@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/styles/normalize.css" />
+        <link rel="stylesheet" href="/dist/bundle.min.css" />
+        <title>Typography</title>
+    </head>
+    <body>
+        <main id="app" v-cloak class="veeva-2024 veeva-2024-preview">
+            <!-- Inter-block Navigation -->
+            <secondary-nav :title="title"></secondary-nav>
+
+            <!-- Content -->
+            <div class="container preview-introduction text-center"> 
+                <h5 class="mb-3">Typography Styles</h5> 
+                <p> 
+                   Here is a list of typography styles used in this component library for reference. <br/> 
+                   Please note that some elements may be styled to different font size in the components/blocks to match for their ui design in figma.
+                </p>
+                <p>For more about typography setup, please check out <a class="doc-link" href="https://github.com/Veeva-com/veeva-component-library/blob/develop/styles/base/typography.scss" target="_blank"> typography.scss </a></p>
+            </div>
+
+            <font-table :font-data="fontData"></font-table>
+        </main>
+
+        <!-- Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <!-- Prism, for code block copying -->
+        <script src="/prism/prism.js"></script>
+        <!-- Vue CDN -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </body>
+</html>
+
+<!-- Vue Component -->
+<script src="/_vue/mixins/commonMixin.js"></script>
+<script src="/_vue/components/SecondaryNav.js"></script>
+<script src="/_vue/components/BlockDivider.js"></script>
+<script src="/_vue/components/BlockDetailContent.js"></script>
+
+<!-- Templates, update here -->
+<script src="/_vue/mixins/copyMixin.js"></script>
+<script src="/_vue/components/FontTable.js"></script>
+
+<script>
+    // data points --
+    // NOTE: update here
+    const FontData = [
+        {
+            title: 'Headings',
+            description: '',
+            fonts: [
+                {
+                    htmlTag: '<h1></h1>',
+                    class: 'h1',
+                    example: '<h1> Headline / H1 </h1>'
+                },
+                {
+                    htmlTag: '<h2></h2>',
+                    class: 'h2',
+                    example: '<h2> Headline / H2 </h2>'
+                },
+                {
+                    htmlTag: '<h3></h3>',
+                    class: 'h3',
+                    example: '<h3> Headline / H3 </h3>'
+                },
+                {
+                    htmlTag: '<h4></h4>',
+                    class: 'h4',
+                    example: '<h4> Headline / H4 </h4>'
+                },
+                {
+                    htmlTag: '<h5></h5>',
+                    class: 'h5',
+                    example: '<h5> Headline / H5 </h5>'
+                },
+                {
+                    htmlTag: '<h6></h6>',
+                    class: 'h6',
+                    example: '<h6> Headline / H6 </h6>'
+                },
+                {
+                    htmlTag: '<h6 class="h7"></h6>',
+                    class: 'h7',
+                    example: '<h6 class="h7"> Headline / H6 </h6>'
+                },
+                {
+                    htmlTag: '<h6 class="h8"></h6>',
+                    class: 'h8',
+                    example: '<h6 class="h8"> Headline / H6 </h6>'
+                },
+            ],
+        },
+        {
+            title: 'Body',
+            description: '',
+            fonts: [
+                {
+                    htmlTag: '<p class="body-l"></p>',
+                    class: 'body-l',
+                    example: '<p class="body-l"> Body / Large: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt ornare metus, vel venenatis ligula. </p>'
+                },
+                {
+                    htmlTag: '<p class="body-m"></p>',
+                    class: 'body-m',
+                    example: '<p class="body-m"> Body / Medium: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt ornare metus, vel venenatis ligula. </p>'
+                },
+                {
+                    htmlTag: '<p class="body-s"></p>',
+                    class: 'body-s',
+                    example: '<p class="body-s"> Body / Small: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt ornare metus, vel venenatis ligula. </p>'
+                },
+                {
+                    htmlTag: '<p class="body-xs"></p>',
+                    class: 'body-xs',
+                    example: '<p class="body-xs"> Body / Extra Small: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi tincidunt ornare metus, vel venenatis ligula. </p>'
+                },
+            ],
+        },
+    ]
+
+
+    const app = Vue.createApp({
+        data() {
+            return {
+                title: "Foundations - Typography",
+                fontData: FontData,
+            };
+        },
+        mixins: [commonMixin], // methods
+        methods: {},
+    });
+
+    // common
+    app.component("secondary-nav", SecondaryNav);
+    app.component("block-divider", BlockDivider);
+    app.component("block-detail-content", BlockDetailContent);
+
+    // specific
+    app.component("font-table", FontTable);
+
+    app.mount("#app");
+</script>

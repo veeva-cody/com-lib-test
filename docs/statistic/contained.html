@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/styles/normalize.css" />
+        <link rel="stylesheet" href="/dist/bundle.min.css" />
+        <title>Statistic</title>
+    </head>
+    <body>
+        <main id="app" v-cloak class="veeva-2024 veeva-2024-preview">
+            <!-- Inter-block Navigation -->
+            <secondary-nav :title="title"></secondary-nav>
+
+            <!-- Content -->
+            <block-detail-content :sections="sections"></block-detail-content>
+        </main>
+
+        <!-- Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <!-- Prism, for code block copying -->
+        <script src="/prism/prism.js"></script>
+        <!-- Vue CDN -->
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    </body>
+</html>
+
+<!-- Vue Component -->
+<script src="/_vue/mixins/commonMixin.js"></script>
+<script src="/_vue/components/SecondaryNav.js"></script>
+<script src="/_vue/components/BlockDivider.js"></script>
+<script src="/_vue/components/BlockDetailContent.js"></script>
+
+<!-- Templates, update here -->
+<script src="/_vue/components/statistic/StatisticContained3Up.js"></script>
+<script src="/_vue/components/statistic/StatisticContained4Up.js"></script>
+
+<script>
+    // data points --
+    // NOTE: update here
+    const PageSections = [
+        {
+            title: "Orange Gradient - 3 Up",
+            component: "statistic-contained-3up",
+            componentConfig: StatisticContained3Up,
+            docLink: "https://github.com/Veeva-com/veeva-component-library/blob/develop/lib/blocks/statistic/contained.html"
+        },
+        {
+            title: "Orange Gradient - 4 Up",
+            component: "statistic-contained-4up",
+            componentConfig: StatisticContained4Up,
+            docLink: "https://github.com/Veeva-com/veeva-component-library/blob/develop/lib/blocks/statistic/contained.html"
+        },
+    ];
+
+    const app = Vue.createApp({
+        data() {
+            return {
+                title: "Statistic - Contained",
+                sections: PageSections,
+            };
+        },
+        mixins: [commonMixin], // methods
+        methods: {},
+    });
+
+    // common
+    app.component("secondary-nav", SecondaryNav);
+    app.component("block-divider", BlockDivider);
+    app.component("block-detail-content", BlockDetailContent);
+
+    // register components
+    PageSections.forEach(({ component, componentConfig }) => {
+        app.component(component, componentConfig);
+    });
+
+    app.mount("#app");
+</script>
