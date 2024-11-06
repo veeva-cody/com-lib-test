@@ -1,0 +1,44 @@
+<section class="people-events [modifier*]">
+    <div class="copy-container container copy-container--center copy-container--eyebrow-gradient">
+        <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+        <h3>[headline]</h3>
+        <p>[body]</p>
+        <div class="copy-container__buttons">
+            <a class="button-primary [modifier^]" href="[url]" target="[target]">[label]</a>
+            <a class="button-secondary [modifier^]" href="[url]" target="[target]">
+                <img src="[src]" alt="[alt]">
+                <span>[label]</span>
+            </a>
+        </div>
+    </div>
+    <div class="people-events__cards container">
+        <!-- [1-?x] -->
+        <div class="person-card-events [modifier^]">
+            <img class="person-card-events__thumbnail" src="[src]" alt="[alt]">
+            <h6>[name]</h6>
+            <p>[title]</p>
+            <div class="person-card-events__experience-container">
+                <p>[label]</p>
+                <div class="person-card-events__logo-container">
+                    <img src="[src]" alt="[alt]">
+                </div>
+            </div>
+        </div>
+        <!-- [] -->
+    </div>
+</section>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+people-events--light
+people-events--dark
+
+Note:
+1. Can add `speaker-modal` to `person-card-events` card. See `person-card-events-with-modal.html` for more detail.
+
+-->

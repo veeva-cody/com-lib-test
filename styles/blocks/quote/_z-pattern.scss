@@ -1,0 +1,50 @@
+.quote-z-pattern__wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    gap: 60px;
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 80px;
+    }
+}
+
+.quote-z-pattern__media img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+
+    box-shadow: $box-shadow-lg-behind;
+    border-radius: $border-radius-s;
+
+    @include media-breakpoint-up(md) {
+        border-radius: $border-radius-m;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+.quote-z-pattern__quote h4 {
+    margin-bottom: map-get($spacers, 3);
+}
+
+.quote-z-pattern__quote p:first-of-type {
+    @include font(body-l);
+
+    font-weight: 600;
+    margin-bottom: map-get($spacers, 2);
+}
+
+.quote-z-pattern--light {
+    @include block-spacing(margin);
+
+    background: color(White);
+    color: color(GalaxyBlack);
+}
+
+.quote-z-pattern--dark {
+    @include block-spacing(padding);
+
+    background: $linear-gradient-linear-dark;
+    color: color(White);
+}

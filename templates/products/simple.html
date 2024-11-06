@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/styles/normalize.css" />
+        <link rel="stylesheet" href="/dist/bundle.min.css" />
+        <title>Product Detail</title>
+    </head>
+
+    <body>
+        <!-- Product Detail Page Start -->
+        <main class="veeva-2024">
+            <div id="simple-product">
+                <!-- Secondary Navigation Start -->
+                <div id="secondary-navigation" class="secondary-navigation">
+                    <div class="secondary-navigation__wrapper container">
+                        <!-- left: main category -->
+                        <div class="secondary-navigation__left">
+                            <h3><span class="icon" data-icon="building-2"></span>Clinical Operations</h3>
+                        </div>
+
+                        <!-- right: product menulist -->
+                        <div class="secondary-navigation__right">
+                            <!-- desktop menu -->
+                            <ul class="secondary-navigation__desktop-menulist">
+                                <!-- * Enter all nav links here * -->
+                                <!--  add `.active` to dropdown-item -->
+                                <a class="dropdown-item" href="/product-detail.html" target="_self">
+                                    <li>Vault Study Startup</li>
+                                </a>
+
+                                <!-- nav with dropdown menu -->
+                                <div class="dropdown-item dropdown">
+                                    <a href="https://www.veeva.com/products/vault-etmf/" target="_self" class="dropdown-toggle dropdown-item--main" type="button" aria-expanded="false">
+                                        <li>Vault eTMF</li>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <div class="dropdown-menu-content">
+                                            <a class="dropdown-item--sublink active" href="/product-detail.html" target="_self">
+                                                <li>Vault Study Training</li>
+                                            </a>
+                                        </div>
+                                    </ul>
+                                </div>
+
+                                <a class="dropdown-item" href="https://www.veeva.com/products/vault-ctms/" target="_self">
+                                    <li>Vault CTMS<span class="icon" data-icon="btn-arrow-up-right--black"></span></li>
+                                </a>
+                                <a class="dropdown-item" href="/products/vault-payments/" target="_self">
+                                    <li>Vault Payments</li>
+                                </a>
+                                <a class="dropdown-item" href="/products/veeva-site-connect/" target="_self">
+                                    <li>Veeva Site Connect</li>
+                                </a>
+                                <a class="dropdown-item" href="/products/clinical-operations/vault-platform/" target="_self">
+                                    <li>Vault Platform</li>
+                                </a>
+                            </ul>
+
+                            <!-- mobile menu -->
+                            <div id="secondary-navigation__mobile-dropdown" class="secondary-navigation__mobile-menulist dropdown">
+                                <!-- current link, toggle mobile list -->
+                                <div class="secondary-navigation__mobile-display-item dropdown-toggle" role="button" id="subnavLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <h6 class="desktop">View More</h6>
+                                </div>
+
+                                <!-- mobile dropdown -->
+                                <ul class="secondary-navigation__mobile-dropdown-menu dropdown-menu container" aria-labelledby="subnavLink" data-popper-placement="bottom-start">
+                                    <div class="dropdown-menu-content">
+                                        <!-- link will be generated based on `.secondary-navigation__desktop-menulist` -->
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="secondary-navigation__backdrop"></div>
+                <!-- Secondary Navigation End -->
+
+                <!-- Hero Start -->
+                <section class="hero-left-aligned hero-left-aligned--product">
+                    <div class="hero-left-aligned__wrapper container">
+                        <div class="copy-container container copy-container--left copy-container--eyebrow-gradient">
+                            <h2>Veeva Link Medical Insights</h2>
+                            <h3>
+                                Modernize and
+                                Accelerate <br /> Study
+                                Start-Up
+                            </h3>
+                            <p>Eliminate costly delays by bringing together study start-up activities and processes in one easy-to-use application. <a href="https://www.veeva.com/">Test Link</a></p>
+                            <h6>
+                                <span><span>Announced</span> 2012</span>
+                                <span><span>Status</span> Very Mature</strong></span>
+                                <span><span>Customers</span> 100+</strong></span>
+                            </h6>
+                            <div class="copy-container__buttons">
+                                <a class="button-primary button-primary--gradient" href="#" target="_self">View Demo</a>
+                                <a class="button-secondary button-secondary--black" href="#" target="_self">
+                                    <img src="/wp-content/themes/veeva2015/assets/svg/icons/btn-phone--black.svg" alt="" />
+                                    <span>Speak to an Expert</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hero-left-aligned__image">
+                            <img src="/wp-content/themes/veeva2015/assets/fpo/hero-05.png" alt="" />
+                        </div>
+                    </div>
+                </section>
+                <!-- Hero End -->
+
+                <!-- Alert Start -->
+                <section class="alert-news">
+                    <a class="alert-news__wrapper container" href=https://www.veeva.com/events/commercial-summit/" target="_self">
+                        <div class="alert-news__inner">
+                            <h6>Shape the Future of Commercial and Medical at Veeva Summit,<br> May 7-8 in Boston. Secure Your Spot</h6>
+                            <span class="alert-news__btn-desktop button-secondary">
+                                <img src="/wp-content/themes/veeva2015/assets/svg/icons/btn-arrow-up-right--black.svg" alt="" />
+                            </span>
+                            <span class="alert-news__btn-mobile button-text-link button-text-link--black">
+                                <span class="button-label">Read More</span>
+                                <span class="underline"></span>
+                            </span>
+                        </div>
+                    </a>
+                </section>
+                <!-- Alert End -->
+
+                <!-- Z Pattern Products -->
+                <section class="z-pattern z-pattern-products z-pattern--light section-rounded-top z-pattern--bg-grey">
+                    <div class="z-pattern__wrapper container">
+                        <!-- z-pattern: headline section -->
+                        <div class="z-pattern__inner">
+                            <div class="copy-container copy-container--eyebrow-gradient copy-container--center copy-container--left-lg">
+                                <h6><span class="icon" data-icon="insert-top-left"></span>Overview</h6>
+                                <h3>
+                                    Coordinate across teams with a single customer database
+                                </h3>
+                                <div class="copy-container__buttons">
+                                    <a class="button-outline button-outline--black" href="https://google.com" target="_self">CTA Text</a>
+                                    <a class="button-secondary button-secondary--icon-bg-white" href="https://google.com" target="_self">
+                                        <img src="/wp-content/themes/veeva2015/assets/svg/icons/btn-play--black.svg" alt="" />
+                                        <span>View Features</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            
+                            <!-- z-pattern: img section -->
+                            <div class="z-pattern__image">
+                                <div class="z-pattern__image-wrapper">
+                                    <img src="/wp-content/themes/veeva2015/assets/fpo/test-product-image.png" alt="" />
+                                </div>
+                            </div>
+
+                            <!-- z-pattern: content section: grid -->
+                            <!-- <div class="z-pattern__content z-pattern__subgrid">
+                                <div class="z-pattern-products__subpoint">
+                                    <div class="z-pattern-products__subpoint-headline">
+                                        <h6>Manage trial start-up activities</h6>
+                                        <span class="icon" data-icon="arrow-up-right--black"></span>
+                                    </div>
+                                    <div class="z-pattern-products__subpoint-body">
+                                        <p>Vault Study Startup manages feasibility, qualification, and activation of research sites. <a href="https://www.veeva.com/">Test Link</a></p>
+                                    </div>
+                                </div>
+
+                                <div class="z-pattern-products__subpoint">
+                                    <div class="z-pattern-products__subpoint-headline">
+                                        <h6>Get complete visibility</h6>
+                                        <span class="icon" data-icon="arrow-up-right--black"></span>
+                                    </div>
+                                    <div class="z-pattern-products__subpoint-body">
+                                        <p>Information is collected, tracked, and presented in dashboard views to deliver visibility of start-up progress and timelines.</p>
+                                    </div>
+                                </div>
+
+                                <div class="z-pattern-products__subpoint">
+                                    <div class="z-pattern-products__subpoint-headline">
+                                        <h6>Drive site activation</h6>
+                                        <span class="icon" data-icon="arrow-up-right--black"></span>
+                                    </div>
+                                    <div class="z-pattern-products__subpoint-body">
+                                        <p>Vault Study Startup drives site activation through standard tasks and milestones. These are controlled through provided and flexible country intelligence templates that specify the processes and documentation required before activating a site.</p>
+                                    </div>
+                                </div>
+
+                                <div class="z-pattern-products__subpoint">
+                                    <div class="z-pattern-products__subpoint-headline">
+                                        <h6>Simplify site selection</h6>
+                                        <span class="icon" data-icon="arrow-up-right--black"></span>
+                                    </div>
+                                    <div class="z-pattern-products__subpoint-body">
+                                        <p>Feasibility surveys are sent to research sites during the site selection phase. Sites are automatically scored based on their response, and those selected are routed into the site activation process.</p>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                            <!-- z-pattern: content section: plain -->
+                            <div class="z-pattern__content">
+                                <p>Vault Study Startup manages feasibility, qualification, and activation of research sites. <a href="https://www.veeva.com/">Test Link</a> ,Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+
+                                <p>Vault CRM is an enterprise customer relationship management application for biopharma, consumer health, and animal health companies. It connects sales, marketing, medical, and service teams with a single customer database supporting the field, including primary care, specialty care, key accounts, retail sales, and medical science liaisons.
+                                </p>
+
+                                <p>Vault CRM enables key capabilities such as customer profiling, content sharing and management, territory and account planning, sampling, and recording field engagement.</p>
+                            </div>
+                        </div>
+
+                        <!-- z-pattern__image will be duplicated to here via js for desktop ui -->
+                    </div>
+                </section>
+
+                <div class="blended-bg">
+                    <!-- Statistics Starts -->
+                    <section class="statistic-inline statistic-inline--dark section-rounded-top">
+                        <div class="container">
+                            <!-- Copy Container -->
+                            <div class="copy-container copy-container--center copy-container--eyebrow-gradient">
+                                <h6><span class="icon" data-icon="graph-dot"></span>Impact</h6>
+                                <h3>
+                                    Vault Study Startup Improves <br />
+                                    Operation Efficiency
+                                </h3>
+                            </div>
+
+                            <!--  Statistic 3 Up  -->
+                            <div class="statistic-3-up-wrapper">
+                                <div class="statistic-tool statistic-tool--dark">
+                                    <h3>30 <sup>%</sup></h3>
+                                    <p>decrease in Site Selected to Site Activated cycle time <a href="https://www.veeva.com/">Test Link</a></p>
+                                </div>
+                                <div class="statistic-tool statistic-tool--dark">
+                                    <h3>36 <sup>%</sup></h3>
+                                    <p>decrease in Start-up Packet Sent to Activation cycle time</p>
+                                </div>
+                                <div class="statistic-tool statistic-tool--dark">
+                                    <h3>10</h3>
+                                    <p>top 20 pharma activate sites with Vault Study Startup</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Statistics Ends-->
+
+                    <!-- Video player Start -->
+                    <section class="video-player-stacked video-player-stacked--dark">
+                        <div class="copy-container container copy-container--center copy-container--eyebrow-gradient">
+                            <h6><span class="icon" data-icon="box-sign"></span>Lorem Ipsum</h6>
+                            <h3>
+                                Stacked Video Player, Dark Mode <br />
+                                Text Box
+                            </h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="copy-container__buttons">
+                                <a class="button-outline button-outline--white" href="https://google.com" target="_self"> CTA Text </a>
+                                <a class="button-secondary" href="https://google.com" target="_self">
+                                    <img src="/wp-content/themes/veeva2015/assets/svg/icons/btn-arrow-right--black.svg" alt="" />
+                                    <span> CTA Text </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="video-player-stacked__video container">
+                            <!-- NOTE: need to add wistia code + aspect ratio -->
+                            <!-- adjust video aspect ratio here -->
+                            <div class="wistia_responsive_padding" style="padding: 56.25% 0 0 0; position: relative">
+                                <div class="wistia_responsive_wrapper" style="height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+                                    <!-- add class here: wistia_async_{wistia-id} -->
+                                    <div class="wistia_embed wistia_async_p4uz0e9bjz" style="height: 100%; width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="video-player-stacked__stats container">
+                            <div class="statistic-3-up-wrapper">
+                                <div class="sidebar-info-box sidebar-info-box--text sidebar-info-box--dark">
+                                    <h6>
+                                        Make better, more <br />
+                                        informed decisions
+                                    </h6>
+                                    <p><a href="https://www.veeva.com/" target="_self">Example link</a> Get insight and prioritize dependent and at-risk tasks, documents, and milestones through automated critical path management.</p>
+                                </div>
+
+                                <div class="sidebar-info-box sidebar-info-box--text sidebar-info-box--dark">
+                                    <h6>
+                                        Make better, more <br />
+                                        informed decisions
+                                    </h6>
+                                    <p>Get insight and prioritize dependent and at-risk tasks, documents, and milestones through automated critical path management.</p>
+                                </div>
+
+                                <div class="sidebar-info-box sidebar-info-box--text sidebar-info-box--dark">
+                                    <h6>
+                                        Make better, more <br />
+                                        informed decisions
+                                    </h6>
+                                    <p>Get insight and prioritize dependent and at-risk tasks, documents, and milestones through automated critical path management.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Video player Ends -->
+                </div>
+
+                <!-- Logo Wall - Listed -->
+                <section class="logo-wall-listed logo-wall-listed--light logo-wall-listed--floating-logos">
+                    <div class="copy-container container copy-container--center copy-container--eyebrow-gradient">
+                        <h6><span class="icon" data-icon="user-multiple-group"></span>Lorem Ipsum</h6>
+                        <h3>Lorem ipsum dolor sit amet,<br> consectetur adipiscing elit, sed do eiusmod</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing<br> elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        <div class="copy-container__buttons">
+                            <a class="button-outline button-outline--black" href="[url]" target="[target]">CTA Text</a>
+                            <a class="button-secondary button-secondary--black" href="https://veeva.com" target="">
+                                <img src="/wp-content/themes/veeva2015/assets/svg/icons/btn-phone--black.svg" />
+                                <span>CTA Text</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="logo-wall-listed__logos container">
+                        <img src="/wp-content/themes/veeva2015/assets/logos/color/alcon.png" alt="">
+                        <img src="/wp-content/themes/veeva2015/assets/logos/color/exactsciences.png" alt="">
+                        <img src="/wp-content/themes/veeva2015/assets/logos/color/sanofi.png" alt="">
+                        <img src="/wp-content/themes/veeva2015/assets/logos/color/moderna.png" alt="">
+                        <img src="/wp-content/themes/veeva2015/assets/logos/color/takeda.png" alt="">
+                        <img src="/wp-content/themes/veeva2015/assets/logos/color/jazz.png" alt="">
+                        <img src="/wp-content/themes/veeva2015/assets/logos/color/insmed.png" alt="">
+                        <img src="/wp-content/themes/veeva2015/assets/logos/color/shionogi.png" alt="">
+                        <img src="/wp-content/themes/veeva2015/assets/logos/color/unitedtherapeutics.png" alt="">
+                        <img src="/wp-content/themes/veeva2015/assets/logos/color/pfizer.png" alt="">
+                        <img src="/wp-content/themes/veeva2015/assets/logos/color/bavarian.png" alt="">
+                    </div>
+                </section>
+                <!-- Logo Wall - Listed Ends -->
+
+                <!-- Quotes Starts -->
+                <section class="quote-tabs quote-tabs--light">
+                    <!-- content -->
+                    <div class="quote-tabs__content">
+                        <div class="container">
+                            <!-- carousel -->
+                            <!-- NOTE: update `data-slide-interval` here if needed, where time is in milliseconds -->
+                            <div class="carousel slide carousel-fade">
+                                <!-- carousel indicators -->
+                                <div class="carousel-indicators"></div>
+
+                                <!-- carousel slides -->
+                                <div class="carousel-inner">
+                                    <!-- slide 1 -->
+                                    <div class="carousel-item">
+                                        <!-- Quote Card -->
+                                        <div class="quote-card quote-card-full quote-card-full--medium-text">
+                                            <div class="quote-card__quote-wrapper">
+                                                <p>"Our strategic partnership with Veeva expands our capacity to leverage innovative technology and enhances our ability to deliver value to patients and all our stakeholders – this is key to how we measure success."</p>
+                                            </div>
+
+                                            <div class="quote-card__person-info">
+                                                <div class="client-logo">
+                                                    <img src="/wp-content/themes/veeva2015/assets/logos/color/merck.png" alt="merck" />
+                                                </div>
+                                                <h5>Robert M. Davis</h5>
+                                                <h6>Chief Executive Officer and President, Merck</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- slide 2 -->
+                                    <div class="carousel-item">
+                                        <!-- Quote Card -->
+                                        <div class="quote-card quote-card-full quote-card-full--medium-text quote-card--bg-blue-gradient">
+                                            <div class="quote-card__quote-wrapper">
+                                                <p>"Our strategic partnership with Veeva expands our capacity to leverage innovative technology and enhances our ability to deliver value to patients and all our stakeholders – this is key to how we measure success."</p>
+                                            </div>
+
+                                            <div class="quote-card__person-info">
+                                                <div class="client-logo">
+                                                    <img src="/wp-content/themes/veeva2015/assets/logos/color/merck.png" alt="merck" />
+                                                </div>
+                                                <h5>Robert M. Davis</h5>
+                                                <h6>Chief Executive Officer and President, Merck</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- slide 3 -->
+                                    <div class="carousel-item">
+                                        <!-- Quote Card -->
+                                        <div class="quote-card quote-card-full quote-card-full--medium-text">
+                                            <div class="quote-card__quote-wrapper">
+                                                <p>"Our strategic partnership with Veeva expands our capacity to leverage innovative technology and enhances our ability to deliver value to patients and all our stakeholders – this is key to how we measure success."</p>
+                                            </div>
+
+                                            <div class="quote-card__person-info">
+                                                <div class="client-logo">
+                                                    <img src="/wp-content/themes/veeva2015/assets/logos/color/merck.png" alt="merck" />
+                                                </div>
+                                                <h5>Robert M. Davis</h5>
+                                                <h6>Chief Executive Officer and President, Merck</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- slide 4 -->
+                                    <div class="carousel-item">
+                                        <!-- Quote Card -->
+                                        <div class="quote-card quote-card-full quote-card-full--medium-text quote-card--bg-dark-gradient">
+                                            <div class="quote-card__quote-wrapper">
+                                                <p>"Our strategic partnership with Veeva expands our capacity to leverage innovative technology and enhances our ability to deliver value to patients and all our stakeholders – this is key to how we measure success."</p>
+                                            </div>
+
+                                            <div class="quote-card__person-info">
+                                                <div class="client-logo">
+                                                    <img src="/wp-content/themes/veeva2015/assets/logos/color/merck.png" alt="merck" />
+                                                </div>
+                                                <h5>Robert M. Davis</h5>
+                                                <h6>Chief Executive Officer and President, Merck</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Quotes Ends -->
+
+                <!-- Resource Block Starts -->
+                <section class="resource-block-cards resource-block-cards--light">
+                    <div class="container">
+                        <!-- copy container -->
+                        <div class="copy-container copy-container--center copy-container--eyebrow-gradient">
+                            <h6>
+                                <span class="icon" data-icon="book-reading"></span>
+                                Resources
+                            </h6>
+                            <h3>Learn and Grow with Veeva</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <a href="https://www.veeva.com/">Test Link</a></p>
+                            <div class="copy-container__buttons">
+                                <a class="button-outline button-outline--black" href="https://google.com" target="_self"> View Resources</a>
+                            </div>
+                        </div>
+
+                        <div class="resource-block__cards resource-block__cards--gridded">
+                            <!-- resource card -->
+                            <a class="resource-card" href="#">
+                                <div class="resource-card__text">
+                                    <!-- resource-chip -->
+                                    <div class="resource-chip">
+                                        <div class="resource-chip__icon">
+                                            <span class="icon" data-icon="play-filled-2"></span>
+                                        </div>
+
+                                        Resource Type
+                                    </div>
+
+                                    <!-- text -->
+                                    <h6>Eyebrow</h6>
+                                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                                </div>
+
+                                <div class="resource-card__media">
+                                    <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                                </div>
+                            </a>
+
+                            <!-- resource card -->
+                            <a class="resource-card" href="#">
+                                <div class="resource-card__text">
+                                    <!-- resource-chip -->
+                                    <div class="resource-chip">
+                                        <div class="resource-chip__icon">
+                                            <span class="icon" data-icon="play-filled-2"></span>
+                                        </div>
+
+                                        Resource Type
+                                    </div>
+
+                                    <!-- text -->
+                                    <h6>Eyebrow</h6>
+                                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                                </div>
+
+                                <div class="resource-card__media">
+                                    <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                                </div>
+                            </a>
+
+                            <!-- resource card -->
+                            <a class="resource-card" href="#">
+                                <div class="resource-card__text">
+                                    <!-- resource-chip -->
+                                    <div class="resource-chip">
+                                        <div class="resource-chip__icon">
+                                            <span class="icon" data-icon="play-filled-2"></span>
+                                        </div>
+
+                                        Resource Type
+                                    </div>
+
+                                    <!-- text -->
+                                    <h6>Eyebrow</h6>
+                                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                                </div>
+
+                                <div class="resource-card__media">
+                                    <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                                </div>
+                            </a>
+
+                            <!-- resource card -->
+                            <a class="resource-card" href="#">
+                                <div class="resource-card__text">
+                                    <!-- resource-chip -->
+                                    <div class="resource-chip">
+                                        <div class="resource-chip__icon">
+                                            <span class="icon" data-icon="play-filled-2"></span>
+                                        </div>
+
+                                        Resource Type
+                                    </div>
+
+                                    <!-- text -->
+                                    <h6>Eyebrow</h6>
+                                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                                </div>
+
+                                <div class="resource-card__media">
+                                    <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                                </div>
+                            </a>
+
+                            <!-- resource card -->
+                            <a class="resource-card" href="#">
+                                <div class="resource-card__text">
+                                    <!-- resource-chip -->
+                                    <div class="resource-chip">
+                                        <div class="resource-chip__icon">
+                                            <span class="icon" data-icon="play-filled-2"></span>
+                                        </div>
+
+                                        Resource Type
+                                    </div>
+
+                                    <!-- text -->
+                                    <h6>Eyebrow</h6>
+                                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                                </div>
+
+                                <div class="resource-card__media">
+                                    <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                                </div>
+                            </a>
+
+                            <!-- resource card -->
+                            <a class="resource-card" href="#">
+                                <div class="resource-card__text">
+                                    <!-- resource-chip -->
+                                    <div class="resource-chip">
+                                        <div class="resource-chip__icon">
+                                            <span class="icon" data-icon="play-filled-2"></span>
+                                        </div>
+
+                                        Resource Type
+                                    </div>
+
+                                    <!-- text -->
+                                    <h6>Eyebrow</h6>
+                                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                                </div>
+
+                                <div class="resource-card__media">
+                                    <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                                </div>
+                            </a>
+
+                            <!-- resource card -->
+                            <a class="resource-card" href="#">
+                                <div class="resource-card__text">
+                                    <!-- resource-chip -->
+                                    <div class="resource-chip">
+                                        <div class="resource-chip__icon">
+                                            <span class="icon" data-icon="play-filled-2"></span>
+                                        </div>
+
+                                        Resource Type
+                                    </div>
+
+                                    <!-- text -->
+                                    <h6>Eyebrow</h6>
+                                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                                </div>
+
+                                <div class="resource-card__media">
+                                    <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                                </div>
+                            </a>
+
+                            <!-- resource card -->
+                            <a class="resource-card" href="#">
+                                <div class="resource-card__text">
+                                    <!-- resource-chip -->
+                                    <div class="resource-chip">
+                                        <div class="resource-chip__icon">
+                                            <span class="icon" data-icon="play-filled-2"></span>
+                                        </div>
+
+                                        Resource Type
+                                    </div>
+
+                                    <!-- text -->
+                                    <h6>Eyebrow</h6>
+                                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                                </div>
+
+                                <div class="resource-card__media">
+                                    <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                <!-- Resource Block Ends -->
+
+                <!-- CTA Start ✅ -->
+                <section class="hero-contained hero-contained--gradient hero-contained--footer-fix">
+                    <div class="container copy-container copy-container--center">
+                        <h3>Interested in learning more<br> about how Veeva can help?</h3>
+                        <div class="copy-container__buttons">
+                            <a class="button-primary button-primary--gradient" href="/contact-us/" target="_self">Contact Us</a>
+                            <a class="button-tertiary button-tertiary--white" href="#" target="_blank">Download Product Sheet</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Product Detail Page End -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://fast.wistia.com/assets/external/E-v1.js" async=""></script>
+        <script src="/dist/bundle.min.js"></script>
+    </body>
+</html>

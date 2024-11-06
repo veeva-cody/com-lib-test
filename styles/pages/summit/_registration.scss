@@ -1,0 +1,21 @@
+.summit-registration {
+    background-color: color(NeutralGrey);
+}
+
+.form .copy-container {
+    color: color(GalaxyBlack);
+}
+
+.form .copy-container p {
+    @extend .body-s;
+    color: color(DarkGray);
+}
+
+.form .form-dropdown {
+    @extend .mt-3, .mx-auto;
+    max-width: $inner-content-max-width-lg;
+}
+
+.form .iframe {
+    @extend .mt-5;
+}

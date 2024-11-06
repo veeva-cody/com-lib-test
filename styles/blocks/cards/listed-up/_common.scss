@@ -1,0 +1,127 @@
+.listed-up {
+    @include copy-content-spacing;
+}
+
+.listed-up .copy-container h1,
+.listed-up .copy-container h2,
+.listed-up .copy-container h3 {
+    max-width: $inner-content-max-width-lg;
+}
+
+// optional eyebrow
+.listed-up .copy-container h4 {
+    @include background-text-clip($linear-gradient-orange-compliant);
+}
+
+.listed-up .copy-container p {
+    max-width: $contained-width-md;
+}
+
+.listed-up__cards {
+
+    @include grid-3-col-up(24px, 24px, 24px);
+    
+    @include media-breakpoint-down(lg) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-breakpoint-down(sm) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}
+
+.listed-up-card {
+    justify-self: center;
+    max-width: 100%;
+}
+    
+
+@mixin listed-up-card--center {
+    align-items: center;
+
+    h4,
+    h5,
+    p {
+        text-align: center;
+    }
+}
+
+.listed-up-card--center {
+    @include listed-up-card--center;
+}
+
+.listed-up--light {
+    @include block-spacing(margin);
+    color: color(GalaxyBlack);
+}
+
+.listed-up--dark {
+    @include block-spacing(padding);
+    color: color(White);
+}
+
+.listed-up--grey {
+    @include block-spacing(padding);
+    margin: 0;
+
+    color: color(GalaxyBlack);
+    background: color(NeutralGrey);
+}
+
+.listed-up--dark.listed-up-accent,
+.listed-up--dark.listed-up-subpoints {
+    background: $linear-gradient-linear-dark;
+}
+
+.listed-up--dark .listed-up-card:not(:hover) {
+    background: transparent;
+}
+
+.listed-up--dark .listed-up-card h5,
+.listed-up--dark .listed-up-card p,
+.listed-up--dark .listed-up-card li {
+    color: color(White);
+}
+
+.listed-up--grey {
+    @include block-spacing(padding);
+    color: color(GalaxyBlack);
+    background: color(NeutralGrey);
+}
+
+.listed-up--grey .floating-icon.arrow-wrapper {
+    background: transparent;
+}
+
+.listed-up--grey a.listed-up-card:hover .floating-icon.arrow-wrapper {
+    background: color(White);
+    border-color: color(White);
+}
+
+// optional eyebrow
+.listed-up-accent--card-center .listed-up-card h4,
+.listed-up:not(.listed-up-accent--card-center) .listed-up-card:not(.listed-up-card-icon) h4,
+.listed-up:not(.listed-up-accent--card-center) .listed-up-card.listed-up-card-icon:not(:hover) h4  {
+    @include background-text-clip($linear-gradient-orange-compliant);
+}
+
+
+.listed-up-accent.listed-up-accent--card-center .listed-up__cards {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $contained-width-xl;
+}
+
+.listed-up-accent.listed-up-accent--card-center .listed-up-card {
+    @include listed-up-card--center;
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.listed-up__cards.container:before,
+.listed-up__cards.container:after {
+    display: none;
+}

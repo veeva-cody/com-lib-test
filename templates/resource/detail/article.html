@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/styles/normalize.css" />
+        <link rel="stylesheet" href="/dist/bundle.min.css" />
+        <title>Resource Detail - Article</title>
+    </head>
+
+    <!-- 
+
+        Format: Article layout matched with Figma layout
+        - Article: https://www.veeva.com/resources/4-steps-for-effectively-marketing-new-treatments/
+
+        NOTE: they dont have a consistent layout across the resources types, like this belongs to article type, but can render another layout :DDDD, need to be CAREFUL to check what's the actual condition for rendering the layout when integrating with the cms fields :DDDD
+        https://www.veeva.com/resources/achieving-true-customer-insight/ 
+
+        NOTE: they have inline css styles that cannot style on, we could try to adjust the styles for a bit so that it fits nicely into our current design
+
+        NOTE: If the following types, (Press Releases - News, Press Releases) would like to have TOC, they will need to update the heading to be `h2, h3` as heading element for us to target. As they both currently used (used strong as title, which is not safe to be targeted for rendering of toc)
+
+        - Press Release - News : https://www.veeva.com/resources/13-of-top-20-pharma-companies-adopt-veeva-crm-events-management-for-better-and-more-compliant-events/
+
+        - Press Release: https://www.veeva.com/resources/7-of-the-top-20-pharma-companies-adopt-veeva-vault-study-startup/
+
+    -->
+
+    <body>
+        <!-- Resource Detail Page End -->
+        <main class="veeva-2024">
+            <!-- Regular Article -->
+            <div id="resource-detail">
+                <!-- Hero Customer -- matches with current content -->
+                <section class="hero-centered hero-centered--logo">
+                    <div class="container copy-container copy-container--center copy-container--eyebrow-gradient">
+                        <h6><span class="icon" data-icon="insert-top-left"></span>Article</h6>
+                        <h1>4 Steps for Effectively Marketing New Treatments</h1>
+                        <!-- NOTE: Use [excerpt] as description -->
+                        <p>There’s no magic formula to guarantee a successful launch for a new biopharma brand. But there are steps you can take to make marketing campaigns more effective and increase the likelihood of great results.</p>
+                        <div class="copy-container__buttons">
+                            <a class="button-primary button-primary--gradient button-primary--download" href="[url]" target="[target]">Download PDF</a>
+                            <a class="button-outline button-outline--black" href="[url]" target="[target]">Join Summit</a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- NOTE: Not sure if possible to have video in page as well, keeping this for reference if needed -->
+                <!-- Hero Customer, Video -->
+                <!-- <section class="hero-customer hero-customer--grey pb-0">
+                    <div class="container">
+                        <div class="copy-container copy-container--center">
+                            <div class="hero-logo client-logo">
+                                <img src="/wp-content/themes/veeva2015/assets/logos/color/bayer.png" alt="Veeva" />
+                            </div>
+                            <h1>4 Steps for Effectively Marketing New Treatments</h1>
+                            <p>There’s no magic formula to guarantee a successful launch for a new biopharma brand. But there are steps you can take to make marketing campaigns more effective and increase the likelihood of great results.</p>
+                            <div class="copy-container__buttons">
+                                <a class="button-primary button-primary--gradient button-primary--download" href="[url]" target="[target]">Download PDF</a>
+                                <a class="button-outline button-outline--black" href="[url]" target="[target]">Join Summit</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-customer__video">
+                        <div class="video-player-stacked__video container">
+                            < !-- NOTE: need to add wistia code + aspect ratio * -- >
+                            < !-- adjust video aspect ratio here -- >
+                            <div class="wistia_responsive_padding" style="padding: 56.25% 0 0 0; position: relative">
+                                <div class="wistia_responsive_wrapper" style="height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+                                    < !-- add class here: wistia_async_{wistia-id} -- >
+                                    <div class="wistia_embed wistia_async_p4uz0e9bjz" style="height: 100%; width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> -->
+
+                <!-- Content Block -->
+                <div class="content-block container-lg">
+                    <div class="content-block__sidebar">
+                        <!-- Page TOC: desktop -->
+                        <!-- Page TOC fields will be added automatically: It will select the elements using the [selector] set in data-toc-target-element-selector="[selector]", inside the element with [data-toc-target-area]"-->
+                        <!-- e.g. data-toc-target-element-selector="h2" -->
+                        <div class="page-toc" data-toc-target-element-selector="h2, h3">
+                            <div class="page-toc__field-desktop-wrapper">
+                                <h6>Table of Contents</h6>
+
+                                <!-- Page TOC fields will be added automatically. -->
+                                <!-- e.g. <a href="#" class="page-toc__field"> {text} </a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Page TOC: mobile -->
+                    <div class="page-toc__field-mobile-wrapper container">
+                        <div class="form-dropdown dropdown form-dropdown--toc">
+                            <button class="dropdown-toggle" role="button" id="page-toc-mobile-dropdown" data-bs-toggle="dropdown" aria-expanded="true">
+                                <h6 class="form-dropdown--toc__display-item">
+                                    Table Of Contents
+                                    <!-- <span> Section {index}: </span> {title} -->
+                                </h6>
+                            </button>
+
+                            <ul class="dropdown-menu" aria-labelledby="page-toc-mobile-dropdown" data-popper-placement="top">
+                                <!-- dropdown items will be added automatically  -->
+                                <!-- <a href="#{anchor-id}" class="dropdown-item"> 
+                                        <span> Section {index}: </span> {title}  
+                                    </a> -->
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- main content field -->
+                    <!-- class on what Veeva currently has: entry-content resources-content -->
+                    <div class="content-block__content container" data-toc-target-area>
+                        <p>
+                            This template uses this Article as example:
+                            <a href="https://www.veeva.com/resources/4-steps-for-effectively-marketing-new-treatments/" target="_blank">https://www.veeva.com/resources/4-steps-for-effectively-marketing-new-treatments/ </a>
+                        </p>
+
+                        <p>
+                            Promoting a new brand can be challenging whether you’re a first-time brand manager or a seasoned veteran. While there is no magic formula that guarantees success, there are steps you can take to increase the likelihood of great results. <a href="/products/marketing-analytics/">Veeva Crossix</a> has gathered unique insights from working on launch brands in both new and competitive therapeutic areas. The following best practices can help marketers in both small biotech
+                            companies and established enterprises best allocate investments and execute effective launch campaigns.
+                        </p>
+
+                        <h2>1) Align and define</h2>
+                        <p>
+                            A large part of a successful promotional launch is managing and informing all stakeholders, including the brand team, executives, and media agencies. Whether your goal is to drive awareness about an under-diagnosed condition, encourage a conversation between a patient and their HCP, or drive new prescriptions, everyone should align and agree on the campaign’s objective before execution. A good approach is to outline the top one or two goals and get agreement from the
+                            key stakeholders. Avoid having too many goals, which can make it difficult to optimize the campaign once it’s in flight.
+                        </p>
+
+                        <p>
+                            It’s also important to define KPIs before the campaign’s launch. Outlining what success looks like ensures the campaign will accomplish what stakeholders agreed on. The approach to setting KPIs will differ depending on your treatment and the market. When launching in a competitive market or for a disease state that is already well established, KPIs will likely be around gaining market share and growing your business. Benchmark information is also readily available for
+                            competitive markets or common therapeutic areas such as diabetes, where the patient journey is well established. KPIs when launching a new treatment in a non-competitive category may be about growing your business but also driving awareness of the category. Understanding new treatment areas also requires more exploratory testing. You can then use these findings to inform potential metrics.
+                        </p>
+
+                        <h2>2) Establish a baseline by running unbranded campaigns first</h2>
+
+                        <p>
+                            Even before a treatment is approved, executing an unbranded campaign is a great way to prime the market and establish baselines before embarking on the more extensive, branded campaign. Depending on the therapeutic area, you may use disease-state awareness campaigns, disease-state education campaigns, or both. Disease-state awareness campaigns are a great tool to teach the market about what the disease-state actually is and help patients get diagnosed. Disease-state
+                            education campaigns provide information that can help diagnosed patients consider a treatment option they haven’t considered before.
+                        </p>
+
+                        <p>
+                            For a first-to-market treatment, you may want to run both kinds of campaigns to generate demand for your treatment. However, for a new treatment option within a well-established category, you may only focus on a disease state education campaign. In either case, running unbranded campaigns helps establish how well different media tactics engage your key audiences. By applying these learnings to your branded campaign, you can be confident that your strategy is effective
+                            and you invest your budget wisely from day one.
+                        </p>
+
+                        <h2>3) Set realistic expectations around ROI, especially for awareness channels</h2>
+
+                        <p>
+                            Linear TV is an important channel for reaching a broad audience and driving awareness. While brand launch campaigns using this channel drive lift in conversion, linear TV needs to be on-air consistently before achieving positive ROIs — sometimes one to three years.<sup>1</sup> This longer time to positive ROI does not mean the campaign is performing poorly, but stakeholders often need reassurance. Set and manage realistic expectations with leadership and other
+                            stakeholders. Leverage benchmarks to help validate performance throughout the campaign and determine if you should make any optimizations or adjustments to the strategy.
+                        </p>
+
+                        <h2>4) Optimize campaigns for success</h2>
+
+                        <p>To improve campaign performance, successful brands diversify the media mix and constantly evaluate data. When buying media, you’ll want to ensure you don’t put all your resources into one bucket, such as programmatic. Instead, use a combination of channels and tactics to reach your audience in different environments.</p>
+
+                        <p>
+                            Constantly evaluate data as it comes in so you can change tactics that are not working, which can help save time and money. For example, in a recent respiratory brand launch, the first-year HCP campaign strategy focused heavily on targeting pulmonologists. However, once the brand reviewed data from Crossix’s net impact analysis, the team realized they were also reaching allergists who were driving new patient starts at a higher rate. While the reach to allergists was
+                            much smaller than pulmonologists, the brand decided to optimize the campaign by reshaping its audience approach to focus on allergists in year two.
+                        </p>
+
+                        <p>Executing marketing for a new brand launch requires a deep understanding of your target audience and the ability to continuously adapt and optimize. Although media is only one component of a brand launch, it is critical. Align early on goals, set realistic performance expectations, establish a baseline through unbranded campaigns, and constantly evaluate data to effectively get your message into the market and reach the right patients and HCPs.</p>
+
+                        <div class="gray-box text-center">
+                            <p style="max-width: 770px; margin-left: auto; margin-right: auto">
+                                <strong>A strong marketing analytics partner provides the measurement and insights you need to make the best media investments for a successful commercial launch. Find out what criteria you should look for in a partner <a href="/blog/5-things-to-look-for-in-a-marketing-analytics-partner/">here</a>.</strong>
+                            </p>
+                        </div>
+
+                        <footnotes>
+                            <hr />
+                            <sup>1</sup> Crossix National TV performance benchmarks.
+                        </footnotes>
+                    </div>
+                </div>
+
+                <!-- Resources - Cards, Light -->
+                <!-- ? can randomly fetched 4 resources on existing type ? -->
+                <section class="resource-block-cards resource-block-cards--light">
+                    <div class="container">
+                        <div class="copy-container copy-container--center copy-container--eyebrow-gradient">
+                            <h6>
+                                <span class="icon" data-icon="definition-search-book"></span>
+                                More Resources
+                            </h6>
+                            <h3>Explore and learn more</h3>
+                            <div class="copy-container__buttons">
+                                <a class="button-outline button-outline--black" href="[url]" target="[target]"> View More </a>
+                            </div>
+                        </div>
+
+                        <div class="resource-block__cards resource-block__cards--gridded">
+                            <!-- resource card -->
+                            <a class="resource-card" href="https://www.google.com/" target="_blank">
+                                <div class="resource-card__text">
+                                    <!-- resource-chip -->
+                                    <div class="resource-chip">
+                                        <!-- veeva icon -->
+                                        <div class="resource-chip__icon">
+                                            <span class="icon" data-icon="veeva"></span>
+                                        </div>
+                                        Product
+                                    </div>
+
+                                    <!-- text -->
+                                    <h6>Eyebrow</h6>
+                                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                                </div>
+
+                                <div class="resource-card__media">
+                                    <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                                </div>
+                            </a>
+
+                            <!-- resource card -->
+                            <a class="resource-card" href="https://www.google.com/" target="_blank">
+                                <div class="resource-card__text">
+                                    <!-- resource-chip -->
+                                    <div class="resource-chip">
+                                        <!-- star icon -->
+                                        <div class="resource-chip__icon">
+                                            <span class="icon" data-icon="star-fill-1"></span>
+                                        </div>
+                                        Summit
+                                    </div>
+
+                                    <!-- text -->
+                                    <h6>Eyebrow</h6>
+                                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                                </div>
+
+                                <div class="resource-card__media">
+                                    <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                                </div>
+                            </a>
+
+                            <!-- resource card -->
+                            <a class="resource-card" href="https://www.google.com/" target="_blank">
+                                <div class="resource-card__text">
+                                    <!-- resource-chip -->
+                                    <div class="resource-chip">
+                                        <!-- rotated-square -->
+                                        <div class="resource-chip__icon">
+                                            <span class="icon" data-icon="rotated-square"></span>
+                                        </div>
+                                        Article
+                                    </div>
+
+                                    <!-- text -->
+                                    <h6>Eyebrow</h6>
+                                    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                                </div>
+
+                                <div class="resource-card__media">
+                                    <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                                </div>
+                            </a>
+
+                            <!-- resource card, show video as popover -->
+                            <!-- NOTE: enter wistiaID to "data-wistia-video-id" here -->
+                            <div class="resource-card js-wistia-resource-card" data-wistia-video-id="latim1ya7g">
+                                <div class="resource-card__text">
+                                    <div class="resource-chip resource-chip--light">
+                                        <!-- video icon -->
+                                        <div class="resource-chip__icon">
+                                            <span class="icon" data-icon="play-filled-2"></span>
+                                        </div>
+                                        Video
+                                    </div>
+                                    <h6>Eyebrow</h6>
+                                    <h5>We are small resource cards, saying lorem ipsum dolor sit amet, consectetur adipiscing</h5>
+                                </div>
+                                <div class="resource-card__media">
+                                    <div class="video wistia-video"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Hero Contained Start (CTA) -->
+                <section class="hero-contained hero-contained--gradient hero-contained--footer-fix">
+                    <div class="copy-container container copy-container--center">
+                        <h6><span class="icon" data-icon="box-sign"></span>Partner with Veeva</h6>
+                        <h3>
+                            Interested in learning more about <br />
+                            how Veeva can help?
+                        </h3>
+                        <div class="copy-container__buttons">
+                            <a class="button-primary button-primary--gradient" href="https://www.veeva.com/contact-us/" target="_self">Contact Us</a>
+
+                            <!-- Optional PDF button -->
+                            <a class="button-tertiary button-tertiary--white" href="https://www.veeva.com/wp-content/uploads/2024/03/Veeva-Crossix-_4-Steps-for-Effectively-Marketing-New-Treatments_Article.pdf" target="_blank">Download PDF</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- Hero Contained End -->
+            </div>
+        </main>
+        <!-- Resource Detail Page End -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://fast.wistia.com/assets/external/E-v1.js" async=""></script>
+        <script src="/dist/bundle.min.js"></script>
+    </body>
+</html>

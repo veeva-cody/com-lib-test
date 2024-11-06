@@ -1,0 +1,8 @@
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.z-pattern-stats .container:before,
+.z-pattern-stats .container:after {
+    display: none;
+}

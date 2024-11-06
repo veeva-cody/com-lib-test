@@ -1,0 +1,30 @@
+.listed-up-card-subpoints ul {
+    margin-top: map-get($spacers, 4);
+    padding: 0;
+}
+
+.listed-up-card-subpoints ul li {
+
+    @include font(h8);
+
+    position: relative;
+    
+    padding-left: map-get($spacers, 3);
+    
+    list-style: none;
+    border-left: 1px solid color(VeevaOrange);
+
+    @include media-breakpoint-up(md) {
+        padding-left: map-get($spacers, 4);
+    }
+
+}
+
+.listed-up-card-subpoints ul li:not(:last-child) {
+    margin-bottom: map-get($spacers, 3);
+}
+
+.listed-up-card-subpoints:hover ul li {
+    border-left: 1px solid color(White);
+    color: color(White)
+}

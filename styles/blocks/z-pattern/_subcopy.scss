@@ -1,0 +1,43 @@
+.z-pattern-subcopy .z-pattern__wrapper {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: map-get($spacers, 6);
+
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+
+    @include media-breakpoint-up(xl) {
+        gap: 0 map-get($spacers, 8);
+    }
+
+}
+
+.z-pattern-subcopy .z-pattern__image {
+    order: 1;
+}
+
+.z-pattern-subcopy .copy-container {
+
+    order: 2;
+
+    @include media-breakpoint-up(lg) {
+        order: 1;
+    }
+
+}
+
+.z-pattern-subcopy .z-pattern__image-wrapper {
+
+    @include media-breakpoint-up(md) {
+        max-width: 50vh;
+        margin-left: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+        max-width: none;
+    }
+
+}

@@ -1,0 +1,71 @@
+<section class="tab-block tab-block-customer [modifier*]">
+    <div class="container">
+        <div class="copy-container copy-container--center copy-container--eyebrow-gradient">
+            <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+            <h3>[headline]</h3>
+            <p>[body]</p>
+            <div class="copy-container__buttons">
+                <a class="button-primary [modifier^]" href="[url]" target="[target]">[label]</a>
+                <a class="button-secondary [modifier^]" href="[url]" target="[target]">
+                    <img src="[src]" alt="[alt]" />
+                    <span>[label]</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="tab-block__content">
+        <!-- [1x] -->
+        {{ `tabs-tablist-text` }}
+        {{ `tabs-tablist-logo` }}
+        {{ `tabs-tablist-client` }}
+        <!-- [] -->
+        <div class="container tab-content">
+            <!-- [1-6x] -->
+            <div class="tab-pane">
+                <div class="customer-story-card">
+                    <a class="customer-story-card__media" href="[url]" target="[target]">
+                        <img class="customer-story-card__image" src="[src]" alt="[alt]" />
+                        <div class="customer-story-card__image-overlay">
+                            <div class="customer-story-card__image-content">
+                                <div class="customer-story-card__image-title">
+                                    <div class="client-logo">
+                                        <img src="[src]" alt="[alt]" />
+                                    </div>
+                                    <h5>[headline]</h5>
+                                    <p>[body]</p>
+                                </div>
+                                <div class="customer-story-card__cta">
+                                    <span class="icon" data-icon="arrow-up-right--white"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="customer-story-card__content sidebar">
+                        <!-- [1-3x] -->
+                        {{ `sidebar-info-box-stats` }}
+                        {{ `sidebar-info-box-quote` }}
+                        {{ `sidebar-info-box-product-list` }}
+                        <!-- [] -->
+                    </div>
+                </div>
+            </div>
+            <!-- [] -->
+        </div>
+    </div>
+</section>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+tab-block--light
+tab-block--dark
+
+Optional *:
+
+tab-block--bg-black
+
+-->

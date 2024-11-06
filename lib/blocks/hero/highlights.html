@@ -1,0 +1,50 @@
+<section class="hero-highlights [modifier*]">
+    <div class="hero-highlights__copy-wrapper section-rounded" style="background-image: url([src])">
+        <div class="copy-container container copy-container--center [modifier^]">
+            <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+            <h1>[headline]</h1>
+            <p>[body]</p>
+            <div class="copy-container__buttons">
+                <a class="button-primary [modifier^]" href="[url]" target="[target]">[label]</a>
+                <a class="button-secondary [modifier^]" href="[url]" target="[target]">
+                    <img src="[src]" alt="[alt]">
+                    <span>[label]</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="hero-highlights__cards container">
+        <!-- [2-4x] -->
+        <div class="statistic-card">
+            <h3>[stat]<sup>[super]</sup></h3>
+            <p>[body]</p>
+        </div>
+        <!-- [] -->
+    </div>
+</section>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+hero-highlights--light
+hero-highlights--dark
+
+Optional *:
+
+hero-highlights--image
+hero-highlights--card-scroll
+
+--
+
+Note:
+
+The following class will be automatically added via JavaScript based on number of cards in the .hero-highlights__cards container:
+
+hero-highlights--grid-2-up
+hero-highlights--grid-4-up
+
+-->

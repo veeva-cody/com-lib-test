@@ -1,0 +1,57 @@
+$people-video-column-gap: map-get($spacers, 4);
+
+.people-video--light {
+    @include block-spacing(margin);
+    color: color(GalaxyBlack);
+}
+
+.people-video--dark {
+
+    @include block-spacing(padding);
+    
+    background: $linear-gradient-linear-dark;
+    color: color(White);
+
+}
+
+.people-video__cards {
+
+    width: 100%;
+    margin-top: map-get($spacers, 5);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    column-gap: $people-video-column-gap;
+    row-gap: map-get($spacers, 5);
+
+    @include media-breakpoint-up(lg) {
+        justify-content: center;
+        margin-top: map-get($spacers, 6);
+    }
+
+}
+
+.people-video__cards .person-card-video {
+
+    width: calc((100% / 2) - ($people-video-column-gap * 1/2));
+
+    @include media-breakpoint-up(lg) {
+        width: calc((100% / 3) - ($people-video-column-gap * 2/3));
+    }
+
+    @include media-breakpoint-up(xl) {  
+        width: calc((100% / 4) - ($people-video-column-gap * 3/4));
+    }
+    
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.people-video__cards:before,
+.people-video__cards:after {
+    display: none;
+}

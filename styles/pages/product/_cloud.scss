@@ -1,0 +1,32 @@
+#cloud #hero.hero-centered--image {
+    @include gateway-hero-bg-images;
+}
+
+#cloud #customers {
+    @include rounded-corners(all);
+    background: $linear-gradient-linear-dark;
+}
+
+#cloud #customers > :not(:last-child) {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+#cloud #customers .logo-wall-listed,
+#cloud #customers .quote-tabs {
+    background: none;
+}
+
+#cloud .tablist-link {
+    opacity: 1;
+}
+
+#cloud .resource-block-gridded-5 {
+    @include media-breakpoint-up(md) {
+        padding-top: map-get($spacers, 6);
+    }
+}
+
+#simple-product .z-pattern__image-wrapper img {
+    object-fit: contain;
+}

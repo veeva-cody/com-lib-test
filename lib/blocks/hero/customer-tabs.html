@@ -1,0 +1,89 @@
+<!-- if there's only 1 image, use style="background-image: url([src]);" -->
+<!-- if there's 2 images (desktop + mobile), use style="--mobile-image: url([src]); --desktop-image: url([src]);", with `hero-customer--image` modifier class -->
+<section class="hero-customer [modifier*]">
+    <div class="tab-block tab-block-customer tab-block--light">
+        <div class="container">
+            <div class="copy-container copy-container--center">
+                <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+                <h3>[headline]</h3>
+                <p>[body]</p>
+                <div class="copy-container__buttons">
+                    <a class="button-outline [modifier^]" href="[url]" target="[target]">[label]</a>
+                    <a class="button-secondary [modifier^]" href="[url]" target="[target]">
+                        <img src="[src]" alt="[alt]" />
+                        <span>[label]</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="tab-block__content">
+            <div class="tablist tablist-client">
+                <ul class="nav nav-pills" role="tablist">
+                    <!-- [1-4x] -->
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link tablist-link tablist-link-client">
+                            <div class="tablist-link-client__topbar">
+                                <span>[label]</span>
+                            </div>
+                            <div class="tablist-link-client__logo">
+                                <span class="logo-svg" data-logo="[id]"></span>
+                            </div>
+                        </button>
+                    </li>
+                    <!-- [] -->
+                </ul>
+            </div>
+            <div class="container tab-content">
+                <!-- [1-6x] -->
+                <div class="tab-pane">
+                    <div class="customer-story-card">
+                        <a class="customer-story-card__media" href="[url]" target="[target]">
+                            <img class="customer-story-card__image" src="[src]" alt="[alt]" />
+                            <div class="customer-story-card__image-overlay">
+                                <div class="customer-story-card__image-content">
+                                    <div class="customer-story-card__image-title">
+                                        <div class="client-logo">
+                                            <img src="[src]" alt="[alt]" />
+                                        </div>
+                                        <h5>[headline]</h5>
+                                        <p>[body]</p>
+                                    </div>
+                                    <div class="customer-story-card__cta">
+                                        <span class="icon" data-icon="arrow-up-right--white"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="customer-story-card__content sidebar">
+                            <!-- [1-3x] -->
+                            {{ `sidebar-info-box-stats` }} 
+                            {{ `sidebar-info-box-quote` }} 
+                            {{ `sidebar-info-box-product-list` }}
+                            <!-- [] -->
+                        </div>
+                    </div>
+                </div>
+                <!-- [] -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--
+
+Modifiers
+---------
+
+Required*:
+
+N/A
+
+--
+
+Optional*:
+
+hero-customer--grey
+hero-customer--blue
+hero-customer--image
+
+-->

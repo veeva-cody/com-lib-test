@@ -1,0 +1,34 @@
+<ul id="[id]" class="pagination">
+    <li class="page-item">
+        <a class="page-link prev-btn [modifier**]" href="[url]" aria-label="Previous">Previous</a>
+    </li>
+    <!-- [1-7x] -->
+    <li class="page-item">
+        <a class="page-link [modifier*]" href="[url]">[PageNum]</a>
+    </li>
+    <!-- [] -->
+    <li class="page-item">
+        <a class="page-link next-btn [modifier**]" href="[url]" aria-label="Next">Next</a>
+    </li>
+</ul>
+
+
+<!--
+
+Modifiers
+---------
+
+Optional*:
+
+active (apply active styling to .page-link)
+
+Optional**:
+
+disabled (apply disabled styling to previous/next buttons)
+
+--
+
+NOTE:
+1. This only includes ui styling for the pagination. You'll need to apply the pagination logic on your own. But those logic functions could be copied from veeva.com new resource/customer-story common functions in `resource-landing-common.js`
+
+-->

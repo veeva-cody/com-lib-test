@@ -1,0 +1,22 @@
+.tab-block-subpoints .tab-content {
+    @include tab-content--rounded;
+    @include tab-content--with-shadow;
+}
+
+.tab-block--light .subpoints-card {
+    @extend .subpoints-card--light;
+}
+
+.tab-block--light.tab-block-subpoints .tab-content {
+    background: color(White);
+}
+
+.tab-block--dark .subpoints-card {
+    @extend .subpoints-card--dark;
+}
+
+.tab-block--dark.tab-block-subpoints .tab-content {
+    @include media-breakpoint-up(lg) {
+        background: color(MidnightIndigo);
+    }
+}

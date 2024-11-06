@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/styles/normalize.css" />
+        <link rel="stylesheet" href="/dist/bundle.min.css" />
+        <title>Product Detail</title>
+    </head>
+
+    <body>
+        <!-- NOTE: -->
+        <!-- local CMS: https://veeva-com.lndo.site/wp-admin/post.php?post=81756&action=edit -->
+        <!-- 2 product template existing in veeva-com: template-single-produdct.php, single-products-pages.php -->
+        <!-- template-single-produdct.php: echo get_post_meta($post->ID, 'variable_name', true) -->
+        <!-- single-products-pages: echo $variable; directly -->
+
+        <!-- Product Detail Page Start -->
+        <main class="veeva-2024">
+            <!-- Secondary Nav -->
+            <!-- CMS Field: Banner & Navigation - Navigation [only a dropdown menu] -->
+            <!-- Estimated existing rendering logic: based on the selected option value in CMS, we'll have value of $nav_url, where $nav_url will point to name of the secondary nav file & render on page accordingly -->
+            <!-- Example: $nav_url = "product-co-nav", render -> 'wp-cotnent/themes/veeva-2015/templates/nav-includes/product-safety-nav.php' with
+            
+                get_template_part('templates/nav-includes/'.$nav_url);
+            -->
+
+            <!-- Action Aproach 1: Create New Fields -->
+            <!-- Action Aproach 2: update our code directly to their existing xxxxx-nav.php files/ create new ones, will need confirmation from Hiliary on all existing in use nav path if we're going for that path -->
+            <!-- Secondary Navigation Start -->
+            <div id="secondary-navigation" class="secondary-navigation">
+                <div class="secondary-navigation__wrapper container">
+                    <!-- left: main category -->
+                    <div class="secondary-navigation__left">
+                        <h3><span class="icon" data-icon="building-2"></span>Clinical Operations</h3>
+                    </div>
+
+                    <!-- right: product menulist -->
+                    <div class="secondary-navigation__right">
+                        <!-- desktop menu -->
+                        <ul class="secondary-navigation__desktop-menulist">
+                            <!-- * Enter all nav links here * -->
+                            <!--  add `.active` to dropdown-item -->
+                            <a class="dropdown-item active" href="/product-detail.html" target="_self">
+                                <li>Vault Study Startup</li>
+                            </a>
+
+                            <!-- nav with dropdown menu -->
+                            <div class="dropdown-item dropdown">
+                                <a href="https://www.veeva.com/products/vault-etmf/" target="_self" class="dropdown-toggle dropdown-item--main" type="button" aria-expanded="false">
+                                    <li>Vault eTMF</li>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <div class="dropdown-menu-content">
+                                        <a class="dropdown-item--sublink" href="/product-detail.html" target="_self">
+                                            <li>Vault Study Training</li>
+                                        </a>
+                                    </div>
+                                </ul>
+                            </div>
+
+                            <a class="dropdown-item" href="https://www.veeva.com/products/vault-ctms/" target="_self">
+                                <li>Vault CTMS</li>
+                            </a>
+                            <a class="dropdown-item" href="/products/vault-payments/" target="_self">
+                                <li>Vault Payments</li>
+                            </a>
+                            <a class="dropdown-item" href="/products/veeva-site-connect/" target="_self">
+                                <li>Veeva Site Connect</li>
+                            </a>
+                            <a class="dropdown-item" href="/products/clinical-operations/vault-platform/" target="_self">
+                                <li>Vault Platform</li>
+                            </a>
+                        </ul>
+
+                        <!-- mobile menu -->
+                        <div id="secondary-navigation__mobile-dropdown" class="secondary-navigation__mobile-menulist dropdown">
+                            <!-- current link, toggle mobile list -->
+                            <div class="secondary-navigation__mobile-display-item dropdown-toggle" role="button" id="subnavLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                <h6 class="desktop">View More</h6>
+                            </div>
+
+                            <!-- mobile dropdown -->
+                            <ul class="secondary-navigation__mobile-dropdown-menu dropdown-menu container" aria-labelledby="subnavLink" data-popper-placement="bottom-start">
+                                <div class="dropdown-menu-content">
+                                    <!-- link will be generated based on `.secondary-navigation__desktop-menulist` -->
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="secondary-navigation__backdrop"></div>
+            <!-- Secondary Navigation End -->
+            <!-- Secondary Nav Ends -->
+
+            <!-- Hero Start -->
+            <section class="hero-left-aligned hero-left-aligned--product">
+                <div class="hero-left-aligned__wrapper container">
+                    <div class="copy-container container copy-container--left">
+                        <!-- Hero: Eyebrow -->
+                        <!-- Action: Reusable, Need content field update [html tag] -->
+                        <!-- CMS Field: Overview and PDF -- Stat 1 - 3 -->
+                        <!-- PHP field: $single_overview_stat[$i] / single_overview_stat_1 -->
+                        <h6>
+                            <span>Announced <strong>2012</strong></span>
+                            <span>Status <strong>Mature</strong></span>
+                            <span>Customers <strong>100+</strong></span>
+                        </h6>
+                        <!-- Hero: Overline end -->
+
+                        <!-- Hero: Title & Description -->
+                        <!-- Action: Reusable, Need content field update [h1 -> h3] -->
+                        <!-- CMS Field: Banner & Navigation -- Banner Text -->
+                        <!-- PHP field: $single_banner_text -->
+                        <h3>
+                            Modernize and<br />
+                            Accelerate Study<br />
+                            Start-Up
+                        </h3>
+                        <p>Eliminate costly delays by bringing together study start-up activities and processes in one easy-to-use application.</p>
+                        <!-- Hero: Title & Description end -->
+
+                        <!-- Hero: CTA -->
+                        <!-- Action: Create New Fields -->
+                        <!-- Note: they have demo wistia code as `Demo Wistia Code` in CMS, but not the text, best to create new one in a long run -->
+                        <div class="copy-container__buttons">
+                            <a class="button-primary button-primary--gradient" href="#" target="_self">View Demo</a>
+
+                            <a class="button-secondary button-secondary--black" href="#" target="_self">
+                                <img src="/wp-content/themes/veeva2015/assets/svg/icons/btn-phone--black.svg" alt="" />
+                                <span>Speak to an Expert</span>
+                            </a>
+                        </div>
+                        <!-- Hero: CTA Ends -->
+                    </div>
+
+                    <!-- Hero: Image -->
+                    <!-- Action: Reusable -->
+                    <!-- CMS Field: Benefits, demo & stats - Demo Image  -->
+                    <!-- PHP field: $single_why_img -->
+                    <div class="hero-left-aligned__image">
+                        <img src="/wp-content/themes/veeva2015/assets/fpo/hero-05.png" alt="" />
+                    </div>
+                    <!-- Hero: Image Ends -->
+                </div>
+
+                <!-- Alert Bar - News -->
+                <!-- Action: Reusable, need to add new field for Button Text -->
+                <!-- PHP field: $single_sub_banner (text), $single_sub_banner_link; (href) -->
+                <section class="alert-news">
+                    <a class="alert-news__wrapper container" href="[url]" target="[target]">
+                        <div class="alert-news__inner">
+                            <h6>Notification about a product release or news article lorem ipsum goes here</h6>
+                            <span class="alert-news__btn-desktop button-secondary [modifier]" href="[url]" target="[target]">
+                                <img src="/wp-content/themes/veeva2015/assets/svg/icons/btn-arrow-up-right--black.svg" alt="" />
+                            </span>
+                            <span class="alert-news__btn-mobile button-text-link [modifier]" href="[url]" target="[target]">
+                                <span class="button-label">Read More</span>
+                                <span class="underline"></span>
+                            </span>
+                        </div>
+                    </a>
+                </section>
+            </section>
+            <!-- Hero End -->
+
+            <!-- Z Pattern Products -->
+            <section class="z-pattern z-pattern--products z-pattern--light section-rounded-top z-pattern--bg-grey">
+                <div class="z-pattern__inner-wrapper">
+                    <!-- z-pattern: headline section -->
+                    <div class="z-pattern__main-section">
+                        <!-- Z-pattern: text section -->
+                        <!-- Action: Create New Fields -> eyebrow, headline, button text if fully editable -->
+                        <!-- Note: the existing content doesn't fit well on this section, need new copies -->
+                        <div class="copy-container copy-container--eyebrow-gradient">
+                            <h6><span class="icon" data-icon="insert-top-left"></span>Overview</h6>
+                            <h3>
+                                Vault Study Startup lorem <br />
+                                ipsum dolor sit amet.
+                            </h3>
+
+                            <div class="copy-container__buttons flex-column flex-sm-row">
+                                <!-- hardcoded text field, has reusable link field -->
+                                <!-- PHP field: $single_overview_link_1 -->
+                                <a class="button-outline button-outline--black" href="https://google.com" target="_self">Download product sheet</a>
+
+                                <!-- hardcoded text field, has reusable link field -->
+                                <!-- PHP field: $single_overview_link_2 -->
+                                <a class="button-secondary" href="https://google.com" target="_self">
+                                    <img src="/wp-content/themes/veeva2015/assets/svg/icons/btn-play--black.svg" alt="" />
+                                    <span>View Features</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- z-pattern: img section -->
+                        <!-- Action: Reusable -->
+                        <!-- CMS Field: Overview and PDF - Overview Image, Overview Image Alt Tag -->
+                        <!-- PHP field: $single_overview_img, $single_overview_alt;  -->
+                        <div class="z-pattern__img-section">
+                            <div class="z-pattern__img-wrapper">
+                                <img src="/wp-content/themes/veeva2015/assets/fpo/placeholder.jpg" alt="" />
+                            </div>
+                        </div>
+
+                        <!-- z-pattern: content section -->
+                        <div class="z-pattern__content-section z-pattern__subgrid">
+                            <!-- Action: Create new fields / Reuse existing field & update content html to the lib strutcute -->
+                            <!-- CMS Field: Overview and PDF - Overview Text -->
+                            <!-- PHP field: $single_overview -->
+                            <!-- Note: different html structure between lib & existing one -->
+                            <div class="product-subpoint-item">
+                                <div class="product-subpoint-item__headline">
+                                    <h6>Manage trial start-up activities</h6>
+                                    <span class="icon" data-icon="arrow-up-right--black"></span>
+                                </div>
+                                <div class="product-subpoint-item__body">
+                                    <p>Vault Study Startup manages feasibility, qualification, and activation of research sites.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-subpoint-item">
+                                <div class="product-subpoint-item__headline">
+                                    <h6>Get complete visibility</h6>
+                                    <span class="icon" data-icon="arrow-up-right--black"></span>
+                                </div>
+                                <div class="product-subpoint-item__body">
+                                    <p>Information is collected, tracked, and presented in dashboard views to deliver visibility of start-up progress and timelines.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-subpoint-item">
+                                <div class="product-subpoint-item__headline">
+                                    <h6>Drive site activation</h6>
+                                    <span class="icon" data-icon="arrow-up-right--black"></span>
+                                </div>
+                                <div class="product-subpoint-item__body">
+                                    <p>Vault Study Startup drives site activation through standard tasks and milestones. These are controlled through provided and flexible country intelligence templates that specify the processes and documentation required before activating a site.</p>
+                                </div>
+                            </div>
+
+                            <div class="product-subpoint-item">
+                                <div class="product-subpoint-item__headline">
+                                    <h6>Simplify site selection</h6>
+                                    <span class="icon" data-icon="arrow-up-right--black"></span>
+                                </div>
+                                <div class="product-subpoint-item__body">
+                                    <p>Feasibility surveys are sent to research sites during the site selection phase. Sites are automatically scored based on their response, and those selected are routed into the site activation process.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- z-pattern__img-section will be duplicated to here via js for desktop ui -->
+                </div>
+            </section>
+            <!-- Z Pattern Products End -->
+
+            <!-- Product Detail: Statistics Starts -->
+            <section class="statistic-block-inline statistic-block-inline--bg-black section-rounded-top pb-0">
+                <div class="container">
+                    <!-- Copy Container -->
+                    <!-- Action: Reusable title + Create field for eyebrow -->
+                    <!-- CMS Field: BENEFITS, DEMO and STATS - Custom Outcome Title -->
+                    <!-- PHP Field: $outcome_title -->
+                    <div class="copy-container copy-container--center copy-container--eyebrow-gradient">
+                        <h6><span class="icon" data-icon="graph-dot"></span>Impact</h6>
+                        <h3>
+                            Vault Study Startup Improves <br />
+                            Operation Efficiency
+                        </h3>
+                    </div>
+
+                    <!--  Statistic 3 Up  -->
+                    <div class="statistic-3-up-wrapper">
+                        <!-- Action: Reusable, need to update content to match with lib  -->
+                        <!-- CMS Field: BENEFITS, DEMO and STATS - Stats 1 to Stats 3 -->
+                        <!-- PHP Field: $outcome[$i] / outcome_i , i = index -->
+                        <div class="statistic-tool statistic-tool--dark">
+                            <h3>30 <sup>%</sup></h3>
+                            <p>decrease in Site Selected to Site Activated cycle time</p>
+                        </div>
+                        <div class="statistic-tool statistic-tool--dark">
+                            <h3>36 <sup>%</sup></h3>
+                            <p>decrease in Start-up Packet Sent to Activation cycle time</p>
+                        </div>
+                        <div class="statistic-tool statistic-tool--dark">
+                            <h3>10</h3>
+                            <p>top 20 pharma activate sites with Vault Study Startup</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Product Detail: Statistics Ends -->
+
+            <!-- Video Stacked Start -->
+            <!--  video-player-stacked--dark, section-rounded-bottom -->
+            <section class="video-player-stacked bg-neutral-grey">
+                <!-- copy container -->
+                <!-- Action: Reusable, need to update content to match with lib -->
+                <!-- CMS Field: BENEFITS, DEMO and STATS - Eyebrow, Title -->
+                <!-- PHP Field: $single_why_brow, $single_why_title; -->
+                <div class="copy-container container copy-container--center copy-container--eyebrow-gradient">
+                    <h6><span class="icon" data-icon="medical-bag"></span>Benefits</h6>
+                    <h3>
+                        Vault Study Startup <br />
+                        Accelerates Site Activation
+                    </h3>
+                </div>
+
+                <!-- video -->
+                <!-- Action: Reusable -->
+                <!-- CMS Field: BENEFITS, DEMO and STATS - Demo Wistia Code -->
+                <!-- PHP Field: $wistia_video -->
+                <div class="video-player-stacked__video container">
+                    <div class="wistia_embed wistia_async_p4uz0e9bjz"></div>
+                </div>
+
+                <!-- video bottom text -->
+                <div class="video-player-stacked__stats container">
+                    <!-- CMS Field: BENEFITS, DEMO and STATS - Benefits -->
+                    <!-- Action: Reusable, need to update content to match with lib -->
+                    <!-- PHP Field: $single_why_list -->
+                    <div class="statistic-3-up-wrapper">
+                        <div class="sidebar-info-box sidebar-info-box--text sidebar-info-box--light">
+                            <h6>
+                                Make better, more <br />
+                                informed decisions
+                            </h6>
+                            <p>Get insight and prioritize dependent and at-risk tasks, documents, and milestones through automated critical path management.</p>
+                        </div>
+
+                        <div class="sidebar-info-box sidebar-info-box--text sidebar-info-box--light">
+                            <h6>
+                                Make better, more <br />
+                                informed decisions
+                            </h6>
+                            <p>Get insight and prioritize dependent and at-risk tasks, documents, and milestones through automated critical path management.</p>
+                        </div>
+
+                        <div class="sidebar-info-box sidebar-info-box--text sidebar-info-box--light">
+                            <h6>
+                                Make better, more <br />
+                                informed decisions
+                            </h6>
+                            <p>Get insight and prioritize dependent and at-risk tasks, documents, and milestones through automated critical path management.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Video Stacked Ends -->
+
+            <!-- Logo Wall: Animated -->
+            <div class="bg-neutral-grey">
+                <h2 class="text-center py-2">LOGO Animated HERE</h2>
+                <div class="logo-wall-animated__count-21 container [modifier]">
+                    <!-- CMS Field: Animated (21) Logos -->
+                    <!-- PHP Field: $logos_animated [list of <img/> html] -->
+                    <!-- Action: Reusable, needs to update field content to match with lib html -->
+
+                    <!-- row 1 -->
+                    <div>
+                        <div class="logo-card [modifier] [modifier]">
+                            <img src="" alt="" />
+                        </div>
+                        <div class="logo-card [modifier] [modifier]">
+                            <img src="" alt="" />
+                        </div>
+                        <div class="logo-card [modifier] [modifier]">
+                            <img src="" alt="" />
+                        </div>
+                        <div class="logo-card [modifier] [modifier]">
+                            <img src="" alt="" />
+                        </div>
+                        <div class="logo-card [modifier] [modifier]">
+                            <img src="" alt="" />
+                        </div>
+                        <div class="logo-card [modifier] [modifier]">
+                            <img src="" alt="" />
+                        </div>
+                    </div>
+
+                    <!-- row 2 -->
+                    <div>
+                        <div class="logo-card [modifier] [modifier]">
+                            <img src="" alt="" />
+                        </div>
+                        <div class="logo-card [modifier] [modifier]">
+                            <img src="" alt="" />
+                        </div>
+                        <div class="logo-card [modifier] [modifier]">
+                            <img src="" alt="" />
+                        </div>
+                        <div class="logo-card [modifier] [modifier]">
+                            <img src="" alt="" />
+                        </div>
+                        <div class="logo-card [modifier] [modifier]">
+                            <img src="" alt="" />
+                        </div>
+                    </div>
+
+                    <!-- row 3 -->
+                    <div>
+                        <div class="logo-card [modifier] [modifier]">
+                            <img src="" alt="" />
+                        </div>
+                        <div class="logo-card [modifier] [modifier]">
+                            <img src="" alt="" />
+                        </div>
+                        <div class="logo-card [modifier] [modifier]">
+                            <img src="" alt="" />
+                        </div>
+                        <div class="logo-card [modifier] [modifier]">
+                            <img src="" alt="" />
+                        </div>
+                        <div class="logo-card [modifier] [modifier]">
+                            <img src="" alt="" />
+                        </div>
+                        <div class="logo-card [modifier] [modifier]">
+                            <img src="" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OR -->
+
+            <!-- Logo Wall: Static -->
+            <!-- NOTE: not sure about grey bg, but design has grey bg -->
+            <!-- Need to use pb-0 to correct the spacing -->
+            <section class="logo-wall-listed logo-wall-listed--light bg-neutral-grey pb-0">
+                <div class="copy-container container copy-container--center copy-container--eyebrow-gradient">
+                    <!-- Action: Create New Fields / skip copy container -->
+                    <!-- CMS: no existing fields/ copy for copy container -->
+                    <!-- Note: design has copy container, but site doesn't have content -->
+                    <h6><span class="icon" data-icon="shipping-box-1"></span>Lorem Ipsum</h6>
+                    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla distinctio, pariatur fugit impedit exercitationem minus doloribus incidunt expedita esse! Est veniam rem consequuntur excepturi quas eligendi eos suscipit iure porro?</p>
+                    <div class="copy-container__buttons">
+                        <a class="button-outline button-outline--black" href="https://veeva.com" target="">Register</a>
+                        <a class="button-secondary button-secondary--dark" href="https://veeva.com" target="">
+                            <span>Contact Us</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="logo-wall-listed__logos container d-flex flex-wrap justify-content-center align-items-center gap-2 gap-sm-3 gap-md-5">
+                    <!-- CMS Field: Static Logos, 6 or 11 -->
+                    <!-- Action: Reusable -->
+                    <!-- PHP Field: $logos_static [list of <img/> html] -->
+                    <img src="/wp-content/themes/veeva2015/assets/logos/color/veeva.png" alt="" />
+                    <img src="/wp-content/themes/veeva2015/assets/logos/color/alcon.png" alt="" />
+                    <img src="/wp-content/themes/veeva2015/assets/logos/color/bausch-heath.png" alt="" />
+                    <img src="/wp-content/themes/veeva2015/assets/logos/color/boehringer-ingelheim.png" alt="" />
+                    <img src="/wp-content/themes/veeva2015/assets/logos/color/bayer.png" alt="" />
+
+                    <img src="/wp-content/themes/veeva2015/assets/logos/color/dicerna.png" alt="" />
+                    <img src="/wp-content/themes/veeva2015/assets/logos/color/forge-biologics.png" alt="" />
+                    <img src="/wp-content/themes/veeva2015/assets/logos/color/fortrea.png" alt="" />
+                    <img src="/wp-content/themes/veeva2015/assets/logos/color/genentech.png" alt="" />
+                    <img src="/wp-content/themes/veeva2015/assets/logos/color/gilead-color.png" alt="" />
+
+                    <img src="/wp-content/themes/veeva2015/assets/logos/color/horizon.png" alt="" />
+                </div>
+            </section>
+
+            <!-- Quotes Starts -->
+            <section class="quote-tabs quote-tabs--light quote-tabs--bg-split-grey">
+                <!-- content -->
+                <div class="quote-tabs__content">
+                    <div class="container">
+                        <!-- carousel -->
+                        <!-- NOTE: update `data-slide-interval` here if needed, where time is in milliseconds -->
+                        <div class="carousel slide carousel-fade">
+                            <!-- carousel indicators -->
+                            <div class="carousel-indicators"></div>
+
+                            <!-- carousel slides -->
+                            <div class="carousel-inner">
+                                <!-- slide 1 -->
+                                <div class="carousel-item">
+                                    <!-- Quote Card -->
+                                    <!-- CMS Field: Quotes and Logos - Quote -->
+                                    <!-- Action: Some are Reusable, need to update field content -->
+                                    <div class="quote-card quote-card--full-page quote-card--full-page--medium-text">
+                                        <div class="quote-card__quote-wrapper">
+                                            <!-- Quote -->
+                                            <!-- Action: Reusable -->
+                                            <!-- CMS Field: QUOTES and LOGOS - Quote 1 -->
+                                            <!-- PHP Field: $single_quote[$i] -->
+                                            <p>"Our strategic partnership with Veeva expands our capacity to leverage innovative technology and enhances our ability to deliver value to patients and all our stakeholders – this is key to how we measure success."</p>
+
+                                            <!-- CTA Button (need conditional render if text.length = 0), as sometimes there's no entry -->
+                                            <!-- Action: Reusable -->
+                                            <!-- CMS Field: QUOTES and LOGOS - Button Text, Link -->
+                                            <!-- PHP Field: $single_quote_btn[$i], $single_quote_link[$i] -->
+                                            <a class="button-outline button-outline--white ml-0" href="https://google.com" target="_self"> CTA Text </a>
+                                        </div>
+
+                                        <div class="quote-card__person-info">
+                                            <!-- Logo image -->
+                                            <!-- Existing CMS Field: Link -->
+                                            <!-- PHP Field: single_quote_link_[$i] -->
+                                            <!-- Action: ?rename Link -> `Logo Link` + logo url update -->
+                                            <!-- Note: No existing image field -->
+                                            <div class="client-logo">
+                                                <img src="/wp-content/themes/veeva2015/assets/logos/color/merck.png" alt="merck" />
+                                            </div>
+
+                                            <!-- Existing CMS Field: Author, Title -->
+                                            <!-- PHP Field: $single_quote_author[$i]; -->
+                                            <!-- Action: renamed to `Author` + content update -->
+                                            <h5>Robert M. Davis</h5>
+
+                                            <!-- Existing CMS Field: Company  -->
+                                            <!-- PHP Field: $single_quote_company[$i];  -->
+                                            <!-- Action: renamed to `Title, Company` + content update -->
+                                            <h6>Chief Executive Officer and President, Merck</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- slide 2 -->
+                                <div class="carousel-item">
+                                    <!-- Quote Card -->
+                                    <div class="quote-card quote-card--full-page quote-card--full-page--medium-text quote-card--bg-blue-gradient">
+                                        <div class="quote-card__quote-wrapper">
+                                            <p>"Our strategic partnership with Veeva expands our capacity to leverage innovative technology and enhances our ability to deliver value to patients and all our stakeholders – this is key to how we measure success."</p>
+                                        </div>
+
+                                        <div class="quote-card__person-info">
+                                            <div class="client-logo">
+                                                <img src="/wp-content/themes/veeva2015/assets/logos/color/merck.png" alt="merck" />
+                                            </div>
+                                            <h5>Robert M. Davis</h5>
+                                            <h6>Chief Executive Officer and President, Merck</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- slide 3 -->
+                                <div class="carousel-item">
+                                    <!-- Quote Card -->
+                                    <div class="quote-card quote-card--full-page quote-card--full-page--medium-text">
+                                        <div class="quote-card__quote-wrapper">
+                                            <p>"Our strategic partnership with Veeva expands our capacity to leverage innovative technology and enhances our ability to deliver value to patients and all our stakeholders – this is key to how we measure success."</p>
+                                        </div>
+
+                                        <div class="quote-card__person-info">
+                                            <div class="client-logo">
+                                                <img src="/wp-content/themes/veeva2015/assets/logos/color/merck.png" alt="merck" />
+                                            </div>
+                                            <h5>Robert M. Davis</h5>
+                                            <h6>Chief Executive Officer and President, Merck</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- slide 4 -->
+                                <div class="carousel-item">
+                                    <!-- Quote Card -->
+                                    <div class="quote-card quote-card--full-page quote-card--full-page--medium-text quote-card--bg-dark-gradient">
+                                        <div class="quote-card__quote-wrapper">
+                                            <p>"Our strategic partnership with Veeva expands our capacity to leverage innovative technology and enhances our ability to deliver value to patients and all our stakeholders – this is key to how we measure success."</p>
+                                        </div>
+
+                                        <div class="quote-card__person-info">
+                                            <div class="client-logo">
+                                                <img src="/wp-content/themes/veeva2015/assets/logos/color/merck.png" alt="merck" />
+                                            </div>
+                                            <h5>Robert M. Davis</h5>
+                                            <h6>Chief Executive Officer and President, Merck</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Quotes Ends -->
+
+            <!-- Resource Block Starts -->
+            <section class="resource-block-cards resource-block-cards--light">
+                <div class="container">
+                    <!-- copy container -->
+                    <div class="copy-container copy-container--center copy-container--eyebrow-gradient">
+                        <!-- Action: Create new fields: eyebrow, title, description, cta text + link  -->
+                        <!-- Note: hardcoded eyebrow & title -->
+                        <h6>
+                            <span class="icon" data-icon="book-reading"></span>
+                            Resources
+                        </h6>
+                        <h3>Learn and Grow with Veeva</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="copy-container__buttons d-flex align-items-center gap-3">
+                            <a class="button-outline button-outline--black" href="https://google.com" target="_self"> View Resources</a>
+                        </div>
+                    </div>
+
+                    <div class="resource-block__cards resource-block__cards--gridded">
+                        <!-- resource card -->
+                        <!-- Existing CMS Field: Resources (shortcode only) -->
+                        <!-- Existing PHP variable:  -->
+                        <!-- Action: Create new fields -->
+                        <!-- resource chip icon + text, eyebrow, title, link, img, video shortcode  -->
+
+                        <!-- NOTE: only has shortcode with fields img, text, cta-link, cta-target -->
+                        <a class="resource-card" href="#">
+                            <div class="resource-card__text">
+                                <!-- resource-chip -->
+                                <div class="resource-chip">
+                                    <div class="resource-chip__icon">
+                                        <span class="icon" data-icon="play-filled-2"></span>
+                                    </div>
+
+                                    Resource Type
+                                </div>
+
+                                <!-- text -->
+                                <h6>Eyebrow</h6>
+                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                            </div>
+
+                            <div class="resource-card__media">
+                                <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                            </div>
+                        </a>
+
+                        <!-- resource card -->
+                        <a class="resource-card" href="#">
+                            <div class="resource-card__text">
+                                <!-- resource-chip -->
+                                <div class="resource-chip">
+                                    <div class="resource-chip__icon">
+                                        <span class="icon" data-icon="play-filled-2"></span>
+                                    </div>
+
+                                    Resource Type
+                                </div>
+
+                                <!-- text -->
+                                <h6>Eyebrow</h6>
+                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                            </div>
+
+                            <div class="resource-card__media">
+                                <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                            </div>
+                        </a>
+
+                        <!-- resource card -->
+                        <a class="resource-card" href="#">
+                            <div class="resource-card__text">
+                                <!-- resource-chip -->
+                                <div class="resource-chip">
+                                    <div class="resource-chip__icon">
+                                        <span class="icon" data-icon="play-filled-2"></span>
+                                    </div>
+
+                                    Resource Type
+                                </div>
+
+                                <!-- text -->
+                                <h6>Eyebrow</h6>
+                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                            </div>
+
+                            <div class="resource-card__media">
+                                <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                            </div>
+                        </a>
+
+                        <!-- resource card -->
+                        <a class="resource-card" href="#">
+                            <div class="resource-card__text">
+                                <!-- resource-chip -->
+                                <div class="resource-chip">
+                                    <div class="resource-chip__icon">
+                                        <span class="icon" data-icon="play-filled-2"></span>
+                                    </div>
+
+                                    Resource Type
+                                </div>
+
+                                <!-- text -->
+                                <h6>Eyebrow</h6>
+                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                            </div>
+
+                            <div class="resource-card__media">
+                                <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                            </div>
+                        </a>
+
+                        <!-- resource card -->
+                        <a class="resource-card" href="#">
+                            <div class="resource-card__text">
+                                <!-- resource-chip -->
+                                <div class="resource-chip">
+                                    <div class="resource-chip__icon">
+                                        <span class="icon" data-icon="play-filled-2"></span>
+                                    </div>
+
+                                    Resource Type
+                                </div>
+
+                                <!-- text -->
+                                <h6>Eyebrow</h6>
+                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                            </div>
+
+                            <div class="resource-card__media">
+                                <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                            </div>
+                        </a>
+
+                        <!-- resource card -->
+                        <a class="resource-card" href="#">
+                            <div class="resource-card__text">
+                                <!-- resource-chip -->
+                                <div class="resource-chip">
+                                    <div class="resource-chip__icon">
+                                        <span class="icon" data-icon="play-filled-2"></span>
+                                    </div>
+
+                                    Resource Type
+                                </div>
+
+                                <!-- text -->
+                                <h6>Eyebrow</h6>
+                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                            </div>
+
+                            <div class="resource-card__media">
+                                <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                            </div>
+                        </a>
+
+                        <!-- resource card -->
+                        <a class="resource-card" href="#">
+                            <div class="resource-card__text">
+                                <!-- resource-chip -->
+                                <div class="resource-chip">
+                                    <div class="resource-chip__icon">
+                                        <span class="icon" data-icon="play-filled-2"></span>
+                                    </div>
+
+                                    Resource Type
+                                </div>
+
+                                <!-- text -->
+                                <h6>Eyebrow</h6>
+                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                            </div>
+
+                            <div class="resource-card__media">
+                                <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                            </div>
+                        </a>
+
+                        <!-- resource card -->
+                        <a class="resource-card" href="#">
+                            <div class="resource-card__text">
+                                <!-- resource-chip -->
+                                <div class="resource-chip">
+                                    <div class="resource-chip__icon">
+                                        <span class="icon" data-icon="play-filled-2"></span>
+                                    </div>
+
+                                    Resource Type
+                                </div>
+
+                                <!-- text -->
+                                <h6>Eyebrow</h6>
+                                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                            </div>
+
+                            <div class="resource-card__media">
+                                <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- Resource Block Ends -->
+        </main>
+
+        <!-- Product Detail Page End -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://fast.wistia.com/assets/external/E-v1.js" async=""></script>
+        <script src="/dist/bundle.min.js"></script>
+    </body>
+</html>

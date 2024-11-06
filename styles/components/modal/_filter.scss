@@ -1,0 +1,71 @@
+.filter-modal {
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+}
+
+.filter-modal .modal-dialog {
+    height: calc(100% - 20px - 24px);
+
+    // need to use margin to allow click on backdrop
+    margin: 20px 16px 24px;
+
+    @include media-breakpoint-up(sm) {
+        max-width: none;
+
+        height: calc(100% - 5vw - 24px);
+        margin: 24px 4vw 5vw;
+    }
+}
+
+.filter-modal .modal-content {
+    height: 100%;
+}
+
+.filter-modal .modal-header {
+    padding: 0 0 16px;
+
+    @include media-breakpoint-up(md) {
+        padding: 0 0 20px;
+    }
+}
+
+.filter-modal .modal-logo,
+.filter-modal .modal-btn-close {
+    height: 32px;
+
+    @include media-breakpoint-up(md) {
+        height: 42px;
+    }
+}
+
+// modal content
+.filter-modal .modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 20px 16px 24px;
+
+    background: color(White);
+
+    border-radius: $border-radius-s;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    @include media-breakpoint-up(md) {
+        gap: 20px;
+        padding: 24px 20px 28px;
+    }
+}
+
+.filter-modal .modal-title {
+    color: color(VeevaOrange);
+
+    @include font(body-l);
+    font-weight: 500;
+}
+
+.filter-modal .modal-body-content {
+    flex-grow: 1;
+}

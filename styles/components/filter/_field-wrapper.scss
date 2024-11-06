@@ -1,0 +1,20 @@
+.filter-field-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: map-get($spacers, 3);
+
+    margin-bottom: map-get($spacers, 3);
+
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: 1fr 250px;
+        align-items: start;
+    }
+}
+
+.filter-field-wrapper .filter-dropdowns-wrapper {
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+        display: flex;
+    }
+}

@@ -1,0 +1,66 @@
+.people-services {
+    @include copy-content-spacing;
+}
+
+.people-services.people-services--light {
+    @include block-spacing(margin);
+    color: color(GalaxyBlack);
+}
+
+.people-services.people-services--dark {
+
+    @include block-spacing(padding);
+
+    background: $linear-gradient-linear-dark;
+    color: color(White);
+
+}
+
+.people-services__cards {
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: $spacer;
+    row-gap: ($spacer * 2);
+
+    @include media-breakpoint-up(sm) {
+        gap: ($spacer * 2);
+    }
+
+    @include media-breakpoint-up(xxl) {
+        gap: map-get($spacers, 4)
+    }
+
+}
+
+.people-services__cards .person-card-services {
+
+    width: calc(50% - ($spacer * 1/2));
+
+    @include media-breakpoint-up(sm) {
+        width: calc(50% - ($spacer * 2 * 1/2));
+    }
+
+    @include media-breakpoint-up(md) {
+        width: calc((100% / 3) - ($spacer * 2 * 2/3));
+    }
+
+    @include media-breakpoint-up(xl) {
+        width: calc(25% - ($spacer * 2 * 3/4));
+    }
+
+    @include media-breakpoint-up(xxl) {
+        width: calc(25% - ($spacer * 3 * 3/4));
+    }
+
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.people-services__cards.container:before,
+.people-services__cards.container:after {
+    display: none;
+}

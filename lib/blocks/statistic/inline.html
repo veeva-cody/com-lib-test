@@ -1,0 +1,49 @@
+<!-- if there's only 1 image, use style="background-image: url([src]);" -->
+<!-- if there's 2 images (desktop + mobile), use style="--mobile-image: url([src]); --desktop-image: url([src]);", with `statistic-inline--image` modifier class -->
+<section class="statistic-inline [modifier*]">
+    <div class="container">
+        <div class="copy-container copy-container--center copy-container--eyebrow-gradient">
+            <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+            <h3>[headline]</h3>
+            <p>[body]</p>
+            <div class="copy-container__buttons">
+                <a class="button-outline [modifier^]" href="[url]" target="[target]">[label]</a>
+                <a class="button-secondary [modifier^]" href="[url]" target="[target]">
+                    <img src="[src]" alt="[alt]">
+                    <span>[label]</span>
+                </a>
+            </div>
+        </div>
+        <div class="statistic-3-up-wrapper">
+            <div class="statistic-tool [modifier^]">
+                <h3>[stat]<sup>[super]</sup></h3>
+                <p>[body]</p>
+            </div>
+            <div class="statistic-tool [modifier^]">
+                <h3>[stat]<sup>[super]</sup></h3>
+                <p>[body]</p>
+            </div>
+            <div class="statistic-tool [modifier^]">
+                <h3>[stat]<sup>[super]</sup></h3>
+                <p>[body]</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+statistic-inline--light
+statistic-inline--dark
+
+Optional *:
+
+statistic-inline--bg-black
+statistic-inline--image
+
+-->

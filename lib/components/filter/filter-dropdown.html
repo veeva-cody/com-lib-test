@@ -1,0 +1,26 @@
+<div id="[form-id]" class="form-dropdown dropdown form-dropdown--filter [modifier*]">
+    <button class="dropdown-toggle" role="button" id="[toggle-id]" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+        <h6>[filter-category]</h6>
+    </button>
+
+    <ul class="dropdown-menu dropdown-menu--multiple" aria-labelledby="[toggle-id]" data-popper-placement="bottom-start">
+        <!-- [1-?x] -->
+        <li class="dropdown-item">
+            <input id="[option-id]" data-filter="[option-value]" type="checkbox" value="[option-value]" />
+            <label for="[option-id]"> [filter-option] </label>
+        </li>
+        <!-- [] -->
+    </ul>
+</div>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+form-dropdown--white 
+form-dropdown--grey
+
+-->

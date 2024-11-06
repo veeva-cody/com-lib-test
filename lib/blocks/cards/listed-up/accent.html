@@ -1,0 +1,37 @@
+<section class="listed-up listed-up-accent [modifier*]">
+    <div class="copy-container container copy-container--center copy-container--eyebrow-gradient">
+        <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+        <h3>[headline]</h3>
+        <p>[body]</p>
+        <div class="copy-container__buttons">
+            <a class="button-primary [modifier^]" href="[url]" target="[target]">[label]</a>
+            <a class="button-secondary [modifier^]" href="[url]" target="[target]">
+                <img src="[src]" alt="[alt]">
+                <span>[label]</span>
+            </a>
+        </div>
+    </div>
+    <div class="listed-up__cards container">
+        <!-- [1-6x] -->
+            {{ `listed-up-card-icon` }}
+            {{ `listed-up-card-bar` }}
+        <!-- [] -->
+    </div>
+</section>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+listed-up--light
+listed-up--dark
+listed-up--grey
+
+Optional *:
+
+listed-up-accent--card-center (center card content)
+
+-->

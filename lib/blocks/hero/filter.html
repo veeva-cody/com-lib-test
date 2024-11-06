@@ -1,0 +1,54 @@
+<section class="hero-filter [modifier*]">
+    <!-- copy container -->
+    <div class="container copy-container [modifier^] copy-container--eyebrow-gradient">
+        <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+        <h3>[headline]</h3>
+        <p>[body]</p>
+        <div class="copy-container__buttons">
+            <a class="button-outline button-outline--black" href="[url]" target="[target]">[label]</a>
+            <a class="button-secondary" href="[url]" target="[target]">
+                <img src="[src]" alt="[alt]" />
+                <span>[label]</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- filter field wrapper -->
+    <div class="filter-field-wrapper container">
+        <!-- filter dropdowns wrapper -->
+        <div class="filter-dropdowns-wrapper">
+            <!-- [1-?x] -->
+            {{ `filter-dropdown` }}
+            <!-- [] -->
+        </div>
+
+        <!-- filter search + modal btn wrapper -->
+        <div class="filter-search-tool-wrapper">
+            <!-- filter search -->
+            {{ `filter-search` }}
+
+            <!-- filter modal btn -->
+            {{ `filter-modal-button` }}
+        </div>
+    </div>
+
+    <!-- filter tag wrapper -->
+    <div class="filter-tag-wrapper container">
+        <!-- [1-?x] -->
+        {{ `filter-tag` }}
+        <!-- [] -->
+    </div>
+</section>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+hero-filter--grey
+hero-filter--light
+hero-filter--blue
+
+-->

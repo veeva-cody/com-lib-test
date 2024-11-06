@@ -1,0 +1,33 @@
+<div class="person-card-services [modifier*]">
+    <div class="person-card-services__image-container" style="background-image: url('[src]');">
+        <div class="person-card-services__name-container person-card-services__name-container--desktop">
+            <h5>[name]</h5>
+            <p>[title]</p>
+        </div>
+    </div>
+    <!-- Need name & title twice since mobile is outside image container. -->
+    <div class="person-card-services__name-container person-card-services__name-container--mobile">
+        <h5>[name]</h5>
+        <p>[title]</p>
+    </div>
+    <div class="person-card-services__experience-container">
+        <h6>[label]</h6>
+        <div class="person-card-services__experience-container-image">
+            <!-- [1-3x] -->
+            <img src="[src]" alt="[alt]">
+            <!-- [] -->
+        </div>
+    </div>
+</div>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+person-card-services--light
+person-card-services--dark
+
+-->

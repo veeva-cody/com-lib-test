@@ -1,0 +1,15 @@
+#summit-overview,
+.summit-registration,
+.summit-travel,
+.summit-faqs,
+.summit-agenda {
+    padding-top: 48px;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 64px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-top: 76px;
+    }
+}

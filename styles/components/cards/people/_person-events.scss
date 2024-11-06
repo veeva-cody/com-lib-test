@@ -1,0 +1,197 @@
+.person-card-events {
+    color: inherit;
+    position: relative;
+}
+
+.person-card-events > :not(img) {
+    margin-left: map-get($spacers, 2);
+    margin-right: map-get($spacers, 2);
+}
+
+.person-card-events__thumbnail {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+
+    border-radius: $border-radius-xxs;
+
+    @include media-breakpoint-up(lg) {
+        border-radius: $border-radius-s;
+    }
+}
+
+.person-card-events a {
+    @include orange-link;
+}
+
+.person-card-events > h6 {
+    @include font(h7);
+    margin-top: map-get($spacers, 3);
+}
+
+.person-card-events > p {
+    @include font(body-xs);
+
+    margin-top: map-get($spacers, 1);
+    margin-bottom: 0;
+}
+
+.person-card-events p.person-card-events__company {
+    @include background-text-clip($linear-gradient-orange-compliant);
+    @include font(body-s);
+    font-weight: 700;
+
+    margin-top: map-get($spacers, 2);
+}
+
+.person-card-events--light > p {
+    color: color(DarkGray);
+}
+
+.person-card-events--dark > p {
+    color: color(LightGray);
+}
+
+.person-card-events__experience-container {
+
+    margin-top: map-get($spacers, 3);
+    padding-top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media-breakpoint-up(lg) {
+        padding-top: map-get($spacers, 2);
+        border-top: 1px solid color(LightGray);
+    }
+
+}
+
+.person-card-events__experience-container p {
+
+    margin: 0;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+        display: block;
+    }
+
+}
+
+.person-card-events--light .person-card-events__experience-container p {
+    color: color(DarkGray);
+}
+
+.person-card-events--dark .person-card-events__experience-container p {
+    color: color(White);
+}
+
+.person-card-events__experience-container img {
+    height: 16px;
+}
+
+.person-card-events__details-container {
+    border-top: 1px solid color(LightGray);
+    margin-top: map-get($spacers, 4);
+    padding: map-get($spacers, 1) 0 map-get($spacers, 2);
+}
+
+.person-card-events__details-container p {
+    @include font(body-xs);
+
+    margin-top: map-get($spacers, 1);
+    margin-bottom: 0;
+}
+
+.person-card-events--light .person-card-events__details-container p {
+    color: color(DarkGray);
+}
+
+.person-card-events--dark .person-card-events__details-container p {
+    color: color(LightGray);
+}
+
+/******************************************/
+/* Modal hover indicators */
+/****************************************/
+.person-card-events[data-bs-toggle]::before,
+.person-card-events[data-bs-toggle]::after {
+    content: "";
+    display: inline-flex;
+
+    position: absolute;
+    z-index: 1;
+
+    transition: opacity 0.3s $cubic-bezier-1;
+
+    @include media-breakpoint-up(lg) {
+        opacity: 0;
+    }
+}
+
+.person-card-events[data-bs-toggle]::before {
+    height: 28px;
+    width: 28px;
+
+    top: 8px;
+    right: 8px;
+
+    background-color: color(GalaxyBlack);
+    border-radius: 8px;
+
+    @include media-breakpoint-up(md) {
+        height: 48px;
+        width: 48px;
+
+        top: 16px;
+        right: 16px;
+
+        border-radius: $border-radius-xxs;
+    }
+}
+
+.person-card-events[data-bs-toggle]::after {
+    height: 14px;
+    width: 14px;
+
+    top: 15px;
+    right: 15px;
+
+    background-color: color(OffWhite);
+    -webkit-mask: url("/wp-content/themes/veeva2015/assets/svg/icons/arrow-expand-diagonal-1.svg") no-repeat 50% 50%;
+    mask: url("/wp-content/themes/veeva2015/assets/svg/icons/arrow-expand-diagonal-1.svg") no-repeat 50% 50%;
+
+    z-index: 2;
+
+    @include media-breakpoint-up(md) {
+        height: 24px;
+        width: 24px;
+
+        top: 28px;
+        right: 28px;
+    }
+}
+
+.person-card-events[data-bs-toggle] h6,
+.person-card-events[data-bs-toggle] p {
+    transition: opacity 0.3s $cubic-bezier-1;
+}
+
+.person-card-events[data-bs-toggle]:hover::before,
+.person-card-events[data-bs-toggle]:hover::after {
+    @include media-breakpoint-up(lg) {
+        opacity: 1;
+    }
+}
+
+.person-card-events[data-bs-toggle]:hover h6,
+.person-card-events[data-bs-toggle]:hover p {
+    @include media-breakpoint-up(lg) {
+        opacity: 0.8;
+    }
+}

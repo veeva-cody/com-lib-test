@@ -1,0 +1,89 @@
+.filter-search {
+    all: unset;
+    box-sizing: border-box;
+
+    position: relative;
+    display: inline-flex;
+    flex-shrink: 0;
+
+    @include font(h7);
+    font-weight: 600;
+
+    width: 100%;
+    padding: 16px;
+    padding-left: 40px;
+    max-height: $filter-field-height;
+
+    border-radius: $border-radius-xs;
+    overflow: hidden;
+
+    transition: $transition-all-ease-in-out-1;
+
+    @include media-breakpoint-up(lg) {
+        padding: 16px 24px;
+        padding-left: 50px;
+    }
+}
+
+// color variation
+@mixin filter-search--white {
+    background: color(White);
+    color: color(GalaxyBlack);
+
+    &::placeholder {
+        color: color(GalaxyBlack);
+    }
+}
+
+@mixin filter-search--grey {
+    background: color(NeutralGrey);
+    color: color(GalaxyBlack);
+
+    &::placeholder {
+        color: color(GalaxyBlack);
+    }
+}
+
+.filter-search--white {
+    @include filter-search--white;
+}
+
+.filter-search--grey {
+    @include filter-search--grey;
+}
+
+.filter-search-wrapper .icon {
+    position: absolute;
+    top: 50%;
+    left: 16px; // match with padding
+    transform: translate(0, -50%);
+
+    width: 16px;
+    height: 16px;
+
+    z-index: 2;
+
+    @include media-breakpoint-up(lg) {
+        left: 24px;
+
+        width: 18px;
+        height: 18px;
+    }
+}
+
+// filter wrapper
+.filter-search-wrapper {
+    position: relative;
+    flex-grow: 1;
+}
+
+// mobile wrapper
+.filter-search-tool-wrapper {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: map-get($spacers, 2);
+
+    width: 100%;
+}

@@ -1,0 +1,4 @@
+.statistic-inline,
+.statistic-contained {
+    @include copy-content-spacing;
+}

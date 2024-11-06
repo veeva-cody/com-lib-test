@@ -1,0 +1,398 @@
+.hero-left-aligned--text {
+    display: flex;
+
+    background: $linear-gradient-dark-blue;
+    color: color(White);
+
+    padding: 100px 0 70px;
+
+    @include rounded-corners(bottom);
+    @include media-breakpoint-up(md) {
+        min-height: 400px;
+        padding: 125px 0 100px;
+    }
+}
+
+.hero-left-aligned--product {
+    background-color: color(White);
+    color: color(GalaxyBlack);
+
+    margin: 50px 0;
+}
+
+.hero-left-aligned--gradient {
+    background: $linear-gradient-orange-compliant;
+    color: color(White);
+
+    padding: 70px 0;
+
+    @include rounded-corners(bottom);
+    @include media-breakpoint-up(md) {
+        padding: 100px 0;
+    }
+}
+
+.hero-left-aligned__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include media-breakpoint-up(lg) {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.hero-left-aligned__wrapper .copy-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+        display: block;
+
+        width: 50%;
+        padding-right: map-get($spacers, 3);
+
+        text-align: left;
+    }
+
+    @include media-breakpoint-up(xl) {
+        width: 45%;
+    }
+}
+
+.hero-left-aligned__wrapper .copy-container > * {
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+        text-align: left;
+    }
+}
+
+.hero-left-aligned__image {
+    width: 100%;
+    margin-top: map-get($spacers, 3);
+
+    @include media-breakpoint-up(lg) {
+        width: 50%;
+        margin-top: 0;
+    }
+
+    @include media-breakpoint-up(xl) {
+        width: 52.5%;
+    }
+}
+
+.hero-left-aligned__image img {
+    width: 100%;
+}
+
+.hero-left-aligned--gradient .hero-left-aligned__wrapper,
+.hero-left-aligned--product .hero-left-aligned__wrapper {
+    @include media-breakpoint-up(lg) {
+        gap: map-get($spacers, 5);
+    }
+
+    @include media-breakpoint-up(xl) {
+        gap: map-get($spacers, 8);
+    }
+}
+
+// variant specific style
+.hero-left-aligned--text .copy-container {
+    @include media-breakpoint-up(lg) {
+        width: 100%;
+        padding-right: 0;
+        text-align: left;
+    }
+}
+
+.hero-left-aligned--text .copy-container h3 {
+    max-width: $inner-content-max-width-sm;
+}
+
+// product
+.hero-left-aligned--product .copy-container h6 {
+
+    @include font(body-m);
+
+    @include media-breakpoint-down(sm) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @include media-breakpoint-up(md) {
+        white-space: nowrap;
+    }
+
+}
+
+.hero-left-aligned--product .copy-container h6 span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.hero-left-aligned--product .copy-container h6 span:after {
+    
+    content: '';
+
+    display: inline-block;
+
+    width: 1px;
+    height: 20px;
+    margin: 0 map-get($spacers, 2);
+
+    background-color: color(GalaxyBlack);
+
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+
+}
+
+.hero-left-aligned--product .copy-container h6 span:last-child:after {
+    display: none;
+}
+
+.hero-left-aligned--product .copy-container h6 strong {
+    @include background-text-clip($linear-gradient-orange-compliant);
+
+    font-weight: 700;
+    margin-left: map-get($spacers, 1);
+}
+
+// carousel
+.hero-left-aligned--carousel {
+    display: flex;
+    padding: 70px 0;
+
+    color: color(White);
+
+    // gradient has several layers of color so exported as an image
+    background: url("/wp-content/themes/veeva2015/assets/background/corner-orange-gradient-mobile.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    // background: $linear-gradient-orange-compliant;
+
+    @include rounded-corners(bottom);
+    overflow: hidden;
+
+    @include media-breakpoint-up(md) {
+        width: 100%;
+        padding: 100px 0;
+
+        background: url("/wp-content/themes/veeva2015/assets/background/corner-orange-gradient-desktop.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+
+.hero-left-aligned--carousel .hero-left-aligned__wrapper .copy-container {
+    width: 100%;
+
+    @include media-breakpoint-up(lg) {
+        width: 55%;
+    }
+}
+
+.hero-left-aligned--carousel .hero-left-aligned__wrapper .copy-container h3 {
+    @include font(h4);
+    margin-bottom: 1.6rem;
+
+    @include media-breakpoint-up(lg) {
+        font-size: $font-size-h2-desktop;
+    }
+}
+
+.hero-left-aligned--carousel .hero-left-aligned__carousel {
+    width: 100%;
+    margin-top: map-get($spacers, 3);
+
+    display: flex;
+    justify-content: center;
+
+    @include media-breakpoint-up(lg) {
+        width: 45%;
+        margin-top: 0;
+    }
+
+    @include media-breakpoint-up(xl) {
+        width: 45%;
+    }
+}
+
+.hero-left-aligned__image img {
+    width: 100%;
+}
+
+// feature stack carousel
+.featured-stack-carousel {
+    width: 90%;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include media-breakpoint-up(lg) {
+        width: 80%;
+        justify-content: center;
+    }
+}
+
+.featured-stack-carousel-item {
+    pointer-events: none;
+
+    position: absolute;
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    will-change: transform, opacity;
+    opacity: 0;
+    transform: translateY(-50%) scale(0.6);
+    transition: all 0.4s ease-in-out;
+
+    @include media-breakpoint-up(lg) {
+        transform: translateY(0) scale(0.6);
+        border-radius: 24px;
+    }
+}
+
+.featured-stack-carousel-item > div {
+    min-height: 150px;
+
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: $box-shadow-lg-behind;
+}
+
+.featured-stack-carousel-item .statistic-card {
+    background: color(White);
+}
+
+// animation sequence, from top to bottom
+// invisible top
+.stack-slide-index_3 {
+    @include media-breakpoint-up(lg) {
+        transform: translateY(-240%) scale(0.6);
+        opacity: 0;
+    }
+}
+
+// position: top
+.stack-slide-index_2 {
+    transform: translateY(-85%) scale(0.6);
+    opacity: 0.25;
+    visibility: visible;
+
+    @include media-breakpoint-up(lg) {
+        transform: translateY(-180%) scale(0.6);
+    }
+}
+
+// position: middle top
+.stack-slide-index_1 {
+    transform: translateY(-50%) scale(0.8); // mobile
+    opacity: 0.5;
+    visibility: visible;
+
+    @include media-breakpoint-up(lg) {
+        transform: translateY(-100%) scale(0.8);
+    }
+}
+
+// position: center (active)
+.stack-slide-index_0 {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+}
+
+// position: middle bottom
+.stack-slide-index_-1 {
+    transform: translateY(50%) scale(1);
+    opacity: 0;
+
+    @include media-breakpoint-up(lg) {
+        transform: translateY(100%) scale(0.8);
+        opacity: 0.5;
+        visibility: visible;
+    }
+}
+
+// position: bottom
+.stack-slide-index_-2 {
+    @include media-breakpoint-up(lg) {
+        transform: translateY(180%) scale(0.6);
+        opacity: 0.25;
+        visibility: visible;
+    }
+}
+
+// invisible bottom
+.stack-slide-index_-3 {
+    @include media-breakpoint-up(lg) {
+        transform: translateY(240%) scale(0.6);
+        opacity: 0;
+    }
+}
+
+// hover effect only happens on visible elements
+.stack-slide-index_2,
+.stack-slide-index_1,
+.stack-slide-index_0 {
+    pointer-events: auto;
+}
+
+.stack-slide-index_-1,
+.stack-slide-index_-2 {
+    @include media-breakpoint-up(lg) {
+        pointer-events: auto;
+    }
+}
+
+.featured-stack-carousel-item:hover {
+    opacity: 1;
+    box-shadow: $box-shadow-lg-down;
+}
+
+// mobile layout variation
+.hero-left-aligned--image-on-top .hero-left-aligned__wrapper {
+    @include media-breakpoint-down(lg) {
+        flex-direction: column-reverse;
+    }
+}
+
+.hero-left-aligned--product.hero-left-aligned--image-on-top .hero-left-aligned__wrapper,
+.hero-left-aligned--gradient.hero-left-aligned--image-on-top .hero-left-aligned__wrapper {
+    @include media-breakpoint-down(lg) {
+        gap: map-get($spacers, 4);
+    }
+}
+
+.hero-left-aligned--carousel.hero-left-aligned--image-on-top .hero-left-aligned__wrapper {
+    @include media-breakpoint-down(lg) {
+        gap: map-get($spacers, 6);
+    }
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.hero-left-aligned__wrapper.container::before,
+.hero-left-aligned__wrapper.container::after {
+    display: none;
+}

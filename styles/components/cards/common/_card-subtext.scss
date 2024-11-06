@@ -1,0 +1,56 @@
+/**********/
+/* MIXINS */
+/**********/
+
+@mixin card-subtext--light {
+    color: color(Black);
+}
+
+@mixin card-subtext--dark {
+    color: color(White);
+}
+
+/**********/
+/* STYLES */
+/**********/
+
+.card-subtext {
+    list-style: none;
+    padding-left: 0;
+}
+
+.card-subtext > li {
+
+    @include font(body-s);
+    
+    position: relative;
+    
+    padding-left: map-get($spacers, 3);
+    margin-bottom: map-get($spacers, 2);
+    
+    color: inherit;
+
+}
+
+.card-subtext > li:before {
+
+    content: '';
+    
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+    width: 2px;
+    height: 100%;
+    
+    background: $linear-gradient-orange-1;
+
+}
+
+.card-subtext--light {
+    @include card-subtext--light;
+}
+
+.card-subtext--dark {
+    @include card-subtext--dark;
+}

@@ -1,0 +1,61 @@
+.quote-tabs { 
+    @include copy-content-spacing;
+}
+
+.quote-tabs .tablist { 
+
+    margin-bottom: map-get($spacers, 3);
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: map-get($spacers, 5);
+    }
+
+}
+
+.quote-tabs--light {
+
+    @include block-spacing(margin);
+
+    background: color(White);
+    color: color(GalaxyBlack);
+
+}
+
+.quote-tabs--dark {
+
+    @include block-spacing(padding);
+
+    background: $linear-gradient-linear-dark;
+    color: color(White);
+
+    @include media-breakpoint-down(lg) {
+        // for counter-acting box-shadow in smaller screens
+        padding-bottom: 100px;
+    }
+}
+
+.quote-tabs--bg-split-grey {
+ 
+    @include block-spacing(padding);
+    @include split-background(color(NeutralGrey));
+
+    margin: 0;
+
+    &::before {
+        height: 60%;
+    }
+    
+}
+
+.quote-tabs--bg-black {
+    background: color(GalaxyBlack);
+}
+
+.quote-tabs .button-outline,
+.quote-tabs .button-primary,
+.quote-tabs .button-tertiary,
+.quote-tabs .button-text-link,
+.quote-tabs .button-secondary,
+.quote-tabs .button-icon {
+    text-transform: capitalize;
+}

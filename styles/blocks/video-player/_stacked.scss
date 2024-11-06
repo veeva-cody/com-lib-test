@@ -1,0 +1,73 @@
+@use "sass:map";
+
+.video-player-stacked {
+    @include copy-content-spacing;
+}
+
+.video-player-stacked--light {
+    
+    @include block-spacing(margin);
+
+    color: color(GalaxyBlack);
+    background: color(White);
+
+}
+
+.video-player-stacked--dark {
+
+    @include block-spacing(padding);
+
+    background: $linear-gradient-linear-dark;
+    color: color(White);
+
+}
+
+.video-player-stacked--bg-grey {
+
+    @include block-spacing(padding);
+
+    margin: 0;
+    background: color(NeutralGrey);
+
+}
+
+.video-player-stacked__video {
+
+    // margin-top: map-get($spacers, 5);
+
+    @include media-breakpoint-up(xl) {
+        max-width: $inner-content-max-width-lg;
+    }
+
+}
+
+.video-player-stacked__video .wistia_embed {
+
+    border-radius: calc($border-radius-xxs / 2);
+    overflow: hidden;
+
+    box-shadow: $box-shadow-sm-behind;
+    background: color(Black);
+
+    @include media-breakpoint-up(md) {
+        border-radius: $border-radius-xxs;
+    }
+    
+}
+
+.video-player-stacked__stats {
+    margin-top: map-get($spacers, 5);
+}
+
+.video-player-stacked__stats > div {
+
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: map.get($grid-breakpoints, "sm");
+
+    @include media-breakpoint-up(lg) {
+        max-width: $inner-content-max-width-lg;
+    }
+
+}

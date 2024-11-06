@@ -1,0 +1,55 @@
+<section class="tab-block tab-block-subpoints [modifier*]">
+    <div class="container">
+        <div class="copy-container copy-container--center copy-container--eyebrow-gradient">
+            <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+            <h3>[headline]</h3>
+            <p>[body]</p>
+            <div class="copy-container__buttons">
+                <a class="button-primary [modifier^]" href="[url]" target="[target]">[label]</a>
+                <a class="button-secondary [modifier^]" href="[url]" target="[target]">
+                    <img src="[src]" alt="[alt]" />
+                    <span>[label]</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="tab-block__content">
+        <!-- [1x] -->
+        {{ `tabs-tablist-text` }}
+        {{ `tabs-tablist-logo` }}
+        {{ `tabs-tablist-client` }}
+        <!-- [] -->
+        <div class="container tab-content">
+            <!-- [1-6x] -->
+            <div class="tab-pane">
+                <div class="subpoints-card">
+                    <div class="subpoints-card__media">
+                        <img src="[src]" alt="[alt]" />
+                    </div>
+                    <div class="subpoints-card__content">
+                        <h6>[overline]</h6>
+                        <h4>[headline]</h4>
+                        <p>[body]</p>
+                    </div>
+                </div>
+            </div>
+            <!-- [] -->
+        </div>
+    </div>
+</section>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+tab-block--light
+tab-block--dark
+
+Optional *:
+
+tab-block--bg-black
+
+-->

@@ -1,0 +1,45 @@
+.about-us {
+    .blended-bg {
+        @include blended-bg;
+    }
+}
+
+.about-us-a {
+    .hero-highlights .hero-highlights__copy-wrapper {
+        background-size: cover;
+    }
+}
+
+.about-us-b { 
+    .logo-wall-animated {
+        background: $linear-gradient-white-grey;
+    }
+
+    .blended-bg {
+        --transparent-bg-height: 350px !important;
+
+        @include media-breakpoint-up(md) {
+            --transparent-bg-height: 425px !important;
+        }
+
+        @include media-breakpoint-up(xl) {
+            --transparent-bg-height: 20% !important;
+        }
+    }
+
+
+    .video-player-stacked .copy-container {
+        color: color(GalaxyBlack);
+    }
+}
+
+.about-us-c { 
+    .hero-customer h1 {
+        font-size: $font-size-h2-mobile;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-h2-desktop;
+        }
+    }
+
+}

@@ -1,0 +1,46 @@
+<!-- if there's only 1 image, use style="background-image: url([src]);" -->
+<!-- if there's 2 images (desktop + mobile), use style="--mobile-image: url([src]); --desktop-image: url([src]);" -->
+<section class="hero-centered [modifier*]" style="background-image: url([src]);">
+    <div class="container copy-container copy-container--center">
+        <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+        <h1>[headline]</h1>
+        <p>[body]</p>
+        <div class="copy-container__buttons">
+            <a class="button-primary [modifier^]" href="[url]" target="[target]">[label]</a>
+            <a class="button-secondary [modifier^]" href="[url]" target="[target]">
+                <img src="[src]" alt="[alt]">
+                <span>[label]</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+hero-centered--gradient
+hero-centered--image
+hero-centered--logo
+hero-centered--white
+hero-centered--dark
+
+--
+
+The following optional classes are used with background image only.
+
+Optional *:
+
+hero-centered--anchor-top
+hero-centered--anchor-bottom
+hero-centered--anchor-left
+hero-centered--anchor-right
+
+Optional *:
+
+hero-centered--tint
+
+-->

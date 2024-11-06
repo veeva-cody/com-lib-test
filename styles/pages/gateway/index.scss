@@ -1,0 +1,159 @@
+#gateway {
+
+    #hero {
+        padding-bottom: calc(25vw + 40px);
+
+        @include media-breakpoint-up(xl) {
+            padding-bottom: 300px;
+        }
+    }
+
+    #hero h1 {
+        font-size: $font-size-h2-mobile;
+
+        @include media-breakpoint-up(xl) {
+            font-size: $font-size-h2-desktop;
+        }
+    }
+
+    #hero .copy-container__buttons {
+        @include media-breakpoint-down(sm) { 
+            flex-direction: column;
+        }
+    }
+
+    // sync max-width with below video-container
+    .hero-centered .copy-container--center {
+        @include media-breakpoint-up(xl) {
+            max-width: $inner-content-max-width-lg;
+        }
+    }
+
+    #hero.hero-centered--image {
+        @include gateway-hero-bg-images;
+    }
+
+    #hero-video {
+        margin-top: -25vw;
+
+        @include media-breakpoint-up(xl) {
+            margin-top: -240px;
+        }
+    }
+
+    .z-pattern .z-pattern__image-wrapper {
+        aspect-ratio: auto;
+        box-shadow: $box-shadow-sm-behind;
+
+        @include media-breakpoint-up(md) {
+            box-shadow: $box-shadow-lg-behind;
+        }
+    }
+
+    .z-pattern .z-pattern__wrapper {
+        @include media-breakpoint-up(xl) {
+            max-width: map-get($container-max-widths, xl); 
+        }
+
+        @include media-breakpoint-up(xxl) {
+            max-width: $inner-content-max-width-xl; 
+        }
+    }
+
+    #quote {
+        margin-bottom: -150px;
+        z-index: 1;
+    }
+
+    .listed-up .listed-up__cards .listed-up-card {
+        width: 100%;
+    }
+
+    .blended-bg {
+        @include rounded-corners(all);
+
+        position: relative;
+        background: $linear-gradient-linear-dark;
+
+        padding-top: 150px;
+    }
+
+    .blended-bg--rounded-top {
+        @include rounded-corners(top);
+    }
+
+    .card-block-z-pattern .z-pattern-card {
+        @include media-breakpoint-up(lg) {
+            margin: 0;
+        }
+    }
+
+    .card-block-z-pattern .z-pattern-card h4 br {
+        display: none;
+
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+    }
+
+    #contact-gateway-modal .modal-content {
+        background-color: #e6e7e8;
+
+        position: relative;
+        overflow: hidden;
+        height: calc(100% - 42px); // subtract space taken up by close button
+        border-radius: $border-radius-xxs;
+
+        @include media-breakpoint-up(md) {
+            height: fit-content;
+            border-radius: $border-radius-m;
+        }
+    }
+
+    #contact-gateway-modal .modal-content.modal-content--grey {
+        background-color: #e6e7e8;
+    }
+
+    #contact-gateway-modal .modal-content.modal-content--white {
+        background-color: $white;
+
+        padding: 24px 20px 20px;
+
+        @include media-breakpoint-up(md) {
+            padding: 34px 28px 20px;
+        }
+    }
+
+    #contact-gateway-modal .modal-body {
+        padding: 0;
+    }
+
+    #contact-gateway-modal .modal-btn-close {
+        background-color: $white;
+        cursor: pointer;
+
+        margin: 0 0 10px auto;
+    }
+
+    .sidebar-info-box h6 a {
+        @include simple-text-link;
+        text-decoration: none;
+    }
+
+
+
+    &.safety-innovation-hub {
+        .card-block-z-pattern .copy-container h2 {
+            @include media-breakpoint-down(md) {
+                font-size: $font-size-h3-mobile;
+            }
+        }
+
+        .card-block-z-pattern:nth-of-type(even) {
+            @include media-breakpoint-up(lg) {
+                margin: calc(map-get($spacers, 5) * -1) 0;
+            }
+        }
+    }
+
+}

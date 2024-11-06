@@ -1,0 +1,48 @@
+.accordion-block {
+    @include copy-content-spacing;
+}
+
+.accordion-block__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+
+    max-width: $inner-content-max-width-lg;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(md) {
+        gap: 60px;
+    }
+}
+
+.accordion-block--light {
+    @include block-spacing(margin);
+
+    color: color(GalaxyBlack);
+    background: color(White);
+}
+
+.accordion-block--dark {
+    @include block-spacing(padding);
+
+    color: color(White);
+    background: color(DarkBlue);
+}
+
+.accordion-block--bg-grey {
+    @include block-spacing(padding);
+    background: color(NeutralGrey);
+}
+
+.accordion-block--subheading-gradient-orange .accordion-block__section-title {
+    @include background-text-clip($linear-gradient-orange-compliant);
+}
+
+.accordion-block--single-accordion-title .accordion-drawer .accordion-button__content {
+    display: flex;
+    padding-right: map-get($spacers, 1);
+}
+
+.accordion-block--contained-xl .accordion-block__wrapper {
+    max-width: $inner-content-max-width-xl;
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/styles/normalize.css" />
+        <link rel="stylesheet" href="/dist/bundle.min.css" />
+        <title>Resource Detail - Single Video Layout</title>
+    </head>
+
+    <!--
+
+        Format: Single Video layout
+
+        Video can come in 2 formats :D, need to check for both for implementation
+        - [wistia-video id="lextkih08m" size="56.25"]
+        - with <script>: <div class="wistia_embed wistia_async_eiqh6lejdt videoFoam=true" style="height:100%;position:relative;width:100%">
+
+        - Podcast (more text): https://www.veeva.com/resources/navigating-the-new-medical-affairs-landscape-data-impact-and-the-evolving-msl-role/
+
+        - Demo Center, Demos: https://www.veeva.com/resources/quality-clinical-operations-connection-demo/
+
+        - Videos: https://www.veeva.com/resources/using-metrics-and-reports-to-measure-content-reuse/
+
+        - Multimedia: https://www.veeva.com/resources/3-ways-to-launch-your-digital-life-sciences-strategy/
+
+        - Solutions Consulting (not found - not sure if it's still in use): 
+        https://www.veeva.com/resources/align-team-goals/ 
+
+        NOTE: Sometimes it will direct to customer page / page out of veeva.com
+
+    -->
+
+    <body>
+        <!-- Resource Detail Page End -->
+        <main class="veeva-2024">
+            <div id="resource-detail">
+                <!-- Single Video Layout -->
+                <!-- NOTE: this article element exist on their current page -->
+                <!-- which we could use it to apply style on in specific post type, e.g.  resource-type-press-release resource-type-news-press-release -->
+                <article class="resource">
+                    <!-- Hero Customer, Video -->
+                    <section class="hero-customer hero-customer--grey">
+                        <div class="container">
+                            <div class="copy-container copy-container--center copy-container--eyebrow-gradient">
+                                <!-- If Demo Center/ Demos / Muitimedia / Videos  -->
+                                <!-- <h6><span class="icon" data-icon="play-list-1"></span>Demo Center</h6> -->
+                                <!-- If Podcast: -->
+                                <h6><span class="icon" data-icon="headphones"></span>Podcasts</h6>
+                                <h1>Navigating the New Medical Affairs Landscape: Data, Impact, and the Evolving MSL Role</h1>
+
+                                <!-- NOTE: -->
+                                <!-- No description: Podcast -->
+                                <!-- With Description: 
+                                    - Demo Center / Demo / Videos : Can Split HTML Content based on [wisita code] position & use top content as description; bottom content as footnote 
+                                -->
+                                <!-- <p>Veeva CRM helps medical science liaisons work more efficiently by presenting this automated next best action suggestions to educate providers with the most relevant approved content. See how Veeva CRM helps MSLs present dynamic, engaging presentations and automatically records their interactions in this 2-minute video. </p> -->
+                            </div>
+                        </div>
+
+                        <!-- NOTE: -->
+                        <!-- check for existence of [wistia-code] & wisita script -->
+                        <!-- Extract [wistia-code]: Podcast/ Demo Center/ Demos -->
+                        <!-- Extract <script>: Demo Center/ Demos / Videos / Multimedia -->
+                        <div class="hero-customer__video">
+                            <div class="video-player-stacked__video container">
+                                <!-- NOTE: need to add wistia code + aspect ratio * -->
+                                <!-- adjust video aspect ratio here -->
+                                <div class="wistia_responsive_padding" style="padding: 56.25% 0 0 0; position: relative">
+                                    <div class="wistia_responsive_wrapper" style="height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+                                        <!-- add class here: wistia_async_{wistia-id} -->
+                                        <div class="wistia_embed wistia_async_4om1irrzfl" style="height: 100%; width: 100%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footnote for Demo Center / Demos / Videos / Multimedia -->
+                        <!-- <div class="footnote">
+                            <p class="text-center">Next up: <a href="/resources/vault-cdms-date-comparison-configurator-demo/">Create date comparison rules with a point-and-click interface. No coding needed</a>.</p>
+                        </div> -->
+                    </section>
+
+                    <!-- Render for: Podcasts -->
+                    <div class="content-block container-lg">
+                        <!-- NOTE: no need sidebar -->
+
+                        <!-- html content -->
+                        <!-- Veeva's class: entry-content resources-content -->
+                        <div class="content-block__content container" data-toc-target-area>
+                            <p>
+                                This template uses this Podcast as example:
+                                <a href="https://www.veeva.com/resources/navigating-the-new-medical-affairs-landscape-data-impact-and-the-evolving-msl-role/" target="_blank"> https://www.veeva.com/resources/navigating-the-new-medical-affairs-landscape-data-impact-and-the-evolving-msl-role/ </a>
+                            </p>
+
+                            <p>As the clinical landscape evolves, healthcare professionals are constantly navigating more complex data, and putting a greater demand on medical affairs for more scientific exchange.</p>
+
+                            <p>The increasing visibility not only puts additional pressure on medical teams to be operationally effective but also to better demonstrate outcomes.</p>
+
+                            <p>In this episode of Veeva’s podcast series, “What Pharma Needs Next”, Christoph Bug, VP Global Medical at Veeva, speaks to several industry experts about the ongoing transformation of medical affairs to become a more strategic, data-driven decision-making organization.</p>
+
+                            <p>Learn more about <a href="/medicalimpact">measuring medical impact</a>.</p>
+
+                            <!-- <p>
+                                This template uses this Podcast as example:
+                                <a href="https://www.veeva.com/resources/navigating-the-new-medical-affairs-landscape-data-impact-and-the-evolving-msl-role/" target="_blank"> https://www.veeva.com/resources/navigating-the-new-medical-affairs-landscape-data-impact-and-the-evolving-msl-role/ </a>
+                            </p> -->
+                        </div>
+                    </div>
+
+                    <!-- Resources -->
+                    <!-- Resource - Cards, Light -->
+                    <section class="resource-block-cards resource-block-cards--light">
+                        <div class="container">
+                            <!-- copy container -->
+                            <div class="copy-container copy-container--center copy-container--eyebrow-gradient">
+                                <h6>
+                                    <span class="icon" data-icon="definition-search-book"></span>
+                                    Related Resources
+                                </h6>
+                                <h3>Explore and learn more</h3>
+                                <div class="copy-container__buttons">
+                                    <a class="button-outline button-outline--black" href="[url]" target="[target]"> View More </a>
+                                </div>
+                            </div>
+
+                            <div class="resource-block__cards resource-block__cards--gridded">
+                                <!-- resource card -->
+                                <a class="resource-card" href="https://www.google.com/" target="_blank">
+                                    <div class="resource-card__text">
+                                        <!-- resource-chip -->
+                                        <div class="resource-chip">
+                                            <!-- veeva icon -->
+                                            <div class="resource-chip__icon">
+                                                <span class="icon" data-icon="veeva"></span>
+                                            </div>
+                                            Product
+                                        </div>
+
+                                        <!-- text -->
+                                        <h6>Eyebrow</h6>
+                                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                                    </div>
+
+                                    <div class="resource-card__media">
+                                        <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                                    </div>
+                                </a>
+
+                                <!-- resource card -->
+                                <a class="resource-card" href="https://www.google.com/" target="_blank">
+                                    <div class="resource-card__text">
+                                        <!-- resource-chip -->
+                                        <div class="resource-chip">
+                                            <!-- star icon -->
+                                            <div class="resource-chip__icon">
+                                                <span class="icon" data-icon="star-fill-1"></span>
+                                            </div>
+                                            Summit
+                                        </div>
+
+                                        <!-- text -->
+                                        <h6>Eyebrow</h6>
+                                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                                    </div>
+
+                                    <div class="resource-card__media">
+                                        <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                                    </div>
+                                </a>
+
+                                <!-- resource card -->
+                                <a class="resource-card" href="https://www.google.com/" target="_blank">
+                                    <div class="resource-card__text">
+                                        <!-- resource-chip -->
+                                        <div class="resource-chip">
+                                            <!-- rotated-square -->
+                                            <div class="resource-chip__icon">
+                                                <span class="icon" data-icon="rotated-square"></span>
+                                            </div>
+                                            Article
+                                        </div>
+
+                                        <!-- text -->
+                                        <h6>Eyebrow</h6>
+                                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                                    </div>
+
+                                    <div class="resource-card__media">
+                                        <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                                    </div>
+                                </a>
+
+                                <!-- resource card, show video as popover -->
+                                <!-- NOTE: enter wistiaID to "data-wistia-video-id" here -->
+                                <div class="resource-card js-wistia-resource-card" data-wistia-video-id="latim1ya7g">
+                                    <div class="resource-card__text">
+                                        <div class="resource-chip resource-chip--light">
+                                            <!-- video icon -->
+                                            <div class="resource-chip__icon">
+                                                <span class="icon" data-icon="play-filled-2"></span>
+                                            </div>
+                                            Video
+                                        </div>
+                                        <h6>Eyebrow</h6>
+                                        <h5>We are small resource cards, saying lorem ipsum dolor sit amet, consectetur adipiscing</h5>
+                                    </div>
+                                    <div class="resource-card__media">
+                                        <div class="video wistia-video"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Hero Contained Start (CTA) -->
+                    <section class="hero-contained hero-contained--gradient hero-contained--footer-fix">
+                        <div class="copy-container container copy-container--center">
+                            <h6><span class="icon" data-icon="box-sign"></span>Partner with Veeva</h6>
+                            <h3>
+                                Interested in learning more about <br />
+                                how Veeva can help?
+                            </h3>
+                            <div class="copy-container__buttons">
+                                <a class="button-primary button-primary--gradient" href="https://www.veeva.com/contact-us/" target="_self">Contact Us</a>
+
+                                <!-- Optional PDF button -->
+                                <!-- <a class="button-tertiary button-tertiary--white" href="https://www.veeva.com/wp-content/uploads/2024/03/Veeva-Crossix-_4-Steps-for-Effectively-Marketing-New-Treatments_Article.pdf" target="_blank">Download PDF</a> -->
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Hero Contained End -->
+                </article>
+            </div>
+        </main>
+        <!-- Resource Detail Page End -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://fast.wistia.com/assets/external/E-v1.js" async=""></script>
+        <script src="/dist/bundle.min.js"></script>
+    </body>
+</html>

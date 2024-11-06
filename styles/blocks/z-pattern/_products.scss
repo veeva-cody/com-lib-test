@@ -1,0 +1,101 @@
+.z-pattern-products__subpoint {
+
+    --spacing-left: 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @include media-breakpoint-up(md) {
+        gap: 16px;
+    }
+
+}
+
+.z-pattern-products__subpoint-headline,
+.z-pattern-products__subpoint-body {
+    padding-left: var(--spacing-left);
+}
+
+.z-pattern-products__subpoint-headline {
+
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    h6 {
+        flex-grow: 1;
+        transition: $transition-all-ease-in-out-1;
+    }
+
+    .icon {
+        width: 24px;
+        height: 24px;
+        transition: $transition-all-ease-in-out-1;
+    }
+}
+
+.z-pattern-products__subpoint-headline:before {
+
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 2px;
+    height: 100%;
+    
+    background: $linear-gradient-orange-1;
+
+}
+
+.z-pattern-products__subpoint-headline h6 {
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-h7-desktop;
+    }
+}
+
+.z-pattern-products__subpoint-body p {
+    @include font(body-s);
+    margin-bottom: 0;
+}
+
+.z-pattern-products__subpoint-body p a {
+    @include simple-text-link;
+}
+
+.z-pattern--light .z-pattern-products__subpoint-headline h6 {
+    color: color(GalaxyBlack);
+}
+
+.z-pattern--light .z-pattern-products__subpoint-body p {
+    color: color(DarkGray);
+}
+
+.z-pattern--dark .z-pattern-products__subpoint-headline h6 {
+    color: color(White);
+}
+
+.z-pattern--dark .z-pattern-products__subpoint-body p {
+    color: color(NeutralGrey);
+}
+
+.z-pattern--light a.z-pattern-products__subpoint:hover .z-pattern-products__subpoint-headline h6,
+.z-pattern--dark a.z-pattern-products__subpoint:hover .z-pattern-products__subpoint-headline h6 {
+    color: color(VeevaOrange);
+}
+
+.z-pattern--light a.z-pattern-products__subpoint:hover .icon,
+.z-pattern--dark a.z-pattern-products__subpoint:hover .icon {
+    background: color(VeevaOrange);
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.z-pattern-products .container:before,
+.z-pattern-products .container:after {
+    display: none;
+}

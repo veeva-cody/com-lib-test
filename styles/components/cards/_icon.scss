@@ -1,0 +1,165 @@
+.icon-card {
+
+    display: flex;
+    flex-direction: column;
+    
+    border-radius: $border-radius-xxs;
+    
+    padding: 32px 24px;
+
+    transition: $transition-all-ease-in-out-1;
+
+    overflow: hidden;
+
+    @include media-breakpoint-up(md) {
+
+        border-radius: $border-radius-s;
+        
+        padding: 28px;
+        min-height: 280px;
+    
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding: 28px 32px;
+    }
+
+}
+
+a.icon-card {
+    cursor: pointer;
+}
+
+.icon-card .floating-icon {
+    
+    margin-bottom: map-get($spacers, 3);
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: map-get($spacers, 4);
+    }
+
+}
+
+.icon-card .floating-icon:before {
+    opacity: 0;
+}
+
+.icon-card h5 {
+
+    margin-bottom: map-get($spacers, 2);
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: map-get($spacers, 3);
+    }
+
+}
+
+.icon-card p {
+    
+    @include font(body-s);
+    
+    flex-grow: 1;
+    margin-bottom: 24px;
+
+}
+
+.icon-card .button-text-link {
+
+    width: fit-content;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 22px;
+    }
+
+}
+
+a.icon-card:hover {
+    box-shadow: $box-shadow-lg-behind;
+}
+
+a.icon-card:hover .floating-icon:before {
+    opacity: 1;
+}
+
+a.icon-card:hover .floating-icon .card-icon {
+    background: color(White);
+}
+
+a.icon-card:hover .floating-icon .card-icon.hover-active {
+    opacity: 1;
+}
+
+a.icon-card:hover .button-text-link {
+    @extend .active;
+}
+
+.icon-card--large p {
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-body-m-desktop;
+    }
+}
+
+.icon-card--medium h5 {
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-h6-desktop;
+    }
+}
+
+.icon-card--light {
+    color: color(GalaxyBlack);
+    background: color(White);
+}
+
+.icon-card--light .floating-icon {
+    @include floating-icon--light;
+}
+
+.icon-card--light .floating-icon .icon {
+    background: color(VeevaOrange);
+}
+
+.icon-card--light h4 {
+    color: color(GalaxyBlack);
+}
+
+.icon-card--light p {
+    color: color(DarkGray);
+}
+
+a.icon-card--light:hover .floating-icon {
+    @extend .active;
+}
+
+.icon-card--dark {
+    color: color(White);
+    background: color(DarkNavy);
+}
+
+.icon-card--dark .floating-icon {
+    @include floating-icon--dark;
+}
+
+.icon-card--dark .floating-icon .icon {
+    background: color(VeevaOrange);
+}
+
+.icon-card--dark h4 {
+    color: color(White);
+}
+
+.icon-card--dark p {
+    color: color(SlateGray);
+}
+
+a.icon-card--dark:hover {
+    background: color(MidnightIndigo);
+}
+
+a.icon-card--dark:hover .floating-icon {
+    @extend .active;
+}
+
+div.icon-card--light .floating-icon,
+div.icon-card--dark  .floating-icon {
+    @extend .active;
+}

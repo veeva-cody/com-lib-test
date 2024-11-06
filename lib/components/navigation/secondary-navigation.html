@@ -1,0 +1,54 @@
+<div id="secondary-navigation" class="secondary-navigation">
+    <div class="secondary-navigation__wrapper container">
+        <div class="secondary-navigation__left">
+            <h3><span class="icon" data-icon="[id]"></span>[label]</h3>
+        </div>
+        <div class="secondary-navigation__right">
+            <!-- Desktop Menu -->
+            <ul class="secondary-navigation__desktop-menulist">
+
+                <!-- Enter links here; mobile will render automatically based on desktop links. -->
+                <!-- Add the `active` class to active dropdown-item. -->
+
+                <!-- Single Nav Item -->
+                <a class="dropdown-item" href="[url]" target="[target]">
+                    <li>[label]</li>
+                </a>
+
+                <!-- Nav Item with Dropdown -->
+                <div class="dropdown-item dropdown">
+                    <a href="[url]" target="[target]" class="dropdown-toggle dropdown-item--main" type="button" aria-expanded="false">
+                        <li>[label]</li>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <div class="dropdown-menu-content">
+                            <a class="dropdown-item--sublink" href="[url]" target="[target]">
+                                <li>[label]</li>
+                            </a>
+                        </div>
+                    </ul>
+                </div>
+
+            </ul>
+            <!-- Mobile Menu -->
+            <div id="secondary-navigation__mobile-dropdown" class="secondary-navigation__mobile-menulist dropdown">
+                <div class="secondary-navigation__mobile-display-item dropdown-toggle" role="button" id="subnavLink" data-bs-toggle="dropdown" aria-expanded="false">
+                    <h6 class="desktop">[label]</h6>
+                </div>
+                <ul class="secondary-navigation__mobile-dropdown-menu dropdown-menu container" aria-labelledby="subnavLink" data-popper-placement="bottom-start">
+                    <div class="dropdown-menu-content"></div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="secondary-navigation__backdrop"></div>
+
+<!--
+
+Modifiers
+---------
+
+None
+
+-->

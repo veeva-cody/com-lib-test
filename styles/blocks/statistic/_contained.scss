@@ -1,0 +1,11 @@
+.statistic-contained {
+    @include rounded-corners(all);
+
+    background: $linear-gradient-orange-compliant;
+    color: color(White);
+    padding: map-get($spacers, 8) 0;
+}
+
+.statistic-contained .icon {
+    background: color(White);
+}

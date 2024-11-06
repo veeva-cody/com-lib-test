@@ -1,0 +1,131 @@
+<section class="tab-block tab-block-customer video-player-tabs tab-block--light">
+    <div class="container">
+        <div class="copy-container copy-container--center copy-container--eyebrow-gradient">
+            <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+            <h3>[headline]</h3>
+            <p>[body]</p>
+            <div class="copy-container__buttons">
+                <a class="button-outline [modifier^]" href="[url]" target="[target]">[label]</a>
+                <a class="button-secondary [modifier^]" href="[url]" target="[target]">
+                    <img src="[src]" alt="[alt]" />
+                    <span>[label]</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="tab-block__content">
+            <!-- text tablist -->
+            <div class="tablist tablist-text tablist--light">
+                <ul class="nav nav-pills" role="tablist">
+                    <!-- [1-4x] -->
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link tablist-link">[tab-label]</button>
+                    </li>
+                    <!-- [] -->
+                </ul>
+            </div>
+
+            <!-- tablist content -->
+            <div class="container tab-content">
+                <!-- tablist content item -->
+                <!-- [1-4x] -->
+                <div class="tab-pane">
+                    <!-- video player block -->
+                    <section id="[id]" class="video-player-demos video-player-demos--light my-0">
+                        <div class="video-player-module video-player-module--multiple">
+                            <div class="video-player-module__video">
+                                <div class="video-player-module__wistia-wrapper">
+                                    <!-- adjust video aspect ratio here -->
+                                    <div class="wistia_responsive_padding" style="padding: 56.25% 0 0 0; position: relative">
+                                        <div class="wistia_responsive_wrapper" style="height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+                                            <div class="wistia_embed wistia_async_[video-wistia-id]" style="height: 100%; width: 100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- [Video info rendered with JavaScript] -->
+                            </div>
+
+                            <div class="video-player-module__video-nav sub-video-nav-wrapper sub-video-nav-wrapper--light">
+                                <div class="sub-video-nav-wrapper__title">
+                                    <h5>[title]</h5>
+                                </div>
+                                <div class="sub-video-nav-wrapper__content">
+                                    <!-- [Additional videos rendered with JavaScript] -->
+                                    <!-- [1-?x] -->
+                                    {{ `video-nav-stacked` }}
+                                    <!-- [] -->
+                                </div>
+                                <div class="sub-video-nav-wrapper__bottom">
+                                    <a class="button-outline" href="[url]" target="[target]"> [label] </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- [] -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+N/A
+
+Notes
+-----
+
+1. The .
+2. Video blocks need unique ID in order for JS to work.
+3. The nested video blocks must be initialized with JS using the appropriate function exported from the Veeva Component Library below the JS bundle.
+
+Ex: 
+
+<script>
+
+const videoBlockIdList = [
+    "video-demo-block-1",
+    "video-demo-block-2",
+    "video-demo-block-3",
+    "video-demo-block-4"
+]; // unique block ids
+const showVideoInfo = true;
+
+// example data list
+const videoData1 = [
+    {
+        wistiaID: "zzk08gne6l", // Required.
+        title: "Custom video title here", // Optional
+        description: "Custom video description here",  // Optional
+    },
+    {
+        wistiaID: "nzu1lv6b2h", // Required.
+    },
+    {
+        wistiaID: "31zfr7kuum", // Required.
+    },
+    {
+        wistiaID: "i5n0o1mryj", // Required.
+    },
+];
+
+// include your video block data here
+const videoDataList = [
+    videoData1, videoData1, videoData1, videoData1
+];
+
+// initialize vidoe block data altogether
+videoBlockIdList.forEach((blockId, index) => {
+    veevaLib.initVideoMultiplePlayerBlock(blockId, videoDataList[index], showVideoInfo);
+});
+
+</script>
+
+If included, optional fields in the data array will override the values from Wistia.
+
+-->

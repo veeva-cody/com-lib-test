@@ -1,0 +1,99 @@
+.hero-contained {
+
+    position: relative;
+    padding: 70px 0;
+
+    @include rounded-corners(all);
+    @include media-breakpoint-up(md) {
+        padding: 100px 0;
+    }
+
+}
+
+.hero-contained--light {
+    background: $linear-gradient-white-grey;
+    color: color(GalaxyBlack);
+}
+
+.hero-contained--dark,
+.hero-contained--gradient,
+.hero-contained--dark-blue-gradient,
+.hero-contained--image,
+.hero-contained--cta {
+    color: color(White);
+}
+
+.hero-contained--dark {
+    background: $linear-gradient-linear-dark;
+}
+
+.hero-contained--gradient {
+    background: $prefooter-gradient-orange-mobile;
+
+    @include media-breakpoint-up(lg) {
+        background: $prefooter-gradient-orange-desktop;
+    }
+}
+
+.hero-contained--dark-blue-gradient {
+    background: $linear-gradient-dark-blue;
+}
+
+.hero-contained--image {
+    background-size: cover;
+    background-position: 50%;
+}
+
+.hero-contained--cta .copy-container {
+    margin-bottom: map-get($spacers, 5);
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: map-get($spacers, 8);
+    }
+}
+
+.hero-contained--cta__cta-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: calc(map-get($spacers, 4) / 2);
+
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.hero-contained--cta__cta-list--2-column {
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.hero-contained--footer-fix {
+    --footer-fix-color: #1b2e53;    
+    --footer-fix-color-desktop: linear-gradient(270deg, rgba(27,46,83,1) 0%, rgba(16,27,51,1) 50%, rgba(1,5,12,1) 100%);
+    
+    overflow: visible;
+}
+
+.hero-contained--footer-fix:after {
+
+    content: '';
+
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 50%;
+
+    background: var(--footer-fix-color);  // veeva.com footer color.
+
+    @include media-breakpoint-up(lg) {
+        background: var(--footer-fix-color-desktop);
+    }
+}

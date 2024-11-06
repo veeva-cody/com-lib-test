@@ -1,0 +1,53 @@
+<a class="resource-card [modifier*]" href="[url]" target="[target]">
+    <div class="resource-card__text">
+        <div class="resource-chip [modifier^]">
+            <div class="resource-chip__icon">
+                <span class="icon" data-icon="[id]"></span>
+            </div>
+            [category]
+        </div>
+        <h6>[overline]</h6>
+        <h5>[headline]</h5>
+        <!-- Optional Button -->
+        <div class="resource-card__cta button-secondary [modifier^]">
+            <img src="[src]" alt="[alt]" />
+            <span>View Video</span>
+        </div>
+        <!--  -->
+        <!-- Featured Only -->
+        <div class="resource-card--featured__logo client-logo">
+            <img src="[src]" alt="[alt]" />
+        </div>
+        <!--  -->
+    </div>
+    <div class="resource-card__media [modifier**]" style="background-image: url([src])">
+        <img src="[src]" alt="[alt]" />
+    </div>
+</a>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+resource-card--with-shadow
+resource-card--featured
+
+Required (one of) *:
+
+resource-card--light
+resource-card--dark
+
+Optional **:
+resource-card--with-bg-gradient-orange
+resource-card--with-bg-gradient-blue
+resource-card--with-bg-gradient-dark
+resource-card--with-bg-gradient-dark-blue
+resource-card--with-png-logo
+
+resource-card__media--bg
+resource-card__media--not-available
+
+-->

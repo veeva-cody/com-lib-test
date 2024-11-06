@@ -1,0 +1,37 @@
+.impact-card {
+    @include media-breakpoint-up(sm) {
+        max-width: 392px;
+    }
+}
+
+.impact-card h5 {
+
+    margin-bottom: map-get($spacers, 3);
+    font-size: $font-size-h4-mobile;
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: map-get($spacers, 4);
+        font-size: $font-size-h4-desktop;
+    }
+
+}
+
+.impact-card h5:first-child {
+    @include background-text-clip($linear-gradient-orange-compliant);
+}
+
+.impact-card p {
+    @include font(body-s);
+
+    margin-bottom: map-get($spacers, 4);
+}
+
+.impact-card br {
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+}
+
+.impact-card > p:last-child {
+    margin-bottom: 0;
+}

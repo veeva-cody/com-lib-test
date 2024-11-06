@@ -1,0 +1,146 @@
+.z-pattern-card {
+    
+    position: relative;
+    overflow: hidden;
+    
+    border-radius: $border-radius-xxs;
+    box-shadow: $box-shadow-lg-behind;
+
+    @include media-breakpoint-up(lg) {
+        margin: map-get($spacers, 2) 0;
+    }
+
+}
+
+.z-pattern-card:before {
+
+    @include background-image-clip($linear-gradient-orange-compliant);
+
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    
+    transition: $transition-all-cubic-bezier-1;
+    opacity: 0;
+
+}
+
+.z-pattern-card:hover:before {
+    opacity: 1;
+}
+
+.z-pattern-card:hover p {
+    color: color(White);   
+}
+
+.z-pattern-card a {
+
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+
+    padding: map-get($spacers, 4);
+    padding-right: map-get($spacers, 7);
+
+    cursor: pointer;
+
+}
+
+.z-pattern-card h4,
+.z-pattern-card p {
+    transition: $transition-all-ease-in-out-1;
+}
+
+.z-pattern-card h4 {
+
+    @include font(h6);
+    @include background-text-clip($linear-gradient-orange-compliant);
+
+    margin-bottom: map-get($spacers, 2);
+
+    @include media-breakpoint-up(md) {
+        font-size: 24px;
+    }
+
+}
+
+.z-pattern-card p {
+    @include font(body-s);
+}
+
+.z-pattern-card__icon {
+    
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    
+    width: 19px;
+    height: 19px;
+
+}
+
+.z-pattern-card__icon .icon {
+    width: 100%;
+    height: 100%;
+}
+
+.z-pattern-card--light {
+    background: color(White);
+}
+
+.z-pattern-card--light .z-pattern-card__icon {
+    color: color(GalaxyBlack);
+}
+
+.z-pattern-card--light:hover h4 {
+    @include background-text-clip(color(White));
+}
+
+.z-pattern-card--light:hover p,
+.z-pattern-card--light:hover .z-pattern-card__icon {
+    color: color(White);
+}
+
+.z-pattern-card--dark {
+    background: color(MidnightIndigo);
+}
+
+.z-pattern-card--dark .z-pattern-card__icon {
+    color: color(White);
+}
+
+.z-pattern-card--dark:hover h4 {
+    @include background-text-clip(color(White));
+}
+
+.z-pattern-card--dark:hover p {
+    color: color(White);
+}
+
+.card-block-z-pattern__cards {
+ 
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: map-get($spacers, 4);
+    
+    padding: 60px 0 24px;
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: map-get($spacers, 5);
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding: 116px 0;
+        gap: map-get($spacers, 3);
+    }
+
+    @include media-breakpoint-up(xl) {
+        gap: map-get($spacers, 5);
+    }
+}

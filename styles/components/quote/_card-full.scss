@@ -1,0 +1,73 @@
+.quote-card-full {
+
+    padding: 40px 24px 56px;
+    min-height: 360px;
+
+    @include media-breakpoint-up(md) {
+        padding: 60px 32px;
+        min-height: 420px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding: 80px 8%;
+        min-height: 480px;
+    }
+
+}
+
+.quote-card-full .quote-card__person-info {
+    @include media-breakpoint-up(xl) {
+        min-width: 400px;
+    }
+}
+
+.quote-card-full .quote-card__person-info__person {
+    @include quote-card-person-info--with-person-icon;
+}
+
+.quote-card-full--large-text,
+.quote-card-full--medium-text {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: $card-gap-sm;
+
+    @include media-breakpoint-up(lg) {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 10%;
+    }
+
+    @include media-breakpoint-up(xl) {
+        gap: 15%;
+    }
+
+}
+
+.quote-card-full--large-text .quote-card__quote-wrapper p {
+
+    @include font(h5);
+    
+    font-weight: 600;
+    line-height: 1.4;
+
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-h3-desktop;
+        line-height: 1.3;
+    }
+
+}
+
+.quote-card-full--medium-text .quote-card__quote-wrapper p {
+
+    @include font(h6);
+    
+    font-weight: 600;
+    line-height: 1.4;
+
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-h5-desktop;
+    }
+    
+}

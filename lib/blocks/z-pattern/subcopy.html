@@ -1,0 +1,69 @@
+<section class="z-pattern z-pattern-subcopy [modifier*]">
+    <div class="z-pattern__wrapper container">
+        <div class="copy-container copy-container--eyebrow-gradient">
+            <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+            <h3>[headline]</h3>
+            <p>[body]</p>
+            <div class="copy-container__buttons">
+                <a class="button-outline [modifier^]" href="[url]" target="[target]">[label]</a>
+                <a class="button-secondary [modifier^]" href="[url]" target="[target]">
+                    <img src="[src]" alt="[alt]" />
+                    <span>[label]</span>
+                </a>
+            </div>
+        </div>
+        <div class="z-pattern__image">
+            <!-- Choose 1 -->
+            <!-- In-page Looping Video -->
+            <div class="z-pattern__image-wrapper">
+                <!-- include one of the following media elements: img, video, or wistia -->
+                <img src="[src]" alt="[alt]" />
+
+                <!-- for video element, all its attributes are required -->
+                <video muted autoplay playsinline loop>
+                    <source src="[src]" type="[video-type]" />
+                </video>
+
+                <div class="wistia_responsive_padding" style="padding: 56.25% 0 0 0; position: relative">
+                    <div class="wistia_responsive_wrapper" style="height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+                        <div class="wistia_embed wistia_async_[video-id] autoplay=true endVideoBehavior=loop" style="height: 100%; width: 100%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OR -->
+
+            <!-- Popover Video -->
+            <div class="z-pattern__image z-pattern__image--with-wistia wistia_embed wistia_async_{wistia-id} popover=true popoverContent=link">
+                <div class="z-pattern__image-wrapper">
+                    <img src="[src]" alt="[alt]" />
+
+                    <div class="z-pattern__cta-wrapper">
+                        <a class="button-secondary button-secondary--dark">
+                            <img src="/wp-content/themes/veeva2015/assets/svg/icons/btn-play--black.svg" alt="" />
+                            <span>[cta-text]</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- [] -->
+        </div>
+    </div>
+</section>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+z-pattern--light
+z-pattern--dark
+
+Optional:
+
+z-pattern--bg-grey
+z-pattern--image-with-shadow
+
+-->

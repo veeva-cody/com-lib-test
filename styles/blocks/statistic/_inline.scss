@@ -1,0 +1,27 @@
+.statistic-inline--light {
+    @include block-spacing(margin);
+    color: color(GalaxyBlack);
+}
+
+.statistic-inline--dark {
+    @include block-spacing(padding);
+
+    background: $linear-gradient-linear-dark;
+    color: color(White);
+}
+
+.statistic-inline--grey {
+    @include block-spacing(padding);
+
+    background: color(NeutralGrey);
+    color: color(GalaxyBlack);
+}
+
+.statistic-inline--bg-black {
+    background: color(GalaxyBlack);
+}
+
+.statistic-inline--image {
+    @include block-spacing(padding);
+    @include responsive-bg-image;
+}

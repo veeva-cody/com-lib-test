@@ -1,0 +1,66 @@
+.button-text-link {
+    display: flex;
+    @include font(h7);
+}
+
+.button-text-link {
+    flex-direction: column;
+}
+
+.button-text-link--black {
+    color: color(GalaxyBlack);
+}
+
+.button-text-link--white {
+    color: color(White);
+}
+
+.button-text-link--blue {
+    color: color(TwilightBlue);
+}
+
+.button-text-link--black:hover,
+.button-text-link--black.active {
+    color: color(DarkGray);
+}
+
+.button-text-link--white:hover,
+.button-text-link--white.active {
+    color: color(OffWhite, 0.9);
+}
+
+.button-text-link--blue:hover,
+.button-text-link--blue.active {
+    color: color(TwilightBlue, 0.9);
+}
+
+.button-text-link .label,
+.button-text-link .button-label {
+    margin-bottom: map-get($spacers, 1);
+}
+
+.button-text-link .underline {
+    height: 1px;
+    background-color: currentColor;
+}
+
+// If the button is wrapped by a span tag in order to trigger a Wistia popover modal on click
+// (following the approach recommended in the docs: https://docs.wistia.com/docs/popover-embed-customization#popovercontent),
+// this class can be added to the wrapping span instead of inline styles
+.button-text-link-wistia-wrap {
+    display: inline-flex;
+    white-space: nowrap;
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.button-text-link .label { 
+    padding: 0;
+    @include font(h7);
+}
+
+.expanding-card--light .button-text-link .label {
+    color: color(GalaxyBlack);
+}

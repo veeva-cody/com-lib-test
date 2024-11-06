@@ -1,0 +1,134 @@
+// common filter landing page style 
+// for listed card by areas
+.resources-all-wrapper .resource-block-listed {
+    @include media-breakpoint-up(md) {
+        padding-top: 0;
+        padding-bottom: $section-spacing-screen-lg;
+    }
+}
+
+.resources-all-wrapper .resource-block-listed:first-of-type {
+    @include media-breakpoint-up(lg) {
+        padding-top: $section-spacing-screen-lg;
+    }
+}
+
+// for result not found within resource-block-listed section
+.resource-block-listed  #resource-search--result-not-found {
+    min-height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resource-block-listed  #resource-search--result-not-found .copy-container {
+    @include media-breakpoint-up(md) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+        margin-bottom: 0;
+    }
+}
+
+.resource-block-listed  #resource-search--result-not-found .copy-container h3 {
+    @include media-breakpoint-up(md) {
+        margin-bottom: map-get($spacers, 4);
+    }
+}
+
+#resource-landing-block, #resource-search-block,
+#resource-search--result-found, #resource-search-result {
+    @include scroll-margin-top-on-hashtag-content;
+}
+
+// Specific archive pages styles
+#customer-landing {
+    .hero-customer .copy-container h1 {
+        font-size: $font-size-h3-mobile;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-h3-desktop;
+        }
+    }
+
+    #hero.hero-customer--image {
+        @include gateway-hero-bg-images;
+    }
+}
+
+#resource-landing, #customer-landing {
+    .form-dropdown--filter,
+    .filter-dropdowns-wrapper--odd .form-dropdown--filter,
+    .filter-dropdowns-wrapper--even .form-dropdown--filter {
+        @include media-breakpoint-up(lg) {
+            min-width: 220px;
+        }
+
+        @include media-breakpoint-up(xl) {
+            min-width: 250px;
+        }
+
+        @include media-breakpoint-up(xxl) {
+            min-width: 270px;
+        }
+    }
+
+}
+
+#demo-center-landing {
+    .filter-dropdowns-wrapper .form-dropdown--filter {
+        min-width: 270px;
+    }
+
+    .video-player-demos .copy-container {
+        margin-bottom: $block-gap-sm;
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: map-get($spacers, 3);
+        }
+    }
+
+    .video-player-demos .copy-container .button-outline {
+        display: none;
+
+        @include media-breakpoint-up(xl) {
+            display: flex;
+        }
+    }
+
+    .resource-card .resource-chip {
+        @include resource-chip--icon-grey;
+    }
+}
+
+
+
+// common style for result not found within resource-block-listed section
+.search-result--not-found,
+.resource-block-listed  #resource-search--result-not-found {
+    min-height: 35vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-result--not-found .copy-container,
+.resource-block-listed  #resource-search--result-not-found .copy-container {
+    @include media-breakpoint-up(md) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        text-align: center;
+        margin-bottom: 0;
+    }
+}
+
+.search-result--not-found .copy-container h3,
+.resource-block-listed  #resource-search--result-not-found .copy-container h3 {
+    @include media-breakpoint-up(md) {
+        margin-bottom: map-get($spacers, 4);
+    }
+}

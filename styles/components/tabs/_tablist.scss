@@ -1,0 +1,434 @@
+@use "sass:map";
+
+/**********/
+/* MIXINS */
+/**********/
+
+@mixin tablist-link-text {
+
+    padding: 8px 12px;
+
+    @include media-breakpoint-up(md) {
+        padding: 12px 16px;
+    }
+
+}
+
+@mixin tablist-link-logo {
+
+    padding: 0;
+
+    @include media-breakpoint-up(lg) {
+        padding: 0 20px;
+    }
+
+}
+
+@mixin tablist-link-client {
+
+    display: flex;
+    flex-direction: column;
+
+    height: 80px;
+    padding: 0;
+    
+    border-radius: $border-radius-xxs;
+    background: transparent;
+
+    opacity: 1;
+
+    @include media-breakpoint-up(md) {
+        height: 120px;
+        border-radius: $border-radius-xs;
+    }
+
+    &.active,
+    &:hover {
+
+        box-shadow: $box-shadow-sm-behind;
+
+        .tablist-link-client__topbar {
+            background: color(NeutralGrey);
+        }
+
+        .tablist-link-client__topbar span {
+            color: color(GalaxyBlack);
+        }
+
+        .tablist-link-client__logo {
+            background: color(White);
+        }
+
+        .tablist-link-client__logo .logo-svg:before {
+            opacity: 1;
+        }
+
+        .tablist-link-client__logo .logo-svg::after {
+            opacity: 0;
+        }
+
+    }
+
+}
+
+@mixin tablist-link--light {
+    color: color(GalaxyBlack);
+    background: color(White);
+}
+
+@mixin tablist-link--dark {
+
+    color: color(White);
+    background: color(MidnightIndigo);
+
+    img {
+        @include change-image-color(White);
+    }
+
+}
+
+@mixin displayTablistItemBasedOnCount($optimal-tablist-item-count) {
+    .nav-pills {
+
+        @each $breakpoint, $max-width in $container-max-widths {
+            @include media-breakpoint-up($breakpoint) {
+                @if index(xs sm md lg, $breakpoint) {
+                    
+                    $optimalMaxVisibleItemCount: map-get($optimal-tablist-item-count, $breakpoint);
+                    $minInnerWidth: calc((map-get($container-max-widths, $breakpoint) - $bs-gutter-x));
+                    $possibleOverflowWidth: calc($minInnerWidth + ($minInnerWidth / $optimalMaxVisibleItemCount) * (var(--number-of-tabs) - $optimalMaxVisibleItemCount));
+                    
+                    width: max($minInnerWidth, $possibleOverflowWidth);
+
+                }
+            }
+        }
+
+        @include media-breakpoint-up(xl) {
+            width: 100%;
+            gap: 20px;
+        }
+
+        @include media-breakpoint-up(xxl) {
+            gap: 24px;
+        }
+
+    }
+}
+
+@mixin tablist--dark {
+    .tablist-link {
+        @include tablist-link--dark;
+    }
+}
+
+@mixin tablist--light {
+    .tablist-link {
+        @include tablist-link--light;
+    }
+}
+
+/**********/
+/* STYLES */
+/**********/
+
+// Overriding Bootstrap styles.
+.tablist .tablist-link {
+
+    @include font(h7);
+
+    position: relative;
+
+    width: 100%;
+
+    font-weight: 600;
+
+    border-radius: 10px;
+    box-shadow: $box-shadow-sm-behind;
+    
+    transition: $transition-all-ease-in-out-1;
+    
+    overflow: hidden;
+    opacity: 0.4;
+
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-h6-desktop;
+        opacity: 0.6;
+    }
+
+}
+
+.tablist .tablist-link:hover,
+.tablist .tablist-link.active {
+
+    opacity: 1;
+
+    @include media-breakpoint-up(md) {
+        opacity: 1;
+    }
+
+}
+
+.tablist .tablist-link.active {
+    box-shadow: $box-shadow-lg-behind-contained;
+}
+
+.tablist .tablist-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.tablist .tablist-link.tablist-link-text {
+    @include tablist-link-text;
+}
+
+.tablist .tablist-link.tablist-link-logo {
+    @include tablist-link-logo;
+}
+
+.tablist-link-client__topbar {
+    
+    width: 100%;
+    padding: 6px 32px;
+
+    background: color(GalaxyBlack, 0.2);
+    
+    transition: $transition-all-ease-in-out-1;
+
+}
+
+.tablist-link-client__topbar span {
+
+    @include font(h8);
+    
+    text-align: center;
+    color: color(White);
+    
+    transition: $transition-all-ease-in-out-1;
+
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-body-s-desktop;
+    }
+
+}
+
+.tablist-link-client__logo {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    
+    width: 100%;
+    
+    background: color(GalaxyBlack, 0.1);
+    
+    transition: $transition-all-ease-in-out-1;
+
+}
+
+.tablist-link-client__logo .logo-svg {
+
+    position: relative;
+
+    width: 120px;
+    height: 100%;
+
+    @include media-breakpoint-up(md) {
+        width: 180px;
+    }
+
+}
+
+.tablist-link-client__logo .logo-svg:before,
+.tablist-link-client__logo .logo-svg:after {
+    
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    
+    background-image: var(--logo-url);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+    transition: $transition-all-ease-in-out-1;
+
+}
+
+.tablist-link-client__logo .logo-svg:before {
+    opacity: 0;
+}
+
+.tablist-link-client__logo .logo-svg::after {
+    opacity: 1;
+    filter: brightness(0%) invert(100%);
+}
+
+.tablist .tablist-link.tablist-link-client {
+    @include tablist-link-client;
+}
+
+.tablist .tablist-link.tablist-link--light {
+    @include tablist-link--light;
+}
+
+.tablist .tablist-link.tablist-link--dark {
+    @include tablist-link--dark;
+}
+
+.tablist .nav-pills {
+
+    --number-of-tabs: 6;
+    --bs-nav-pills-link-active-bg: inherit;
+
+    display: grid;
+    grid-template-columns: repeat(var(--number-of-tabs), 1fr);
+    gap: 10px;
+
+    transition: all 0.3s ease;
+
+}
+
+.tablist .nav-pills .nav-item,
+.tablist .nav-pills .tablist-link {
+    width: 100%;
+    height: 100%;
+}
+
+$optimal-tablist-text-item-count: (
+    xs: 3,
+    sm: 3,
+    md: 4,
+    lg: 5,
+);
+
+$optimal-tablist-logo-item-count: (
+    xs: 2,
+    sm: 3,
+    md: 3,
+    lg: 4,
+);
+
+$optimal-tablist-client-item-count: (
+    xs: 1.5,
+    sm: 2,
+    md: 2.5,
+    lg: 4,
+);
+
+.tablist {
+
+    width: 100%;
+    margin-bottom: map-get($spacers, 3);
+
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    
+    transition: all 0.2s linear;
+    
+    @include hide-scrollbar;
+    @include media-breakpoint-up(lg) {
+        margin-bottom: map-get($spacers, 5);
+    }
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: -20px;
+
+    // Add breakpoint-based padding and gutter padding for mobile scroll.
+    @include add-breakpoint-side-padding;
+}
+
+.tablist.tablist-text {
+    @include displayTablistItemBasedOnCount($optimal-tablist-text-item-count);
+}
+
+.tablist.tablist-text .nav-pills .tablist-link {
+
+    min-height: 40px;
+
+    @include tablist-link-text;
+    @include media-breakpoint-up(md) {
+        min-height: 70px;
+    }
+
+}
+
+.tablist.tablist-logo {
+    @include displayTablistItemBasedOnCount($optimal-tablist-logo-item-count);
+}
+
+.tablist.tablist-logo .nav-pills .tablist-link {
+    
+    height: 50px;
+
+    @include tablist-link-logo;
+    @include media-breakpoint-up(md) {
+        height: 80px;
+    }
+
+}
+
+.tablist.tablist-client {
+    @include displayTablistItemBasedOnCount($optimal-tablist-client-item-count);
+}
+
+.tablist.tablist-client .nav-pills {
+    gap: 16px;
+}
+
+.tablist.tablist-client .nav-pills .tablist-link {
+    
+    height: 80px;
+
+    @include tablist-link-client;
+    @include media-breakpoint-up(md) {
+        height: 120px;
+    }
+
+}
+
+.tablist.tablist--dark {
+    @include tablist--dark;
+}
+
+.tablist.tablist--light {
+    @include tablist--light;
+}
+
+// use tablist link style only without carousel function
+.tablist.tablist--display-only .tablist-link {
+    cursor: default;
+}
+
+.tablist.tablist--display-only .nav-pills {
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media-breakpoint-up(xl) {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.tablist .nav:before {
+    content: none;
+}
+
+.tablist .nav-pills > li {
+    position: static;
+    display: list-item;
+}

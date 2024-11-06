@@ -1,0 +1,218 @@
+@mixin logo-wall-animated-layout-4-3 {
+    grid: auto / repeat(24, 1fr);
+
+    > img,
+    > img:nth-child(3n) {
+        grid-column: span 6;
+    }
+
+    > img:nth-child(5) {
+        grid-column: 4 / 10;
+    }
+
+    > img:nth-child(8) {
+        grid-column: 1 / 7;
+    }
+}
+
+@mixin logo-wall-animated-layout-3-2 {
+    grid: auto / repeat(6, 1fr);
+
+    > img,
+    > img:nth-child(3n) {
+        grid-column: span 2;
+    }
+
+    > img:nth-child(5n-1) {
+        grid-column: 2 / 4;
+    }
+}
+
+.logo-wall-animated {
+    @include block-spacing(padding);
+    @include copy-content-spacing;
+    overflow: hidden;
+}
+
+.logo-wall-animated .copy-container {
+    max-width: $contained-width-lg;
+}
+
+.logo-wall-animated__logos img {
+    display: inline-block;
+    box-shadow: $box-shadow-lg-behind;
+    object-fit: fit;
+}
+
+.logo-wall-animated--small .logo-wall-animated__logos img {
+    border-radius: $border-radius-xxs;
+
+    padding-inline: map-get($spacers, 5);
+    max-width: 180px;
+}
+
+.logo-wall-animated--large .logo-wall-animated__logos img {
+    border-radius: $border-radius-xxs;
+
+    padding-inline: map-get($spacers, 5);
+    max-width: 180px;
+
+    @include media-breakpoint-up(md) {
+        border-radius: $border-radius-xs;
+
+        padding-inline: clamp(36px, 5vw, 88px);
+        height: clamp(48px, 5vw, 100px);
+        max-width: 390px;
+    }
+}
+
+.logo-wall-animated__logos {
+    max-width: max-content;
+    display: grid;
+}
+
+.logo-wall-animated--count-5 .logo-wall-animated__logos {
+    grid: auto / repeat(4, 1fr);
+
+    > img {
+        grid-column: span 2;
+    }
+
+    > img:nth-child(3n) {
+        grid-column: 2 / 4;
+    }
+}
+
+.logo-wall-animated--count-5.logo-wall-animated--small .logo-wall-animated__logos {
+    @include media-breakpoint-up(md) {
+        @include logo-wall-animated-layout-3-2;
+    }
+}
+
+.logo-wall-animated--count-5.logo-wall-animated--large .logo-wall-animated__logos {
+    @include media-breakpoint-up(xxl) {
+        @include logo-wall-animated-layout-3-2;
+    }
+}
+
+.logo-wall-animated--count-11 .logo-wall-animated__logos {
+    grid: auto / repeat(4, 1fr);
+
+    > img {
+        grid-column: span 2;
+    }
+
+    > img:nth-child(3n) {
+        grid-column: 2 / 4;
+    }
+}
+
+.logo-wall-animated--count-11.logo-wall-animated--small .logo-wall-animated__logos {
+    @include media-breakpoint-up(md) {
+        @include logo-wall-animated-layout-4-3;
+    }
+}
+
+.logo-wall-animated--count-11.logo-wall-animated--large .logo-wall-animated__logos {
+    @include media-breakpoint-up(md) {
+        @include logo-wall-animated-layout-4-3;
+    }
+}
+
+.logo-wall-animated--count-21 .logo-wall-animated__logo-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    overflow-x: clip;
+}
+
+.logo-wall-animated--count-21.logo-wall-animated--small .logo-wall-animated__logo-row:nth-child(odd) {
+    animation: scroll-right-small 20s linear infinite;
+}
+
+.logo-wall-animated--count-21.logo-wall-animated--small .logo-wall-animated__logo-row:nth-child(even) {
+    animation: scroll-left-small 20s linear infinite;
+}
+
+.logo-wall-animated--count-21.logo-wall-animated--large .logo-wall-animated__logo-row:nth-child(odd) {
+    animation: scroll-right-large 25s linear infinite;
+}
+
+.logo-wall-animated--count-21.logo-wall-animated--large .logo-wall-animated__logo-row:nth-child(even) {
+    animation: scroll-left-large 25s linear infinite;
+}
+
+.logo-wall-animated--small .logo-wall-animated__logos,
+.logo-wall-animated--small .logo-wall-animated__logo-row {
+    gap: 12px 10px;
+}
+
+.logo-wall-animated--large .logo-wall-animated__logos,
+.logo-wall-animated--large .logo-wall-animated__logo-row {
+    gap: 12px 10px;
+
+    @include media-breakpoint-up(md) {
+        gap: clamp(12px, 2vw, 40px) clamp(10px, 2vw, 32px);
+    }
+}
+
+.logo-wall-animated--light {
+    color: color(GalaxyBlack);
+}
+
+.logo-wall-animated--dark {
+    background: $linear-gradient-linear-dark;
+    color: color(White);
+}
+
+.logo-wall-animated--dark .logo-wall-animated__logos img {
+    box-shadow: $box-shadow-lg-behind;
+    background: color(MidnightIndigo);
+}
+
+@keyframes scroll-right-small {
+    0% {
+        transform: translateX(calc(-33.33% - 2.5px));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes scroll-left-small {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-33.33% - 2.5px));
+    }
+}
+
+@keyframes scroll-right-large {
+    0% {
+        transform: translateX(calc(-33.33% - 9px));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes scroll-left-large {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-33.33% - 9px));
+    }
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.logo-wall-animated .container:before,
+.logo-wall-animated .container:after {
+    display: none;
+}

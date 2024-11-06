@@ -1,0 +1,75 @@
+.tab-block .copy-container {
+
+    margin-bottom: map-get($spacers, 7);
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: map-get($spacers, 9);
+    }
+
+}
+
+.tab-block .tablist {
+
+    margin-bottom: map-get($spacers, 3);
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: map-get($spacers, 4);
+    }
+
+}
+
+.tab-block--light {
+
+    @include block-spacing(margin);
+
+    color: color(GalaxyBlack);
+    background: color(White);
+
+}
+
+.tab-block--light .tablist {
+    @include tablist--light;
+}
+
+.tab-block--light .sidebar {
+    @include sidebar--light;
+}
+
+.tab-block--dark {
+
+    @include block-spacing(padding);
+
+    color: color(White);
+    background: $linear-gradient-linear-dark;
+
+}
+
+.tab-block--dark .tablist {
+    @include tablist--dark;
+}
+
+.tab-block--dark .sidebar {
+    @include sidebar--dark;
+}
+
+.tab-block--bg-black,
+.tab-block--dark.tab-block--bg-black {
+    background: color(GalaxyBlack);
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.tab-block .nav:before,
+.tab-block .nav:after {
+    display: none;
+}
+
+.tab-block .tab-pane.show {
+    opacity: 1;
+}
+
+.tab-block .tab-content .product-arrow-link {
+    display: grid !important;
+}

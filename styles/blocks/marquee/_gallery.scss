@@ -1,0 +1,103 @@
+$marquee-gallery-gap: 32px;
+
+.marquee-gallery {
+    @include block-spacing(padding);
+    @include copy-content-spacing;
+}
+
+.marquee-gallery .copy-container {
+    max-width: $contained-width-lg;
+}
+
+.marquee-gallery--light {
+    color: color(GalaxyBlack);
+}
+
+.marquee-gallery--dark {
+    color: color(White);
+    background: $linear-gradient-linear-dark;
+}
+
+.marquee-gallery__images > div:not(:last-child) {
+    margin-bottom: map-get($spacers, 3);
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: map-get($spacers, 5);
+    }
+}
+
+.marquee-gallery__image-row {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: map-get($spacers, 3);
+
+    @include media-breakpoint-up(md) {
+        gap: map-get($spacers, 5);
+    }
+}
+
+.marquee-gallery__image-row img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: $border-radius-xs;
+
+    @include media-breakpoint-up(md) {
+        height: 200px;
+        border-radius: $border-radius-s;
+    }
+
+    @include media-breakpoint-up(lg) {
+        height: 240px;
+        border-radius: $border-radius-m;
+    }
+
+    @include media-breakpoint-up(xl) {
+        height: 300px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        height: 380px;
+    }
+}
+
+.marquee-gallery__image-row--60-40 img:first-child {
+    @include media-breakpoint-up(md) {
+        width: calc(60% - $marquee-gallery-gap / 2);
+    }
+}
+
+.marquee-gallery__image-row--60-40 img:last-child {
+    @include media-breakpoint-up(md) {
+        width: calc(40% - $marquee-gallery-gap / 2);
+    }
+}
+
+.marquee-gallery__image-row--40-60 img:first-child {
+    @include media-breakpoint-up(md) {
+        width: calc(40% - $marquee-gallery-gap / 2);
+    }
+}
+
+.marquee-gallery__image-row--40-60 img:last-child {
+    @include media-breakpoint-up(md) {
+        width: calc(60% - $marquee-gallery-gap / 2);
+    }
+}
+
+.marquee-gallery__image-row--50-50 img {
+    @include media-breakpoint-up(md) {
+        width: calc(50% - $marquee-gallery-gap / 2);
+    }
+}
+
+.marquee-gallery__image-row--100 img {
+    @include media-breakpoint-up(md) {
+        width: 100%;
+    }
+}

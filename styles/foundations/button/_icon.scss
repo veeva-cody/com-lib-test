@@ -1,0 +1,31 @@
+.button-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+}
+
+.button-icon::after {
+    display: inline-block;
+    height: 19px;
+    width: 19px;
+}
+
+.button-icon--black:after {
+    background-image: url("/wp-content/themes/veeva2015/assets/svg/icons/arrow-up-right--black.svg");
+}
+
+.button-icon--white:after {
+    background-image: url("/wp-content/themes/veeva2015/assets/svg/icons/arrow-up-right--white.svg");
+}
+
+.button-icon--linkedin {
+    background-color: color(IconBtnBgColor);
+    height: 32px;
+    width: 32px;
+}
+
+.button-icon--linkedin:after {
+    background-image: url("/wp-content/themes/veeva2015/assets/svg/icons/linkedin-dark.svg");
+    height: 24px;
+    width: 24px;
+}

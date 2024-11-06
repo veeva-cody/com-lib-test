@@ -1,0 +1,67 @@
+$people-events-column-gap: map-get($spacers, 4);
+
+.people-events--light {
+    @include block-spacing(margin);
+    color: color(GalaxyBlack);
+}
+
+.people-events--dark {
+
+    @include block-spacing(padding);
+    
+    background: $linear-gradient-linear-dark;
+    color: color(White);
+
+}
+
+.people-events__cards {
+
+    width: 100%;
+    margin-top: map-get($spacers, 5);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    column-gap: $people-events-column-gap;
+    row-gap: map-get($spacers, 5);
+
+    @include media-breakpoint-up(lg) {
+        justify-content: center;
+        margin-top: map-get($spacers, 6);
+    }
+
+}
+
+.people-events__cards .person-card-events {
+
+    width: calc((100% / 2) - ($people-events-column-gap * 1/2));
+
+    @include media-breakpoint-up(lg) {
+        width: calc((100% / 3) - ($people-events-column-gap * 2/3));
+    }
+
+    @include media-breakpoint-up(xl) {  
+        width: calc((100% / 4) - ($people-events-column-gap * 3/4));
+    }
+    
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.people-events__cards:before,
+.people-events__cards:after {
+    display: none;
+}
+
+.people-events .footnote p {
+    color: color(GalaxyBlack);
+}
+
+.people-events .footnote p br {
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+}

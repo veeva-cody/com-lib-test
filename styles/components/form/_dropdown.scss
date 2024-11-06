@@ -1,0 +1,122 @@
+.form-dropdown,
+.form-dropdown .dropdown-menu {
+    background-color: color(White);
+    border-radius: $border-radius-xs;
+}
+
+.form-dropdown {
+    height: 54px;
+}
+
+.form-dropdown .dropdown-toggle,
+.form-dropdown .dropdown-menu {
+    padding: 0 map-get($spacers, 4);
+}
+
+.form-dropdown .dropdown-toggle {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+
+    color: color(MediumGray);
+
+    height: 100%;
+
+    // counter default button styles
+    width: 100%;
+    background: inherit;
+
+    border-width: 0;
+    border-radius: $border-radius-xs;
+}
+
+.form-dropdown .dropdown-toggle.filled {
+    color: color(GalaxyBlack);
+}
+
+.form-dropdown .dropdown-toggle:after {
+    color: color(GalaxyBlack);
+}
+
+.form-dropdown .dropdown-toggle h6 {
+    @include font(h7);
+}
+
+.form-dropdown .dropdown-menu,
+.form-dropdown .dropdown-menu .dropdown-item {
+    margin: 0;
+}
+
+.form-dropdown .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    gap: ($spacer);
+
+    background-color: color(White);
+
+    width: 100%;
+    margin-top: map-get($spacers, 2);
+    padding: map-get($spacers, 3) 0;
+}
+
+.form-dropdown .dropdown-menu.show {
+    display: flex !important;
+}
+
+.form-dropdown .dropdown-menu .dropdown-item {
+    @include font(h8);
+
+    color: color(MediumGray);
+    transition: color $transition-default-duration ease;
+
+    cursor: pointer;
+
+    max-width: 100%;
+    white-space: normal;
+    
+    padding: 8px map-get($spacers, 4);
+}
+
+.form-dropdown .dropdown-menu .dropdown-item:hover {
+    color: color(GalaxyBlack);
+}
+
+.form-dropdown .dropdown-menu .dropdown-item:active {
+    background-color: transparent;
+}
+
+// color variation
+@mixin form-dropdown--grey {
+    color: color(GalaxyBlack);
+    background-color: color(NeutralGrey);
+
+    .dropdown-toggle {
+        color: color(GalaxyBlack);
+    }
+
+    .dropdown-menu,
+    .dropdown-menu-mobile {
+        color: color(GalaxyBlack);
+        background-color: color(NeutralGrey);
+    }
+
+    .dropdown-menu .dropdown-item {
+        color: color(DarkGray);
+    }
+}
+
+@mixin form-dropdown--white {
+    color: color(GalaxyBlack);
+
+    .dropdown-toggle {
+        color: color(GalaxyBlack);
+    }
+}
+
+.form-dropdown--grey {
+    @include form-dropdown--grey;
+}
+
+.form-dropdown--white {
+    @include form-dropdown--white;
+}

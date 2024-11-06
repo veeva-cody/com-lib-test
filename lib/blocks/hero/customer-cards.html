@@ -1,0 +1,52 @@
+<!-- if there's only 1 image, use style="background-image: url([src]);" -->
+<!-- if there's 2 images (desktop + mobile), use style="--mobile-image: url([src]); --desktop-image: url([src]);", with `hero-customer--image` modifier class -->
+<section class="hero-customer hero-customer-cards [modifier*]">
+    <div class="container">
+        <div class="copy-container copy-container--center">
+            <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+            <h3>[headline]</h3>
+            <p>[body]</p>
+            <div class="copy-container__buttons">
+                <a class="button-outline [modifier^]" href="[url]" target="[target]">[label]</a>
+                <a class="button-secondary [modifier^]" href="[url]" target="[target]">
+                    <img src="[src]" alt="[alt]" />
+                    <span>[label]</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container hero-customer__cards-wrapper">
+        <div class="hero-customer__cards">
+            <!-- accept 2 cards only -->
+            <a class="customer-image-card" href="[url]" target="[target]">
+                <div class="customer-image-card__image">
+                    <img src="[img-src]" alt="[alt]">
+                </div>
+                <div class="customer-image-card__info">
+                    <img src="[logo-src]" alt="[alt]">
+                    <h6>[title]</h6>
+                    <p>[description]</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!--
+
+Modifiers
+---------
+
+Required*:
+
+N/A
+
+--
+
+Optional*:
+
+hero-customer--blue
+hero-customer--image
+
+-->

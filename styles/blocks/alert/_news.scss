@@ -1,0 +1,38 @@
+.alert-news__wrapper {
+    display: block;
+}
+
+.alert-news__wrapper:hover .alert-news__btn-desktop img {
+    background-color: color(IconBtnHoverBgColor);
+}
+
+.alert-news__inner h6 {
+    
+    flex: 1;
+    padding-right: map-get($spacers, 3);
+
+    @include media-breakpoint-up(xl) {
+        padding-right: map-get($spacers, 4);
+    }
+
+}
+
+.alert-news__btn-desktop {
+    
+    display: none !important;
+
+    @include media-breakpoint-up(sm) {
+        display: flex !important;
+    }
+
+}
+
+.alert-news__btn-mobile {
+
+    margin-top: map-get($spacers, 4);
+
+    @include media-breakpoint-up(sm) {
+        display: none !important;
+    }
+
+}

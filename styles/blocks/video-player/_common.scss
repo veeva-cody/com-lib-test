@@ -1,0 +1,35 @@
+// wisita style customization
+.w-bpb-wrapper.w-css-reset.w-css-reset-tree {
+    border-radius: 18px !important;
+}
+
+.wistia_responsive_wrapper > div > div {
+    // border-radius: 24px !important;
+}
+
+.w-bottom-bar.w-css-reset {
+
+    display: table !important;
+    table-layout: auto !important;
+
+    position: absolute !important;
+    bottom: 6px !important;
+    right: 50% !important;
+
+    transform: translate(50%) !important;
+
+    width: calc(100% - 12px) !important;
+    padding-left: 6px !important;
+    padding-right: 6px !important;
+    
+    border-radius: 18px !important;
+    
+}
+
+.w-bottom-bar-lower.w-css-reset > div > div {
+    border-radius: 18px !important;
+}
+
+.w-bottom-bar-right-inner.w-css-reset {
+    padding-right: 3px !important;
+}

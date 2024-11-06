@@ -1,0 +1,66 @@
+.modal {
+    background: color(black, 0.5); // backdrop
+}
+
+// close modal button
+.modal-btn-close {
+    all: unset;
+
+    display: grid;
+    place-items: center;
+
+    height: 32px;
+    aspect-ratio: 1 / 1;
+
+    color: color(GalaxyBlack);
+    background: color(NeutralGrey);
+
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+.modal-btn-close .icon {
+    width: 70%;
+    aspect-ratio: 1 / 1;
+}
+
+.modal-dialog {
+    height: calc(100% - 20px - 24px);
+
+    // need to use margin to allow click on backdrop
+    margin: 20px 16px 24px;
+
+    @include media-breakpoint-up(sm) {
+        height: calc(100% - 5vw - 24px);
+        margin: 24px auto 5vw;
+    }
+}
+
+[data-bs-toggle] {
+    cursor: pointer;
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.modal.show {
+    z-index: $modal-z-index;
+}
+
+.modal.fade.show {
+    opacity: 1;
+}
+
+.modal .modal-dialog {
+    overflow: hidden;
+}
+
+.modal.fade .modal-dialog {
+    transform: translate(0, -5%);
+    transition: all 0.3s ease-in-out;
+}
+
+.modal.fade.show .modal-dialog {
+    transform: translate(0, 0);
+}

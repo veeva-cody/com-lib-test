@@ -1,0 +1,92 @@
+.service-overview {
+    #hero .copy-container h1 {
+        @include media-breakpoint-down(md) {
+            font-size: $font-size-h2-mobile;
+        }
+    }
+
+    #hero .copy-container__buttons {
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+        }
+    }
+
+    #hero.statistic-inline .copy-container {
+        margin-bottom: map-get($spacers, 6);
+    }
+
+    #hero.statistic-inline--image {
+        @include gateway-hero-bg-images;
+    }
+
+    .listed-up-accent .listed-up-card {
+        @include media-breakpoint-down(md) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    .listed-up-accent .listed-up-card .arrow-wrapper {
+        margin-bottom: 0;
+    }
+
+    .listed-up-accent .listed-up-card p {
+        flex-grow: 1;
+    }
+}
+
+.service-overview-a {
+    background: color(NeutralGrey);
+
+    .card-block-z-pattern .copy-container h2 {
+        @include media-breakpoint-down(md) {
+            font-size: $font-size-h3-mobile;
+        }
+    }
+
+    .card-block-z-pattern .copy-container__buttons {
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+        }
+    }
+
+    .blended-bg {
+        @include blended-bg;
+    }
+}
+
+.service-overview-b { 
+    .blended-bg {
+        $bgColor: color(NeutralGrey);
+        @include blended-bg($bgColor);
+    }
+
+    .quote-tabs {
+        $bgColor: $linear-gradient-linear-dark;
+        @include split-background($bgColor);     
+    }
+
+    .quote-tabs::before {
+        height: 60%;
+        @include rounded-corners(all);
+    }
+
+    .quote-tabs,
+    .resource-block-cards {
+        background: color(NeutralGrey);   
+    }
+
+    .resource-block-cards {
+        margin: 0;
+        @include block-spacing(padding);
+        padding-bottom: 120px;
+
+        @include media-breakpoint-up(md){
+            padding-bottom: 150px;
+        }
+    }
+
+    .hero-contained {
+        margin-top: -60px;
+    }
+}

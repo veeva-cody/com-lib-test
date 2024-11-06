@@ -1,0 +1,182 @@
+@mixin quote-card-person-info--with-person-icon {
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    h6 {
+        font-weight: 400;
+    }
+
+    @include media-breakpoint-up(md) {
+    
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: $card-gap-xxs;
+
+        .quote-card__person-info-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h5 {
+            font-size: $font-size-h6-desktop;
+        }
+
+        h6 {
+            font-size: $font-size-body-m-desktop;
+        }
+
+    }
+
+    .avatar-thumbnail {
+        flex-shrink: 0;
+    }
+
+}
+
+.quote-card,
+.quote-card-full,
+.quote-card-article,
+.quote-card-single {
+   
+    background: $linear-gradient-orange-compliant;
+    background-size: cover;
+    background-position: center center;
+
+    color: color(White);
+    
+    border-radius: $border-radius-s;
+    
+    @include media-breakpoint-up(md) {
+        border-radius: $border-radius-m;
+    }
+
+}
+
+.quote-card__quote-wrapper {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-grow: 1;
+    gap: $card-gap-sm;
+
+    @include media-breakpoint-up(md) {
+        gap: $card-gap-md;
+    }
+
+    @include media-breakpoint-up(lg) {
+        justify-content: center;
+        gap: $card-gap-lg;
+    }
+
+}
+
+.quote-card__quote-wrapper p {
+
+    @include font(h5);
+
+    font-weight: 600;
+    line-height: 1.4;
+    text-indent: -0.32em;
+    
+    max-width: $inner-content-max-width-sm;
+
+}
+
+.quote-card__person-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quote-card__person-info .avatar-thumbnail {
+
+    width: 50px;
+    height: 50px;
+    margin: map-get($spacers, 2) 0;
+
+    @include media-breakpoint-up(sm) {
+        margin: map-get($spacers, 3) 0;
+    }
+
+    @include media-breakpoint-up(md) {
+        width: 80px;
+        height: 80px;
+    }
+
+}
+
+.quote-card__person-info h5 {
+
+    @include font(h5);
+
+    line-height: 1.5;
+    margin-bottom: map-get($spacers, 1);
+
+    @include media-breakpoint-down(md) {
+        font-size: $font-size-h6-mobile;
+    }
+
+}
+
+.quote-card__person-info h6 {
+    @include font(h8);
+    @include media-breakpoint-down(md) {
+        font-size: $font-size-body-s-mobile;
+        font-weight: 400;
+    }
+}
+
+.quote-card__person-info .client-logo {
+
+    @include client-logo--white;
+
+    width: clamp(120px, 30vw, 200px);
+    margin-bottom: map-get($spacers, 3);
+
+    background: color(white, 0.2);
+    border-radius: 10px;
+
+    @include media-breakpoint-up(lg) {
+        
+        width: 100%;
+        margin-bottom: map-get($spacers, 4);
+
+        border-radius: $border-radius-s;
+        
+    }
+
+}
+
+.quote-card__person-info--with-person-icon {
+    @include quote-card-person-info--with-person-icon;
+}
+
+.quote-card--bg-dark-gradient {
+    background: $linear-gradient-dark-quote;
+}
+
+.quote-card--bg-blue-gradient {
+    background: $linear-gradient-linear-blue;
+}
+
+.quote-card--without-text-indent .quote-card__quote-wrapper p {
+    text-indent: 0;
+}
+
+.quote-card__quote-wrapper,
+.quote-card__person-info {
+    z-index: 1;
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.quote-card__quote-wrapper p {
+    color: inherit;
+}

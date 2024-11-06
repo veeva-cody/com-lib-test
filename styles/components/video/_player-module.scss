@@ -1,0 +1,349 @@
+$sub-video-nav-width-desktop: 400px;
+$sub-video-nav-width-desktop-lg: 430px;
+$sub-video-nav-width-desktop-xl: 480px;
+
+.video-player-module__video {
+    display: flex;
+    flex-direction: column;
+    gap: $card-gap-xxs;
+
+    width: 100%;
+    height: fit-content;
+
+    @include media-breakpoint-up(md) {
+        gap: $card-gap-sm;
+    }
+}
+
+// no aspect ratio is set as we are using wistia_responsive_padding for easier CMS update
+.video-player-module__video .video-player-module__wistia-wrapper {
+    @include video-main;
+
+    position: relative;
+    background: color(Black);
+}
+
+.video-player-module__video-info {
+    display: flex;
+    flex-direction: column;
+    gap: calc($card-gap-xxs / 2);
+}
+
+.video-player-module__video-info h6 {
+    @include media-breakpoint-down(md) {
+        font-size: $font-size-h6-desktop;
+    }
+}
+
+.video-player-module__video-info p {
+    margin-bottom: 0;
+
+    @include font(body-xs);
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-h8-desktop;
+    }
+}
+
+.sub-video-nav-wrapper__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: map-get($spacers, 4) 0;
+
+    @include media-breakpoint-up(xl) {
+        display: none;
+    }
+}
+
+.sub-video-nav-wrapper__title h5 {
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-h6-desktop;
+    }
+}
+
+.sub-video-nav-wrapper__title a {
+    @include font(h7);
+    @include media-breakpoint-down(lg) {
+        display: none;
+    }
+}
+
+.sub-video-nav-wrapper__content {
+    display: flex;
+    flex-direction: column;
+    gap: $card-gap-xxs;
+
+    @include media-breakpoint-between(xl, xxl) {
+        gap: 12px;
+    }
+}
+
+.video-player-module--multiple .sub-video-nav-wrapper__content .sub-video-nav:nth-of-type(n + 4) {
+    @include media-breakpoint-down(xl) {
+        display: none;
+    }
+}
+
+.video-player-module--chapters .sub-video-nav-wrapper__content .sub-video-nav:nth-of-type(n + 5) {
+    @include media-breakpoint-down(xl) {
+        display: none;
+    }
+}
+
+.sub-video-nav-wrapper__bottom {
+    @include media-breakpoint-up(xl) {
+        display: none;
+    }
+}
+
+.sub-video-nav-wrapper__bottom a {
+    width: fit-content;
+    margin: map-get($spacers, 4) auto;
+}
+
+.sub-video-nav-wrapper__bottom a:after {
+    display: inline-block;
+}
+
+.sub-video-nav-wrapper--recommended .sub-video-nav-wrapper__title {
+    @include media-breakpoint-up(md) {
+        display: flex;
+    }
+}
+
+.sub-video-nav-wrapper--recommended .sub-video-nav-wrapper__content {
+    @include media-breakpoint-up(xl) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.sub-video-nav-wrapper--recommended .sub-video-nav-wrapper__bottom {
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+}
+
+.sub-video-nav-wrapper--light {
+    color: color(GalaxyBlack);
+}
+
+.sub-video-nav-wrapper--light .sub-video-nav-wrapper__title {
+    border-top: 1px solid color(LightGray);
+}
+
+.sub-video-nav-wrapper--light .button-text-link {
+    @extend .button-text-link--black;
+}
+
+.sub-video-nav-wrapper--light .button-outline {
+    @extend .button-outline--black;
+}
+
+.sub-video-nav-wrapper--dark {
+    color: color(White);
+}
+
+.sub-video-nav-wrapper--dark .sub-video-nav-wrapper__title {
+    border-top: 1px solid color(White);
+}
+
+.sub-video-nav-wrapper--dark .button-text-link {
+    @extend .button-text-link--white;
+}
+
+.sub-video-nav-wrapper--dark .button-outline {
+    @extend .button-outline--white;
+}
+
+// module variation
+// chapters
+.video-player-module--chapters {
+    gap: $card-gap-xs;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    margin-bottom: map-get($spacers, 5);
+
+    @include media-breakpoint-up(lg) {
+        display: flex;
+        flex-direction: row;
+        gap: $card-gap-sm;
+    }
+}
+
+.video-player-module--chapters .video-player-module__video {
+    @include media-breakpoint-up(lg) {
+        width: calc(100% - $sub-video-nav-width-desktop);
+    }
+}
+
+.video-player-module--chapters .chapter-tool {
+    @include media-breakpoint-up(lg) {
+        width: $sub-video-nav-width-desktop;
+    }
+}
+
+// multiple
+.video-player-module--multiple {
+    gap: $card-gap-lg;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    @include media-breakpoint-up(xl) {
+        display: flex;
+        flex-direction: row;
+        gap: $card-gap-sm;
+    }
+}
+
+.video-player-module--multiple .video-player-module__video {
+    @include media-breakpoint-up(xl) {
+        width: calc(100% - $sub-video-nav-width-desktop-lg);
+    }
+}
+
+.video-player-module--multiple .sub-video-nav-wrapper {
+    @include media-breakpoint-up(xl) {
+        flex-grow: 1;
+        max-width: $sub-video-nav-width-desktop-lg;
+    }
+}
+
+.video-player-module__video-nav.sub-video-nav-wrapper {
+    @include media-breakpoint-up(xl) {
+        margin: -12px;
+        padding: 12px;
+
+        overflow-y: auto;
+    }
+}
+
+// used for nav wrapper with <a> links only
+.sub-video-nav-wrapper.sub-video-nav-wrapper--link-only {
+    @include media-breakpoint-up(xl) {
+        max-width: $sub-video-nav-width-desktop-lg;
+    }
+}
+
+
+// used for nav wrapper with video play icon + watch video cta
+.sub-video-nav-wrapper--video-icon .sub-video-nav__content p,
+.sub-video-nav-wrapper--video-icon .sub-video-nav__thumbnail img {
+    display: none;
+}
+
+.sub-video-nav-wrapper--video-icon .sub-video-nav__thumbnail:before {
+    content: '';
+    display: inline-block;
+
+    background: url('/wp-content/themes/veeva2015/assets/svg/icons/button-play-circle.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    width: 32px;
+    height: 32px;
+}
+
+.sub-video-nav-wrapper--dark.sub-video-nav-wrapper--video-icon .sub-video-nav__thumbnail:before {
+    filter: invert(1);
+}
+
+.sub-video-nav-wrapper--video-icon .sub-video-nav__content::after {
+    @include font(body-xs);
+
+    content: 'Watch Video';  // added here so it's easier to update all at once
+
+    color: color(VeevaOrange);
+    font-weight: 500;
+}
+
+
+// center video player & sub-video-nav-wrapper (recommended videos) when no chapter list is present
+.video-player-module--center-video .chapter-tool {
+    display: none;
+}
+
+.video-player-module--center-video {
+    justify-content: center;
+}
+
+.video-player-module--center-video .video-player-module__video {
+    width: 100%;
+
+    @include media-breakpoint-up(xl) {
+        max-width: $inner-content-max-width-lg;
+    }
+}
+
+.sub-video-nav-wrapper--center .sub-video-nav-wrapper__title,
+.sub-video-nav-wrapper--center .sub-video-nav-wrapper__bottom {
+    @include media-breakpoint-up(xl) {
+        max-width: $inner-content-max-width-lg;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.sub-video-nav-wrapper--center .sub-video-nav-wrapper__content {
+    @include media-breakpoint-up(xl) {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        margin-left: auto;
+        margin-right: auto;
+        max-width: $inner-content-max-width-lg;
+    }
+}
+
+.sub-video-nav-wrapper--3-col .sub-video-nav-wrapper__content {
+    @include media-breakpoint-up(xl) {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.sub-video-nav-wrapper--3-col .sub-video-nav-wrapper__content h6 {
+    @include media-breakpoint-up(xl) {
+        font-size: $font-size-body-s-desktop;
+    }
+}
+
+.sub-video-nav-wrapper--3-col .sub-video-nav-wrapper__content .resource-chip {
+    @include media-breakpoint-up(xl) {
+        padding: 4px 8px;
+        font-size: $font-size-h8-mobile;
+    }
+}
+
+.sub-video-nav-wrapper--3-col .sub-video-nav-wrapper__content .resource-chip__icon {
+    @include media-breakpoint-up(xl) {
+        width: $font-size-body-s-desktop;
+        height: $font-size-body-s-desktop;
+    }
+}
+
+.sub-video-nav-wrapper--3-col .sub-video-nav-wrapper__content p {
+    @include media-breakpoint-up(xl) {
+        display: none;
+    }
+}
+
+.sub-video-nav-wrapper--3-col .sub-video-nav--below {
+    @include media-breakpoint-up(xl) {
+        gap: 10px;
+    }
+}
+
+.sub-video-nav-wrapper--3-col .sub-video-nav--below .sub-video-nav__content {
+    @include media-breakpoint-up(xl) {
+        gap: 6px;
+    }
+}

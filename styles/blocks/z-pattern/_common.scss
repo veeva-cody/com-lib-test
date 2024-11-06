@@ -1,0 +1,240 @@
+$z-pattern-content-gap-mobile: 48px;
+$z-pattern-content-gap-desktop: 64px;
+
+.z-pattern--light {
+
+    @include block-spacing(margin);
+
+    background: color(White);
+    color: color(GalaxyBlack);
+
+}
+
+.z-pattern--dark {
+
+    @include block-spacing(padding);
+
+    background: $linear-gradient-linear-dark;
+    color: color(White);
+
+}
+
+.z-pattern--bg-grey {
+
+    @include block-spacing(padding);
+
+    margin: 0;
+    background: $linear-gradient-white-grey-vertical;
+
+}
+
+.z-pattern--bg-solid-grey {
+    @include block-spacing(padding);
+
+    margin: 0;
+    background: color(NeutralGrey);
+}
+
+.z-pattern-products .z-pattern__wrapper,
+.z-pattern-stats .z-pattern__wrapper {
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: 1.25fr 1fr;
+        gap: 0 map-get($spacers, 5);
+    }
+
+    @include media-breakpoint-up(xl) {
+        gap: 0 map-get($spacers, 6);
+    }
+}
+
+.z-pattern-products .z-pattern__wrapper {
+    @include media-breakpoint-up(lg) { 
+        grid-template-columns: 1.2fr 1fr;
+    }
+
+    @include media-breakpoint-up(xl) {
+        gap: 0 map-get($spacers, 8);
+    }
+}
+
+.z-pattern-products .z-pattern__inner,
+.z-pattern-stats .z-pattern__inner {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $z-pattern-content-gap-mobile;
+
+    @include media-breakpoint-up(lg) {
+        align-content: center;
+    }
+
+    @include media-breakpoint-up(xl) {
+        gap: $z-pattern-content-gap-desktop;
+    }
+
+}
+
+.z-pattern__subgrid {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    height: fit-content;
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: 1fr 1fr;
+        // gap: 28px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        gap: 48px 32px;
+    }
+
+}
+
+.z-pattern__content p a {
+    @include simple-text-link;
+}
+
+.z-pattern__image-wrapper {
+
+    width: 100%;
+    margin: 0 auto;
+
+    border-radius: $border-radius-s;
+    overflow: hidden;
+
+    @include media-breakpoint-up(md) {
+        border-radius: $border-radius-m;
+        max-width: 50vh;
+    }
+
+    @include media-breakpoint-up(lg) {
+        max-width: none;
+    }
+
+}
+
+.z-pattern__image-wrapper > img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain; // need this to show full content
+    object-position: center center;
+}
+
+.z-pattern__image-wrapper video {
+    width: 100%;
+    height: auto;
+}
+
+.z-pattern__image {
+
+    display: flex;
+
+    @include media-breakpoint-up(lg) {
+        align-items: center;
+    }
+
+}
+
+.z-pattern__image--mobile {
+
+    display: flex;
+
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+
+}
+
+.z-pattern__image--desktop {
+
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+        display: flex;
+    }
+    
+}
+
+.z-pattern__image--sharp-corners .z-pattern__image-wrapper {
+    border-radius: 0;
+}
+
+.z-pattern__image--with-wistia {
+    cursor: pointer;
+}
+
+.z-pattern__image--with-wistia .z-pattern__image-wrapper > img {
+    transition: $transition-all-ease-in-out-1;
+}
+
+.z-pattern__image--with-wistia:hover .z-pattern__image-wrapper > img {
+    transform: scale(1.04);
+}
+
+.z-pattern__image--with-wistia .z-pattern__image-wrapper {
+    position: relative;
+}
+
+.z-pattern__image--with-wistia .z-pattern__image-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    background: color(Black, 0.1);
+    z-index: 2;
+}
+
+.z-pattern__image--with-wistia .wistia_click_to_play {
+    height: auto !important;
+}
+
+.z-pattern__image--with-wistia .z-pattern__cta-wrapper {
+    position: absolute;
+    left: map-get($spacers, 3);
+    bottom: map-get($spacers, 3);
+
+    color: color(White);
+    z-index: 3;
+
+    @include media-breakpoint-up(md) {
+        left: map-get($spacers, 4);
+        bottom: map-get($spacers, 4);
+    }
+}
+
+.z-pattern--light .sidebar-info-box {
+    @include sidebar-info-box--light;
+}
+
+.z-pattern--dark .sidebar-info-box {
+    @include sidebar-info-box--dark;
+}
+
+.z-pattern--image-with-shadow .z-pattern__image-wrapper {
+    
+    box-shadow: $box-shadow-sm-behind;
+
+    @include media-breakpoint-up(md) {
+        box-shadow: $box-shadow-lg-behind;
+    }
+
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.z-pattern__wrapper.container::before,
+.z-pattern__wrapper.container::after {
+    display: none;
+} 

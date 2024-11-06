@@ -1,0 +1,66 @@
+<div class="resource-card js-wistia-resource-card [modifier*]" data-wistia-video-id="[video-id]">
+    <div class="resource-card__text">
+        <div class="resource-chip [modifier^]">
+            <div class="resource-chip__icon">
+                <span class="icon" data-icon="[id]"></span>
+            </div>
+            [category]
+        </div>
+        <h6>[eyebrow]</h6>
+        <h5>[title]</h5>
+        <!-- Optional Button -->
+        <div class="resource-card__cta button-secondary [modifier^]">
+            <img src="[src]" alt="[alt]" />
+            <span>View Video</span>
+        </div>
+        <!-- [] -->
+        <!-- Featured Only -->
+        <div class="resource-card--featured__logo client-logo">
+            <img src="[src]" alt="[alt]" />
+        </div>
+        <!-- [] -->
+    </div>
+    <div class="resource-card__media [modifier**]" style="background-image: url([src])">
+        <img src="[src]" alt="[alt]" />
+        <div class="video wistia-video"></div>
+    </div>
+</div>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+resource-card--with-shadow
+resource-card--featured
+
+Required (one of) *:
+
+resource-card--light
+resource-card--dark
+
+Optional **:
+
+resource-card__media--bg
+resource-card__media--not-available
+
+Legacy (Common):
+
+resource-card--xl-down--font-large
+resource-card--lg-down--font-large
+resource-card--md-down--font-large
+resource-card--desktop-large
+resource-card--without-shadow-overlay
+resource-card--mobile-shadow-overlay
+resource-card--with-bg-gradient-blue
+resource-card--with-bg-gradient-dark
+resource-card--mobile-show-logo
+
+Legacy (Featured):
+
+resource-card--featured--main
+resource-card--featured--subcard
+
+-->

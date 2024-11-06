@@ -1,0 +1,26 @@
+@mixin tab-content--rounded {
+
+    border-radius: $border-radius-s;
+    overflow: hidden;
+
+    @include media-breakpoint-up(md) {
+        border-radius: $border-radius-m;
+    }
+
+}
+
+@mixin tab-content--with-shadow {
+    @include media-breakpoint-up(lg) {
+        box-shadow: $box-shadow-lg-behind;
+    }
+}
+
+.tab-content--rounded,
+.tab-content.tab-content--rounded {
+    @include tab-content--rounded;
+}
+
+.tab-content--with-shadow,
+.tab-content.tab-content--with-shadow {
+    @include tab-content--with-shadow;
+}

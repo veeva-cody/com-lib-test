@@ -1,0 +1,226 @@
+#platform-product {
+    
+    position: relative;
+    
+    background-color: color(NeutralGrey);
+
+    padding-top: 48px;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 64px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-top: 76px;
+    }
+
+}
+
+#platform-product:before {
+    
+    content: '';
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 60px;
+
+    background-color: #1f242b; // veeva.com footer color.
+
+}
+
+#platform-product.bg-white {
+    background-color: color(White);
+}
+
+#platform-product #hero.hero-centered--image {
+    --mobile-image: url('/wp-content/themes/veeva2015/assets/veeva-2024/background/suite-hero-mobile.jpg'); 
+    --desktop-image: url('/wp-content/themes/veeva2015/assets/veeva-2024/background/suite-hero-desktop.jpg');
+}
+
+#platform-product .listed-up-accent .listed-up__cards {
+    gap: 0;
+
+    @include media-breakpoint-up(md) { 
+        gap: 0 36px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        gap: 24px 48px;
+    }
+    
+    @include media-breakpoint-up(xl) {
+        gap: 24px 72px;
+    }   
+
+    @include media-breakpoint-up(xxl) {
+        gap: 24px 100px;
+    } 
+}
+
+#platform-product .listed-up-accent .listed-up-card {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#platform-product .marquee-subpoints--light {
+    background: none;
+}
+
+#platform-product #products {
+    background: color(White);
+}
+
+#platform-product #products-intro.hero-contained {
+    background: none;
+    padding-bottom: 0;
+}
+
+#platform-product .z-pattern--light {
+    @include block-spacing(padding);
+    margin: 0;
+}
+
+#platform-product .z-pattern--bg-grey {
+    background: color(NeutralGrey);
+}
+
+#platform-product .z-pattern__image-wrapper {
+    border-radius: 0;
+    aspect-ratio: unset;
+}
+
+#platform-product .z-pattern__image-wrapper img {
+    object-fit: contain;
+}
+
+#platform-product #supplementary {
+    position: relative;
+}
+
+#platform-product #supplementary:before,
+#platform-product #supplementary:after {
+
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+}
+
+#platform-product #supplementary:before {
+    
+    z-index: 0;
+    background: color(NeutralGrey);
+
+    height: 50%;
+
+}
+
+#platform-product #supplementary[data-count="1"]:before {
+    height: 100%;
+}
+
+#platform-product #supplementary.white-bg:before {
+    background: color(White);
+}
+
+#platform-product #supplementary[data-count="1"]:before {
+    background: $linear-gradient-white-grey-vertical;
+    transform: scaleY(-1);
+}
+
+#platform-product #supplementary:after {
+
+    @include rounded-corners(all);
+    
+    z-index: 1;
+    background: $linear-gradient-linear-dark;
+
+    height: 100%;
+
+}
+
+#platform-product #supplementary[data-count="1"]:after {
+    display: none;
+}
+
+#platform-product #supplementary[data-count="1"] .logo-wall-listed .copy-container {
+    color: color(GalaxyBlack);
+}
+
+#platform-product #supplementary[data-count="1"] .video-player-chapters--light {
+    @include block-spacing(padding);
+    margin: 0;
+}
+
+#platform-product #supplementary section {
+    position: relative;
+    z-index: 2;
+}
+
+#platform-product #supplementary > :not(:last-child) {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+#platform-product .statistic-inline,
+#platform-product .quote-tabs,
+#platform-product .logo-wall-listed,
+#platform-product .video-player-chapters,
+#platform-product .resource-block-cards {
+    background: none;
+}
+
+#platform-product .hero-contained#pre-footer {
+    --counter-prev-section-color: transparent;
+    background: transparent;
+
+    position: relative;
+    border-radius: 0;
+
+    z-index: 5;
+}
+
+#platform-product .hero-contained#pre-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 50%;
+    background: var(--counter-prev-section-color);
+
+    z-index: 0;
+}
+
+#platform-product .hero-contained#pre-footer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    background: $prefooter-gradient-orange-mobile;
+
+    @include rounded-corners(all);
+    overflow: hidden;
+
+    z-index: 2;
+
+    @include media-breakpoint-up(lg) {
+        background: $prefooter-gradient-orange-desktop;
+    } 
+}
+
+
+#platform-product .hero-contained#pre-footer > * {
+    z-index: 3;
+    position: relative;
+}

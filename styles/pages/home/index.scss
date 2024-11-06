@@ -1,0 +1,37 @@
+#home #hero.hero-centered--image {
+    --mobile-image: url('/wp-content/themes/veeva2015/assets/veeva-2024/background/homepage-hero-mobile.jpg'); 
+    --desktop-image: url('/wp-content/themes/veeva2015/assets/veeva-2024/background/homepage-hero-desktop.jpg');
+}
+
+#home .tab-block {
+    background: none !important;
+}
+
+#home .z-pattern {
+    background: none !important;
+}
+
+#home .blended-bg {
+
+    @include rounded-corners(all);
+
+    position: relative;
+    background: $linear-gradient-linear-dark;
+
+}
+
+#home #resource-card--summit .resource-card__text p {
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-body-l-desktop;
+    }
+}
+
+#home  #proven-results {
+    // @include media-breakpoint-down(lg) {
+        padding-top: 0;
+    // }
+}
+
+#home  #proven-results .z-pattern__image--mobile {
+    display: none;
+}

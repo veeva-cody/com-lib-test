@@ -1,0 +1,153 @@
+.statistic-tool {
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: $card-gap-xxs;
+    align-items: center;
+
+    position: relative;
+    
+    padding: 24px;
+
+    @media (min-width: 480px) {
+        grid-template-columns: 1fr 3fr;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding: 24px 0;
+    }
+
+    @include media-breakpoint-up(xl) {
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+.statistic-tool:before {
+
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 2px;
+    
+    background: $linear-gradient-orange-2;
+
+}
+
+.statistic-tool h3 {
+
+    @include font(h1);
+    @include background-text-clip($linear-gradient-orange-compliant);
+
+    display: flex;
+    justify-self: flex-end;
+}
+
+.statistic-tool h3 sup {
+
+    @include font(h7);
+    @include background-text-clip($linear-gradient-orange-compliant);
+
+    top: 0;
+    padding-top: 0.3em;
+    padding-left: 0.1em;
+    height: fit-content;
+
+    @include media-breakpoint-down(md) {
+        padding-top: 0.2em;
+        font-size: $font-size-h6-desktop;
+    }
+
+}
+
+.statistic-tool h3 sup.sup--plus {
+    padding-top: 0;
+    padding-left: 0;
+    top: 0;
+    font-size: 27px;
+
+    @include media-breakpoint-down(md) {
+        padding-left: 0.05em;
+        top: -1px;
+    }
+}
+
+.statistic-tool h3 sup.sup--x {
+    padding-top: 0;
+    top: 1px;
+    font-size: 24px;
+
+    @include media-breakpoint-down(md) {
+        top: 0px;
+    }
+}
+
+.statistic-tool h3 sup.sup--lengthy {
+    font-size: $font-size-h7-desktop;
+
+    @include media-breakpoint-down(md) {
+        font-size: $font-size-h8-desktop;
+    }
+}
+
+.statistic-tool p {
+
+    display: block;
+
+    @include font(h7);
+    @include media-breakpoint-up(lg) {
+        font-size: $font-size-h8-desktop;
+    }
+
+}
+
+.statistic-tool p > a {
+    @include simple-text-link;
+}
+
+.statistic-tool--light {
+    color: color(GalaxyBlack);
+}
+
+.statistic-tool--dark {
+    color: color(White);
+}
+
+.statistic-tool--text-white {
+    color: color(White);
+}
+
+.statistic-tool--text-white h3,
+.statistic-tool--text-white h3 sup {
+    @include background-text-clip(color(White));
+}
+
+.statistic-tool--text-white:before {
+    background: color(White);
+}
+
+.statistic-tool-outer-wrapper > h4 {
+
+    @include font(body-s);
+    @include background-text-clip($linear-gradient-orange-compliant);
+
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+
+    padding-bottom: map-get($spacers, 2);
+    
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.statistic-tool p {
+    color: inherit;
+}

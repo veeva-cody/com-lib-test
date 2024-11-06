@@ -1,0 +1,71 @@
+<section class="accordion-block [modifier*]">
+    <div class="container">
+        <div class="copy-container container [modifier^]">
+            <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+            <h3>[headline]</h3>
+            <p>[body]</p>
+            <div class="copy-container__buttons">
+                <a class="button-primary [modifier^]" href="[url]" target="[target]">[label]</a>
+                <a class="button-secondary [modifier^]" href="[url]" target="[target]">
+                    <img src="[src]" alt="[alt]" />
+                    <span>[label]</span>
+                </a>
+            </div>
+        </div>
+        <div class="accordion-block__wrapper">
+            <!-- Optional: add `data-accordion-always-open` to `accordion-block__section` property will keep its expand state when clicking on other items -->
+            <div class="accordion-block__section [modifier**]" >
+                <h3 class="accordion-block__section-title">[headline]</h3>
+                <div class="accordion-block__section-content">
+                    <div class="accordion accordion-block__drawers">
+                        <!-- [1-?x] -->
+                        {{ `accordion-drawer-with-speaker` }} 
+                        {{ `accordion-drawer-without-speaker` }} 
+                        {{ `accordion-drawer-disabled` }}
+                        <!-- [] -->
+
+                        <!-- OR -->
+
+                        <!-- Optional Wrapper -->
+                        <!-- Used when .accordion-block__section--timetable is applied & want to indent the child accordion items -->
+                        <div class="accordion-drawer-nested-item-wrapper">
+                            {{ `accordion-drawer-with-speaker` }} 
+                            {{ `accordion-drawer-without-speaker` }} 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+accordion-block--light
+accordion-block--dark
+accordion-block--bg-grey
+
+Required (one of) **:
+
+accordion-block__section--active
+accordion-block__section--disabled 
+
+Optional *:
+
+accordion-block--subheading-gradient-orange
+accordion-block--single-accordion-title
+
+Optional **:
+accordion-block__section--timetable
+
+
+NOTE:
+- Default behavior on accordion is to only display 1 accordion item at a time & collapse all other inactive ones
+- On `.accordion-block__section`, add `data-accordion-always-open` property will allow accordion item to always stay open when another item is opened
+
+-->

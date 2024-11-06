@@ -1,0 +1,23 @@
+.listed-up-impact__cards {
+
+    display: grid;
+    
+    @include grid-4-col-up(32px, 32px);
+    @include media-breakpoint-down(sm) {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.listed-up--dark.listed-up-impact {
+    background: color(GalaxyBlack);
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.listed-up-impact__cards:before,
+.listed-up-impact__cards:after {
+    display: none;
+}

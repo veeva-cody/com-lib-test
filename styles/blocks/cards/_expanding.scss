@@ -1,0 +1,44 @@
+.card-block-expanding .expanding-card-wrapper {
+    margin: 0 auto;
+    max-width: $inner-content-max-width-xl;
+}
+
+.card-block-expanding--light {
+    @include block-spacing(margin);
+    
+    color: color(GalaxyBlack);
+    background: color(White);
+}
+
+.card-block-expanding--dark {
+
+    @include block-spacing(padding);
+
+    color: color(White);
+    background: color(GalaxyBlack);
+
+}
+
+.card-block-expanding--3-up .expanding-card {
+    @include media-breakpoint-up(lg) {
+        width: 75%;
+    }
+}
+
+.card-block-expanding--3-up .expanding-card.card-collapse {
+    @include media-breakpoint-up(lg) {
+        width: 20%;
+    }
+}
+
+.card-block-expanding--4-up .expanding-card {
+    @include media-breakpoint-up(lg) {
+        width: 44%;
+    }
+}
+
+.card-block-expanding--4-up .expanding-card.card-collapse {
+    @include media-breakpoint-up(lg) {
+        width: 17%;
+    }
+}

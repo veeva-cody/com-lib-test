@@ -1,0 +1,29 @@
+<div class="content-block container-lg">
+    <!-- Optional Sidebar: choose one of it if needed -->
+    <!-- Sidebar with company-detail -->
+    {{ `sidebar-company-detail` }}
+    <!-- Sidebar with page table of content -->
+    {{ `sidebar-page-toc`}}
+
+    <!-- Optional: `data-toc-target-area` property: if added, it'll be targeted for rendering the TOC field -->
+    <div class="content-block__content container" data-toc-target-area>
+        <!-- Enter main content here -->
+    </div>
+</div>
+
+<!--
+
+Modifiers
+---------
+
+N/A
+
+--
+
+Note:
+
+1. If page TOC sidebar is added, Page TOC (Table Of Content) fields will be added automatically, by configuring `data-toc-target-element-selector` property on `.page-toc` element and adding `data-toc-target-area` property on `.content-block__content` elemnt. It will select the elements using the [selector] set in data-toc-target-element-selector="[selector]", inside the element with [data-toc-target-area]"
+
+2. Don't use 'entry-content resources-content' class on current content block as Veeva previously has styles for the class, which may cause ui to render differently
+
+-->

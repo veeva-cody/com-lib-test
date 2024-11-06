@@ -1,0 +1,15 @@
+# Dependencies.
+/node_modules
+.sass-cache
+
+# Environment Variables.
+.env
+
+# Mac Files.
+.DS_Store
+
+# Compiled Files.
+dist
+
+# IDE
+/.idea

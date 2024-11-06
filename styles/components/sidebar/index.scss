@@ -1,0 +1,528 @@
+/**********/
+/* MIXINS */
+/**********/
+
+@mixin sidebar-info-box--product-list__links--expanded {
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 12px;
+    }
+}
+
+@mixin sidebar-info-box {
+
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    
+    border-left: 2px solid color(VeevaOrange);
+
+    @include media-breakpoint-up(lg) {
+        gap: 12px;
+    }
+
+    & > h5 br,
+    & > h6 br {
+
+        display: none;
+
+        @include media-breakpoint-up(md) {
+            display: block;
+        }
+
+    }
+
+    p {
+        @include font(body-s);
+    }
+
+    p a {
+        @include simple-text-link;
+    }
+}
+
+@mixin sidebar-info-box--light {
+  
+    color: color(GalaxyBlack);
+
+    p {
+        color: color(GalaxyBlack);
+    }
+
+    .product-arrow-link,
+    .product-simple-links a {
+        color: color(GalaxyBlack);
+    }
+
+    .product-arrow-link .icon {
+        background: color(GalaxyBlack);
+    }
+
+    &.sidebar-info-box--stats-sm h4,
+    &.sidebar-info-box--stats-lg h4 {
+        @include background-text-clip($linear-gradient-orange-compliant);
+    }
+
+    &.sidebar-info-box--company-type h6 {
+        color: color(DarkGray);
+    }
+
+    .product-arrow-link:hover,
+    .product-simple-links a:hover {
+        color: color(VeevaOrange);
+    }
+
+    .product-arrow-link:hover .icon,
+    .product-simple-links a:hover .icon {
+        background: color(VeevaOrange);
+    }
+}
+
+@mixin sidebar-info-box--dark {
+    
+    color: color(White);
+
+    h4,
+    h5 {
+        color: color(White);
+    }
+
+    p {
+        color: color(LightGray);
+    }
+
+    .product-arrow-link,
+    .sidebar-info-box--product-list-simple a {
+        color: color(White);
+    }
+
+    .product-arrow-link .icon {
+        background: color(White);
+    }
+
+    &.sidebar-info-box--quote p,
+    &.sidebar-info-box--quote-img p,
+    &.sidebar-info-box--quote-logo p {
+        color: color(White);
+    }
+
+    &.sidebar-info-box--quote-logo .client-logo {
+        @include client-logo--white;
+    }
+
+    &.sidebar-info-box--company-type h6 {
+        color: color(LightGray);
+    }
+
+    .product-arrow-link:hover,
+    .product-simple-links a:hover {
+        color: color(VeevaOrange);
+    }
+
+    .product-arrow-link:hover .icon,
+    .product-simple-links a:hover .icon {
+        background: color(VeevaOrange);
+    }
+}
+
+@mixin sidebar-info-box--stats-black-title {
+    
+    .sidebar-info-box--stats-lg h4,
+    .sidebar-info-box--stats-sm h4 {
+        color: color(GalaxyBlack);
+        -webkit-text-fill-color: color(GalaxyBlack);
+    }
+
+    .sidebar-info-box--stats-lg p,
+    .sidebar-info-box--stats-sm p {
+        color: color(DarkGray);
+    }
+
+}
+
+@mixin sidebar--light {
+    .sidebar-info-box {
+        @include sidebar-info-box--light;
+    }
+}
+
+@mixin sidebar--dark {
+    .sidebar-info-box {
+        @include sidebar-info-box--dark;
+    }
+}
+
+/**********/
+/* STYLES */
+/**********/
+
+.sidebar-info-box__author h5,
+.sidebar-info-box__author h6 {
+    font-size: $font-size-body-s-mobile;
+}
+
+.sidebar-info-box__author h5 {
+    line-height: 1.2;
+}
+
+.sidebar-info-box__author h6 {
+    margin-top: map-get($spacers, 1);
+    font-weight: 400;
+}
+
+.sidebar-info-box__author-wrapper {
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 8px;
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: 40px 1fr;
+        gap: 0 16px;
+    }
+
+}
+
+.sidebar-info-box__author-wrapper .avatar-thumbnail {
+    max-width: 40px;
+}
+
+.product-arrow-link {
+    
+    display: grid;
+    grid-template-columns: 14px 1fr 20px;
+    gap: 8px;
+    align-items: center;
+    
+    width: 100%;
+    height: 25px;
+
+    transition: $transition-all-ease-in-out-1;
+    
+}
+
+.product-arrow-link span {
+    @include font(body-s);
+}
+
+.product-arrow-link__icon,
+.product-arrow-link__arrow {
+    
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+
+}
+
+.product-arrow-link__icon .icon,
+.product-arrow-link__arrow .icon {
+    
+    width: 14px;
+    height: 25px;
+
+    transition: $transition-all-ease-in-out-1;
+    
+}
+
+.product-arrow-link__arrow .icon {
+    width: 16px;
+}
+
+.sidebar-info-box--product-list__links,
+.sidebar-info-box--product-list__links--expanded {
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+
+    max-width: 450px;
+
+}
+
+.sidebar-info-box--product-list__links--expanded {
+    @include sidebar-info-box--product-list__links--expanded;
+}
+
+.sidebar-info-box,
+.sidebar-info-box--stats-sm,
+.sidebar-info-box--stats-lg,
+.sidebar-info-box--product-list,
+.sidebar-info-box--quote,
+.sidebar-info-box--quote-img,
+.sidebar-info-box--quote-logo,
+.sidebar-info-box--company-type,
+.sidebar-info-box--text {
+    @include sidebar-info-box;
+}
+
+.sidebar-info-box--text {
+    justify-content: flex-start;
+}
+
+.sidebar-info-box--stats-sm,
+.sidebar-info-box--stats-lg {
+    padding: 8px 24px;
+}
+
+.sidebar-info-box--stats-sm h4,
+.sidebar-info-box--stats-sm h5,
+.sidebar-info-box--stats-lg h4,
+.sidebar-info-box--stats-lg h5 {
+    font-size: $font-size-h5-mobile;
+}
+
+.sidebar-info-box--stats-sm p,
+.sidebar-info-box--stats-lg p {
+    margin-bottom: 0;
+}
+
+.sidebar-info-box--stats-lg {
+    @include media-breakpoint-up(md) {
+        padding: 24px 32px;
+    }
+}
+
+.sidebar-info-box--stats-lg h4,
+.sidebar-info-box--stats-lg h5 {
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-h4-desktop;
+    }
+}
+
+.sidebar-info-box--stats-lg p {
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-body-m-desktop;
+    }
+}
+
+.sidebar-info-box--product-list {
+
+    padding: 24px;
+
+    @include media-breakpoint-up(md) {
+        padding: 24px 32px;
+    }
+
+}
+
+.sidebar-info-box--product-list h4,
+.sidebar-info-box--product-list h5 {
+
+    font-size: $font-size-h5-mobile;
+
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-h5-desktop;
+    }
+
+}
+
+.sidebar-info-box--product-list--title-sm h4,
+.sidebar-info-box--product-list--title-sm h5 {
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-h5-mobile;
+    }
+}
+
+.sidebar-info-box--product-list-expanded .sidebar-info-box--product-list__links {
+    @include sidebar-info-box--product-list__links--expanded;
+}
+
+.sidebar-info-box--product-list-simple {
+    display: flex;
+    flex-direction: column;
+    gap: calc(map-get($spacers, 4) / 2);
+}
+
+// without icon + auto forward arrow at the end
+.product-simple-links {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($spacers, 2);
+}
+
+.product-simple-links a {
+    @include font(body-s);
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+
+    transition: $transition-all-ease-in-out-1;
+}
+
+.product-simple-links .icon {
+    width: 16px;
+    height: 16px;
+
+    transition: $transition-all-ease-in-out-1;
+}
+
+.sidebar-info-box--quote,
+.sidebar-info-box--quote-img,
+.sidebar-info-box--quote-logo {
+
+    padding: 24px;
+    gap: 12px;
+
+    @include media-breakpoint-up(md) {
+        padding: 24px 32px;
+    }
+
+}
+
+.sidebar-info-box--quote p,
+.sidebar-info-box--quote-img p,
+.sidebar-info-box--quote-logo p {
+    @include font(h6);
+    @include media-breakpoint-up(lg) {
+        font-size: $font-size-h7-desktop;
+    }
+}
+
+.sidebar-info-box--quote p {
+    text-indent: -0.35em;
+    line-height: 1.4;
+}
+
+.sidebar-info-box--quote-img h5 {
+    font-size: $font-size-body-m-desktop;
+}
+
+.sidebar-info-box--quote-logo .client-logo {
+
+    width: 75px;
+
+    @include media-breakpoint-up(md) {
+        width: 100px;
+    }
+
+}
+
+.sidebar-info-box--company-type,
+.sidebar-info-box--product-list-simple {
+    padding: 8px 24px;
+}
+
+.sidebar-info-box--company-type h6 {
+    @include font(body-s);
+    margin-bottom: map-get($spacers, 2);
+}
+
+.sidebar-info-box--product-list-simple h5 {
+    @include font(h7);
+    @include media-breakpoint-down(md) {
+        font-size: $font-size-h6-mobile;
+    }
+}
+
+.sidebar-info-box--company-type h5 {
+    @include font(body-m);
+    font-weight: 600;
+}
+
+.sidebar-info-box--text {
+
+    padding: 16px 0;
+
+    border: 0;
+    border-top: 2px solid color(VeevaOrange);
+
+}
+
+.sidebar-info-box--text h6 {
+    flex-grow: 1;
+}
+
+.sidebar-info-box--highlight-left {
+    border: 0;
+    border-left: 2px solid color(VeevaOrange);
+}
+
+.sidebar-info-box--highlight-top {
+    border: 0;
+    border-top: 2px solid color(VeevaOrange);
+}
+
+.sidebar-info-box--light {
+    @include sidebar-info-box--light;
+}
+
+.sidebar-info-box--dark {
+    @include sidebar-info-box--dark;
+}
+
+.sidebar-info-box--stats-black-title,
+.sidebar-info-box--light.sidebar-info-box--stats-black-title {
+    @include sidebar-info-box--stats-black-title;
+}
+
+.sidebar {
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+   
+    width: 100%;
+    max-width: 560px;
+
+    @include media-breakpoint-up(md) {
+        justify-content: center;
+    }
+
+    @include media-breakpoint-up(xl) {
+        gap: 24px;
+    }
+
+}
+
+.sidebar--light {
+    @include sidebar--light;
+}
+
+.sidebar--dark {
+    @include sidebar--dark;
+}
+
+.sidebar--company-detail {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($spacers, 3);
+
+    width: 100%;
+
+    transition: all 0.2s linear;
+
+    @include media-breakpoint-up(lg) {
+        position: sticky;
+        top: calc($nav-menu-height-md + map-get($spacers, 10));
+
+        overflow: visible;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.sidebar--company-detail__logo {
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+        display: grid;
+        place-items: center;
+    }
+}
+
+.sidebar--company-detail__logo img {
+    width: 100%;
+    height: 100%;
+    max-height: 100px;
+    object-fit: contain;
+    object-position: center;
+}

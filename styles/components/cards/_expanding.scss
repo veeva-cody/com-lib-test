@@ -1,0 +1,346 @@
+.expanding-card {
+
+    --card-transition: all 0.3s linear;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 32px 24px;
+    
+    background: color(White);
+    border-radius: $border-radius-xxs;
+    box-shadow: $box-shadow-lg-behind;
+
+    color: color(Black);
+    
+    transition: var(--card-transition);
+
+    overflow: hidden;
+    cursor: pointer;
+
+    @include media-breakpoint-up(md) {
+
+        min-height: 300px;
+        padding: 28px;
+
+        border-radius: $border-radius-s;
+        
+    }
+
+    @include media-breakpoint-up(lg) {
+        width: 40%;
+        min-height: 380px;
+        padding: 28px 24px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        min-width: 240px;
+        padding: 28px 32px;
+    }
+
+}
+
+.expanding-card__toggle-button {
+
+    position: relative;
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    
+    background: transparent;
+    border: 0;
+    
+    cursor: pointer;
+
+    transition: $transition-all-ease-in-out-1;
+
+    @include media-breakpoint-up(md) {
+        width: 22px;
+        height: 22px;
+    }
+
+}
+
+.expanding-card__toggle-button .icon {
+        
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: color(SlateGray);
+
+    transition: $transition-all-ease-in-out-1;
+
+}
+
+// hide .icon-arrow-shrink at all times, falling back to hide .icon-arrow-shrink if it's still present in html template
+.expanding-card__toggle-button .icon.ready.icon-arrow-shrink,
+.expanding-card__toggle-button .icon.ready.inactive.icon-arrow-shrink {
+    opacity: 0;
+}
+
+.expanding-card__toggle-button .icon.ready.icon-arrow-expand {
+    opacity: 0;
+}
+
+.expanding-card__toggle-button .icon.ready.inactive.icon-arrow-expand {
+    opacity: 1;
+}
+
+.expanding-card h4 {
+
+    @include font(h5);
+    
+    margin-bottom: 16px;
+    transition: var(--card-transition);
+
+}
+
+.expanding-card h4 br {
+
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+        display: block;
+    }
+
+}
+
+.expanding-card p {
+
+    @include font(body-s);
+
+    flex-grow: 1;
+
+    margin-bottom: 28px;
+
+    color: color(DarkGray);
+    
+    overflow: hidden;
+    
+}
+
+.expanding-card .card-subtext {
+
+    margin-top: map-get($spacers, 3);
+    margin-bottom: map-get($spacers, 5);
+
+    @include media-breakpoint-up(lg) {
+        margin-top: map-get($spacers, 5);
+    }
+
+}
+
+.expanding-card p,
+.expanding-card .card-subtext {
+    
+    max-height: 130px;
+
+    transition: all 0.3s linear 0.4s;
+    opacity: 1;
+
+}
+
+.expanding-card__top-wrapper {
+    flex-grow: 1;
+    max-width: 500px;
+}
+
+.expanding-card__bottom-wrapper {
+    
+    position: relative;
+    display: flex;
+
+    width: 100%;
+    
+}
+
+.expanding-card .expanding-card__toggle-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+}
+
+.expanding-card.card-collapse {
+
+    box-shadow: $box-shadow-sm-behind;
+
+    @include media-breakpoint-up(lg) {
+        width: 20%;
+    }
+
+}
+
+.expanding-card.card-collapse h4 {
+
+    font-size: $font-size-h6-mobile;
+
+    @include media-breakpoint-up(lg) {
+        font-size: $font-size-h6-desktop;
+    }
+
+}
+
+.expanding-card.card-collapse p {
+    @include media-breakpoint-up(lg) {
+        max-height: 100px;
+        opacity: 0;
+    }
+}
+
+.expanding-card.card-collapse p,
+.expanding-card.card-collapse .card-subtext {
+    
+    max-height: 0;
+
+    transition: all 0s linear;
+    opacity: 0;
+
+}
+
+.expanding-card.card-collapse .button-text-link { 
+    opacity: 0;
+}
+
+.expanding-card.card-collapse .expanding-card__toggle-button {
+    opacity: 1;
+}
+
+.expanding-card.card-collapse .expanding-card__toggle-button .icon,
+.expanding-card.card-collapse .expanding-card__toggle-button .floating-icon {
+    @extend .inactive;
+}
+
+.expanding-card--light {
+    color: color(Black);
+    background: color(White);
+}
+
+.expanding-card--light .floating-icon {
+    @include floating-icon--light;
+}
+
+.expanding-card--light .card-bar {
+    @include card-bar--overlay-active;
+}
+
+.expanding-card--light p {
+    color: color(DarkGray);
+}
+
+.expanding-card--light .card-subtext {
+    @include card-subtext--light;
+}
+
+.expanding-card--light .button-text-link {
+    @extend .button-text-link--black;
+}
+
+.expanding-card--light:hover .floating-icon {
+    @extend .active;
+}
+
+.expanding-card--light.card-collapse .floating-icon {
+    @extend .inactive;
+}
+
+.expanding-card--light.card-collapse .card-bar {
+    @include card-bar--grey;
+}
+
+.expanding-card--light.card-collapse:hover .card-bar {
+    @include card-bar--overlay-active;
+}
+
+.expanding-card--dark {
+    color: color(White);
+    background: color(DarkNavy);
+}
+
+.expanding-card--dark .floating-icon {
+    @include floating-icon--dark;
+}
+
+.expanding-card--dark .card-bar {
+    @include card-bar--overlay-active;
+}
+
+.expanding-card--dark p {
+    color: color(White);
+}
+
+.expanding-card--dark .card-subtext {
+    @include card-subtext--dark;
+}
+
+.expanding-card--dark .button-text-link {
+    @extend .button-text-link--white;
+}
+
+.expanding-card--dark:hover .floating-icon {
+    @extend .active;
+}
+
+.expanding-card--dark.card-collapse .floating-icon {
+    @extend .inactive;
+}
+
+.expanding-card--dark.card-collapse .card-bar {
+    @include card-bar--grey;
+}
+
+.expanding-card--dark.card-collapse:hover .card-bar {
+    @include card-bar--overlay-active;
+}
+
+.expanding-card-icon .floating-icon {
+    display: inline-block;
+}
+
+.expanding-card-icon .card-bar {
+    display: none;
+}
+
+.expanding-card-accent {
+    @include media-breakpoint-up(lg) {
+        min-height: 340px;
+    }
+}
+
+.expanding-card-accent .floating-icon {
+    display: none;
+}
+
+.expanding-card-accent .card-bar {
+
+    display: inline-block;
+
+    margin-top: map-get($spacers, 2);
+    margin-bottom: map-get($spacers, 4);
+
+}
+
+.expanding-card-wrapper {
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include media-breakpoint-up(lg) {
+        flex-direction: row;
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: auto;
+        gap: 20px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        gap: 28px;
+    }
+
+}

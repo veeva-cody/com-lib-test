@@ -1,0 +1,119 @@
+// toc styles
+$page-toc-height: 54px;
+
+.page-toc {
+    width: 100%;
+
+    transition: all 0.2s linear;
+
+    @include media-breakpoint-up(lg) {
+        position: sticky;
+        top: calc($nav-menu-height-md + map-get($spacers, 10));
+
+        // for content box shadow to be visible
+        padding: 0 10px map-get($spacers, 4);
+        margin: 0 -10px;
+
+        max-height: calc(100vh - $nav-menu-height-md - map-get($spacers, 10));
+        overflow-y: auto;
+    }
+}
+
+.page-toc > h6 {
+    @include font(h7);
+    padding: map-get($spacers, 3) map-get($spacers, 4);
+
+    @include media-breakpoint-down(lg) {
+        display: none;
+    }
+}
+
+.page-toc__field-desktop-wrapper {
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+        display: flex;
+        flex-direction: column;
+        gap: map-get($spacers, 2);
+        width: 100%;
+    }
+}
+
+.page-toc__field-desktop-wrapper > h6 {
+    color: color(GalaxyBlack);
+    margin: map-get($spacers, 3) 0;
+}
+
+.page-toc__field {
+    @include font(body-xs);
+    line-height: 1.2;
+    color: color(MediumGray);
+
+    display: grid;
+    place-items: center;
+
+    width: fit-content;
+    max-width: 60vw;
+    padding: map-get($spacers, 2) map-get($spacers, 3);
+
+    white-space: normal;
+
+    border-radius: 24px;
+    overflow: hidden;
+
+    @include media-breakpoint-up(lg) {
+        display: block;
+        text-align: left;
+
+        width: 100%;
+        max-width: none;
+
+        padding: calc(map-get($spacers, 4) / 2) map-get($spacers, 4);
+        border-radius: 16px;
+    }
+}
+
+.page-toc__field:hover {
+    color: color(GalaxyBlack);
+}
+
+.page-toc__field.active {
+    background: color(White);
+    color: color(GalaxyBlack);
+
+    box-shadow: $box-shadow-sm-behind;
+}
+
+// scroll to position adjustment 
+.resources-toc-target {
+    @include scroll-margin-top-on-hashtag-content;
+}
+
+// mobile dropdown
+.page-toc__field-mobile-wrapper {
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+}
+
+// sticky bottom mobile dropdown, will reveal itself as we scrolled into content part
+.page-toc__field-mobile-wrapper--fixed-bottom {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    opacity: 0;
+    pointer-events: none;
+
+    z-index: 10;
+}
+
+.page-toc__field-mobile-wrapper--fixed-bottom .form-dropdown--toc .dropdown-menu {
+    transform: translate3d(0, calc((100% + $page-toc-height) * -1), 0) !important;
+}
+
+.page-toc__field-mobile-wrapper--fixed-bottom .form-dropdown--toc .dropdown-menu.show {
+    transform: translate(0, calc((100% + $page-toc-height + 16px) * -1)) !important;
+}
+

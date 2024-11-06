@@ -1,0 +1,27 @@
+.footnote {
+    margin-top: map-get($spacers, 4);
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: map-get($spacers, 6);
+    }
+}
+
+.footnote p {
+    @include font(body-m);
+}
+
+.footnote .text-center {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include media-breakpoint-up(lg) {
+        max-width: $inner-content-max-width-lg;
+    }
+}
+
+.footnote a {
+    @include orange-link;
+
+    text-decoration: none;
+}

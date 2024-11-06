@@ -1,0 +1,51 @@
+.quote-card-article {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: $card-gap-sm;
+
+    width: 100%;
+    max-width: $contained-width-lg;
+    min-height: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 24px;
+
+    @include media-breakpoint-up(md) {
+        padding: 48px 32px;
+        min-height: 325px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding: 56px 80px;
+    }
+
+}
+
+.quote-card-article .quote-card__person-info {
+    @include quote-card-person-info--with-person-icon;
+    @include media-breakpoint-up(md) {
+        grid-template-columns: 65px 1fr;
+    }
+}
+
+.quote-card-article .quote-card__person-info .avatar-thumbnail {
+
+    width: 50px;
+
+    @include media-breakpoint-up(md) {
+        width: 70px;
+    }
+
+}
+
+.quote-card-article--large-text .quote-card__quote-wrapper p {
+    @include font(h5);
+    line-height: 1.4;
+}
+
+.quote-card-article--small-text .quote-card__quote-wrapper p {
+    @include font(h6);
+    line-height: 1.4;
+}

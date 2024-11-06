@@ -1,0 +1,278 @@
+.sub-video-nav__thumbnail {
+
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+    height: auto;
+
+    border-radius: $border-radius-xxs;
+    overflow: hidden;
+
+}
+
+.sub-video-nav__thumbnail img {
+
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+    
+    transition: $transition-all-ease-in-out-1;
+
+}
+
+.sub-video-nav__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.sub-video-nav__content h6 {
+    
+    font-size: 16px;
+
+    @include media-breakpoint-down(md) {
+        font-size: $font-size-body-m-mobile;
+    }
+
+    @include media-breakpoint-between(xl, xxl) {
+        line-height: 1.1;
+    }
+}
+
+.sub-video-nav__content p {
+    @include font(body-xs);
+    line-height: 1.25;
+    margin-bottom: 0;
+}
+
+.sub-video-nav--stacked,
+.sub-video-nav--below {
+
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: max-content;
+    gap: $card-gap-xxs;
+
+    width: 100%;
+    padding: 24px 16px;
+    
+    border-radius: $border-radius-xxs;
+    box-shadow: $box-shadow-sm-behind;
+
+    transition: $transition-all-ease-in-out-1;
+
+    overflow: hidden;
+    cursor: pointer;
+
+}
+
+.sub-video-nav--stacked:hover .sub-video-nav__thumbnail img,
+.sub-video-nav--below:hover .sub-video-nav__thumbnail img {
+    transform: scale(1.05);
+}
+
+.sub-video-nav--below {
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: 180px 1fr;
+    }
+
+    @include media-breakpoint-up(xl) {
+
+        grid-template-columns: 1fr 1.15fr;
+        align-items: center;
+        gap: 12px;
+        
+        padding: 0;
+        
+        box-shadow: none;
+        border-radius: 0;
+    
+    }
+
+}
+
+.sub-video-nav--below .resource-chip {
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+}
+
+.sub-video-nav--below .sub-video-nav__thumbnail {
+
+    aspect-ratio: 1 / 1;
+
+    @include media-breakpoint-up(md) {
+        aspect-ratio: 16 / 9;
+    }
+
+}
+
+.sub-video-nav--below.hide {
+    display: none;
+}
+
+.sub-video-nav--below--light {
+
+    background: color(White);
+
+    @include media-breakpoint-up(xl) {
+        background: transparent;
+    }
+
+}
+
+.sub-video-nav--below--light .sub-video-nav__content h6 {
+    color: color(GalaxyBlack);
+}
+
+.sub-video-nav--below--light .sub-video-nav__content p {
+    color: color(DarkGrey);
+}
+
+.sub-video-nav--below--dark {
+
+    background: color(MidnightIndigo);
+
+    @include media-breakpoint-up(xl) {
+        background: transparent;
+    }
+
+}
+
+.sub-video-nav--below--dark .sub-video-nav__content h6 {
+    color: color(White);
+}
+
+.sub-video-nav--below--dark .sub-video-nav__content p {
+    color: color(NeutralGrey);
+}
+
+.sub-video-nav--stacked {
+
+    @include media-breakpoint-up(md) {
+        padding: 24px 32px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding: 20px 28px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        padding: 24px 28px;
+    }
+
+}
+
+.sub-video-nav--stacked .sub-video-nav__thumbnail {
+    aspect-ratio: 1 / 1;
+}
+
+.sub-video-nav--stacked:hover {
+    box-shadow: $box-shadow-lg-behind-contained;
+}
+
+a.sub-video-nav--stacked,
+a.sub-video-nav--stacked--light .sub-video-nav__thumbnail,
+a.sub-video-nav--stacked--dark .sub-video-nav__thumbnail {
+    cursor: pointer;
+}
+
+.sub-video-nav--stacked--light {
+    background: color(White);
+}
+
+.sub-video-nav--stacked--light .sub-video-nav__content h6 {
+    color: color(GalaxyBlack);
+    font-weight: 400;
+}
+
+.sub-video-nav--stacked--light .sub-video-nav__content h6 strong {
+    font-weight: 600;
+}
+
+.sub-video-nav--stacked--light .sub-video-nav__content p {
+    color: color(DarkGrey);
+}
+
+.sub-video-nav--stacked--light .sub-video-nav__thumbnail {
+    background: color(NeutralGrey, 0.5);
+}
+
+.sub-video-nav--stacked--light.active {
+    box-shadow: $box-shadow-lg-behind-contained;
+}
+
+.sub-video-nav--stacked--dark {
+    background: color(DarkNavy);
+}
+
+.sub-video-nav--stacked--dark .sub-video-nav__content h6 {
+    color: color(White);
+    font-weight: 400;
+}
+
+.sub-video-nav--stacked--dark .sub-video-nav__content h6 strong {
+    font-weight: 600;
+}
+
+.sub-video-nav--stacked--dark .sub-video-nav__content p {
+    color: color(NeutralGrey);
+}
+
+.sub-video-nav--stacked--dark .sub-video-nav__thumbnail {
+    background: color(NeutralGrey, 0.2);
+}
+
+.sub-video-nav--stacked--dark.active,
+a.sub-video-nav--stacked--dark:hover {
+    background: color(MidnightIndigo);
+}
+
+.sub-video-nav-wrapper--link-only a.sub-video-nav--stacked--light .sub-video-nav__content p::after,
+.sub-video-nav-wrapper--link-only a.sub-video-nav--stacked--dark .sub-video-nav__content p::after {
+    content: '';
+
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 4px;
+
+    -webkit-mask-image: url('/wp-content/themes/veeva2015/assets/svg/icons/arrow-up-right--black.svg');
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+  
+    mask-image: url('/wp-content/themes/veeva2015/assets/svg/icons/arrow-up-right--black.svg');
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    background: color(VeevaOrange);
+
+    transition: $transition-all-ease-in-out-1;
+}
+
+.sub-video-nav-wrapper--link-only a.sub-video-nav--stacked--light .sub-video-nav__content p,
+.sub-video-nav-wrapper--link-only a.sub-video-nav--stacked--dark .sub-video-nav__content p {
+    color: color(VeevaOrange);
+    font-weight: 500;
+}
+
+a.sub-video-nav--stacked--dark:hover .sub-video-nav__content p::after,
+a.sub-video-nav--stacked--light:hover .sub-video-nav__content p::after{
+    transform: translate(1px, -1px);
+}
+
+// fallback image when thumbnail is not available
+.sub-video-nav__thumbnail--not-available {
+    @include thumbnail--not-available;
+}
+
+.sub-video-nav--below:hover .sub-video-nav__thumbnail--not-available::after,
+.sub-video-nav--stacked:hover .sub-video-nav__thumbnail--not-available::after {
+    transform: scale(1.05);
+}

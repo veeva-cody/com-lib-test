@@ -1,0 +1,5 @@
+.card-block-4-up__cards {
+    @include media-breakpoint-up(xl) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

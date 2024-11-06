@@ -1,0 +1,20 @@
+.alert-announcement .button-primary,
+.alert-announcement .button-outline {
+
+    margin-top: map-get($spacers, 4);
+
+    @include media-breakpoint-up(sm) {
+        margin-top: 0;
+    }
+
+}
+
+.alert-announcement--footer {
+    
+    background: #1f242b; // veeva.com footer color.
+    color: color(White);
+
+    margin: 0;
+    padding: map-get($spacers, 6) 0;
+
+}

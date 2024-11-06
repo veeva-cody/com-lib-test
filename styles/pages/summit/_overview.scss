@@ -1,0 +1,45 @@
+#summit-overview .card-block-3-up {
+    overflow: visible;
+}
+
+#summit-overview .card-block-3-up:before {
+    
+    content: '';
+
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 200px;
+
+    background: color(NeutralGrey);
+
+}
+
+#summit-overview .z-pattern-products .z-pattern__image-wrapper img {
+    object-fit: contain;
+}
+
+#summit-overview .people-events .copy-container > p {
+    max-width: 730px;
+}
+
+#summit-overview #summit-announcements .listed-up__cards {
+    max-width: $contained-width-lg;
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+#keynotes-roadmaps {
+    @include block-spacing(margin);
+}
+
+#keynotes-roadmaps .copy-container > p {
+    @include media-breakpoint-up(md) {
+        font-size: 18px;
+    }
+}

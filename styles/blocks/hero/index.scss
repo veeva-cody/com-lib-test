@@ -1,0 +1,21 @@
+@import './centered';
+@import './contained';
+@import './customer';
+@import "./filter";
+@import './highlights';
+@import './left-aligned';
+@import './center-stack';
+
+// common styles
+.hero-centered .copy-container--center,
+.hero-center-stack .copy-container--center,
+.hero-contained .copy-container--center,
+.hero-customer .copy-container--center,
+.hero-filter .copy-container--center {
+
+    @include media-breakpoint-up(xxl) {
+        max-width: $inner-content-max-width-xl;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -1,0 +1,146 @@
+.person-card-services {
+    display: flex;
+    flex-direction: column;
+}
+
+.person-card-services__image-container {
+
+    position: relative;
+    overflow: hidden;
+
+    background-size: 102%;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    padding: map-get($spacers, 3);
+    height: auto;
+    aspect-ratio: 3 / 2;
+
+    border-radius: $border-radius-xxs;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    transition: $transition-all-ease-in-out-1;
+
+    @include media-breakpoint-up(xxl) {
+        border-radius: $border-radius-s;
+    }
+
+}
+
+.person-card-services__image-container:before {
+
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(to top, color(GalaxyBlack, 0.7), transparent);
+
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+        display: block;
+    }
+
+}
+
+.person-card-services[data-bs-toggle="modal"]:hover  .person-card-services__image-container{
+    background-size: 107%;
+}
+
+.person-card-services__name-container {
+    position: relative;
+    z-index: 5;
+}
+
+.person-card-services__name-container h5 {
+    @include font(h7);
+    margin-bottom: map-get($spacers, 1);
+}
+
+.person-card-services__name-container--desktop {
+    
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+        display: block;
+    }
+
+}
+
+.person-card-services__name-container--mobile {
+
+    margin-top: map-get($spacers, 3);
+    flex-grow: 1;
+    
+    @include media-breakpoint-up(lg) {
+        display: none;
+    }
+
+}
+
+.person-card-services__name-container--desktop h5 {
+    color: color(White);
+}
+
+.person-card-services--light .person-card-services__name-container--mobile h5 {
+    color: color(GalaxyBlack);
+}
+
+.person-card-services--dark .person-card-services__name-container--mobile h5 {
+    color: color(White);
+}
+
+.person-card-services__name-container p {
+
+    @include font(body-s);
+
+    margin: 0;
+    color: color(LightGray);
+
+}
+
+.person-card-services__experience-container {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: map-get($spacers, 3);
+
+}
+
+.person-card-services__experience-container h6 {
+    
+    display: none;
+
+    @include font(h8);
+    @include media-breakpoint-up(lg) {
+        display: block;
+    }
+
+}
+
+.person-card-services--light .person-card-services__experience-container h6 {
+    color: color(GalaxyBlack);
+}
+
+.person-card-services--dark .person-card-services__experience-container h6 {
+    color: color(White);
+}
+
+.person-card-services__experience-container-image {
+    display: flex;
+    align-items: center;
+    gap: map-get($spacers, 2);
+    overflow: hidden;
+}
+
+.person-card-services__experience-container-image img {
+    height: 22px;
+    aspect-ratio: 2.2 / 1;
+    object-fit: contain;
+}

@@ -1,0 +1,133 @@
+@use 'sass:map';
+@import '../bootstrap/functions';
+@import '../bootstrap/variables';
+
+/*
+ * $spacer = 10px;
+ *
+ * We have set the base font size for the Component Library
+ * to 10px to match veeva.com. Everything is multiplied by
+ * 1.6 to compensate as we built many of the blocks before discovering
+ * that the base font size was not 16px.
+ */
+$spacers: (
+    0: 0,
+    1: ($spacer * 0.25 * 1.6),
+    2: ($spacer * 0.5 * 1.6),
+    3: ($spacer * 1.6),
+    4: ($spacer * 1.5 * 1.6),
+    5: ($spacer * 2 * 1.6),
+    6: ($spacer * 3 * 1.6),
+    7: ($spacer * 3.5 * 1.6),
+    8: ($spacer * 4 * 1.6),
+    9: ($spacer * 4.5 * 1.6),
+    10: ($spacer * 5 * 1.6),
+);
+
+// Needs to stay in sync with .container in master index.scss.
+$grid-breakpoints: (
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+    xxxl: 1600px,
+);
+
+$container-max-widths: (
+    xs: 95vw,
+    sm: 90vw,
+    md: 90vw,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px,
+    xxxl: 1440px,
+);
+
+$container-side-padding: (
+    xs: calc((100vw - map.get($container-max-widths, "xs")) / 2),
+    sm: calc((100vw - map.get($container-max-widths, "sm")) / 2),
+    md: calc((100vw - map.get($container-max-widths, "md")) / 2),
+    lg: calc((100vw - map.get($container-max-widths, "lg")) / 2),
+    xl: calc((100vw - map.get($container-max-widths, "xl")) / 2),
+    xxl: calc((100vw - map.get($container-max-widths, "xxl")) / 2),
+    xxxl: calc((100vw - map.get($container-max-widths, "xxxl")) / 2),
+);
+
+$bs-gutter-x: 1.5rem;
+
+@import "../bootstrap/bootstrap.scss";
+
+.container {
+    @include media-breakpoint-up(xxl) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    opacity: 1;
+}
+
+.fade {
+    transition: opacity 0.2s ease;
+}
+
+.dropdown-toggle {
+    position: relative;
+}
+
+.dropdown-toggle:after {
+
+    position: absolute;
+    top: 50%;
+    right: 16px;
+
+    width: 16px;
+    height: 16px;
+
+    border: 0;
+    background: url("/wp-content/themes/veeva2015/assets/svg/icons/caret-down-filled.svg");
+    
+    transform: translateY(-50%);
+    transition: all 0.3s ease-in-out;
+
+}
+
+.dropdown-toggle.show:after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.dropdown-menu {
+
+    display: block;
+
+    opacity: 0;
+    pointer-events: none;
+    
+    // These values are !important in order to override
+    // the `inset` property from the popper styles.
+    top: calc(100% + 8px) !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: auto !important;
+    z-index: $dropdown-menu-z-index;
+
+    transform: translate3d(0, -20px, 0) !important;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.dropdown-menu.show {
+
+    opacity: 1;
+    pointer-events: auto;
+        
+    transform: translate3d(0, 0, 0) !important;
+
+}

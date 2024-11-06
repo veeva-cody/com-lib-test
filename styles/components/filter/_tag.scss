@@ -1,0 +1,100 @@
+@use "sass:map";
+
+.filter-tag {
+    all: unset;
+    @include font(body-xs);
+
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-shrink: 0;
+
+    padding: 8px 16px;
+
+    border-radius: 500px;
+    overflow: hidden;
+
+    transition: $transition-all-ease-in-out-1;
+
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-body-xs-mobile;
+    }
+}
+
+.filter-tag::after {
+    content: "";
+    display: inline-block;
+
+    background: url("/wp-content/themes/veeva2015/assets/svg/icons/delete-1.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 12px;
+    height: 12px;
+}
+
+.filter-tag .icon {
+    width: 12px;
+    height: 12px;
+}
+
+.filter-tag:hover {
+    cursor: pointer;
+    box-shadow: $box-shadow-sm-behind-light;
+}
+
+// color variation
+@mixin filter-tag--white {
+    background: color(White);
+    color: color(GalaxyBlack);
+}
+
+@mixin filter-tag--grey {
+    background: color(NeutralGrey);
+    color: color(GalaxyBlack);
+}
+
+.filter-tag--white {
+    @include filter-tag--white;
+}
+
+.filter-tag--grey {
+    @include filter-tag--grey;
+}
+
+// wrapper
+.filter-tag-wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: map-get($spacers, 2);
+
+    max-width: 100vw;
+    min-height: 54px; // prevent layout shifting when tag is added
+    overflow-x: auto;
+    @include hide-scrollbar;
+
+    // counter box-shadow hover
+    margin-top: -10px;
+    margin-bottom: -10px;
+    padding: 10px;
+
+    // always align left
+    margin-left: 0;
+    margin-right: auto;
+
+    // Add breakpoint-based padding and gutter padding for mobile scroll.
+    @include add-breakpoint-side-padding;
+
+    @include media-breakpoint-up(md) {
+        max-width: 768px;
+        flex-wrap: wrap;
+    }
+
+    @include media-breakpoint-up(lg) {
+        max-width: 75%;
+    }
+}

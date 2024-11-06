@@ -1,0 +1,47 @@
+.statistic-4-up-wrapper {
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    margin: 0 auto;
+    width: 100%;
+    max-width: $contained-width-sm;
+
+    @include media-breakpoint-up(lg) {
+
+        grid-template-columns: repeat(2, 1fr);
+        gap: $card-gap-sm;
+
+        max-width: $contained-width-md;
+    }
+
+    @include media-breakpoint-up(xl) {
+
+        grid-template-columns: repeat(4, 1fr);
+        gap: $card-gap-xxs;
+
+        max-width: $inner-content-max-width-lg;
+    }
+}
+
+.statistic-4-up-wrapper .statistic-tool {
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: 1fr 3fr;
+    }
+
+    @include media-breakpoint-up(xl) {
+        gap: 12px;
+    }
+}
+
+.statistic-4-up-wrapper .statistic-tool h3 {
+    @include media-breakpoint-up(xl) {
+        font-size: $font-size-h2-desktop;
+    }
+}
+
+.statistic-4-up-wrapper .statistic-tool p {
+    @include media-breakpoint-up(xl) {
+        font-size: $font-size-body-s-desktop;
+    }
+}

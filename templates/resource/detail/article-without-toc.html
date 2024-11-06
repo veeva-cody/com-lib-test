@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/styles/normalize.css" />
+        <link rel="stylesheet" href="/dist/bundle.min.css" />
+        <title>Resource Detail - Article Without TOC</title>
+    </head>
+
+    <!-- 
+
+        Format: Article without TOC
+
+        - Press Release - News: https://www.veeva.com/resources/13-of-top-20-pharma-companies-adopt-veeva-crm-events-management-for-better-and-more-compliant-events/
+
+        - Press Release: https://www.veeva.com/resources/7-of-the-top-20-pharma-companies-adopt-veeva-vault-study-startup/
+
+        NOTE: they have `echo wpautop($current_content);` this function in the template to automatically insert paragraph tags (<p>...</p>) into the content 
+        
+        NOTE: As in the above type, they both currently used (used strong as title, which is not safe to be targeted for rendering of toc). If they would like to have TOC, they will need to update the heading to be `h2, h3` as heading element for us to target in the CMS field in future.
+
+    -->
+
+    <body>
+        <!-- Resource Detail Page End -->
+        <main class="veeva-2024">
+            <!-- Regular Article -->
+            <div id="resource-detail">
+                <!-- NOTE: this article element exist on their current page, which we could use it to apply style on based on specific post type class -->
+                <article class="resource resource-type-press-release resource-type-news-press-release">
+                    <!-- Hero Customer -- matches with current content -->
+                    <section class="hero-centered hero-centered--logo">
+                        <div class="container copy-container copy-container--center copy-container--eyebrow-gradient">
+                            <!-- <div class="hero-logo client-logo">
+                            <img src="/wp-content/themes/veeva2015/assets/logos/color/Veeva.png" alt="Veeva" />
+                        </div> -->
+                            <h6><span class="icon" data-icon="insert-top-left"></span>Press Releases</h6>
+                            <h1>
+                                7 of the Top 20 Pharma Companies <br />
+                                Adopt Veeva Vault Study Startup
+                            </h1>
+                            <p>Leading companies are using advanced study start-up application to speed clinical trials. [excerpt]</p>
+                            <div class="copy-container__buttons">
+                                <a class="button-primary button-primary--gradient button-primary--download" href="[url]" target="[target]">Download PDF</a>
+                                <a class="button-outline button-outline--black" href="[url]" target="[target]">Join Summit</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Content Block -->
+                    <div class="content-block container-lg">
+                        <!-- NOTE: hide this directly -->
+                        <!-- <div class="content-block__sidebar"></div> -->
+
+                        <!-- html content, using same class as what Veeva has currently -->
+                        <!-- entry-content resources-content -->
+                        <!-- data-toc-target-area -->
+                        <div class="content-block__content container">
+                            <p align="center"><em>Leading companies are using advanced study start-up application to speed clinical trials</em></p>
+
+                            <p>
+                                This template uses this Press Release as example:
+                                <a href="https://www.veeva.com/resources/7-of-the-top-20-pharma-companies-adopt-veeva-vault-study-startup/" target="_blank"> https://www.veeva.com/resources/7-of-the-top-20-pharma-companies-adopt-veeva-vault-study-startup/</a>
+                            </p>
+
+                            <p>
+                                <strong>PLEASANTON, CA — Jan. 14, 2020 –</strong> Accelerating study start-up is a top priority among leading life sciences companies. With this shift underway, an increasing number of organizations are selecting <a href="/products/vault-study-startup/">Vault Study Startup</a> from <a href="/">Veeva Systems</a> (NYSE:VEEV) to improve clinical trial efficiency and speed time to site activation. Seven of the top 20 largest global pharmaceutical companies are
+                                adopting Vault Study Startup to bring together start-up activities and processes in a single, easy-to-use modern cloud application.
+                            </p>
+
+                            <p>“Study start-up is the clinical area with the most potential to improve overall trial efficiency because of a heavy reliance on manual processes and legacy standalone systems,” said Ashley Davidson, director of Veeva Vault Study Startup. “Customers are using Veeva Vault Study Startup to modernize their start-up operations and get trials up and running much faster.”</p>
+
+                            <p>Veeva Vault Study Startup is an advanced application that eliminates manual processes to speed cycle times and trial execution. Sponsors can find the right site faster by automating and streamlining site identification, feasibility, and selection. Companies can also prioritize and assign tasks such as site contracting and budgeting throughout their study portfolio – an area that accounts for most of the cycle time during study start-up.<sup>1</sup></p>
+
+                            <p>Vault Study Startup is part of Veeva’s <a href="/products/clinical-operations/">unified suite of clinical operations applications</a>, enabling sponsors and CROs to seamlessly share information and documents across CTMS, eTMF, and study start-up for better collaboration and increased efficiency throughout the study lifecycle.</p>
+
+                            <p>To learn how Vault Study Startup is helping companies speed time to site activation, <a href="https://go.veeva.com/Speed-Study-Startup-Webinar" target="_blank" rel="noopener noreferrer">watch</a> the on-demand webinar at <a href="https://go.veeva.com/Speed-Study-Startup-Webinar" target="_blank" rel="noopener noreferrer">veeva.com/StudyStartupWebinar</a>.</p>
+
+                            <p>
+                                <strong>Additional Information</strong><br />
+                                For more on Veeva Vault Study Startup, visit: <a href="/products/vault-study-startup/">veeva.com/StudyStartup</a><br />
+                                Connect with Veeva on LinkedIn: <a href="http://www.linkedin.com/company/veeva-systems" target="_blank" rel="noopener noreferrer">linkedin.com/company/veeva-systems</a><br />
+                                Follow @veevasystems on Twitter: <a href="https://twitter.com/veevasystems" target="_blank" rel="noopener noreferrer">twitter.com/veevasystems</a><br />
+                                Like Veeva on Facebook: <a href="https://www.facebook.com/VeevaSystems" target="_blank" rel="noopener noreferrer">facebook.com/veevasystems</a>
+                            </p>
+
+                            <p>
+                                <strong>About Veeva Systems</strong><br />
+                                Veeva Systems Inc. is the leader in cloud-based software for the global life sciences industry. Committed to innovation, product excellence, and customer success, Veeva serves more than 800 customers, ranging from the world’s largest pharmaceutical companies to emerging biotechs. Veeva is headquartered in the San Francisco Bay Area, with offices throughout North America, Europe, Asia, and Latin America. For more information, visit <a href="/">veeva.com</a>.
+                            </p>
+
+                            <p>
+                                <strong>Forward-looking Statements</strong><br />
+                                This release contains forward-looking statements, including the market demand for and acceptance of Veeva’s products and services, the results from use of Veeva’s products and services, and general business conditions, particularly in the life sciences industry. Any forward-looking statements contained in this press release are based upon Veeva’s historical performance and its current plans, estimates, and expectations, and are not a representation that such
+                                plans, estimates, or expectations will be achieved. These forward-looking statements represent Veeva’s expectations as of the date of this press announcement. Subsequent events may cause these expectations to change, and Veeva disclaims any obligation to update the forward-looking statements in the future. These forward-looking statements are subject to known and unknown risks and uncertainties that may cause actual results to differ materially. Additional risks
+                                and uncertainties that could affect Veeva’s financial results are included under the captions, “Risk Factors” and “Management’s Discussion and Analysis of Financial Condition and Results of Operations,” in the company’s filing on Form 10-Q for the period ended October 31, 2019. This is available on the company’s website at <a href="/">veeva.com</a> under the Investors section and on the SEC’s website at
+                                <a href="http://sec.gov/" rel="noopener noreferrer" target="_blank">sec.gov</a>. Further information on potential risks that could affect actual results will be included in other filings Veeva makes with the SEC from time to time.
+                            </p>
+
+                            <p align="center">###</p>
+
+                            <p>
+                                <strong>Contact:</strong><br />
+                                Veeva Systems<br />
+                                <a href="mailto:pr@veeva.com">pr@veeva.com</a>
+                            </p>
+
+                            <p>
+                                Deivis Mercado<br />
+                                Veeva Systems<br />
+                                <a href="mailto:deivis.mercado@veeva.com">deivis.mercado@veeva.com</a><br />
+                                925-226-8821
+                            </p>
+
+                            <hr />
+
+                            <div style="font-size: 14px"><sup>1</sup><strong>BioSpace. Site Contracts from Weeks to Months: Results from KMR Group’s Site Contracts Study. August 2016.</strong></div>
+                        </div>
+                    </div>
+
+                    <!-- Resources - Cards, Light -->
+                    <!-- Can randomly fetched 4 resource based on existing type -->
+                    <section class="resource-block-cards resource-block-cards--light">
+                        <div class="container">
+                            <div class="copy-container copy-container--center copy-container--eyebrow-gradient">
+                                <h6>
+                                    <span class="icon" data-icon="definition-search-book"></span>
+                                    More Resources
+                                </h6>
+                                <h3>Explore and learn more</h3>
+                                <div class="copy-container__buttons">
+                                    <a class="button-outline button-outline--black" href="[url]" target="[target]"> View More </a>
+                                </div>
+                            </div>
+
+                            <div class="resource-block__cards resource-block__cards--gridded">
+                                <!-- resource card -->
+                                <a class="resource-card" href="https://www.google.com/" target="_blank">
+                                    <div class="resource-card__text">
+                                        <!-- resource-chip -->
+                                        <div class="resource-chip">
+                                            <!-- veeva icon -->
+                                            <div class="resource-chip__icon">
+                                                <span class="icon" data-icon="veeva"></span>
+                                            </div>
+                                            Product
+                                        </div>
+
+                                        <!-- text -->
+                                        <h6>Eyebrow</h6>
+                                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                                    </div>
+
+                                    <div class="resource-card__media">
+                                        <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                                    </div>
+                                </a>
+
+                                <!-- resource card -->
+                                <a class="resource-card" href="https://www.google.com/" target="_blank">
+                                    <div class="resource-card__text">
+                                        <!-- resource-chip -->
+                                        <div class="resource-chip">
+                                            <!-- star icon -->
+                                            <div class="resource-chip__icon">
+                                                <span class="icon" data-icon="star-fill-1"></span>
+                                            </div>
+                                            Summit
+                                        </div>
+
+                                        <!-- text -->
+                                        <h6>Eyebrow</h6>
+                                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                                    </div>
+
+                                    <div class="resource-card__media">
+                                        <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                                    </div>
+                                </a>
+
+                                <!-- resource card -->
+                                <a class="resource-card" href="https://www.google.com/" target="_blank">
+                                    <div class="resource-card__text">
+                                        <!-- resource-chip -->
+                                        <div class="resource-chip">
+                                            <!-- rotated-square -->
+                                            <div class="resource-chip__icon">
+                                                <span class="icon" data-icon="rotated-square"></span>
+                                            </div>
+                                            Article
+                                        </div>
+
+                                        <!-- text -->
+                                        <h6>Eyebrow</h6>
+                                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</h5>
+                                    </div>
+
+                                    <div class="resource-card__media">
+                                        <img src="/wp-content/themes/veeva2015/assets/fpo/media.jpg" alt="" />
+                                    </div>
+                                </a>
+
+                                <!-- resource card, show video as popover -->
+                                <!-- NOTE: enter wistiaID to "data-wistia-video-id" here -->
+                                <div class="resource-card js-wistia-resource-card" data-wistia-video-id="latim1ya7g">
+                                    <div class="resource-card__text">
+                                        <div class="resource-chip resource-chip--light">
+                                            <!-- video icon -->
+                                            <div class="resource-chip__icon">
+                                                <span class="icon" data-icon="play-filled-2"></span>
+                                            </div>
+                                            Video
+                                        </div>
+                                        <h6>Eyebrow</h6>
+                                        <h5>We are small resource cards, saying lorem ipsum dolor sit amet, consectetur adipiscing</h5>
+                                    </div>
+                                    <div class="resource-card__media">
+                                        <div class="video wistia-video"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Hero Contained Start (CTA) -->
+                    <section class="hero-contained hero-contained--gradient hero-contained--footer-fix">
+                        <div class="copy-container container copy-container--center">
+                            <h6><span class="icon" data-icon="box-sign"></span>Partner with Veeva</h6>
+                            <h3>
+                                Interested in learning more about <br />
+                                how Veeva can help?
+                            </h3>
+                            <div class="copy-container__buttons">
+                                <a class="button-primary button-primary--gradient" href="https://www.veeva.com/contact-us/" target="_self">Contact Us</a>
+
+                                <!-- Optional PDF button -->
+                                <a class="button-tertiary button-tertiary--white" href="https://www.veeva.com/wp-content/uploads/2024/03/Veeva-Crossix-_4-Steps-for-Effectively-Marketing-New-Treatments_Article.pdf" target="_blank">Download PDF</a>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Hero Contained End -->
+                </article>
+            </div>
+        </main>
+        <!-- Resource Detail Page End -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://fast.wistia.com/assets/external/E-v1.js" async=""></script>
+        <script src="/dist/bundle.min.js"></script>
+    </body>
+</html>

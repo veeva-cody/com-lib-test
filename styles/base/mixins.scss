@@ -1,0 +1,662 @@
+@use "sass:map";
+@import "./variables";
+
+/*  
+ * Mimics background-text-clip for images.
+ * Typically used for icons.
+ */
+ @mixin background-image-clip($color) {
+
+    background: $color;
+    background-size: 100%;
+    background-clip: border-box;
+    -webkit-background-clip: border-box;
+    -moz-background-clip: border-box;
+    
+    width: fit-content;
+
+}
+
+/*  
+ * Replaces standard color with gradient text.
+ */
+ @mixin background-text-clip($color) {
+
+    background: $color;
+    background-size: 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    
+    width: fit-content;
+
+}
+
+/*  
+ * Spacing between blocks depending on the block's background style.
+ *
+ * white/transparent = margin
+ * coloured = padding
+ */
+ @mixin block-spacing($property) {
+
+    #{$property}: $section-spacing-screen-xs 0;
+
+    @include media-breakpoint-up(md) {
+        #{$property}: $section-spacing-screen-md 0;
+    }
+
+    @include media-breakpoint-up(xl) {
+        #{$property}: $section-spacing-screen-lg 0;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        #{$property}: $section-spacing-screen-xxl 0;
+    }
+
+}
+
+/*  
+ * Similar to background-image-clip for <img>.
+ * Typically used for logos.
+ */
+ @mixin change-image-color($color) {
+    filter: drop-shadow(0px 1000px color($color, 1));
+    transform: translateY(-1000px);
+    overflow: hidden;
+}
+
+/*  
+ * Spacing between Copy Container and content below.
+ */
+@mixin copy-content-spacing {
+
+    .copy-container {
+        margin-bottom: $block-gap-sm;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .copy-container {
+            margin-bottom: $block-gap-lg;
+        }
+    }
+
+}
+
+/*
+ * Linear gradient to increase contrast for legibility.
+ */
+ @mixin content-pop {
+
+    content: '';
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background: $content-pop-gradient;
+
+}
+
+/*
+ * Normalize fonts.
+ */
+@mixin font($style) {
+    @if $style == h1 {
+
+        @include heading-default;
+        font-size: $font-size-h1-mobile;
+	    line-height: 1.1;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-h1-desktop;
+        }
+    
+    } @else if $style == h2 {
+
+        @include heading-default;
+        font-size: $font-size-h2-mobile;
+	    line-height: 1.15;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-h2-desktop;
+        }
+    
+    } @else if $style == h3 {
+
+        @include heading-default;
+        font-size: $font-size-h3-mobile;
+	    line-height: 1.15;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-h3-desktop;
+        }
+    
+    } @else if $style == h4 {
+
+        @include heading-default;
+        font-size: $font-size-h4-mobile;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-h4-desktop;
+        }
+    
+    } @else if $style == h5 {
+
+        @include heading-default;
+        font-size: $font-size-h5-mobile;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-h5-desktop;
+        }
+    
+    } @else if $style == h6 {
+
+        @include heading-default;
+        font-size: $font-size-h6-mobile;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-h6-desktop;
+        }
+    
+    } @else if $style == h7 {
+
+        @include heading-default;
+        font-size: $font-size-h7-mobile;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-h7-desktop;
+        }
+    
+    } @else if $style == h8 {
+
+        @include heading-default;
+        font-size: $font-size-h8-mobile;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-h8-desktop;
+        }
+    
+    } @else if $style == body-l {
+
+        font-family: $body-font-family;
+        line-height: 1.4;
+        font-weight: 400;
+        font-size: $font-size-body-l-mobile;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-body-l-desktop;
+        }
+    
+    } @else if $style == body-m {
+
+        font-family: $body-font-family;
+        line-height: 1.4;
+        font-weight: 400;
+        font-size: $font-size-body-m-mobile;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-body-m-desktop;
+        }
+    
+    } @else if $style == body-s {
+
+        font-family: $body-font-family;
+        line-height: 1.4;
+        font-weight: 400;
+        font-size: $font-size-body-s-mobile;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-body-s-desktop;
+        }
+    
+    } @else if $style == body-xs {
+
+        font-family: $body-font-family;
+        line-height: 1.4;
+        font-weight: 400;
+        font-size: $font-size-body-xs-mobile;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-body-xs-desktop;
+        }
+    
+    }
+}
+
+/*  
+ * Semi-standardized 3-column grid.
+ */
+ @mixin grid-3-col-up($smGap: 16px 20px, $mdGap: 20px 28px, $lgGap: 28px 36px) {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $smGap;
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: $mdGap;
+    }
+
+    @include media-breakpoint-up(lg) {
+        gap: $lgGap;
+    }
+
+}
+
+/*  
+ * Semi-standardized 4-column grid.
+ */
+@mixin grid-4-col-up($smGap: 24px 16px, $mdGap: 42px 28px) {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $smGap;
+
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $mdGap;
+    }
+
+    @include media-breakpoint-up(xl) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: $mdGap;
+    }
+
+}
+
+/*
+ * Default link style.
+ */
+@mixin orange-link {
+
+    color: color(VeevaOrange);
+    text-decoration: underline;
+
+    transition: color $transition-default-duration ease;
+
+    &:hover {
+        color: color(SunsetRed);
+    }
+
+}
+
+@mixin twilight-blue-link {
+
+    color: color(TwilightBlue);
+    text-decoration: underline;
+
+    transition: all $transition-default-duration ease;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+}
+
+/*
+ *  Simple underlined link styles
+ */
+@mixin simple-text-link {
+    text-decoration: underline;
+    transition: $transition-all-ease-in-out-1;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+/*
+ * Decorative orange arrow after link text
+ */
+
+@mixin after-link-orange-arrow {
+    &:after {
+        content: "";
+        display: inline-block;
+        margin-left: 6px;
+
+        border-style: solid;
+        border-width: 5px 0 5px 5px;
+        border-color: transparent transparent transparent color(VeevaOrange);
+
+        transition: $transition-all-ease-in-out-1;
+    }
+
+    &:hover {
+        &:after {
+            border-color: transparent transparent transparent color(SunsetRed);
+        }
+    }
+}
+
+
+/*
+ * Normalize blocks with rounded edges.
+ */
+@mixin rounded-corners($position) {
+
+    overflow: hidden;
+
+    @if $position == top {
+
+        border-radius: $border-radius-m $border-radius-m 0 0;
+
+        @include media-breakpoint-up(lg) {
+            border-radius: $border-radius-xl $border-radius-xl 0 0;
+        }
+
+    } @else if $position == bottom {
+
+        border-radius: 0 0 $border-radius-m $border-radius-m;
+
+        @include media-breakpoint-up(lg) {
+            border-radius: 0 0 $border-radius-xl $border-radius-xl;
+        }
+
+    } @else if $position == all {
+
+        border-radius: $border-radius-m;
+
+        @include media-breakpoint-up(lg) {
+            border-radius: $border-radius-xl;
+        }
+
+    }
+
+}
+
+@mixin counter-section-rounded-top {
+    margin-bottom: calc($border-radius-m * -1);
+    padding-bottom: calc($section-spacing-screen-xs + $border-radius-m);
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: calc($border-radius-xl * -1);
+        padding-bottom: ($section-spacing-screen-lg + $border-radius-xl);
+    }
+}
+
+@mixin counter-section-rounded-bottom {
+    margin-top: calc($border-radius-m * -1);
+    padding-top: calc($section-spacing-screen-xs + $border-radius-m);
+
+    @include media-breakpoint-up(lg) {
+        margin-top: calc($border-radius-xl * -1);
+        padding-top: ($section-spacing-screen-lg + $border-radius-xl);
+    }
+}
+
+/*  
+ * Creates a partial background that only covers half the height of the block.
+ */
+ @mixin split-background($color) {
+
+    position: relative;
+
+    .copy-container {
+        position: relative;
+        z-index: 3;
+    }
+
+    &:before {
+
+        content: '';
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+
+        width: 100%;
+        height: 50%;
+
+        background: $color;
+        border-radius: 0 0 $border-radius-m $border-radius-m;
+        overflow: hidden;
+
+        @include media-breakpoint-up(lg) {
+            border-radius: 0 0 $border-radius-xl $border-radius-xl;
+        }
+
+    }
+
+}
+
+/*
+ * Default video style.
+ */
+@mixin video-main {
+    
+    border-radius: calc($border-radius-xxs / 2);
+    box-shadow: $box-shadow-sm-behind;
+
+    overflow: hidden;
+
+    @include media-breakpoint-up(md) {
+        border-radius: $border-radius-xxs;
+    }
+
+}
+
+/*  
+ * Add in support for mobile and desktop background image in section
+ */
+@mixin responsive-bg-image {
+    position: relative;
+    background: color(HeroFallbackBgColor);
+    background-size: cover;
+    background-position: center;
+
+    color: color(White);
+
+    > div {
+        position: relative;
+        z-index: 2;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+
+        background-image: var(--mobile-image);
+        background-size: cover;
+        background-position: center;
+        
+        @include media-breakpoint-up(md) {
+            background-image: var(--desktop-image);
+        }
+    }    
+}
+
+/*  
+ * background image set, used with `@include responsive-bg-image;` mixin
+ */
+@mixin gateway-hero-bg-images {
+    --mobile-image: #{$gateway-hero-img-mobile}; 
+    --desktop-image: #{$gateway-hero-img-desktop};
+}
+
+/*
+ * Hide System Scrollbar.
+ */
+
+@mixin hide-scrollbar {
+    
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.4);
+        border-radius: 10px;
+    }
+
+}
+
+/*
+ * Add breakpoint-based padding and gutter padding for mobile scroll,
+ * for overflow tabs ui layout
+ */
+
+@mixin add-breakpoint-side-padding {
+    @each $breakpoint, $max-width in $container-max-widths {
+        @include media-breakpoint-up($breakpoint) {
+            @if ($breakpoint == 'xxxl') or ($breakpoint == 'xxl') {
+                padding-left: map-get($map: $container-side-padding, $key: $breakpoint);
+                padding-right: map-get($map: $container-side-padding, $key: $breakpoint);
+            } @else {
+                padding-left: calc(map-get($map: $container-side-padding, $key: $breakpoint) + ($bs-gutter-x / 2));
+                padding-right: calc(map-get($map: $container-side-padding, $key: $breakpoint) + ($bs-gutter-x / 2));
+            }
+        }
+    }
+}
+
+
+/*
+ *  Spinning loader
+ */
+
+@mixin spinning-loader() {
+    
+    display: inline-block;
+
+    background: url('/wp-content/themes/veeva2015/assets/svg/icons/loading-circle.svg');
+    background-size: contain;
+    background-position: center;
+    
+    filter: $filter-color-veeva-orange;
+
+    animation: rotate 3s linear infinite ;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); /* Start rotation from 0 degrees */
+  }
+  to {
+    transform: rotate(360deg); /* End rotation at 360 degrees */
+  }
+}
+
+/*
+ *  Thumbnail not available
+ *  default mock image when thumbnail is not available, add to image wrapper
+ */
+@mixin thumbnail--not-available {
+    position: relative;
+    display: grid;
+    place-items: center;
+
+    img {
+        display: none;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        
+        background: $linear-gradient-orange-1;
+    }
+
+    &::after {
+        content: '';
+
+        position: absolute;
+        width: 80%;
+        height: 80%;
+
+        background: url('/wp-content/themes/veeva2015/assets/veeva/veeva-logo-white.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        z-index: 2;
+
+        transition: $transition-all-ease-in-out-1;
+    }
+}
+
+/*
+ *  Scroll Margin Top for #href content based on Navbar height
+ */
+
+@mixin scroll-margin-top-on-hashtag-content {
+    scroll-margin-top: calc(map-get($spacers, 5) + $nav-menu-height-sm);
+
+    @include media-breakpoint-up(md){
+        scroll-margin-top: calc(map-get($spacers, 6) + $nav-menu-height-md);
+    }
+}
+
+/*
+ * For blended background style
+ * Positioning: adjust via adding .blended-bg--top, .blended-bg--bottom
+ * Height will be updated based on first/last section height via js side
+ */
+
+@mixin blended-bg($bgColor: $linear-gradient-linear-dark) {
+    --transparent-bg-height: 0;
+
+    position: relative;
+
+    &::before {
+        @include rounded-corners(all);
+
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+
+        width: 100%;
+        height: calc(100% - var(--transparent-bg-height));
+
+        background: $bgColor;
+    }
+
+    &.blended-bg--top {
+        &::before { 
+            bottom: 0;
+            top: auto;
+        }
+    }
+
+    &.blended-bg--bottom {
+        &::before { 
+            top: 0;
+            bottom: auto;
+        }
+    }
+
+    &.blended-bg--rounded-top {
+        &::before { 
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+            
+    & > section {
+        background: transparent;
+    }
+
+    & > section:not(:last-of-type) {
+        padding-bottom: map-get($spacers, 5);
+        margin-bottom: 0;
+    }
+}

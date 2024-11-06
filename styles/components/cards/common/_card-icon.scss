@@ -1,0 +1,141 @@
+/**********/
+/* MIXINS */
+/**********/
+
+@mixin floating-icon--light {
+
+    background: color(White);
+
+    &:before {
+        background: $linear-gradient-orange-1;
+    }
+
+    .icon {
+        background: color(White);
+    }
+
+    &.inactive {
+
+        &:before {
+            opacity: 0;
+        }
+
+        .icon {
+            background: color(VeevaOrange);
+        }
+
+    }
+
+    &.active {
+        
+        &:before {
+            opacity: 1;
+        }
+
+        .icon {
+            background: color(White);
+        }
+
+    }
+
+}
+
+@mixin floating-icon--dark {
+    
+    background: color(MidnightIndigo);
+
+    &:before {
+        background: $linear-gradient-orange-1;
+    }
+
+    .icon {
+        background: color(White);
+    }
+
+    &.inactive {
+
+        &:before {
+            opacity: 0;
+        }
+
+        .icon {
+            background: color(VeevaOrange);
+        }
+
+    }
+
+    &.active {
+        
+        &:before {
+            opacity: 1;
+        }
+
+        .icon {
+            background: color(White);
+        }
+
+    }
+
+}
+
+/**********/
+/* STYLES */
+/**********/
+
+.floating-icon {
+
+    position: relative;
+    overflow: hidden;
+
+    width: 40px;
+    height: auto;
+    margin-bottom: 20px;
+    aspect-ratio: 1 / 1;
+
+    border-radius: 50%;
+    background: color(White);
+    box-shadow: $box-shadow-sm-behind-light;
+    
+    transition: $transition-all-ease-in-out-1;
+
+    @include media-breakpoint-up(md) {
+        width: 48px;
+    }
+
+}
+
+.floating-icon:before {
+
+    content: '';
+    
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    
+    transition: $transition-all-ease-in-out-1;
+    opacity: 1;
+    
+}
+
+.floating-icon .icon {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    
+    width: 44%;
+    aspect-ratio: 1 / 1;
+    
+    transform: translate(-50%, -50%);
+    transition: $transition-all-ease-in-out-1;
+    
+}
+
+.floating-icon--light {
+    @include floating-icon--light;
+}
+
+.floating-icon--dark {
+    @include floating-icon--dark;
+}

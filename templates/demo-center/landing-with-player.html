@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/styles/normalize.css" />
+        <link rel="stylesheet" href="/dist/bundle.min.css" />
+        <title>Demo Center Landing</title>
+    </head>
+
+
+    <!-- Live: https://www.veeva.com/products/development-demo-center/ -->
+    <!-- Live: https://www.veeva.com/products/quality-demo-center/ -->
+    <!-- Live: https://www.veeva.com/products/medical-demo-center/ -->
+    <!-- Live: https://www.veeva.com/products/commercial-demo-center/ -->
+
+    <!-- Planned Url: /demo-center?area=development-cloud&page=1 -->
+    <!-- Planned Url: /demo-center?area=vault-quality&page=1 -->
+    <!-- Planned Url: /demo-center?area=medical-suite&page=1 -->
+    <!-- Planned Url: /demo-center?area=commercial-cloud&page=1 -->
+    <body>
+        <!-- Demo Center Page Start -->
+        <main class="veeva-2024">
+            <div id="demo-center-landing">
+                <!-- Hero - Filter -->
+                <!-- NOTE: can change to hero-filter--grey pb-8 -->
+                <section class="hero-filter hero-filter--light pb-0">
+                    <!-- copy container -->
+                    <div class="container copy-container copy-container--left copy-container--eyebrow-gradient">
+                        <h3>Demo Center</h3>
+                        <p>Watch these demos and videos to learn how Veeva deliver high-value products and services with great efficiency and impact.
+                        </p>
+                    </div>
+
+                    <!-- filter field wrapper -->
+                    <div class="filter-field-wrapper container">
+                        <!-- filter dropdowns wrapper -->
+                        <div class="filter-dropdowns-wrapper">
+                            <!-- filter dropdown: area -->
+                            <div id="[form-id]" class="form-dropdown dropdown form-dropdown--filter">
+                                <button class="dropdown-toggle" role="button" id="[toggle-id]" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                    <h6>Areas</h6>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="[toggle-id]" data-popper-placement="bottom-start">
+                                    <!-- filter option -->
+                                    <li class="dropdown-item">
+                                        <input id="f4-1-option-1" data-filter="f4-1-option-1" type="checkbox" value="option1" />
+                                        <label for="f4-1-option-1"> Development Cloud </label>
+                                    </li>
+
+                                    <li class="dropdown-item">
+                                        <input id="f4-1-option-2" data-filter="f4-1-option-2" type="checkbox" value="option1" />
+                                        <label for="f4-1-option-2"> Vault Quality </label>
+                                    </li>
+
+                                    <li class="dropdown-item">
+                                        <input id="f4-1-option-3" data-filter="f4-1-option-3" type="checkbox" value="option1" />
+                                        <label for="f4-1-option-3"> Medical Suite </label>
+                                    </li>
+
+                                    <li class="dropdown-item">
+                                        <input id="f4-1-option-4" data-filter="f4-1-option-4" type="checkbox" value="option1" />
+                                        <label for="f4-1-option-4"> Commercial Cloud </label>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- filter dropdown: product -->
+                            <div id="[form-id]" class="form-dropdown dropdown form-dropdown--filter">
+                                <button class="dropdown-toggle" role="button" id="[toggle-id]" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                                    <h6>Product</h6>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="[toggle-id]" data-popper-placement="bottom-start">
+                                    <!-- filter option -->
+                                    <li class="dropdown-item">
+                                        <input id="f4-2-option-1" data-filter="f4-2-option-1" type="checkbox" value="option1" />
+                                        <label for="f4-2-option-1"> Product 1 </label>
+                                    </li>
+
+                                    <li class="dropdown-item">
+                                        <input id="f4-2-option-2" data-filter="f4-2-option-2" type="checkbox" value="option1" />
+                                        <label for="f4-2-option-2"> Product 2 </label>
+                                    </li>
+
+                                    <li class="dropdown-item">
+                                        <input id="f4-2-option-3" data-filter="f4-2-option-3" type="checkbox" value="option1" />
+                                        <label for="f4-2-option-3"> Product 3 </label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- filter search + modal btn wrapper -->
+                        <div class="filter-search-tool-wrapper">
+                            <!-- filter search -->
+                            <div class="filter-search-wrapper">
+                                <span class="icon" data-icon="magnifying-glass"></span>
+                                <input class="filter-search" name="search" type="text" placeholder="Search" value="" />
+                            </div>
+
+                            <!-- filter modal btn -->
+                            <button class="filter-modal-btn" data-bs-toggle="modal" data-modal-logo="/wp-content/themes/veeva2015/assets/veeva-2024/logos/trimmed/white/veeva.png" data-modal-title="Filter" data-modal-button-text="Filter">
+                                <span class="icon" data-icon="slider-mobile"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- filter tag wrapper -->
+                    <div class="filter-tag-wrapper container">
+                        <!-- NOTE: add filter tag on js side -->
+                        <!-- <div class="filter-tag">Filter Tag Name</div>
+                        <div class="filter-tag">Filter Tag Name</div>
+                        <div class="filter-tag">Filter Tag Name</div> -->
+                    </div>
+                </section>
+
+                <!-- NOTE: Use for-loop to loop over for actual implementation -->
+
+                <!-- Areas on existing page: Development Cloud, Vault Quality, Medical Suite -->
+
+                <!-- Video Player Demos - Development Cloud -->
+                <!-- NOTE: need id on block -->
+                <section id="video-demo-block-1" class="video-player-demos video-player-demos--light">
+                    <div class="container">
+                        <!-- copy container -->
+                        <div class="copy-container">
+                            <div class="copy-container__title-section">
+                                <h3> Development Cloud </h3>
+                                <p> From clinical trials to quality and manufacturing, Veeva's cloud-based content management applications are developed specifically for the global life sciences industry. </p>
+                            </div>
+                            <a class="button-outline button-outline--black" href="https://google.com" target="_self"> View All </a>
+                        </div>
+
+                        <!-- video player module -->
+                        <div class="video-player-module video-player-module--multiple">
+                            <div class="video-player-module__video">
+                                <div class="video-player-module__wistia-wrapper">
+                                    <!-- NOTE: need to add wistia code + aspect ratio -->
+                                    <!-- adjust video aspect ratio here -->
+                                    <div class="wistia_responsive_padding" style="padding: 56.25% 0 0 0; position: relative">
+                                        <div class="wistia_responsive_wrapper" style="height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+                                            <!-- add class here : wistia_async_{wistia-id} -->
+                                            <div class="wistia_embed wistia_async_p4uz0e9bjz" style="height: 100%; width: 100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- NOTE: Video Info added automatically -->
+                            </div>
+
+                            <!-- sub video nav wrapper, light -->
+                            <div class="video-player-module__video-nav sub-video-nav-wrapper sub-video-nav-wrapper--light">
+                                <div class="sub-video-nav-wrapper__title">
+                                    <h5>Recommended Videos</h5>
+                                </div>
+                                <div class="sub-video-nav-wrapper__content">
+                                    <!-- NOTE: Sub Video Nav added automatically -->
+                                </div>
+                                <div class="sub-video-nav-wrapper__bottom">
+                                    <a class="button-outline" href="https://google.com" target="_self"> View All </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Video Player Demos - Vault Quality -->
+                <section id="video-demo-block-2" class="video-player-demos video-player-demos--light">
+                    <div class="container">
+                        <!-- copy container -->
+                        <div class="copy-container">
+                            <div class="copy-container__title-section">
+                                <h3> Vault Quality </h3>
+                                <p> Watch these demos and videos to learn how Veeva Vault Quality streamlines quality content, processes, and training management across GxPs. </p>
+                            </div>
+                            <a class="button-outline button-outline--black" href="https://google.com" target="_self"> View All </a>
+                        </div>
+
+                        <!-- video player module -->
+                        <div class="video-player-module video-player-module--multiple">
+                            <div class="video-player-module__video">
+                                <div class="video-player-module__wistia-wrapper">
+                                    <!-- NOTE: need to add wistia code + aspect ratio -->
+                                    <!-- adjust video aspect ratio here -->
+                                    <div class="wistia_responsive_padding" style="padding: 56.25% 0 0 0; position: relative">
+                                        <div class="wistia_responsive_wrapper" style="height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+                                            <!-- add class here : wistia_async_{wistia-id} -->
+                                            <div class="wistia_embed wistia_async_p4uz0e9bjz" style="height: 100%; width: 100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- NOTE: Video Info added automatically -->
+                            </div>
+
+                            <!-- sub video nav wrapper, light -->
+                            <div class="video-player-module__video-nav sub-video-nav-wrapper sub-video-nav-wrapper--light">
+                                <div class="sub-video-nav-wrapper__title">
+                                    <h5>Recommended Videos</h5>
+                                </div>
+                                <div class="sub-video-nav-wrapper__content">
+                                    <!-- NOTE: Sub Video Nav added automatically -->
+                                </div>
+                                <div class="sub-video-nav-wrapper__bottom">
+                                    <a class="button-outline" href="https://google.com" target="_self"> View All </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Video Player Demos - Medical Suite -->
+                <section id="video-demo-block-3" class="video-player-demos video-player-demos--light">
+                    <div class="container">
+                        <!-- copy container -->
+                        <div class="copy-container">
+                            <div class="copy-container__title-section">
+                                <h3> Medical Suite </h3>
+                                <p> Tailored specifically for medical affairs, Veeva Medical Suite brings together customer insights, engagement, and content to enable effective scientific exchange. </p>
+                            </div>
+                            <a class="button-outline button-outline--black" href="https://google.com" target="_self"> View All </a>
+                        </div>
+
+                        <!-- video player module -->
+                        <div class="video-player-module video-player-module--multiple">
+                            <div class="video-player-module__video">
+                                <div class="video-player-module__wistia-wrapper">
+                                    <!-- NOTE: need to add wistia code + aspect ratio -->
+                                    <!-- adjust video aspect ratio here -->
+                                    <div class="wistia_responsive_padding" style="padding: 56.25% 0 0 0; position: relative">
+                                        <div class="wistia_responsive_wrapper" style="height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+                                            <!-- add class here : wistia_async_{wistia-id} -->
+                                            <div class="wistia_embed wistia_async_p4uz0e9bjz" style="height: 100%; width: 100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- NOTE: Video Info added automatically -->
+                            </div>
+
+                            <!-- sub video nav wrapper, light -->
+                            <div class="video-player-module__video-nav sub-video-nav-wrapper sub-video-nav-wrapper--light">
+                                <div class="sub-video-nav-wrapper__title">
+                                    <h5>Recommended Videos</h5>
+                                </div>
+                                <div class="sub-video-nav-wrapper__content">
+                                    <!-- NOTE: Sub Video Nav added automatically -->
+                                </div>
+                                <div class="sub-video-nav-wrapper__bottom">
+                                    <a class="button-outline" href="https://google.com" target="_self"> View All </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Video Player Demos - Commercial Cloud -->
+                <section id="video-demo-block-4" class="video-player-demos video-player-demos--light">
+                    <div class="container">
+                        <!-- copy container -->
+                        <div class="copy-container">
+                            <div class="copy-container__title-section">
+                                <h3> Commercial Cloud </h3>
+                                <p> Designed specifically for the life sciences industry, Veeva Commercial Cloud provides the foundation for digital excellence, powered by data, multichannel CRM, and content management. </p>
+                            </div>
+                            <a class="button-outline button-outline--black" href="https://google.com" target="_self"> View All </a>
+                        </div>
+
+                        <!-- video player module -->
+                        <div class="video-player-module video-player-module--multiple">
+                            <div class="video-player-module__video">
+                                <div class="video-player-module__wistia-wrapper">
+                                    <!-- NOTE: need to add wistia code + aspect ratio -->
+                                    <!-- adjust video aspect ratio here -->
+                                    <div class="wistia_responsive_padding" style="padding: 56.25% 0 0 0; position: relative">
+                                        <div class="wistia_responsive_wrapper" style="height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+                                            <!-- add class here : wistia_async_{wistia-id} -->
+                                            <div class="wistia_embed wistia_async_p4uz0e9bjz" style="height: 100%; width: 100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- NOTE: Video Info added automatically -->
+                            </div>
+
+                            <!-- sub video nav wrapper, light -->
+                            <div class="video-player-module__video-nav sub-video-nav-wrapper sub-video-nav-wrapper--light">
+                                <div class="sub-video-nav-wrapper__title">
+                                    <h5>Recommended Videos</h5>
+                                </div>
+                                <div class="sub-video-nav-wrapper__content">
+                                    <!-- NOTE: Sub Video Nav added automatically -->
+                                </div>
+                                <div class="sub-video-nav-wrapper__bottom">
+                                    <a class="button-outline" href="https://google.com" target="_self"> View All </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- NOTE: if veeva opt for video control list as url only -->
+                <!-- Video Player Demos - Development Cloud -->
+                <section id="video-demo-block-as-link" class="video-player-demos video-player-demos--light">
+                    <div class="container">
+                        <!-- copy container -->
+                        <div class="copy-container">
+                            <div class="copy-container__title-section">
+                                <h3> Video Control as url </h3>
+                                <p> The above sections act as a video player instead of video links. This will serve as the template they end up using link only video-nav. As their current content only has link instead of wistia ID which will be required for it to work as video player. </p>
+                            </div>
+                            <a class="button-outline button-outline--black" href="https://google.com" target="_self"> View All </a>
+                        </div>
+
+                        <!-- video player module -->
+                        <div class="video-player-module video-player-module--multiple">
+                            <div class="video-player-module__video">
+                                <div class="video-player-module__wistia-wrapper">
+                                    <!-- NOTE: need to add wistia code + aspect ratio -->
+                                    <!-- adjust video aspect ratio here -->
+                                    <div class="wistia_responsive_padding" style="padding: 56.25% 0 0 0; position: relative">
+                                        <div class="wistia_responsive_wrapper" style="height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+                                            <!-- add class here : wistia_async_{wistia-id} -->
+                                            <div class="wistia_embed wistia_async_p4uz0e9bjz" style="height: 100%; width: 100%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- NOTE: Video Info added automatically -->
+                            </div>
+
+                            <!-- sub video nav wrapper, light -->
+                            <div class="video-player-module__video-nav sub-video-nav-wrapper sub-video-nav-wrapper--light">
+                                <div class="sub-video-nav-wrapper__title">
+                                    <h5>Recommended Videos</h5>
+                                </div>
+                                <div class="sub-video-nav-wrapper__content">
+                                    <a href="https://www.veeva.com/eu/resources/advanz-pharma-partners-with-veeva-to-set-unified-digital-first-commercial-foundation/" class="sub-video-nav sub-video-nav--stacked sub-video-nav--stacked--light">
+                                        <div class="sub-video-nav__thumbnail">
+                                            <img src="https://www.veeva.com/wp-content/uploads/2024/04/Vault-PromoMats-Medical-Connection-Demo_Thumb-380x250-1.png" alt="">
+                                        </div>
+                                        <div class="sub-video-nav__content">
+                                            <h6>PromoMats-Medical Connection Demo</h6>
+                                            <p>Simplify document management and enhance collaboration between medical and promotional teams.</p>
+                                        </div>
+                                    </a>
+                                    <a href="https://www.veeva.com/wp-content/uploads/2024/03/Veeva-CDB-2023-Release-Highlights-Demo_Demo-center-tile.png" class="sub-video-nav sub-video-nav--stacked sub-video-nav--stacked--light">
+                                        <div class="sub-video-nav__thumbnail">
+                                            <img src="https://www.veeva.com/wp-content/uploads/2024/03/Veeva-CDB-2023-Release-Highlights-Demo_Demo-center-tile.png" alt="">
+                                        </div>
+                                        <div class="sub-video-nav__content">
+                                            <h6>Veeva CDB Release Highlights | Demo</h6>
+                                            <p>Simplify document management and enhance collaboration between medical and promotional teams. </p>
+                                        </div>
+                                    </a>
+                                    <a href="https://www.veeva.com/wp-content/uploads/2024/03/Quality-Clinical-operations-connection-Demo_demo-center-tile.png" class="sub-video-nav sub-video-nav--stacked sub-video-nav--stacked--light">
+                                        <div class="sub-video-nav__thumbnail">
+                                            <img src="https://www.veeva.com/wp-content/uploads/2024/03/Quality-Clinical-operations-connection-Demo_demo-center-tile.png" alt="">
+                                        </div>
+                                        <div class="sub-video-nav__content">
+                                            <h6>Quality-Clinical Operations Connection Demo</h6>
+                                            <p>See how the Quality-Clinical Operations Connection automates the sharing of core study data and clinical issues with quality teams. </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Hero Contained Start (CTA) -->
+                <section class="hero-contained hero-contained--gradient hero-contained--footer-fix">
+                    <div class="copy-container container copy-container--center">
+                        <h6><span class="icon" data-icon="box-sign"></span>Partner with Veeva</h6>
+                        <h3>
+                            Interested in learning more about <br />
+                            how Veeva can help?
+                        </h3>
+                        <div class="copy-container__buttons">
+                            <a class="button-primary button-primary--gradient" href="/contact-us/" target="_self">Contact Us</a>
+                        </div>
+                    </div>
+                </section>
+                <!-- Hero Contained End -->
+            </div>
+        </main>
+        <!-- Demo Center Page End -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://fast.wistia.com/assets/external/E-v1.js" async=""></script>
+        <script src="/dist/bundle.min.js"></script>
+
+        <script>
+            const videoBlockIdList = [
+                "video-demo-block-1",
+                "video-demo-block-2",
+                "video-demo-block-3",
+                "video-demo-block-4"
+            ]; // unique block ids
+            const videoDataList = [];
+            const showVideoInfo = true;
+
+            const videoData1 = [
+                {
+                    wistiaID: "zzk08gne6l", // Required.
+                    title: "Custom video title here", // Optional
+                    description: "Custom video description here", // Optional
+                    // image: "/wp-content/themes/veeva2015/assets/fpo/media.jpg", // Optional
+                },
+                {
+                    wistiaID: "nzu1lv6b2h", // Required.
+                    description: "Custom video description here",
+                },
+                {
+                    wistiaID: "31zfr7kuum", // Required.
+                    description: "Custom video description here",
+                },
+                {
+                    wistiaID: "i5n0o1mryj", // Required.
+                    description: "Custom video description here",
+                },
+            ];
+
+            videoDataList.push(videoData1, videoData1, videoData1, videoData1);
+
+            videoBlockIdList.forEach((blockId, index) => {
+                veevaLib.initVideoMultiplePlayerBlock(blockId, videoDataList[index], showVideoInfo);
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+.summit-agenda .hero-filter {
+    z-index: 2;
+}
+
+mark {
+    background: color(SunshineYellow, 0.5);
+    padding: 0;
+}
+
+.summit-agenda #agenda-wrapper {
+    position: relative;
+}
+
+// add loading animation to page only as the accordion is huge
+.summit-agenda #agenda-wrapper::before {
+    @include spinning-loader;
+
+    content: "";
+    width: 32px;
+    height: 32px;
+
+    position: absolute;
+    top: calc(15vh - 32px / 2);
+    right: calc(50% - 32px / 2);
+}
+
+.summit-agenda #agenda-wrapper > div {
+    opacity: 0;
+    transition: $transition-all-ease-in-out-1;
+}
+
+.summit-agenda #agenda-wrapper.ready > div {
+    opacity: 1;
+}
+
+.summit-agenda #agenda-wrapper.ready::before {
+    opacity: 0;
+}

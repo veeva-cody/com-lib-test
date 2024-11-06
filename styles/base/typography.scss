@@ -1,0 +1,151 @@
+@mixin heading-default {
+	
+	font-family: $heading-font-family;
+	letter-spacing: -0.03em;
+	line-height: 1.2;
+	font-weight: 600;
+	text-transform: unset;
+
+	margin-bottom: 0;
+
+}
+
+p, ol, ul {
+	font-size: $font-size-body-m-mobile;
+	font-weight: 400;
+	line-height: 1.4;
+	color: inherit;
+}
+
+strong {
+	font-weight: 700;
+}
+
+em {
+	font-style: italic;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.h7, 
+.h8 {
+	@include heading-default;
+}
+
+h1, .h1 {
+	font-size: $font-size-h1-mobile;
+	line-height: 1.1;
+}
+
+h2, .h2 {
+	font-size: $font-size-h2-mobile;
+	line-height: 1.15;
+}
+
+h3, .h3 {
+	font-size: $font-size-h3-mobile;
+	line-height: 1.15;
+}
+
+h4, .h4 {
+	font-size: $font-size-h4-mobile;
+}
+
+h5, .h5 {
+	font-size: $font-size-h5-mobile;
+}
+
+h6, .h6 {
+	font-size: $font-size-h6-mobile;
+}
+
+.h7 {
+	font-size: $font-size-h7-mobile;
+}
+
+.h8 {
+    font-size: $font-size-h8-mobile;
+}
+
+.body-l,
+.body-m,
+.body-s,
+.body-xs {
+	font-family: $body-font-family;
+	line-height: 1.4;
+	font-weight: 400;
+}
+
+.body-l {
+	font-size: $font-size-body-l-mobile;
+}
+
+.body-m {
+	font-size: $font-size-body-m-mobile;
+}
+
+.body-s {
+	font-size: $font-size-body-s-mobile;
+}
+
+.body-xs {
+	font-size: $font-size-body-xs-mobile;
+}
+
+@include media-breakpoint-up(md) {
+	p, ol, ul {
+		font-size: $font-size-body-m-desktop;
+	}
+
+	h1, .h1 {
+		font-size: $font-size-h1-desktop;
+	}
+
+	h2, .h2 {
+		font-size: $font-size-h2-desktop;
+	}
+
+	h3, .h3 {
+		font-size: $font-size-h3-desktop;
+	}
+
+	h4, .h4 {
+		font-size: $font-size-h4-desktop;
+	}
+
+	h5, .h5 {
+		font-size: $font-size-h5-desktop;
+	}
+
+	h6, .h6 {
+		font-size: $font-size-h6-desktop;
+	}
+
+	.h7 {
+		font-size: $font-size-h7-desktop;
+	}
+
+    .h8 {
+		font-size: $font-size-h8-desktop;
+	}
+
+	.body-l {
+		font-size: $font-size-body-l-desktop;
+	}
+
+	.body-m {
+		font-size: $font-size-body-m-desktop;
+	}
+
+	.body-s {
+		font-size: $font-size-body-s-desktop;
+	}
+
+	.body-xs {
+		font-size: $font-size-body-xs-desktop;
+	}
+}

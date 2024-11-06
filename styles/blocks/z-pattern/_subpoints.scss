@@ -1,0 +1,137 @@
+.z-pattern-subpoints .z-pattern__wrapper {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $z-pattern-content-gap-mobile;
+
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: 1.2fr 1fr;
+        gap: $z-pattern-content-gap-desktop;
+    }
+
+}
+
+.z-pattern-subpoints .z-pattern__inner {
+
+    display: flex;
+    flex-direction: column;
+    gap: $z-pattern-content-gap-mobile;
+
+    @include media-breakpoint-up(lg) {
+        justify-content: center;
+        gap: $z-pattern-content-gap-desktop;
+    }
+
+}
+
+.z-pattern-subpoints__point {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $card-gap-xxs;
+}
+
+.z-pattern-subpoints__point p {
+    margin-bottom: 0;
+}
+
+.z-pattern-subpoints__point p a {
+    @include simple-text-link;
+}
+
+.z-pattern--light .z-pattern-subpoints__point {
+    color: color(GalaxyBlack);
+}
+
+.z-pattern--dark .z-pattern-subpoints__point {
+    color: color(White);
+}
+
+.z-pattern-subpoints__points {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $card-gap-lg;
+}
+
+.z-pattern-subpoints__stats {
+
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(xxl) {
+        flex-direction: row;
+        gap: 10px;
+        max-width: none;
+    }
+
+}
+
+.z-pattern-subpoints__stats .z-pattern-subpoints__stats-item-label {
+    @include font(body-s);
+}
+
+.z-pattern-subpoints__stats .z-pattern-subpoints__stats-item-value {
+    @include background-text-clip($linear-gradient-orange-compliant);
+    @include font(body-s);
+    font-weight: 600;
+}
+
+.z-pattern-subpoints__stats-item {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+
+    @include media-breakpoint-up(md) {
+        padding-right: 10px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        gap: 8px;
+    }
+
+}
+
+.z-pattern--light .z-pattern-subpoints__stats-item {
+
+    color: color(GalaxyBlack);
+    border-bottom: 1px solid color(LightGray);
+
+    @include media-breakpoint-up(xxl) {
+        border: 0;
+        border-right: 1px solid color(LightGray);
+    }
+
+}
+
+.z-pattern--light .z-pattern-subpoints__stats-item:last-of-type {
+    
+    border-bottom: 0;
+
+    @include media-breakpoint-up(xxl) {
+        border-right: 0;
+    }
+
+}
+
+.z-pattern--dark .z-pattern-subpoints__stats-item {
+
+    color: color(White);
+    border-bottom: 1px solid color(NeutralGrey);
+
+    @include media-breakpoint-up(xxl) {
+        border: 0;
+        border-right: 1px solid color(NeutralGrey);
+    }
+    
+}
+
+.z-pattern--dark .z-pattern-subpoints__stats-item:last-of-type {
+    
+    border-bottom: 0;
+
+    @include media-breakpoint-up(xxl) {
+        border-right: 0;
+    }
+
+}

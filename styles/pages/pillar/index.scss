@@ -1,0 +1,29 @@
+.pillar-page {
+    .hero-centered .copy-container h1 {
+        font-size: $font-size-h3-mobile;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-h2-desktop;
+        }
+    }
+
+    #hero.hero-centered--image {
+        @include gateway-hero-bg-images;
+    }
+
+    .blended-bg {
+        @include blended-bg;
+    }
+}
+
+#pillar-pbc {
+    @include media-breakpoint-up(lg) {
+        .resource-card:nth-child(n+1) .resource-card--featured__logo img {
+            max-height: 28px;
+        }
+    }
+
+    .resource-block__cards--featured > .resource-card.resource-card--featured:first-child .resource-card__media:before {
+        background: color(Black, 0.1);
+    }
+}

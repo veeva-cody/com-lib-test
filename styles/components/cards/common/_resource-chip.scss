@@ -1,0 +1,89 @@
+.resource-chip {
+
+    @include font(body-xs);
+    @include heading-default;
+    
+    display: flex;
+    align-items: center;
+    
+    width: fit-content;
+    padding: 6px 8px;
+    
+    border-radius: 8px;
+
+    transition: $transition-all-ease-in-out-1;
+
+    @include media-breakpoint-up(sm) {
+        padding: 6px 12px;
+    }
+
+    @include media-breakpoint-up(md) {
+        border-radius: 10px;
+    }
+
+}
+
+.resource-chip__icon {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 14px;
+    height: 14px;
+    margin-right: map-get($spacers, 1);
+    
+    background: $linear-gradient-orange-1; 
+    border-radius: 50%;
+
+    @include media-breakpoint-up(md) {
+        width: 16px;
+        height: 16px;
+    }
+
+}
+
+.resource-chip__icon .icon {
+    
+    width: 50%;
+    height: 50%;
+    aspect-ratio: 1 / 1;
+
+    background: color(White);
+    
+}
+
+@mixin resource-chip--light {
+    color: color(GalaxyBlack);
+    background: color(NeutralGrey);
+}
+
+@mixin resource-chip--dark {
+    color: color(White);
+    background: color(MidnightIndigo);
+}
+
+@mixin resource-chip--icon-grey {
+    color: color(GalaxyBlack);
+    background: color(NeutralGrey);
+
+    .resource-chip__icon {
+        background: color(SlateGray);
+    }
+    
+    .resource-chip__icon .icon { 
+        background: color(Black);
+    }
+}
+
+.resource-chip--light {
+    @include resource-chip--light;
+}
+
+.resource-chip--dark {
+    @include resource-chip--dark;
+}
+
+.resource-chip--icon-grey {
+    @include resource-chip--icon-grey;
+}

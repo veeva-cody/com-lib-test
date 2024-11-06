@@ -1,0 +1,130 @@
+// used on pbc page
+.content-article {
+    width: 100%;
+    max-width: $inner-content-max-width-lg;
+    margin: map-get($spacers, 5) auto;
+
+    color: color(GalaxyBlack);
+
+    @include media-breakpoint-up(lg) {
+        margin: map-get($spacers, 10) auto;
+    }
+}
+
+// component style adjustment
+.content-article .quote-card-vertical {
+    @include media-breakpoint-up(md) {
+        padding: map-get($spacers, 6) 6%;
+    }
+}
+
+.content-article .quote-card__quote-wrapper p {
+    max-width: none;
+}
+
+.content-article .quote-card-vertical .quote-card__person-info {
+    margin-top: 0;
+}
+
+// regular text wrapper
+.content-article__text,
+.content-article__img-box-wrapper {
+    margin-top: map-get($spacers, 7);
+    margin-bottom: map-get($spacers, 7);
+}
+
+.content-article__text h1,
+.content-article__text h2,
+.content-article__text h3,
+.content-article__text h4,
+.content-article__text h5,
+.content-article__text h6 {
+    margin-top: map-get($spacers, 5);
+    margin-bottom: map-get($spacers, 3);
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: map-get($spacers, 4);
+    }
+}
+
+.content-article__text p {
+    @include font(body-m);
+    line-height: 1.5em;
+    margin-bottom: map-get($spacers, 3);
+}
+
+.content-article__text p:last-of-type {
+    margin-bottom: 0;
+}
+
+.content-article__text ul,
+.content-article__text ol {
+    padding-inline-start: map-get($spacers, 5);
+
+    margin: map-get($spacers, 4) 0;
+}
+
+.content-article__text ul li,
+.content-article__text ol li {
+    padding-left: map-get($spacers, 2);
+
+    margin-top: map-get($spacers, 2);
+    margin-bottom: 0;
+}
+
+.content-article__text .rounded-img-box {
+    @include rounded-corners(all);
+    box-shadow: $box-shadow-lg-behind;
+    margin: map-get($spacers, 5) 0 map-get($spacers, 8);
+}
+
+.content-article__text .rounded-img-box img {
+    width: 100%;
+}
+
+.content-article__text a {
+    // @include orange-link;  // switched to blue for accessibility purposes
+    @include twilight-blue-link;
+
+    text-decoration: none;
+}
+
+.content-article__img-box-wrapper--2-col {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($spacers, 4);
+
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.content-article__img-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-article__img-box h6 {
+    text-align: center;
+    margin-bottom: map-get($spacers, 3);
+}
+
+.content-article__img-box img {
+    width: 100%;
+    max-width: 470px;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(md) {
+        max-width: none;
+    }
+}
+
+.content-article__text--footnote {
+    border-top: solid 1px color(NeutralGrey);
+    padding-top: map-get($spacers, 3);
+}
+
+.content-article__text--footnote p {
+    @include font(body-xs);
+}

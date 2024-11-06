@@ -1,0 +1,188 @@
+.card-block-z-pattern {
+
+    position: relative;
+    overflow: hidden;
+    
+    padding-top: map-get($spacers, 6);
+    padding-bottom: map-get($spacers, 6);
+
+}
+
+.card-block-z-pattern:before {
+    @include media-breakpoint-up(lg) {
+        
+        content: '';
+
+        position: absolute;
+        
+        width: 50%;
+        height: calc(100% - (map-get($spacers, 6) * 2));
+
+        border-radius: $border-radius-xl;
+
+    }
+}
+
+.card-block-z-pattern .container {
+    @include media-breakpoint-up(lg) {
+        display: flex;
+        gap: map-get($spacers, 5);
+    }
+}
+
+.card-block-z-pattern .copy-container {
+    @include media-breakpoint-up(lg) {
+        flex-basis: 45%;
+    }
+}
+
+.card-block-z-pattern .card-block-z-pattern__cards {
+    @include media-breakpoint-up(lg) {
+        flex-basis: 55%;
+    }
+}
+
+.card-block-z-pattern .copy-container,
+.card-block-z-pattern .card-block-z-pattern__cards {
+    @include media-breakpoint-up(xl) {
+        flex-basis: 50%;
+    }
+}
+
+.card-block-z-pattern .copy-container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+
+        align-items: flex-start;
+
+        padding-right: map-get($spacers, 10);
+
+        text-align: left;
+
+    }
+
+}
+
+.card-block-z-pattern .copy-container h3 {
+    @include media-breakpoint-up(lg) {
+        font-size: $font-size-h1-desktop;
+        line-height: 1.2;
+    }
+}
+
+.card-block-z-pattern .copy-container h3 br {
+
+    display: none;
+
+    @include media-breakpoint-up(md) {
+        display: block;
+    }
+
+}
+
+.card-block-z-pattern .copy-container p {
+    max-width: $inner-content-max-width-sm;
+}
+
+.card-block-z-pattern--cards-end {
+    @include media-breakpoint-up(lg) {
+        &:before {
+            // Calculate the left offset of the decorative background element based on the max-width of the container.
+            @each $breakpoint, $max-width in $container-max-widths {
+                @include media-breakpoint-up($breakpoint) {
+                    @if index(lg xl xxl xxxl, $breakpoint) {
+                        $leftOffset: calc(map-get($container-max-widths, $breakpoint) / 8);
+                        left: calc(50% + $leftOffset);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.card-block-z-pattern--cards-end .copy-container {
+
+    @include media-breakpoint-up(lg) {
+        padding-right: map-get($spacers, 4);
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding-right: map-get($spacers, 10);
+    }
+
+}
+
+.card-block-z-pattern--cards-start {
+    @include media-breakpoint-up(lg) {
+        &:before {
+            // Calculate the right offset of the decorative background element based on the max-width of the container.
+            @each $breakpoint, $max-width in $container-max-widths {
+                @include media-breakpoint-up($breakpoint) {
+                    @if index(lg xl xxl xxxl, $breakpoint) {
+                        $rightOffset: calc(map-get($container-max-widths, $breakpoint) / 8);
+                        right: calc(50% + $rightOffset);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.card-block-z-pattern--cards-start .container {
+    flex-direction: row-reverse;
+}
+
+.card-block-z-pattern--cards-start .copy-container {
+
+    @include media-breakpoint-up(lg) {
+        padding-left: map-get($spacers, 5);
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding-left: map-get($spacers, 10);
+    }
+
+}
+
+.card-block-z-pattern--light {
+    color: color(GalaxyBlack);
+    background-color: color(White);
+}
+
+.card-block-z-pattern--light:before {
+    @include media-breakpoint-up(lg) {
+        background-color: color(NeutralGrey);
+    }
+}
+
+.card-block-z-pattern--dark {
+    background-color: color(GalaxyBlack);
+    color: color(White);
+}
+
+.card-block-z-pattern--dark:before {
+    @include media-breakpoint-up(lg) {
+        background-color: color(DarkNavy);
+    }
+}
+
+.card-block-z-pattern--grey {
+    color: color(GalaxyBlack);
+    background-color: color(NeutralGrey);
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.card-block-z-pattern .container::before,
+.card-block-z-pattern .container::after {
+    display: none;
+}

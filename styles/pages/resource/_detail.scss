@@ -1,0 +1,97 @@
+#customer-story-detail,
+#resource-detail {
+    // hero
+    .hero-centered h1,
+    .hero-customer h1,
+    .hero-highlights h1 {
+        font-size: $font-size-h3-mobile;
+
+        @include media-breakpoint-up(md) {
+            font-size: $font-size-h2-desktop;
+        }
+
+        @include media-breakpoint-up(xl) {
+            max-width: $inner-content-max-width-lg;
+        }
+    }
+
+    .hero-customer::before {
+        // NOTE: calculate grey-bg height based on video height
+        @each $breakpoint, $max-width in $container-max-widths {
+            @include media-breakpoint-up($breakpoint) {
+                @if index(xs sm md lg, $breakpoint) {
+                    $videoWidth: calc((map-get($container-max-widths, $breakpoint) - $bs-gutter-x));
+
+                    $videoHeight: calc(($videoWidth / 16) * 9);
+                    height: calc(100% - ($videoHeight / 2));
+                } @else {
+                    // based on .video-player-stacked__video style
+                    $videoWidth: $inner-content-max-width-lg;
+
+                    $videoHeight: calc(($videoWidth / 16) * 9);
+                    height: calc(100% - ($videoHeight / 2));
+                }
+            }
+        }
+    }
+
+    .hero-centered .copy-container p,
+    .hero-customer .copy-container p {
+        @include font(body-m);
+    }
+
+    .hero-centered .copy-container__buttons,
+    .hero-customer .copy-container__buttons {
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+        }
+    }
+
+    .hero-customer:has(.hero-customer__video) {
+        padding-bottom: 0;
+    }
+
+    .hero-customer .copy-container ul {
+        text-align: left;
+    }
+
+    // bottom cta section
+    .hero-contained .copy-container__buttons {
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+        }
+    }
+
+    // resources
+    .resource-block__cards {
+        @include media-breakpoint-down(sm) {
+            gap: 12px;
+        }
+    }
+
+    .resource-block__cards .resource-card {
+        @include media-breakpoint-down(sm) {
+            padding-left: 14px;
+            padding-right: 14px;
+        }
+    }
+}
+
+#customer-story-detail {
+    // using images from cms so we can't have control on aspect ratio
+    .client-logo {
+        aspect-ratio: auto;
+    }
+
+    .hero-highlights__cards {
+        padding: 0 map-get($spacers, 3);
+
+        @include media-breakpoint-down(md) {
+            max-width: 85%;
+        }
+    }
+
+    .hero-highlights__cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

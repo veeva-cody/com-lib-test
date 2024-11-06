@@ -1,0 +1,255 @@
+/***************/
+/* BOX SHADOWS */
+/***************/
+
+.shadow-large-down {
+    box-shadow: $box-shadow-lg-down;
+}
+
+.shadow-large-behind {
+    box-shadow: $box-shadow-lg-behind;
+}
+
+.shadow-small-behind {
+    box-shadow: $box-shadow-sm-behind;
+}
+
+/*******************/
+/* SECTION SPACING */
+/*******************/
+
+.section-spacing {
+
+    padding: $section-spacing-screen-xs 0;
+
+    @include media-breakpoint-up(md) {
+        padding: $section-spacing-screen-md 0;
+    }
+
+    @include media-breakpoint-up(xl) {
+        padding: $section-spacing-screen-lg 0;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        padding: $section-spacing-screen-xxl 0;
+    }
+
+}
+
+.section-margin {
+
+    margin: $section-spacing-screen-xs 0;
+
+    @include media-breakpoint-up(md) {
+        margin: $section-spacing-screen-md 0;
+    }
+
+    @include media-breakpoint-up(xl) {
+        margin: $section-spacing-screen-lg 0;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        margin: $section-spacing-screen-xxl 0;
+    }
+
+}
+
+.section-copy-content-spacing {
+
+    .copy-container {
+        margin-bottom: $block-gap-sm;
+    }
+
+    @include media-breakpoint-up(lg) {
+        .copy-container {
+            margin-bottom: $block-gap-lg;
+        }
+    }
+
+}
+
+/*******************/
+/* BORDER RADIUSES */
+/*******************/
+
+.section-rounded {
+
+    border-radius: $border-radius-m;
+    overflow: hidden;
+
+    @include media-breakpoint-up(lg) {
+        border-radius: $border-radius-xl;
+    }
+
+}
+
+.section-rounded-top {
+
+    border-radius: $border-radius-m $border-radius-m 0 0;
+    overflow: hidden;
+
+    @include media-breakpoint-up(lg) {
+        border-radius: $border-radius-xl $border-radius-xl 0 0;
+    }
+
+}
+
+.section-rounded-bottom {
+
+    border-radius: 0 0 $border-radius-m $border-radius-m;
+    overflow: hidden;
+
+    @include media-breakpoint-up(lg) {
+        border-radius: 0 0 $border-radius-xl $border-radius-xl;
+    }
+
+}
+
+// Use if merging background color with previous section.
+.counter-section-rounded-top {
+
+    padding-bottom: calc($section-spacing-screen-xs + $border-radius-m);
+    margin-bottom: calc($border-radius-m * -1);
+
+    @include media-breakpoint-up(md) {
+        padding-bottom: calc($section-spacing-screen-md + $border-radius-m);
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-bottom: calc($section-spacing-screen-lg + $border-radius-xl);
+        margin-bottom: calc($border-radius-xl * -1);
+    }
+
+    @include media-breakpoint-up(xxl) {
+        padding-bottom: calc($section-spacing-screen-xxl + $border-radius-xl);
+    }
+
+}
+
+.counter-section-rounded-bottom {
+
+    padding-top: calc($section-spacing-screen-xs + $border-radius-m);
+    margin-top: calc($border-radius-m * -1);
+
+    @include media-breakpoint-up(md) {
+        padding-top: calc($section-spacing-screen-md + $border-radius-m);
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding-top: calc($section-spacing-screen-lg + $border-radius-xl);
+        margin-top: calc($border-radius-xl * -1);
+    }
+
+    @include media-breakpoint-up(xxl) {
+        padding-top: calc($section-spacing-screen-xxl + $border-radius-xl);
+    }
+
+}
+
+/**************/
+/* CONTAINERS */
+/**************/
+
+.section-contained-width--lg {
+    max-width: $contained-width-lg;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-contained-width--xl {
+    max-width: $contained-width-xl;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*************/
+/* GRADIENTS */
+/*************/
+
+.clip-radial-orange-gradient {
+    @include background-text-clip($radial-gradient-orange-1);
+}
+
+.clip-linear-gradient-orange-1 {
+    @include background-text-clip($linear-gradient-orange-compliant);
+}
+
+.clip-linear-gradient-orange-compliant {
+    @include background-text-clip($linear-gradient-orange-compliant);
+}
+
+.clip-linear-gradient-blue {
+    @include background-text-clip($linear-gradient-linear-blue);
+}
+
+.clip-img-radial-orange-gradient {
+    @include background-image-clip($radial-gradient-orange-1);
+}
+
+.clip-img-linear-gradient-orange-1 {
+    @include background-image-clip($linear-gradient-orange-1);
+}
+
+.clip-img-linear-gradient-orange-compliant {
+    @include background-image-clip($linear-gradient-orange-compliant);
+}
+
+.clip-img-conic-orange-gradient-1 {
+    @include background-image-clip($conic-gradient-orange-1);
+}
+
+.clip-img-linear-gradient-blue {
+    @include background-image-clip($linear-gradient-linear-blue);
+}
+
+/***************/
+/* BACKGROUNDS */
+/***************/
+
+.bg-midnight-blue {
+    background: color(MidnightIndigo);
+}
+
+.bg-dark-blue {
+    background: color(DarkBlue);
+}
+
+.bg-neutral-grey {
+    background: color(NeutralGrey) !important;
+}
+
+.bg-linear-gradient-orange-1 {
+    background: $linear-gradient-orange-1;
+}
+
+.bg-linear-gradient-orange-2 {
+    background: $linear-gradient-orange-2;
+}
+
+.bg-conic-gradient-light-grey {
+    background: $conic-gradient-light-grey-1;
+}
+
+.bg-linear-gradient-linear-blue {
+    background: $linear-gradient-linear-blue;
+}
+
+.bg-linear-gradient-dark-blue {
+    background: $linear-gradient-dark-blue;
+}
+
+.bg-linear-gradient-linear-dark {
+    background: $linear-gradient-linear-dark;
+}
+
+.bg-none {
+    background: none !important;
+}
+
+/*************/
+/* Link Styles */
+/*************/
+
+.after-link-orange-arrow {
+    @include after-link-orange-arrow;
+}

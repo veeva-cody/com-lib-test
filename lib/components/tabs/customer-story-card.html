@@ -1,0 +1,38 @@
+<div class="customer-story-card [modifier*]">
+    <a class="customer-story-card__media" href="[url]" target="[target]">
+        <img class="customer-story-card__image" src="[src]" alt="[alt]" />
+        <div class="customer-story-card__image-overlay">
+            <div class="customer-story-card__image-content">
+                <div class="customer-story-card__image-title">
+                    <div class="client-logo">
+                        <img src="[src]" alt="[alt]" />
+                    </div>
+                    <h5>[headline]</h5>
+                    <p>[body]</p>
+                </div>
+                <div class="customer-story-card__cta">
+                    <span class="icon" data-icon="arrow-up-right--white"></span>
+                </div>
+            </div>
+        </div>
+    </a>
+    <div class="customer-story-card__content sidebar">
+        <!-- [1-3x] -->
+        {{ `sidebar-info-box-stats` }}
+        {{ `sidebar-info-box-quote` }}
+        {{ `sidebar-info-box-product-list` }}
+        <!-- [] -->
+    </div>
+</div>
+
+<!--
+
+Modifiers
+---------
+
+Required *:
+
+customer-story-card--light
+customer-story-card--dark
+
+-->

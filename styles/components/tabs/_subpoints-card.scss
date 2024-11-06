@@ -1,0 +1,126 @@
+.subpoints-card {
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $card-gap-sm;
+    align-items: center;
+
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+        gap: $card-gap-lg;
+        border-radius: $border-radius-m;
+    }
+
+    @include media-breakpoint-up(lg) {
+        
+        grid-template-columns: 1fr 1fr;
+        gap: $card-gap-xl;
+
+        padding: 28px;
+
+    }
+
+    @include media-breakpoint-up(xl) {
+        gap: 8%;
+        padding: 64px;
+    }
+    
+}
+
+.subpoints-card__media {
+    width: 100%;
+}
+
+.subpoints-card__media img,
+.subpoints-card__media video {
+
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    max-height: 450px;
+    object-fit: cover;
+    object-position: center;
+    
+    border-radius: 32px;
+    overflow: hidden;
+
+}
+
+.subpoints-card__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.subpoints-card__content h6 {
+
+    @include background-text-clip($linear-gradient-orange-compliant);
+    @include font(h8);
+
+    margin-bottom: map-get($spacers, 3);
+
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-h6-desktop;
+    }
+
+}
+
+.subpoints-card__content h4 {
+
+    margin-bottom: map-get($spacers, 3);
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: map-get($spacers, 4);
+    }
+
+}
+
+.subpoints-card__content h4 br {
+
+    display: none;
+
+    @include media-breakpoint-up(lg) {
+        display: block;
+    }
+
+}
+
+.subpoints-card__content p {
+    @include font(body-m);
+    @include media-breakpoint-up(lg) {
+        max-width: 520px;
+    }
+}
+
+.subpoints-card--light {
+
+    color: color(GalaxyBlack);
+
+    @include media-breakpoint-up(lg) {
+        background: color(White);
+    }
+
+}
+
+.subpoints-card--light .subpoints-card__content h6 {
+    @include background-text-clip($linear-gradient-orange-compliant);
+}
+
+.subpoints-card--dark {
+
+    color: color(White);
+
+    @include media-breakpoint-up(lg) {
+        background: color(MidnightIndigo);
+    }
+
+}
+
+.subpoints-card--dark .subpoints-card__content h6 {
+    @include background-text-clip($linear-gradient-orange-compliant);
+}
+
+.subpoints-card--with-shadow {
+    @include media-breakpoint-up(lg) {
+        box-shadow: $box-shadow-lg-behind;
+    }
+}

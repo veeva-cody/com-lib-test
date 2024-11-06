@@ -1,0 +1,77 @@
+<section class="z-pattern z-pattern-products [modifier*]">
+    <div class="z-pattern__wrapper container">
+        <div class="z-pattern__inner">
+            <div class="copy-container copy-container--eyebrow-gradient copy-container--center copy-container--left-lg">
+                <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+                <h3>[headline]</h3>
+                <p>[body]</p>
+                <div class="copy-container__buttons">
+                    <a class="button-outline [modifier^]" href="[url]" target="[target]">[label]</a>
+                    <a class="button-secondary [modifier^]" href="[url]" target="[target]">
+                        <img src="[src]" alt="[alt]" />
+                        <span>[label]</span>
+                    </a>
+                </div>
+            </div>
+            <div class="z-pattern__image">
+                <div class="z-pattern__image-wrapper">
+                    <!-- include one of the following media elements: img, video, or wistia -->
+                    <img src="[src]" alt="[alt]" />
+
+                    <!-- for video element, all its attributes are required -->
+                    <video muted autoplay playsinline loop>
+                        <source src="[src]" type="[video-type]" />
+                    </video>
+
+                    <div class="wistia_responsive_padding" style="padding: 56.25% 0 0 0; position: relative">
+                        <div class="wistia_responsive_wrapper" style="height: 100%; left: 0; position: absolute; top: 0; width: 100%">
+                            <div class="wistia_embed wistia_async_[video-id] autoplay=true endVideoBehavior=loop" style="height: 100%; width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="z-pattern__content z-pattern__subgrid">
+                <!-- [1-6x] -->
+                <a class="z-pattern-products__subpoint" href="[url]" target="[target]">
+                    <div class="z-pattern-products__subpoint-headline">
+                        <h6>[headline]</h6>
+                        <span class="icon" data-icon="arrow-up-right--black"></span>
+                    </div>
+                    <div class="z-pattern-products__subpoint-body">
+                        <p>[body]</p>
+                    </div>
+                </a>
+                <!-- [] -->
+            </div>
+
+            <!-- z-pattern__image will be duplicated here via javascript for desktop image -->
+        </div>
+    </div>
+</section>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+z-pattern--light
+z-pattern--dark
+
+Optional *:
+
+z-pattern--bg-grey
+z-pattern--image-with-shadow
+
+Optional **:
+
+z-pattern__image--sharp-corners
+
+---
+
+Note: 
+
+1. `z-pattern__image--mobile` and `z-pattern__image--desktop` will be added to `z-pattern__image` automatically via javascript functions
+
+-->

@@ -1,0 +1,45 @@
+// form dropdown toc
+.form-dropdown--toc .dropdown-toggle {
+    height: $page-toc-height;
+
+    box-shadow: $box-shadow-sm-behind;
+    border-radius: $border-radius-xxs;
+}
+
+.form-dropdown--toc .dropdown-toggle h6 {
+    @include font(h8);
+    text-align: left;
+    white-space: normal;
+    letter-spacing: -0.02em;
+
+    max-width: 95%;
+}
+
+.form-dropdown--toc .dropdown-menu {
+    gap: map-get($spacers, 1);
+    padding: map-get($spacers, 2) 0;
+
+    box-shadow: $box-shadow-sm-behind;
+    border-radius: $border-radius-xxs;
+
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.form-dropdown--toc h6,
+.form-dropdown--toc .dropdown-menu .dropdown-item {
+    color: color(GalaxyBlack);
+}
+
+.form-dropdown--toc span {
+    color: color(DarkGray);
+    margin-right: 2px;
+}
+
+.form-dropdown--toc .dropdown-item.active {
+    background: color(NavMobileItemBgColor);
+}
+
+.form-dropdown--toc .dropdown-item.active span {
+    color: color(GalaxyBlack);
+}

@@ -1,0 +1,44 @@
+.card-block-4-up,
+.card-block-3-up,
+.card-block-featured-3-up,
+.card-block-expanding {
+    @include copy-content-spacing;
+}
+
+.card-block-3-up__cards,
+.card-block-4-up__cards {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $card-gap-xs;
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: 1fr 1fr;
+        gap: $card-gap-sm;
+    }
+
+    @include media-breakpoint-up(lg) {
+        gap: $card-gap-md;
+    }
+
+}
+
+.card-block-3-up--light,
+.card-block-4-up--light {
+
+    @include block-spacing(padding);
+
+    background: color(NeutralGrey);
+    color: color(GalaxyBlack);
+
+}
+
+.card-block-3-up--dark,
+.card-block-4-up--dark {
+    
+    @include block-spacing(padding);
+
+    background: $linear-gradient-linear-dark;
+    color: color(White);
+
+}

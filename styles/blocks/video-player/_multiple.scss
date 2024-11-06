@@ -1,0 +1,51 @@
+.video-player-multiple {
+    @include copy-content-spacing;
+}
+
+.video-player-multiple .copy-container h3 {
+    max-width: $inner-content-max-width-lg;
+} 
+
+.video-player-multiple--light {
+
+    @include block-spacing(margin);
+
+    color: color(GalaxyBlack);
+    background: color(White);
+
+}
+
+.video-player-multiple--light .chapter-tool__title {
+    background: color(White);
+}
+
+.video-player-multiple--dark {
+
+    @include block-spacing(padding);
+
+    background: $linear-gradient-linear-dark;
+    color: color(White);
+
+}
+
+.video-player-multiple--dark .chapter-tool__title {
+    background: color(GalaxyBlack);
+}
+
+// hide current active item from right side video control
+.video-player-multiple--hide-active-sub-video-nav .sub-video-nav--stacked--light.active,
+.video-player-multiple--hide-active-sub-video-nav .sub-video-nav--stacked--dark.active {
+    display: none;
+}
+
+.video-player-multiple--hide-active-sub-video-nav .sub-video-nav-wrapper__content .sub-video-nav:nth-of-type(4) {
+    @include media-breakpoint-down(xl) {
+        display: grid;
+    }
+}
+
+.video-player-multiple--hide-active-sub-video-nav .sub-video-nav-wrapper__content .sub-video-nav:nth-of-type(4).active {
+    @include media-breakpoint-down(xl) {
+        display: none;
+    }
+}

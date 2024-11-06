@@ -1,0 +1,27 @@
+span.icon {
+
+    -webkit-mask-image: var(--icon);
+    -webkit-mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+  
+    mask-image: var(--icon);
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    
+    display: inline-block;
+
+    width: 32px;
+    height: 32px;
+
+    // background: transparent;
+    background: currentColor;
+
+    opacity: 0;
+
+}
+
+span.icon.ready {
+    opacity: 1;
+}

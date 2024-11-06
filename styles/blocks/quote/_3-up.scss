@@ -1,0 +1,47 @@
+.quote-3-up {
+    @include copy-content-spacing;
+}
+
+.quote-3-up__quotes {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $card-gap-sm;
+
+    @include media-breakpoint-up(sm) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $card-gap-md;
+    }
+
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+.quote-3-up--light {
+
+    @include block-spacing(margin);
+    
+    color: color(GalaxyBlack);
+    background: color(White);
+
+}
+
+.quote-3-up--dark {
+
+    @include block-spacing(padding);
+
+    color: color(White);
+    background: $linear-gradient-linear-dark;
+
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.quote-3-up__quotes.container::before,
+.quote-3-up__quotes.container::after {
+    display: none;
+}

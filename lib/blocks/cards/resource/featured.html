@@ -1,0 +1,47 @@
+<section class="resource-block-featured [modifier*]">
+    <div class="container">
+        <div class="copy-container copy-container--center copy-container--eyebrow-gradient">
+            <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+            <h3>[headline]</h3>
+            <p>[body]</p>
+            <div class="copy-container__buttons">
+                <a class="button-primary [modifier^]" href="[url]" target="[target]">[label]</a>
+                <a class="button-secondary [modifier^]" href="[url]" target="[target]">
+                    <img src="[src]" alt="[alt]" />
+                    <span>[label]</span>
+                </a>
+            </div>
+        </div>
+        <div class="resource-block__cards resource-block__cards--featured [modifier**]">
+            <!-- [3-6x] -->
+            {{ `resource-card-link` }}
+            {{ `resource-card-wistia` }}
+            <!-- [] -->
+        </div>
+    </div>
+</section>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+resource-block-featured--light
+resource-block-featured--dark
+
+Optional **: 
+section-contained-width--xl
+
+Applied:
+
+resource-block__cards--featured
+
+--
+
+Note:
+- Resource card wrapper class, like `resource-block__cards--featured--4` and `resource-block__cards--featured--5`, will be added automatically via JavaScript function for supporting ui for 3-6 cards. 
+- If the card count is out of range of 3-6, additional css & js function will need to be added for ui support.
+
+-->

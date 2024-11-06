@@ -1,0 +1,66 @@
+.person-card-video {
+    cursor: pointer;
+}
+
+.person-card-video :not(img) {
+    margin-left: map-get($spacers, 2);
+    margin-right: map-get($spacers, 2);
+}
+
+.person-card-video__thumbnail-wrapper {
+    position: relative;
+}
+
+.person-card-video__thumbnail {
+
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+
+    border-radius: $border-radius-xxs;
+
+    @include media-breakpoint-up(lg) {
+        border-radius: $border-radius-s;
+    }
+
+}
+
+.person-card-video__thumbnail + .button-secondary {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    z-index: 1;
+}
+
+
+.person-card-video a {
+    @include orange-link;
+}
+
+.person-card-video h6 {
+    @include font(h7);
+    margin-top: map-get($spacers, 3);
+}
+
+.person-card-video p {
+    @include font(body-xs);
+
+    margin-top: map-get($spacers, 1);
+    margin-bottom: 0;
+}
+
+.person-card-video p.person-card-video__company {
+    @include background-text-clip($linear-gradient-orange-compliant);
+    @include font(body-s);
+    font-weight: 700;
+
+    margin-top: map-get($spacers, 2);
+}
+
+.person-card-video--light p {
+    color: color(DarkGray);
+}
+
+.person-card-video--dark p {
+    color: color(LightGray);
+}

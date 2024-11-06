@@ -1,0 +1,42 @@
+.button-primary--gradient {
+
+    background: $linear-gradient-dark-blue;
+    background-size: 100%;
+
+    color: color(White);
+
+}
+
+.button-primary--white {
+    background: color(White);
+    color: color(GalaxyBlack);
+}
+
+.button-primary--gradient:hover,
+.button-primary--gradient.active {
+    background-size: 300%; // Trick for broken background gradient transitions.
+}
+
+.button-primary--white:hover,
+.button-primary--white.active {
+    background: color(OffWhite);
+}
+
+.button-primary--gradient:after {
+    background: url('/wp-content/themes/veeva2015/assets/svg/icons/arrow-up-right--white.svg');
+}
+
+.button-primary--white:after {
+    background: url('/wp-content/themes/veeva2015/assets/svg/icons/arrow-up-right--black.svg');
+}
+
+.button-primary--download:after {
+    background: url('/wp-content/themes/veeva2015/assets/svg/icons/download--white.svg');
+
+    height: 19px;
+    width: 19px;
+}
+
+.button-primary--arrow-downward:after { 
+    transform: rotate(135deg);
+}

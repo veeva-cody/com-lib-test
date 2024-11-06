@@ -1,0 +1,63 @@
+.inline-quote {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($spacers, 3);
+
+    width: 100%;
+    padding: 0 0 map-get($spacers, 4);
+    margin: map-get($spacers, 6) 0;
+
+    @include media-breakpoint-up(md){
+        gap: map-get($spacers, 5);
+        padding: 0;
+        margin: map-get($spacers, 6) 0;
+    }
+}
+
+.inline-quote__quote p {
+    @include font(h5);
+    @include background-text-clip($linear-gradient-orange-compliant);
+
+    line-height: 1.15;
+    padding-right: 5%;
+}
+
+.inline-quote__person-info {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($spacers, 3);
+
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+
+        .quote-card__person-info-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+}
+
+.inline-quote__person-info .avatar-thumbnail {
+    max-width: 50px;
+    flex-shrink: 0;
+
+    @include media-breakpoint-up(md) {
+        max-width: 80px;
+    }
+}
+
+.inline-quote__person-info h5 {
+    @include font(h6);
+    line-height: 1.5;
+    margin-bottom: map-get($spacers, 1);
+
+    @include media-breakpoint-down(md) {
+        font-size: $font-size-body-m-desktop;
+    }
+}
+
+.inline-quote__person-info h6 {
+    @include font(body-m);
+    font-weight: 400;
+}

@@ -1,0 +1,122 @@
+/*---
+Leadership card specific styles
+---
+
+@purpose
+  Declaration of styles for the leadership card block.
+*/
+
+.team-cards {
+    @include copy-content-spacing;
+}
+
+.team-cards__grid {
+    display: grid;
+    gap: $card-gap-xs;
+    grid-template-columns: 1fr;
+
+    @include media-breakpoint-up(lg) {
+        gap: $card-gap-lg;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-breakpoint-up(xl) {
+        gap: 40px; // largest card gap for this display.
+    }
+
+    @include media-breakpoint-up(xxl) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.team-card {
+    background: color(White);
+    border-radius: $border-radius-s;
+    box-shadow: $box-shadow-sm-behind;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 40px 32px;
+    transition:  box-shadow .3s ease-in-out;
+
+    &:hover,
+    &:focus {
+        box-shadow: $box-shadow-lg-behind;
+    }
+}
+
+.team-card__header {
+    display: flex;
+    flex-direction: row;
+    gap: $card-gap-xs;
+
+    @include media-breakpoint-up(xxl) {
+        gap: $card-gap-lg;
+    }
+}
+
+.team-card__headshot {
+    height: 150px;
+    width: 150px;
+
+    img {
+        border-radius: 50%;
+        max-width: 150px;
+        width: auto;
+    }
+}
+
+.team-card__name {
+    font-size: 21px;
+    margin-bottom: 2px;
+    @include background-text-clip($linear-gradient-orange-compliant);
+}
+
+.team-card__title {
+    color: color(Black);
+    margin-bottom: 20px;
+}
+
+.team-card__tenure {
+    color: color(DarkGray);
+    font-size: $font-size-body-s-desktop;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.team-card__social {
+    svg {
+        height: 24px;
+        width: 24px;
+    }
+}
+
+.team-card__description {
+    color: color(DarkGray);
+    font-size: $font-size-body-m-desktop;
+    margin-bottom: 0;
+}
+
+// Block variations
+.team-cards--light {
+    @include block-spacing(margin);
+    background: color(White);
+    color: color(GalaxyBlack);
+}
+
+.team-cards--dark {
+    @include block-spacing(padding);
+    background: $linear-gradient-linear-dark;
+    color: color(White);
+
+    .team-card {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .team-card__title,
+    .team-card__description {
+        color: color(White);
+    }
+}

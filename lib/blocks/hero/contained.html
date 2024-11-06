@@ -1,0 +1,46 @@
+<section class="hero-contained [modifier*]" style="background-image: url([src])">
+    <div class="container copy-container copy-container--center [modifier^]">
+        <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+        <h1>[headline]</h1>
+        <p>[body]</p>
+        <div class="copy-container__buttons">
+            <a class="button-primary [modifier^]" href="[url]" target="[target]">[label]</a>
+            <a class="button-secondary [modifier^]" href="[url]" target="[target]">
+                <img src="[src]" alt="[alt]">
+                <span>[label]</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- for .hero-contained--cta only -->
+    <div class="container hero-contained--cta__cta-list">
+        <!-- [1-3x] -->
+        <a class="button-transparent" href="[url]" target="[target]">
+            <div class="button-transparent__top"> [category] </div>
+            <div class="button-transparent__bottom">
+                <span> [title] </span>
+                <img src="[src]">
+            </div>
+        </a>
+        <!-- [] -->
+    </div>
+</section>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+hero-contained--light
+hero-contained--dark
+hero-contained--gradient
+hero-contained--image
+hero-contained--dark-blue-gradient + hero-contained--cta
+
+Optional *:
+
+hero-contained--footer-fix
+
+-->

@@ -1,0 +1,71 @@
+.button-transparent {
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+
+    color: color(White);
+    border: 1px solid transparent;
+    border-radius: $border-radius-xxs;
+    overflow: hidden;
+
+    transition: $transition-all-ease-in-out-1;
+
+    @include media-breakpoint-up(md) {
+        border-radius: $border-radius-xs;
+    }
+}
+
+.button-transparent__top {
+    @include font(h8);
+
+    padding: 6px 24px;
+    background: color(White, 0.2);
+}
+
+.button-transparent__bottom {
+    @include font(h6);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: map-get($spacers, 2);
+
+    padding: 16px;
+    height: 100px;
+
+    background: color(White, 0.1);
+
+    @include media-breakpoint-up(md) {
+        flex-direction: row;
+        height: 115px;
+
+        gap: calc(map-get($spacers, 4) / 2);
+    }
+}
+
+.button-transparent__bottom span { 
+    @include font(h6);
+}
+
+
+.button-transparent__bottom img {
+    border: 1px solid color(Black);
+    border-radius: 999px;
+
+    width: 25px;
+
+    filter: invert(1);
+
+    @include media-breakpoint-up(md) {
+        width: 32px;
+    }
+}
+
+
+.button-transparent:hover {
+    cursor: pointer;
+
+    border-color: color(White);
+}

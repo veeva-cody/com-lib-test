@@ -1,0 +1,29 @@
+.card-block-contained__wrapper {
+
+    color: color(White);
+
+    background: $linear-gradient-orange-compliant;
+    border-radius: $border-radius-s;
+
+    padding: map-get($spacers, 8);
+
+    @include media-breakpoint-up(lg) {
+
+        border-radius: $border-radius-m;
+        box-shadow: $box-shadow-lg-behind;
+
+        padding: map-get($spacers, 10);
+    
+    }
+}
+
+.card-block-contained .copy-container h1 {
+
+    @include media-breakpoint-down(lg) {
+        font-size: $font-size-h2-mobile;
+    }
+
+    @include media-breakpoint-down(md) {
+        font-size: $font-size-h3-mobile;
+    }
+}

@@ -1,0 +1,36 @@
+.card-block-3-up__cards {
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card-block-featured-3-up--light {
+
+    @include block-spacing(margin);
+
+    background: color(White);
+    color: color(GalaxyBlack);
+
+}
+
+.card-block-featured-3-up--dark {
+
+    @include block-spacing(padding);
+
+    background: $linear-gradient-linear-dark;
+    color: color(White);
+
+}
+
+.card-block-featured-3-up--black {
+
+    @include block-spacing(padding);
+
+    background: color(GalaxyBlack);
+    color: color(White);
+
+}
+
+.card-block-featured-3-up--mobile-small .featured-events-card {
+    @include featured-events-card--mobile-small;
+}

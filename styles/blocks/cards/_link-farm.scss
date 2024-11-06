@@ -1,0 +1,187 @@
+.card-link-farm {
+
+    @include block-spacing(margin);
+
+    padding: 54px 8px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    border-radius: $border-radius-s;
+    background: color(NeutralGrey);
+
+    @include media-breakpoint-up(md) {
+        padding: 86px 96px;
+        border-radius: $border-radius-m;
+    }
+
+}
+
+.card-link-farm__cards {
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+
+    @include media-breakpoint-up(md) {
+        flex-wrap: wrap;
+    }
+
+}
+
+.card-link-farm__cards > a {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    min-height: 70px;
+    width: 100%;
+    padding: 0 36px;
+    
+    border: 1px solid color(IconBtnHoverBgColor);
+    border-radius: 8px;
+    background: color(White);
+    box-shadow: $box-shadow-lg-down;
+
+    @include media-breakpoint-up(md) {
+
+        flex-direction: column;
+
+        width: 236px;
+        padding: 24px 30px;
+        
+        border-radius: $border-radius-s;
+    
+    }
+
+    @include media-breakpoint-up(xl) {
+        // 16px is the gap between the cards
+        width: calc((100% - 16px * 4) / 5);
+    }
+}
+
+.card-link-farm__cards > a:before {
+
+    content: '';
+    
+    position: absolute;
+    inset: 0;
+
+    border-radius: inherit;
+    background: $linear-gradient-orange-1;
+
+    transition: opacity .3s ease-in-out;
+    opacity: 0;
+
+}
+
+.card-link-farm__cards > a:hover {
+    border-color: transparent;
+}
+
+.card-link-farm__cards > a:hover:before {
+    opacity: 1;
+}
+
+.card-link-farm__cards .floating-icon,
+.card-link-farm__cards > a > p {
+    z-index: 1;
+    margin: 0;
+}
+
+.card-link-farm__cards > a > p {
+
+    color: color(GalaxyBlack);
+    font-weight: 600;
+    text-align: center;
+
+    @include media-breakpoint-up(md) {
+        font-size: 18px;
+    }
+
+}
+
+.card-link-farm__cards > a > p br {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+        display: block;
+    }
+}
+
+.card-link-farm__cards .floating-icon {
+    
+    width: 34px;
+    height: 34px;
+
+    @include media-breakpoint-up(md) {
+        width: 60px;
+        height: 60px;
+    }
+
+}
+
+.card-link-farm__cards .floating-icon:before {
+    background: $linear-gradient-orange-1;
+}
+
+.card-link-farm__cards .floating-icon .icon {
+    background: color(White);
+}
+
+
+.card-link-farm__cards > a:hover .floating-icon:before {
+    background: color(White);
+}
+
+.card-link-farm__cards > a:hover .floating-icon .icon {
+    background: color(VeevaOrange);
+}
+
+.card-link-farm__cards > a:hover p {
+    color: color(White);
+}
+
+.card-link-farm__buttons {
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    
+    margin-top: map-get($spacers, 6);
+
+    @include media-breakpoint-up(md) {
+        gap: 26px;
+    }
+
+}
+
+.card-link-farm__buttons > a {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 70px;
+    
+    border-radius: 8px;
+    background: $linear-gradient-orange-compliant;
+    box-shadow: $box-shadow-lg-behind;
+
+    color: color(White);
+
+    @include font(h5);
+    @include media-breakpoint-up(md) {
+        min-height: 90px;
+        border-radius: $border-radius-s;
+    }
+
+}
+
+.card-link-farm__buttons > a:hover {
+    opacity: 0.9;
+}

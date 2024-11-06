@@ -1,0 +1,24 @@
+.card-block-article {
+    margin: map-get($spacers, 6) 0;
+
+    @include media-breakpoint-up(md) {
+        margin: map-get($spacers, 8) 0;
+    }
+}
+
+.card-block-article__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: map-get($spacers, 4);
+
+    max-width: $inner-content-max-width-lg;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include media-breakpoint-up(xl) {
+        gap: map-get($spacers, 5);
+    }
+}

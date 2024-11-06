@@ -1,0 +1,82 @@
+/**********/
+/* MIXINS */
+/**********/
+
+@mixin card-bar--orange-gradient {
+    background: $linear-gradient-orange-1;
+}
+
+@mixin card-bar--white {
+    background: color(White);
+
+    &::before {
+        opacity: 0;
+    }
+}
+
+@mixin card-bar--grey {
+    background: color(LightGray);
+    
+    &::before {
+        opacity: 0;
+    }
+}
+
+@mixin card-bar--overlay-active {
+    &::before {
+        opacity: 1;
+    }
+}
+
+/**********/
+/* STYLES */
+/**********/
+
+.card-bar {
+
+    display: inline-block;
+    position: relative;
+    
+    width: 32px;
+    height: 4px;
+    
+    border-radius: 500px;
+    overflow: hidden;
+
+    transition: $transition-all-ease-in-out-1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+        
+        background: $linear-gradient-orange-1;
+        opacity: 0;
+
+        transition: $transition-all-ease-in-out-1;
+    }
+
+    @include media-breakpoint-up(md) {
+        width: 45px;
+    }
+
+}
+
+.card-bar--orange-gradient {
+    @include card-bar--orange-gradient;
+}
+
+.card-bar--grey {
+    @include card-bar--grey;
+}
+
+.card-bar--white {
+    @include card-bar--white;
+}
+
+.card-bar--overlay-active {
+    @include card-bar--overlay-active;
+}

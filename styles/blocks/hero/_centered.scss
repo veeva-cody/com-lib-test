@@ -1,0 +1,80 @@
+.hero-centered {
+
+    position: relative;
+    padding: 100px 0;
+
+    @include rounded-corners(bottom);
+    @include media-breakpoint-up(md) {
+        padding: 160px 0;
+    }
+
+}
+
+.hero-centered .copy-container p {
+    @include font(body-l);
+
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-h7-desktop;
+    }
+}
+
+.hero-centered--gradient {
+    background: $linear-gradient-orange-compliant;
+    color: color(White);
+}
+
+.hero-centered--gradient .icon {
+    background: color(White);
+}
+
+.hero-centered--image {
+    @include responsive-bg-image;
+}
+
+.hero-centered--logo {
+    background: $linear-gradient-white-grey;
+    color: color(GalaxyBlack);
+}
+
+.hero-centered--white {
+    background-color: color(White);
+    color: color(GalaxyBlack);
+}
+
+.hero-centered--dark {
+    background: $linear-gradient-linear-dark-2;
+    color: color(White);
+}
+
+.hero-centered--tint:after {
+    @include content-pop;
+}
+
+.hero-centered--anchor-top,
+.hero-centered--anchor-top::before {
+    background-position: top;
+}
+
+.hero-centered--anchor-bottom,
+.hero-centered--anchor-bottom::before {
+    background-position: bottom;
+}
+
+.hero-centered--anchor-left,
+.hero-centered--anchor-left::before {
+    background-position: left;
+}
+
+.hero-centered--anchor-right,
+.hero-centered--anchor-left::before {
+    background-position: right;
+}
+
+.hero-centered--image .copy-container {
+    position: relative;
+    z-index: 5;
+}
+
+.hero-centered .hero-logo {
+    margin-top: -5%;
+}

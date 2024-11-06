@@ -1,0 +1,72 @@
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+// accodion in mobile menu, as need to toggle & their original site has this behavior
+.filter-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($spacers, 2);
+}
+
+// accordion top
+.filter-accordion .accordion-button {
+    @include font(h7);
+
+    padding: 16px;
+
+    background: color(NeutralGrey);
+    color: color(GalaxyBlack);
+
+    border-radius: $border-radius-xxs !important;
+    overflow: hidden;
+}
+
+.filter-accordion .accordion-button::after {
+    background: url("/wp-content/themes/veeva2015/assets/svg/icons/caret-down-filled.svg");
+    background-position: center center;
+    background-size: contain;
+
+    width: 16px;
+    height: 16px;
+
+    transform: rotate(0deg);
+    transition: all 0.3s ease-in-out;
+}
+
+.filter-accordion .accordion-button[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+// accordion content
+.filter-accordion-content {
+    filter: $drop-shadow-sm-behind;
+}
+
+.filter-accordion-content::before {
+    content: "";
+    display: block;
+
+    width: 100%;
+    height: 8px;
+}
+
+.filter-accordion-content .accordion-body {
+    background: color(NeutralGrey);
+    color: color(DarkGrey);
+
+    padding: 0;
+    margin-bottom: map-get($spacers, 2);
+
+    border-radius: $border-radius-xxs;
+    overflow: hidden;
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.collapse.show {
+    visibility: visible;
+}

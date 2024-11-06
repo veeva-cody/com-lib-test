@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/styles/normalize.css" />
+        <link rel="stylesheet" href="/dist/bundle.min.css" />
+        <title>Service Overview B</title>
+    </head>
+
+        <!-- Notes -->
+        <!-- 
+            Live Link: https://www.veeva.com/services/
+
+            Final Version in use
+        -->
+
+        <!-- Service Overview: Start -->
+        <main class="veeva-2024">
+            <div id="service-overview" class="service-overview service-overview-b">
+                <!-- Secondary Navigation -->
+                <div id="secondary-navigation" class="secondary-navigation">
+                    <div class="secondary-navigation__wrapper container">
+                        <!-- left: main category -->
+                        <div class="secondary-navigation__left">
+                            <h3><span class="icon" data-icon="building-2"></span>Services</h3>
+                        </div>
+
+                        <!-- right: product menulist -->
+                        <div class="secondary-navigation__right">
+                            <!-- desktop menu -->
+                            <ul class="secondary-navigation__desktop-menulist">
+                                <!-- * Enter all nav links here * -->
+                                <!--  add `.active` to dropdown-item -->
+                                <a class="dropdown-item active" href="/services/" target="_self">
+                                    <li>Services Overview</li>
+                                </a>
+
+                                <!-- nav with dropdown menu -->
+                                <div class="dropdown-item dropdown">
+                                    <a href="/services/business-consulting-services/" target="_self" class="dropdown-toggle dropdown-item--main" type="button" aria-expanded="false">
+                                        <li>Business Consulting</li>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <div class="dropdown-menu-content">
+                                            <a class="dropdown-item--sublink" href="/services/business-consulting-services/resource-hub/" target="_self">
+                                                <li>Resource Hub</li>
+                                            </a>
+                                        </div>
+                                    </ul>
+                                </div>
+
+                                <a class="dropdown-item" href="/services/analytics/" target="_self">
+                                    <li>Analytics</li>
+                                </a>
+                                <a class="dropdown-item" href="/services/customer/" target="_self">
+                                    <li>Professional & <br/>Managed Services</li>
+                                </a>
+                                <a class="dropdown-item" href="/services/training/" target="_self">
+                                    <li>Training Services</li>
+                                </a>
+                                <a class="dropdown-item" href="https://support.veeva.com/hc/en-us" target="_blank">
+                                    <li>Support & Community <span class="icon" data-icon="btn-arrow-up-right--black"></span></li>
+                                </a>
+                            </ul>
+
+                            <!-- mobile menu -->
+                            <div id="secondary-navigation__mobile-dropdown" class="secondary-navigation__mobile-menulist dropdown">
+                                <!-- current link, toggle mobile list -->
+                                <div class="secondary-navigation__mobile-display-item dropdown-toggle" role="button" id="subnavLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <h6 class="desktop">View More</h6>
+                                </div>
+
+                                <!-- mobile dropdown -->
+                                <ul class="secondary-navigation__mobile-dropdown-menu dropdown-menu container" aria-labelledby="subnavLink" data-popper-placement="bottom-start">
+                                    <div class="dropdown-menu-content">
+                                        <!-- link will be generated based on `.secondary-navigation__desktop-menulist` -->
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="secondary-navigation__backdrop"></div>
+
+                <!-- Hero -->
+                <section class="hero-centered hero-centered--dark">
+                    <div class="container copy-container copy-container--center copy-container--eyebrow-gradient">
+                        <h6><span class="icon" data-icon="module-puzzle-3"></span>Services</h6>
+                        <h1>Your Success is Everything</h1>
+                        <p>We know Veeva software better than anyone. Combined with our deep industry expertise, we understand what it takes to deliver lasting value to our customers.</p>
+                        <div class="copy-container__buttons">
+                            <a class="button-primary button-primary--gradient" href="https://www.veeva.com/products/development-demo-center/" target="_self">View Demo</a>
+                            <a class="button-secondary button-secondary--white" href="/contact-us/" target="_self">
+                                <img src="/wp-content/themes/veeva2015/assets/svg/icons/btn-phone--black.svg" alt="" />
+                                <span>Speak to an Expert</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Card Blocks: Expanding -->
+                <!-- class variant: card-block-expanding--3-up -->
+                <section class="card-block-expanding card-block-expanding--4-up card-block-expanding--light">
+                    <div class="container">
+                        <div class="copy-container copy-container--center copy-container--eyebrow-gradient">
+                            <h6>
+                                <span class="icon" data-icon="outline-icon"></span>
+                                Overview
+                            </h6>
+                            <h3> Veeva Services </h3>
+                            <p>As service providers deeply embedded within Veeva, we have visibility into the product roadmap and direct access to product engineering to ensure you thrive now and into the future. Tap into our expertise from thousands of successful customer projects.</p>
+                            <div class="copy-container__buttons">
+                                <a class="button-outline button-outline--black" href="/products/commercial-demo-center/" target="_self">Watch CRM Demo</a>
+                                <a class="button-secondary" href="/products/development-demo-center/" target="_self">
+                                    <img src="/wp-content/themes/veeva2015/assets/svg/icons/btn-play--black.svg" alt="" />
+                                    <span>Watch R&D Demo</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="expanding-card-wrapper">
+                            <div class="expanding-card expanding-card-icon expanding-card--light">
+                                <div class="expanding-card__top-wrapper">
+                                    <div class="floating-icon">
+                                        <span class="icon" data-icon="medical-bag"></span>
+                                    </div>
+                                    <h4>Maximize Veeva <br/> Innovations</h4>
+                                    <p>Achieve greater accuracy and long-term value of your Veeva software with full end-to-end services, from implementation and data migration to support.</p>
+                                </div>
+
+                                <div class="expanding-card__bottom-wrapper">
+                                    <a class="button-text-link" href="#">
+                                        <span class="label">Learn More</span>
+                                        <span class="underline"></span>
+                                    </a>
+                                    <button class="expanding-card__toggle-button">
+                                        <span class="icon icon-arrow-expand" data-icon="arrow-expand"></span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="expanding-card expanding-card-icon expanding-card--light">
+                                <div class="expanding-card__top-wrapper">
+                                    <div class="floating-icon">
+                                        <span class="icon" data-icon="medical-bag"></span>
+                                    </div>
+                                    <h4>Drive Faster <br/> Adoption</h4>
+                                    <p>Adopt new ways of working faster by taking less time to test, validate, and configure Veeva software and get the most out of your investment right away.</p>
+                                </div>
+
+                                <div class="expanding-card__bottom-wrapper">
+                                    <a class="button-text-link" href="#">
+                                        <span class="label">Learn More</span>
+                                        <span class="underline"></span>
+                                    </a>
+                                    <button class="expanding-card__toggle-button">
+                                        <span class="icon icon-arrow-expand" data-icon="arrow-expand"></span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="expanding-card expanding-card-icon expanding-card--light">
+                                <div class="expanding-card__top-wrapper">
+                                    <div class="floating-icon">
+                                        <span class="icon" data-icon="medical-bag"></span>
+                                    </div>
+                                    <h4>Deliver Success <br/> from the Start</h4>
+                                    <p>Ensure consistent global implementation and stay ahead of future needs with proper governance, best practices, and proven standard methodologies.</p>
+                                </div>
+
+                                <div class="expanding-card__bottom-wrapper">
+                                    <a class="button-text-link" href="#">
+                                        <span class="label">Learn More</span>
+                                        <span class="underline"></span
+                                    ></a>
+                                    <button class="expanding-card__toggle-button">
+                                        <span class="icon icon-arrow-expand" data-icon="arrow-expand"></span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="expanding-card expanding-card-icon expanding-card--light">
+                                <div class="expanding-card__top-wrapper">
+                                    <div class="floating-icon">
+                                        <span class="icon" data-icon="medical-bag"></span>
+                                    </div>
+                                    <h4>Lorem Ipsum <br/> dolor sit</h4>
+                                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus blanditiis vero quam mollitia, fuga aspernatur.</p>
+                                </div>
+
+                                <div class="expanding-card__bottom-wrapper">
+                                    <a class="button-text-link" href="#">
+                                        <span class="label">Learn More</span>
+                                        <span class="underline"></span
+                                    ></a>
+                                    <button class="expanding-card__toggle-button">
+                                        <span class="icon icon-arrow-expand" data-icon="arrow-expand"></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div class="blended-bg blended-bg--top blended-bg--rounded-top">
+                    <div class="container">
+                        <!-- Statistics -->
+                        <section class="statistic-contained">
+                            <div class="container">
+                                <!-- Copy Container -->
+                                <div class="copy-container copy-container--center">
+                                    <h6>
+                                        <span class="icon" data-icon="graph-bar-increase"></span>
+                                        Impact
+                                    </h6>
+                                    <h3>
+                                        Veeva Commercial Services <br/> by the Numbers
+                                    </h3>
+                                </div>
+
+                                <!--  Statistic 3 Up  -->
+                                <div class="statistic-3-up-wrapper">
+                                    <div class="statistic-tool statistic-tool--text-white">
+                                        <h3>6K<sup>+</sup></h3>
+                                        <p>projects since 2007 in Commercial Cloud</p>
+                                    </div>
+                                    <div class="statistic-tool statistic-tool--text-white">
+                                        <h3>900 <sup>+</sup></h3>
+                                        <p>admin certified consultants</p>
+                                    </div>
+                                    <div class="statistic-tool statistic-tool--text-white">
+                                        <h3>750 <sup>+</sup></h3>
+                                        <p>orgs in production Veeva CRM</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Services -->
+                    <section class="listed-up listed-up-accent listed-up--grey">
+                        <div class="copy-container container copy-container--center copy-container--eyebrow-gradient">
+                            <h6><span class="icon" data-icon="task-list"></span>Our Services</h6>
+                            <h3>Tailored Services <br/> for your Business</h3>
+                            <p>We’ll get you up and running fast and stay with you every step of the way, from implementation and managed services to training.</p>
+                        </div>
+
+                        <div class="listed-up__cards container">
+                            <a class="listed-up-card" href="/services/customer/#2" target="_self">
+                                <div class="bar"></div>
+                                <h5>Professional <br/> Services</h5>
+                                <p>We’ll deploy your Veeva software fast, on time, and on budget, guiding you from project startup to go-live, eliminating strain on your team, and preparing users for adoption.</p>
+                                <div class="button-text-link button-text-link--black">
+                                    <span class="button-label">Learn More</span>
+                                    <span class="underline"></span>
+                                </div>
+                            </a>
+
+                            <a class="listed-up-card" href="/services/customer/#1" target="_self">
+                                <div class="bar"></div>
+                                <h5>Transformation <br/> Consulting</h5>
+                                <p>We offer expert advice to solve key business challenges, determining the technology roadmap to get you where you want to go, as well as strategic guidance pre- and post- implementation.</p>
+                                <div class="button-text-link button-text-link--black">
+                                    <span class="button-label">Learn More</span>
+                                    <span class="underline"></span>
+                                </div>
+                            </a>
+
+
+                            <a class="listed-up-card" href="/services/customer/#4" target="_self">
+                                <div class="bar"></div>
+                                <h5>Custom <br/> Development</h5>
+                                <p>Our technical architects and professional developers do the code work for you, building special customizations with Veeva CRM and integrating solutions using the Vault API.</p>
+                                <div class="button-text-link button-text-link--black">
+                                    <span class="button-label">Learn More</span>
+                                    <span class="underline"></span>
+                                </div>
+                            </a>
+
+                            <a class="listed-up-card" href="/services/customer/#3" target="_self">
+                                <div class="bar"></div>
+                                <h5>Managed <br/> Services</h5>
+                                <p>We make sure your system is running at peak performance, offering differing levels of support to fit your needs, from admin assistance to handling everything for you.</p>
+                                <div class="button-text-link button-text-link--black">
+                                    <span class="button-label">Learn More</span>
+                                    <span class="underline"></span>
+                                </div>
+                            </a>
+
+                            <a class="listed-up-card" href="/services/customer/#4" target="_self">
+                                <div class="bar"></div>
+                                <h5>Migration <br/> Services</h5>
+                                <p>Our deployment architects get your entire environment onto Veeva with speed and quality, ensuring your data is efficiently and effectively migrated so it’s in production right away.</p>
+                                <div class="button-text-link button-text-link--black">
+                                    <span class="button-label">Learn More</span>
+                                    <span class="underline"></span>
+                                </div>
+                            </a>
+
+                            <a class="listed-up-card" href="/services/training/" target="_self">
+                                <div class="bar"></div>
+                                <h5>Administrator <br/> Training</h5>
+                                <p>Our in-person or virtual end-user training will get your staff up to speed quickly, ensuring that you get the most out of your Veeva investment after deployment and enhance user adoption.</p>
+                                <div class="button-text-link button-text-link--black">
+                                    <span class="button-label">Learn More</span>
+                                    <span class="underline"></span>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Customers Quote Tabs (Logo Tablist) -->
+                <!-- Quote come from: 
+                1. https://www.veeva.com/products/development-cloud/
+                2. https://www.veeva.com/products/commercial-solutions/
+                3. https://www.veeva.com/products/data-cloud/
+                -->
+                <section class="quote-tabs quote-tabs--dark">
+                    <div class="container">
+                        <div class="copy-container copy-container--center copy-container--eyebrow-gradient">
+                            <h6>
+                                <span class="icon" data-icon="user-multiple-group"></span>
+                                Customer Stories
+                            </h6>
+                            <h3>We’ve done this thousands of times</h3>
+                            <div class="copy-container__buttons">
+                                <a class="button-outline button-outline--white" href="/customers/" target="_self">View Customer Stories</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- content -->
+                    <div class="quote-tabs__content">
+                        <!-- tablist: number of items need to be the same as the slide one ***, maximum 6 items -->
+                        <div class="tablist tablist-logo tablist--dark">
+                            <ul class="nav nav-pills" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link tablist-link">
+                                        <img src="/wp-content/themes/veeva2015/assets/logos/color/boehringer-ingelheim.png" />
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link tablist-link">
+                                        <img src="/wp-content/themes/veeva2015/assets/logos/color/idorsia.png" />
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link tablist-link">
+                                        <img src="/wp-content/themes/veeva2015/assets/logos/color/emmes.png" />
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link tablist-link" aria-selected="true">
+                                        <img src="/wp-content/themes/veeva2015/assets/logos/color/gsk.png" />
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link tablist-link">
+                                        <img src="/wp-content/themes/veeva2015/assets/logos/color/takeda.png" />
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link tablist-link">
+                                        <img src="/wp-content/themes/veeva2015/assets/logos/color/ani.png" />
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="container">
+                            <!-- Carousel -->
+                            <!-- NOTE: update carousel timing by passing in data-slide-interval="[time]", where time is in milliseconds, if no data-slide-interval is set, it'll use 8500 by default -->
+                            <div class="carousel slide carousel-fade" data-slide-interval="8500">
+                                <!-- carousel indicators, indicators will be generated based on number of 'carousel-item'  -->
+                                <div class="carousel-indicators"></div>
+
+                                <!-- carousel slides, no need to add active class as it'll be added automatically -->
+                                <div class="carousel-inner">
+                                    <!-- slide 1 -->
+                                    <div class="carousel-item">
+                                        <div class="quote-card quote-card-full quote-card-full quote-card-full--medium-text">
+                                            <div class="quote-card__quote-wrapper">
+                                                <p>"Veeva Development Cloud will enable cross-functional teams to work more collaboratively and leverage data and insights, enhancing their ways of working."</p>
+
+                                                <a class="button-outline button-outline--white" href="/resources/boehringer-ingelheim-selects-veeva-development-cloud-worldwide-to-bring-innovative-therapies-to-patients-faster/" target="_self"> Read Article </a>
+                                            </div>
+
+                                            <div class="quote-card__person-info">
+                                                <div class="client-logo">
+                                                    <img src="/wp-content/themes/veeva2015/assets/logos/color/boehringer-ingelheim.png" alt="Boehringer Ingelheim" />
+                                                </div>
+                                                <h5>Uli Brödl</h5>
+                                                <h6>Senior Vice President, <br/> Global Clinical Development and Operations</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- slide 2 -->
+                                    <div class="carousel-item">
+                                        <div class="quote-card quote-card-full quote-card-full quote-card-full--medium-text quote-card--bg-blue-gradient">
+                                            <div class="quote-card__quote-wrapper">
+                                                <p>"Veeva’s Commercial solutions enable Idorsia’s sales, medical, and marketing teams to align their engagement and content strategy for a more customer-centric and coordinated experience."</p>
+
+                                                <a class="button-outline button-outline--white" href="/customer-stories/idorsia-achieving-launch-excellence/" target="_self"> View Customer Story </a>
+                                            </div>
+
+                                            <div class="quote-card__person-info">
+                                                <div class="client-logo">
+                                                    <img src="/wp-content/themes/veeva2015/assets/logos/color/idorsia.png" alt="Idorsia" />
+                                                </div>
+                                                <h5>Bas Van de Kamp</h5>
+                                                <h6>Director Medical Affairs Systems</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- slide 3 -->
+                                    <div class="carousel-item">
+                                        <div class="quote-card quote-card-full quote-card-full quote-card-full--medium-text">
+                                            <div class="quote-card__quote-wrapper">
+                                                <p>"Our strategic partnership with Veeva empowers us to streamline how we work, improve visibility and oversight, and run faster, more cost-effective research programs."</p>
+
+                                                <a class="button-outline button-outline--white" href="/resources/emmes-standardizes-on-veeva-development-cloud-to-streamline-product-development/" target="_self"> Read Article </a>
+                                            </div>
+
+                                            <div class="quote-card__person-info">
+                                                <div class="client-logo">
+                                                    <img src="/wp-content/themes/veeva2015/assets/logos/color/emmes.png" alt="Emmes" />
+                                                </div>
+                                                <h5>Dr. Christine Dingivan</h5>
+                                                <h6>Chief Executive Officer</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- slide 4 -->
+                                    <div class="carousel-item">
+                                        <div class="quote-card quote-card-full quote-card-full--medium-text quote-card--bg-blue-gradient">
+                                            <div class="quote-card__quote-wrapper">
+                                                <p>"Veeva deeply understands the life sciences industry and has the expertise and vision in commercial technology to help biopharma companies like ours bring complex therapies to patients who need them for years to come."</p>
+
+                                                <a class="button-outline button-outline--white" href="/resources/top-biopharma-commits-to-veeva-vault-crm-for-global-customer-engagement/" target="_self"> Read Article </a>
+                                            </div>
+
+                                            <div class="quote-card__person-info">
+                                                <div class="client-logo">
+                                                    <img src="/wp-content/themes/veeva2015/assets/logos/color/gsk.png" alt="GSK" />
+                                                </div>
+                                                <h5>Kieron Scrutton</h5>
+                                                <h6>Senior Vice President of Commercial and Digital Technology</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- slide 5 -->
+                                    <div class="carousel-item">
+                                        <div class="quote-card quote-card-full quote-card-full--medium-text">
+                                            <div class="quote-card__quote-wrapper">
+                                                <p>"Veeva brings a deep expertise and a unique set of data assets that really give us an incredibly strong analytical foundation to understand our HCPs and our customers."</p>
+
+                                                <a class="button-outline button-outline--white" href="/blog/takeda-data-driven-approach-to-hcp-engagement/" target="_self"> Read Article </a>
+                                            </div>
+
+                                            <div class="quote-card__person-info">
+                                                <div class="client-logo">
+                                                    <img src="/wp-content/themes/veeva2015/assets/logos/color/takeda.png" alt="Takeda" />
+                                                </div>
+                                                <h5>Eric Solis</h5>
+                                                <h6>Director, Lead Data Scientist</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- slide 6 -->
+                                    <div class="carousel-item">
+                                        <div class="quote-card quote-card-full quote-card-full--medium-text quote-card--bg-blue-gradient">
+                                            <div class="quote-card__quote-wrapper">
+                                                <p>"Veeva’s integrated solutions allowed us to execute faster and access insights quicker than if we had used a more traditional, separate application approach."</p>
+
+                                                <a class="button-outline button-outline--white" href="/customer-stories/ani-triggering-daily-field-team-suggestions-for-dynamic-targeting/" target="_self"> View Customer Story </a>
+                                            </div>
+
+                                            <div class="quote-card__person-info">
+                                                <div class="client-logo">
+                                                    <img src="/wp-content/themes/veeva2015/assets/logos/color/ani.png" alt="ANI Pharmaceuticals" />
+                                                </div>
+                                                <h5>Mike Rifflard</h5>
+                                                <h6>Vice President, Operations</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Resources -->
+                <section class="resource-block-cards resource-block-cards--light pt-0">
+                    <div class="container">
+                        <div class="copy-container copy-container--center copy-container--eyebrow-gradient">
+                            <h6>
+                                <span class="icon" data-icon="definition-search-book"></span>
+                                Resources
+                            </h6>
+                            <h3>
+                                Stay current on the latest trends 
+                            </h3>
+                            <div class="copy-container__buttons">
+                                <a class="button-outline button-outline--black" href="/services/business-consulting-services/resource-hub/"> View Resource Hub </a>
+                            </div>
+                        </div>
+
+                        <div class="resource-block__cards resource-block__cards--gridded">
+                            <a class="resource-card" href="/blog/implementing-a-pre-commercial-client-working-with-the-unknown/">
+                                <div class="resource-card__text">
+                                    <div class="resource-chip">
+                                        <div class="resource-chip__icon">
+                                            <span class="icon" data-icon="insert-top-left"></span>
+                                        </div>
+                                        White Paper
+                                    </div>
+                                    <h6>R&D Strategy</h6>
+                                    <h5>Optimize Your Organizational Structure to Prepare for a Connected Vault Ecosystem</h5>
+                                </div>
+
+                                <div class="resource-card__media">
+                                    <img src="https://www.veeva.com/wp-content/uploads/2023/12/optimize-your-organizational-structure-to-prepare-for-a-connected-vault-ecosystem.png" alt="" />
+                                </div>
+                            </a>
+
+                            <a class="resource-card" href="/blog/change-control-and-veeva-commercial-cloud/" href="https://www.google.com/">
+                                <div class="resource-card__text">
+                                    <div class="resource-chip">
+                                        <div class="resource-chip__icon">
+                                            <span class="icon" data-icon="insert-top-left"></span>
+                                        </div>
+                                        Article
+                                    </div>
+                                    <h6>Hybrid Engagement</h6>
+                                    <h5>Orchestrating Field-Driven Customer Journeys</h5>
+                                </div>
+
+                                <div class="resource-card__media">
+                                    <img src="https://www.veeva.com/wp-content/uploads/2023/06/Orchestrating-Field-Driven-Customer-Journeys.png" alt="" />
+                                </div>
+                            </a>
+
+                            <a class="resource-card" href="/blog/how-to-launch-successfully-in-todays-digital-world/">
+                                <div class="resource-card__text">
+                                    <div class="resource-chip">
+                                        <div class="resource-chip__icon">
+                                            <span class="icon" data-icon="insert-top-left"></span>
+                                        </div>
+                                        Blog
+                                    </div>
+                                    <h6>Launch Readiness</h6>
+                                    <h5>How to Launch Successfully in Today’s Digital World</h5>
+                                </div>
+
+                                <div class="resource-card__media">
+                                    <img src="https://www.veeva.com/wp-content/uploads/2021/05/Dan-Rizzo-Aaron-Bean.png" alt="" />
+                                </div>
+                            </a>
+
+                            <a class="resource-card" href="https://www.google.com/" target="_blank">
+                                <div class="resource-card__text">
+                                    <div class="resource-chip">
+                                        <div class="resource-chip__icon">
+                                            <span class="icon" data-icon="insert-top-left"></span>
+                                        </div>
+                                        Article
+                                    </div>
+                                    <h6>Content Optimization</h6>
+                                    <h5>6 Guidelines for Preparing Teams to Scale Modular Content</h5>
+                                </div>
+
+                                <div class="resource-card__media">
+                                    <img src="https://www.veeva.com/wp-content/uploads/2024/05/6-Guidelines-for-Preparing-Teams-to-Scale-Modular-Content_resource-tile.png" alt="" />
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer CTA -->
+                <section class="hero-contained hero-contained--gradient hero-contained--footer-fix">
+                    <div class="copy-container container copy-container--center">
+                        <h6><span class="icon" data-icon="user-multiple-circle"></span>Partner with Veeva</h6>
+                        <h3>
+                            Ready to learn how <br/> Veeva Services can help?
+                        </h3>
+                        <div class="copy-container__buttons">
+                            <a class="button-primary button-primary--gradient" href="/contact-us/" target="_self">Contact Us</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <!-- Service Overview: End -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://fast.wistia.com/assets/external/E-v1.js" async=""></script>
+        <script src="/dist/bundle.min.js"></script>
+    </body>
+</html>

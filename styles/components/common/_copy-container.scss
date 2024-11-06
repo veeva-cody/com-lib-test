@@ -1,0 +1,165 @@
+.copy-container h1,
+.copy-container > img {
+    margin-bottom: map-get($spacers, 4);
+}
+
+.copy-container h2,
+.copy-container h3,
+.copy-container h4,
+.copy-container h5,
+.copy-container h6 {
+    margin-bottom: map-get($spacers, 3);
+}
+
+.copy-container p {
+    @include font(body-m);
+    margin-bottom: map-get($spacers, 3);
+}
+
+.copy-container p:last-of-type {
+    margin-bottom: map-get($spacers, 4);
+}
+
+.copy-container > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+.copy-container h6 {
+    display: inline-flex;
+    align-items: center;
+}
+
+.copy-container .icon {
+    width: 24px;
+    aspect-ratio: 1 / 1;
+}
+
+.copy-container h1 br,
+.copy-container h2 br,
+.copy-container h3 br,
+.copy-container h4 br,
+.copy-container h5 br,
+.copy-container h6 br,
+.copy-container p br {
+    @include media-breakpoint-down(md) {
+        display: none;
+    }
+}
+
+.copy-container .icon {
+    margin-right: map-get($spacers, 2);
+}
+
+.copy-container > img {
+    width: 100%;
+    max-width: $inner-content-max-width-sm;
+    max-height: 120px;
+}
+
+.copy-container > p {
+    max-width: $inner-content-max-width-sm;
+}
+
+.copy-container--left {
+    text-align: left;
+}
+
+.copy-container--center {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.copy-container--center h3 {
+    max-width: $inner-content-max-width-lg;
+}
+
+.copy-container--center p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.copy-container--left .copy-container__buttons {
+    justify-content: flex-start;
+}
+
+.copy-container--center .copy-container__buttons {
+    justify-content: center;
+}
+
+.copy-container--eyebrow-gradient h6 {
+    @include background-text-clip($linear-gradient-orange-compliant);
+
+    line-height: 1.25;
+}
+
+.copy-container--eyebrow-gradient .icon {
+    background: $linear-gradient-orange-1;
+}
+
+.copy-container--eyebrow-column h6 span {
+    display: inline-block;
+
+    padding: 0 map-get($spacers, 2);
+    border-right: 1px solid currentColor;
+}
+
+.copy-container--eyebrow-column h6 span:last-of-type {
+    border-right: 0;
+}
+
+.copy-container--left-md {
+    @include media-breakpoint-up(md) {
+        text-align: left;
+        align-items: flex-start;
+    }
+}
+
+.copy-container--left-md p {
+    @include media-breakpoint-up(md) {
+        margin-left: 0;
+    }
+}
+
+.copy-container--left-lg {
+    @include media-breakpoint-up(lg) {
+        text-align: left;
+        align-items: flex-start;
+    }
+}
+
+.copy-container--left-lg p {
+    @include media-breakpoint-up(lg) {
+        margin-left: 0;
+    }
+}
+
+.copy-container__buttons {
+
+    display: flex;
+    align-items: center;
+    gap: map-get($spacers, 3);
+
+    margin-top: map-get($spacers, 2);
+    
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.copy-container p {
+    color: inherit;
+}
+
+.copy-container :not(.copy-container__buttons) a {
+    @include simple-text-link;
+}
+
+.copy-container.container:before,
+.copy-container.container:after {
+    display: none;
+}

@@ -1,0 +1,125 @@
+.accordion-speaker {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: map-get($spacers, 3);
+
+    padding: 12px 0;
+
+    @include media-breakpoint-up(lg) {
+        gap: map-get($spacers, 4);
+    }
+}
+
+.accordion-speaker__image {
+    flex-shrink: 0;
+    width: 42px;
+
+    box-shadow: $box-shadow-lg-behind;
+
+    @include media-breakpoint-up(md) {
+        width: 64px;
+    }
+}
+
+.accordion-speaker__info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: map-get($spacers, 2);
+}
+
+.accordion-speaker__name {
+    @include font(h7);
+    text-decoration: underline;
+
+    margin-bottom: map-get($spacers, 1);
+    transition: $transition-all-ease-in-out-1;
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 0;
+        margin-right: map-get($spacers, 3);
+    }
+}
+
+.accordion-speaker__title {
+    @include font(body-xs);
+    font-weight: 600;
+}
+
+.accordion-speaker__link {
+    display: none;
+
+    @include media-breakpoint-up(xl) {
+        display: inline-block;
+        font-size: inherit;
+        width: fit-content;
+    }
+}
+
+.accordion-speaker:hover .button-text-link--white {
+    color: color(OffWhite, 0.9);
+}
+
+.accordion-speaker:hover .button-text-link--black {
+    color: color(DarkGray);
+}
+
+.accordion-speaker--light {
+    border-bottom: 1px solid color(DawnGray);
+}
+
+.accordion-speaker--light:hover .accordion-speaker__name {
+    color: color(VeevaOrange);
+}
+
+.accordion-speaker--light .accordion-speaker__name {
+    color: color(GalaxyBlack);
+}
+
+.accordion-speaker--light .accordion-speaker__title {
+    color: color(DawnGray);
+}
+
+.accordion-speaker--dark {
+    color: color(White);
+    border-bottom: 1px solid color(LightGray);
+}
+
+.accordion-speaker--dark:hover .accordion-speaker__name {
+    color: color(VeevaOrange);
+}
+
+.accordion-speaker--dark .accordion-speaker__name {
+    color: color(White);
+}
+
+.accordion-speaker--dark .accordion-speaker__title {
+    color: color(NeutralGrey);
+}
+
+.accordion-body__speakers {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px 24px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        gap: 16px 60px;
+    }
+
+    @include media-breakpoint-down(md) {
+        .accordion-speaker:last-of-type {
+            border-bottom: 0;
+        }
+    }
+}
+
+.accordion-body__speakers .accordion-speaker:last-of-type {
+    @include media-breakpoint-down(md) {
+        border-bottom: 0;
+    }
+}

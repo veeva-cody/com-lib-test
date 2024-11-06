@@ -1,0 +1,50 @@
+<!-- Optional sidebar -->
+<div class="content-block__sidebar">
+    <!-- Page TOC: desktop -->
+    <!-- Page TOC fields will be added automatically: It will select the elements using the [selector] set in data-toc-target-element-selector="[selector]", inside the element with [data-toc-target-area]"-->
+    <!-- e.g. data-toc-target-element-selector="h2" -->
+    <div class="page-toc" data-toc-target-element-selector="h2, h3">
+        <div class="page-toc__field-desktop-wrapper">
+            <h6>Table of Contents</h6>
+
+            <!-- Page TOC fields will be added automatically. -->
+            <!-- e.g. <a href="#{anchor-id}" class="page-toc__field"> {text} </a> -->
+        </div>
+    </div>
+</div>
+
+<!-- Page TOC: mobile -->
+<div class="page-toc__field-mobile-wrapper container">
+    <div class="form-dropdown dropdown form-dropdown--toc">
+        <button class="dropdown-toggle" role="button" id="page-toc-mobile-dropdown" data-bs-toggle="dropdown" aria-expanded="true">
+            <h6 class="form-dropdown--toc__display-item">
+                Table Of Contents
+
+                <!-- Will display active in-view item in following format: -->
+                <!-- <span> Section {index}: </span> {title} -->
+            </h6>
+        </button>
+
+        <ul class="dropdown-menu" aria-labelledby="page-toc-mobile-dropdown" data-popper-placement="top">
+            <!-- dropdown items will be added automatically  -->
+            <!-- <a href="#{anchor-id}" class="dropdown-item"> 
+                    <span> Section {index}: </span> {title} 
+                </a> -->
+        </ul>
+    </div>
+</div>
+
+<!--
+
+Modifiers
+---------
+
+N/A
+
+--
+
+Note:
+
+1. Page TOC (Table Of Content) fields will be added automatically, by configuring ` data-toc-target-element-selector` property on `.page-toc` element and adding ` data-toc-target-area` property on `.content-block__content` element.  It will select the elements using the [selector] set in data-toc-target-element-selector="[selector]", inside the element with [data-toc-target-area]".
+
+-->

@@ -1,0 +1,244 @@
+/*********/
+/* FONTS */
+/*********/
+
+$heading-font-family: "Poppins", sans-serif;
+$body-font-family: "Poppins", sans-serif;
+
+/**********************/
+/* HEADING FONT SIZES */
+/**********************/
+
+$font-size-h1-mobile: 46px;
+$font-size-h2-mobile: 42px;
+$font-size-h3-mobile: 30px;
+$font-size-h4-mobile: 26px;
+$font-size-h5-mobile: 22px;
+$font-size-h6-mobile: 18px;
+$font-size-h7-mobile: 14px;
+$font-size-h8-mobile: 12px;
+
+$font-size-h1-desktop: 56px;
+$font-size-h2-desktop: 42px;
+$font-size-h3-desktop: 36px;
+$font-size-h4-desktop: 28px;
+$font-size-h5-desktop: 24px;
+$font-size-h6-desktop: 20px;
+$font-size-h7-desktop: 18px;
+$font-size-h8-desktop: 16px;
+
+/*******************/
+/* BODY FONT SIZES */
+/*******************/
+
+$font-size-body-l-mobile: 16px;
+$font-size-body-m-mobile: 14px;
+$font-size-body-s-mobile: 14px;
+$font-size-body-xs-mobile: 12px;
+
+$font-size-body-l-desktop: 20px;
+$font-size-body-m-desktop: 16px;
+$font-size-body-s-desktop: 14px;
+$font-size-body-xs-desktop: 14px;
+
+/**********/
+/* COLORS */
+/**********/
+
+$color: (
+
+    // Primary.
+    VeevaOrange: #f7981d,
+    SunshineYellow: #fdb913,
+    SunsetRed: #db6015,
+    LightGray: #bbbbbc,
+    MediumGray: #898a8d,
+    DarkGray: #636669,
+    SkyBlue: #449fd7,
+    TwilightBlue: #1a76a3,
+    DarkBlue: #02040c,
+
+    // Secondary.
+    SeafoamGreen: #9eefed,
+    CaribbeanAqua: #54dddd,
+    TealGreen: #00b6b9,
+    OasisBlue: #93cae5,
+
+    // Blue Gradients.
+    SlateGray: #9da6b4,
+    DawnGray: #53627d,
+    MidnightIndigo: #1b2f54,
+    DarkNavy: #091730,
+
+    // Neutrals.
+    Black: #000000,
+    GalaxyBlack: #01040b,
+    White: #ffffff,
+    OffWhite: #fbfcfd,
+    NeutralGrey: #eef1f5,
+    DarkNeutralGrey: #e6e6e6,
+
+    // Misc.
+    IconBtnBgColor: #eef1f5,
+    IconBtnHoverBgColor: #dbe1e8,
+    NavMobileItemBgColor: #f2f2f2,
+    HeroFallbackBgColor: #F7981D,
+
+);
+
+@function color($key, $alpha: 1) {
+    @return rgba(map-get($color, $key), $alpha);
+}
+
+/*************/
+/* GRADIENTS */
+/*************/
+
+// Orange.
+$linear-gradient-orange-compliant: linear-gradient(163deg, #F5670E 4.54%, #FF6B00 88.28%);
+$linear-gradient-orange-1: linear-gradient(180deg, #f7981d 0%, #ff6b00 100%);
+$linear-gradient-orange-2: linear-gradient(90deg, #f7981d 20%, #ff6b00 100%);
+$radial-gradient-orange-1: radial-gradient(107.71% 107.71% at 11.87% 0%, #F7981D 0%, #FF6B00 100%);
+$conic-gradient-orange-1: conic-gradient(from 205deg at 89.84% 19.43%, #fd7909 0deg, #e58c18 360deg);
+$prefooter-gradient-orange-mobile: linear-gradient(110deg, #F08A1C 0%, #DA5E13 40%, #DA5E13 60%, #F08A1C 100%);
+$prefooter-gradient-orange-desktop: linear-gradient(105deg, #F7971D 0%, #F7971D 15%, #DC620E 42.5%, #DC620E 57.5%, #F7971D 85%, #F7971D 100%);
+
+// Blue.
+$linear-gradient-linear-blue: linear-gradient(91deg, #449fd7 6.43%, #54dddd 104.88%);
+$linear-gradient-dark-blue: linear-gradient(132deg, #1b2f54 -3.62%, #1b3055 9.38%, #1b3157 19.95%, #1b345a 28.48%, #1b385e 35.33%, #1b3c62 40.88%, #1b4168 45.49%, #1b466e 49.55%, #1b4c74 53.43%, #1b527b 57.49%, #1a5982 62.1%, #1a5f89 67.65%, #1a6590 74.5%, #1a6b97 83.03%, #1a719d 93.6%, #1a76a3 106.6%);
+$linear-gradient-linear-dark: linear-gradient(195deg, #1B2F54 10.29%, #01050B 25.48%, #02060D 37.84%, #030710 47.81%, #040A13 55.82%, #060C18 62.3%, #080F1D 67.7%, #0A1223 72.44%, #0C1629 76.97%, #0E1A2F 81.72%, #101D36 87.11%, #13213C 93.6%, #152543 101.61%, #172849 111.57%, #192C4F 123.93%, #1B2F54 139.12%);
+$linear-gradient-linear-dark-2: linear-gradient(191deg, #1B2F54 -4.76%, #01050B 12.81%, #02060D 27.11%, #030710 38.64%, #040A13 47.9%, #060C18 55.41%, #080F1D 61.65%, #0A1223 67.14%, #0C1629 72.38%, #0E1A2F 77.87%, #101D36 84.11%, #13213C 91.61%, #152543 100.88%, #172849 112.41%, #192C4F 126.71%, #1B2F54 144.28%);
+$linear-gradient-dark-quote: radial-gradient(155.15% 99.46% at 56.51% 50.08%, #030D1F 0%, #1B2F54 100%);
+
+// Grey.
+$linear-gradient-white-grey: linear-gradient(146deg, #fff 5.2%, #eef1f5 92.04%);
+$linear-gradient-white-grey-vertical: linear-gradient(0deg, #fff 5.2%, #eef1f5 92.04%);
+$conic-gradient-light-grey-1: conic-gradient(from 11deg at 57.68% 20.44%, #f0f0f0 0deg, #fbfbfb 360deg);
+$content-pop-gradient: linear-gradient(to top, color(GalaxyBlack, 0.5) 50%, transparent);
+$linear-gradient-black-card-overlay-1: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%), linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 76.81%);
+
+/*************/
+/* Background Images */
+/*************/
+$gateway-hero-img-mobile: url('/wp-content/themes/veeva2015/assets/veeva-2024/background/gateway-hero-mobile.jpg'); 
+$gateway-hero-img-desktop: url('/wp-content/themes/veeva2015/assets/veeva-2024/background/gateway-hero-desktop.jpg'); 
+
+/*************/
+/* FILTER COLOR */
+/*************/
+
+// NOTE: original image needs to be black svg for this to work
+// color generated from: https://codepen.io/sosuke/pen/Pjoqqp
+$filter-color-veeva-orange: invert(79%) sepia(38%) saturate(4558%) hue-rotate(344deg) brightness(98%) contrast(98%);
+
+/*************/
+/* Z-INDEXES */
+/*************/
+
+$nav-menu-z-index: 999;
+$pagenav-menu-z-index: 998;
+$nav-backdrop-z-index: 990;
+$dropdown-menu-z-index: 11;
+$modal-z-index: 10000;
+
+/*************/
+/* NAV SIZES */
+/*************/
+
+$nav-menu-height-sm: 64px;
+$nav-menu-height-md: 72px;
+$secondary-nav-height-xs: 48px;
+$secondary-nav-height-md: 64px;
+$secondary-nav-height-lg: 76px;
+
+/***************/
+/* BOX SHADOWS */
+/***************/
+
+$box-shadow-sm-behind: 0px 5px 8px 0px rgba(0, 0, 0, 0.15);
+$box-shadow-sm-behind-light: 0px 5px 8px 0px rgba(0, 0, 0, 0.09);
+$box-shadow-lg-behind: 0px 0.99px 11.8px 0px rgba(0, 0, 0, 0.05), 0px 2.75px 32.7px 0px rgba(0, 0, 0, 0.07), 0px 6.6px 78.7px 0px rgba(0, 0, 0, 0.09), 0px 22px 80px 0px rgba(0, 0, 0, 0.14);
+$box-shadow-lg-down: 0px 6.65px 5.32px 0px rgba(0, 0, 0, 0.03), 0px 22.336px 17.869px 0px rgba(0, 0, 0, 0.04), 0px 80px 80px 0px rgba(0, 0, 0, 0.07);
+$box-shadow-lg-behind-contained: 0px 0.99px 11.8px 0px rgba(0, 0, 0, 0.05), 0px 2.75px 15px 0px rgba(0, 0, 0, 0.07), 0px 6.6px 15px 0px rgba(0, 0, 0, 0.08), 0px 8px 15px 0px rgba(0, 0, 0, 0.09);
+
+/*************************/
+/* DROP SHADOWS (filter) */
+/*************************/
+
+$drop-shadow-sm-behind: drop-shadow(0px 5px 8px rgba(0, 0, 0, 0.15));
+$drop-shadow-lg-behind: drop-shadow(0px 6.65px 5.32px rgba(0, 0, 0, 0.03)) drop-shadow(0px 22.336px 17.869px rgba(0, 0, 0, 0.04)) drop-shadow(0px 80px 80px rgba(0, 0, 0, 0.07));
+$drop-shadow-lg-down: drop-shadow(0px 6.65px 5.32px rgba(0, 0, 0, 0.03)) drop-shadow(0px 22.336px 17.869px rgba(0, 0, 0, 0.04)) drop-shadow(0px 80px 80px rgba(0, 0, 0, 0.07));
+
+/*******************/
+/* BORDER RADIUSES */
+/*******************/
+
+$border-radius-xxs: 16px;
+$border-radius-xs: 20px;
+$border-radius-s: 24px;
+$border-radius-m: 40px;
+$border-radius-l: 60px;
+$border-radius-xl: 60px;
+$border-radius-xxl: 80px;
+
+/***********/
+/* SPACING */
+/***********/
+
+$section-spacing-screen-xs: 60px;
+$section-spacing-screen-md: 80px;
+$section-spacing-screen-lg: 100px;
+$section-spacing-screen-xxl: 120px;
+$section-spacing: $section-spacing-screen-xs;
+
+$section-spacing-s-screen-xs: 40px;
+$section-spacing-s-screen-md: 55px;
+$section-spacing-s-screen-lg: 70px;
+
+// configured based on breakpoint for calculation
+$section-spacing-map: (
+    xs:  $section-spacing-screen-xs,
+    sm:  $section-spacing-screen-xs,
+    md:  $section-spacing-screen-md,
+    lg:  $section-spacing-screen-md,
+    xl:  $section-spacing-screen-lg,
+    xxl:  $section-spacing-screen-xxl,
+    xxxl:  $section-spacing-screen-xxl,
+);
+
+/********/
+/* GAPS */
+/********/
+
+$card-gap-xxs: 16px;
+$card-gap-xs: 20px;
+$card-gap-sm: 24px;
+$card-gap-md: 28px;
+$card-gap-lg: 32px;
+$card-gap-xl: 36px;
+
+// Space between Copy Container and content below.
+$block-gap-sm: 48px;
+$block-gap-lg: 80px;
+
+/****************************/
+/* CONTAINED CONTENT WIDTHS */
+/****************************/
+
+$contained-width-sm: 600px;
+$contained-width-md: 800px;
+$contained-width-lg: 1080px;
+$contained-width-xl: 1300px;
+
+$inner-content-max-width-sm: 700px;
+$inner-content-max-width-lg: 1024px;
+$inner-content-max-width-xl: 1200px;
+
+/**************/
+/* ANIMATIONS */
+/**************/
+
+$cubic-bezier-1: cubic-bezier(0.165, 0.84, 0.44, 1);
+$transition-all-ease-in-out-1: all 0.3s ease-in-out;
+$transition-all-cubic-bezier-1: all 0.5s $cubic-bezier-1;
+$transition-default-duration: 0.3s;

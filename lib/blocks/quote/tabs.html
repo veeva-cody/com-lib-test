@@ -1,0 +1,64 @@
+<section class="quote-tabs [modifier*]">
+    <div class="container">
+        <div class="copy-container copy-container--center copy-container--eyebrow-gradient">
+            <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+            <h3>[headline]</h3>
+            <p>[body]</p>
+            <div class="copy-container__buttons">
+                <a class="button-outline [modifier^]" href="[url]" target="[target]">[label]</a>
+                <a class="button-secondary [modifier^]" href="[url]" target="[target]">
+                    <img src="[src]" alt="[alt]" />
+                    <span>[label]</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="quote-tabs__content">
+        <!-- [1x] -->
+        {{ `tabs-tablist-text` }}
+        {{ `tabs-tablist-logo` }}
+        <!-- [] -->
+        <div class="container">
+            <!-- Optional: update carousel timing by passing in data-slide-interval="[time]", where time is in milliseconds. If no data-slide-interval is set, it'll use 8500 by default --> 
+            <div class="carousel slide carousel-fade" data-slide-interval="[time]">
+                <div class="carousel-indicators"></div>
+                <div class="carousel-inner">
+                    <!-- [1-6x] -->
+                    <div class="carousel-item">
+                        {{ `quote-card-full` }}
+                        {{ `quote-card-full-vertical` }}
+                        {{ `quote-card-article` }}
+                        {{ `quote-card-single` }}
+                    </div>
+                    <!-- [] -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 
+    
+Modifiers
+---------
+
+Required (one of) *:
+
+quote-tabs--light
+quote-tabs--dark
+
+Optional *:
+
+quote-tabs--bg-black
+quote-tabs--bg-split-grey
+
+Notes
+-----
+
+1. Number of items in tablist must match number of carousel items; max of 6.
+
+2. Optional: update carousel timing by passing in data-slide-interval="[time]" to carousel with ``, where time is in milliseconds. If no `data-slide-interval` is set, it'll use 8500 by default.
+
+3. `data-bs-ride="carousel"` is not needed for `.carousel` class, as the sliding animation + progress bar in the carousel is controlled by custom function `fillCarouselIndicator()`. Adding the `data-bs-ride="carousel"` attribute will make carousel not function properly as bootstrap may initiate the animation before we can act on it via bundle.min.js
+
+-->

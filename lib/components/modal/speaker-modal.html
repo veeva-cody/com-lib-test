@@ -1,0 +1,62 @@
+<div id="[modal-id]" class="modal fade speaker-modal [modifier*]" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="modal-btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span class="icon" data-icon="close"></span>
+                </button>
+
+                <div class="modal-speaker-info">
+                    <div class="avatar-thumbnail">
+                        <img src="[avatar-img]" alt="[img-alt]" />
+                    </div>
+                    <div class="modal-speaker-info__text">
+                        <h5 class="speaker-name">[speaker-name]</h5>
+                        <p>
+                            <span class="speaker-company"> [company-name] </span>
+                            <span class="speaker-position"> [job-title] </span>
+                        </p>
+                        <!-- Optional LinkedIn button -->
+                        <div class="copy-container__buttons">
+                            <a class="button-icon button-icon--linkedin" href="#" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="modal-inner-separator" />
+
+                <div class="modal-speaker-bio">
+                    <p>[description]</p>
+                </div>
+
+                <!-- Optional Session -->
+                <div class="modal-speaker-session">
+                    <h5>Sessions</h5>
+                    <hr />
+
+                    <!-- [1-?x] -->
+                    <!-- Optional: data-bs-dismiss="modal" -->
+                    <!-- Add {data-bs-dismiss="modal"} if link is on same page, else remove it if link is on another page -->
+                    <a class="modal-speaker-session__item" href="[url]" target="[target]">
+                        <h6>[Session Title]</h6>
+                        <p>[Session Time]</p>
+                        <span class="forward-arrow"></span>
+                    </a>
+                    <!-- [] -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+speaker-modal--light
+speaker-modal--dark
+
+-->

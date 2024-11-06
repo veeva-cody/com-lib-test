@@ -1,0 +1,59 @@
+<!-- id needs to match with filter-modal-button target-->
+<div class="modal fade filter-modal" id="[modal-id]" tabindex="-1" aria-labelledby="[modal-label]" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Top -->
+            <div class="modal-header">
+                <img class="modal-logo" src="/wp-content/themes/veeva2015/assets/veeva/veeva-logo-white.svg" alt="Veeva" />
+
+                <button type="button" class="modal-btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <span class="icon" data-icon="close"></span>
+                </button>
+            </div>
+
+            <!-- Modal Content -->
+            <div class="modal-body">
+                <h4 class="modal-title" id="filter-modal-label">[modal-title]</h4>
+
+                <div class="modal-body-content filter-dropdowns-wrapper">
+                    <!-- Accodion of filter option -->
+                    <div class="accordion filter-accordion" id="[accordion-id]">
+                        <!-- [1-?x]: Accordion Item -->
+                        <div class="accordion-item form-dropdown--filter">
+                            <!-- Accordion Button -->
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="[accordion-collapse-id]" aria-expanded="true" aria-controls="[accordion-collapse-id]">[filter-category]</button>
+
+                            <!-- Accordion Collapse Content -->
+                            <div id="[accordion-collapse-id]" class="accordion-collapse filter-accordion-content collapse" data-bs-parent="[accordion-id]">
+                                <div class="accordion-body">
+                                    <ul class="dropdown-menu-mobile">
+                                        <!-- [1-?x]: Mobile Filter Option -->
+                                        <!-- NOTE: label[for=""] needs to match with desktop filter option's checkbox id -->
+                                        <li class="dropdown-item">
+                                            <label for="[option-checkbox-id]"> [filter-option] </label>
+                                        </li>
+                                        <!-- [] -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- [] -->
+                    </div>
+                </div>
+
+                <div class="modal-cta-wrapper">
+                    <!-- close modal button -->
+                    <a type="button" class="button-primary button-primary--gradient" data-bs-dismiss="modal"> [modal-button-text] </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+
+Note: 
+
+- This will be rendered by js automatically based on the form-dropdown element in filter-field-wrapper, to avoid error caused by mis-entry on some information manually. This only serves as a preview of a rendered modal
+
+-->

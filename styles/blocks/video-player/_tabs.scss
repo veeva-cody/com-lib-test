@@ -1,0 +1,5 @@
+.video-player-tabs .tablist.tablist-text .nav-pills .tablist-link {
+    @include media-breakpoint-down(md) {
+        height: 55px;
+    }
+}

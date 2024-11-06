@@ -1,0 +1,216 @@
+.listed-up-card {
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    max-width: 342px;
+    padding: 32px 24px;
+
+    border-radius: $border-radius-s;
+    background: transparent;
+    box-shadow: none;
+
+    transition: box-shadow 0.3s ease-in-out;
+
+    overflow: hidden;
+
+    @include media-breakpoint-up(md) {
+        max-width: 469px;
+        padding: 32px 28px;
+    }
+
+}
+
+.listed-up-card .icon-wrapper {
+
+    width: 44px;
+
+    @include media-breakpoint-up(md) {
+        width: 64px;
+    }
+
+}
+
+.listed-up-card .icon-wrapper,
+.listed-up-card .bar {
+    margin-bottom: map-get($spacers, 4);
+}
+
+.listed-up-card .icon-wrapper:before {
+    background: $linear-gradient-orange-1;
+}
+
+.listed-up-card .icon-wrapper .icon {
+    background: color(White);
+}
+
+.listed-up-card .bar {
+
+    display: inline-block;
+    position: relative;
+
+    width: 72px;
+    height: 4px;
+
+    border-radius: 999px;
+    background: $linear-gradient-orange-1;
+
+    transition: $transition-all-ease-in-out-1;
+
+}
+
+.listed-up-card .arrow-wrapper {
+
+    width: 34px;
+
+    border-radius: 999px;
+    border: 1px solid color(GalaxyBlack);
+    box-shadow: none;
+
+    transition: $transition-all-ease-in-out-1;
+
+    @include media-breakpoint-up(md) {
+        width: 48px;
+    }
+
+}
+
+.listed-up-card .arrow-wrapper .icon {
+    background: color(GalaxyBlack);
+}
+
+// eyebrow
+.listed-up-card h4 { 
+
+    @include font(h7);
+
+    position: relative;
+    font-weight: 600;
+    text-transform: unset;
+
+    margin-bottom: calc(map-get($spacers, 4) / 2);
+
+}
+
+// main title
+.listed-up-card h5 {
+
+    position: relative;
+
+    font-size: $font-size-h4-mobile;
+    margin-bottom: map-get($spacers, 3);
+
+    @include media-breakpoint-up(md) {
+        font-size: $font-size-h4-desktop;
+    }
+
+}
+
+.listed-up-card p {
+    position: relative;
+    font-weight: 400;
+    line-height: 1.4;
+
+    margin-bottom: map-get($spacers, 4);
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: map-get($spacers, 5);
+    }
+}
+
+.listed-up-card-subpoints p {
+    margin-bottom: 0;
+}
+
+.listed-up-card p a {
+    @include simple-text-link;
+}
+
+.listed-up-card .card-subtext {
+    margin-top: map-get($spacers, 4);
+
+    @include media-breakpoint-up(md) {
+        margin-top: map-get($spacers, 5);
+    }
+}
+
+.listed-up-card .card-subtext > li {
+    margin-bottom: map-get($spacers, 3); 
+
+    font-weight: 500;
+}
+
+.listed-up-card .button-text-link {
+    cursor: pointer;
+    display: inline-flex;
+    position: relative;
+
+    width: fit-content;
+    margin-top: auto;
+}
+
+// only add hover effect if that's a link
+a.listed-up-card:hover {
+    cursor: pointer;
+}
+
+a.listed-up-card:hover h4,
+a.listed-up-card:hover h5,
+a.listed-up-card:hover p {
+    transition: $transition-all-ease-in-out-1;
+}
+
+a.listed-up-card:hover {
+    box-shadow: $box-shadow-lg-down;
+}
+
+a.listed-up-card:hover .icon-wrapper:before {
+    background: color(White);
+}
+
+a.listed-up-card:hover .icon-wrapper .icon {
+    background: color(VeevaOrange);
+}
+
+a.listed-up-card:hover .bar {
+    background: color(White);
+}
+
+a.listed-up-card:hover .button-text-link--black {
+    color: color(White);
+}
+
+.listed-up--light a.listed-up-card:hover .arrow-wrapper {
+    border-color: color(White);
+}
+
+.listed-up--dark a.listed-up-card:hover .arrow-wrapper {
+    border-color: color(White);
+}
+
+a.listed-up-card:hover h4,
+a.listed-up-card:hover h5,
+a.listed-up-card:hover p {
+    color: color(White);
+}
+
+.listed-up-card:before {
+
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    background: $linear-gradient-orange-compliant;
+    border-radius: inherit;
+    opacity: 0;
+
+    transition: opacity 0.3s ease-in-out;
+
+}
+
+a.listed-up-card:hover:before {
+    opacity: 1;
+}
+

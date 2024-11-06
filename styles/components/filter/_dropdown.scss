@@ -1,0 +1,152 @@
+.form-dropdown--filter {
+    @include media-breakpoint-up(lg) {
+        max-height: $filter-field-height;
+    }
+}
+
+.form-dropdown--filter,
+.filter-dropdowns-wrapper--odd .form-dropdown--filter {
+    @include media-breakpoint-up(lg) {
+        min-width: 205px;
+    }
+}
+
+.filter-dropdowns-wrapper--even .form-dropdown--filter {
+    @include media-breakpoint-up(lg) {
+        min-width: 300px;
+    }
+}
+
+.form-dropdown--filter,
+.filter-dropdowns-wrapper--odd .form-dropdown--filter,
+.filter-dropdowns-wrapper--even .form-dropdown--filter {
+    @include media-breakpoint-up(xl) {
+        min-width: 200px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        min-width: 220px;
+    }
+}
+
+.form-dropdown--filter .dropdown-menu {
+    box-shadow: $box-shadow-sm-behind;
+
+    max-height: 280px;
+    overflow-y: auto;
+
+    gap: map-get($spacers, 2);
+}
+
+// cancel off padding to allow inner input label to work
+.form-dropdown--filter .dropdown-menu .dropdown-item {
+    padding: 0;
+}
+
+// sync with dropdown padding
+.form-dropdown--filter label {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 6px map-get($spacers, 4);
+    padding-right: 14px; // align 'tick' with dropdown arrow
+
+    cursor: pointer;
+    white-space: normal; // prevent lengthy word to overflow container
+
+    transition: $transition-all-ease-in-out-1;
+}
+
+// hide checkbox, comment this out it want to view checkbox state
+.form-dropdown--filter input[type="checkbox"] {
+    all: unset;
+}
+
+.form-dropdown--filter label:before {
+    content: "";
+
+    background-image: url("/wp-content/themes/veeva2015/assets/svg/icons/tick-fill.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    align-self: start;
+
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+
+    @include media-breakpoint-up(md) {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+// mobile label
+.form-dropdown--filter .dropdown-menu-mobile label {
+    @include font(h8);
+
+    padding: 8px map-get($spacers, 3);
+    color: inherit;
+}
+
+// state
+.form-dropdown--filter label.active,
+.form-dropdown--filter .dropdown-menu-mobile label.active,
+.form-dropdown--filter label:hover,
+.form-dropdown--filter .dropdown-menu-mobile label:hover {
+    color: color(GalaxyBlack);
+}
+
+.form-dropdown--filter label.active:before,
+.form-dropdown--filter .dropdown-menu-mobile label.active:before {
+    opacity: 1;
+}
+
+.form-dropdown--filter .dropdown-menu {
+    @include media-breakpoint-down(md) {
+        gap: map-get($spacers, 1);
+        padding: map-get($spacers, 2) 0;
+    }
+}
+
+// mobile styles in filter popup modal
+.form-dropdown--filter .dropdown-menu-mobile {
+    all: unset;
+
+    display: flex;
+    flex-direction: column;
+    gap: map-get($spacers, 1);
+
+    padding: map-get($spacers, 2) 0;
+}
+
+// wrapper
+.filter-dropdowns-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($spacers, 2);
+
+    @include media-breakpoint-up(md) {
+        gap: map-get($spacers, 3);
+    }
+
+    @include media-breakpoint-up(lg) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: calc($card-gap-sm / 2)  map-get($spacers, 2);
+    }
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+.form-dropdown--filter label {
+    font-weight: 600;
+    margin-bottom: 0;
+}

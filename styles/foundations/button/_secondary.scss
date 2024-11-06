@@ -1,0 +1,30 @@
+.button-secondary--black {
+    color: color(GalaxyBlack);
+}
+
+.button-secondary--white {
+    color: color(White);
+}
+
+.button-secondary img {
+
+    background-color: color(IconBtnBgColor);
+    border-radius: 50%;
+
+    width: 32px;
+    margin-right: map-get($spacers, 2);
+    
+    @include media-breakpoint-up(md) {
+        width: 40px;
+    }
+
+}
+
+.button-secondary--icon-bg-white img {
+    background-color: color(White);
+}
+
+.button-secondary:hover img,
+.button-secondary.active img {
+    background-color: color(IconBtnHoverBgColor);
+}

@@ -1,0 +1,243 @@
+$vault-basics-orange: #F67919;
+$vault-basics-gradient-orange: linear-gradient(235deg, rgba(247,182,0,1) 0%, rgba(235,149,0,1) 50%, rgba(225,104,1,1) 100%);
+
+#vault-basics-header {
+    position: absolute;
+    inset: 0;
+    top: 20px;
+    z-index: 1000;
+    max-height: 80px;
+
+    @include media-breakpoint-up(md) {
+        top: 40px;
+    }
+}
+
+#vault-basics-header .vault-basics-header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: map-get($grid-breakpoints, "xxl");
+    margin: 0 map-get($spacers, 3 );
+    padding: 12px 24px;
+    background-color: color(DarkNavy); /* $Secondary-Dark-Navy */
+    border-radius: map-get($spacers, 4 );
+
+    @include media-breakpoint-up(md) {
+        padding: 20px 40px;
+    }
+
+    @include media-breakpoint-up(xxl) {
+        margin: 0 auto;
+    }
+}
+
+#vault-basics-header .header-logo {
+    display: flex;
+    align-items: center;
+}
+
+#vault-basics-header .header-logo--image {
+    display: inline-block;
+
+    width: 220px;
+
+    @include media-breakpoint-up(md) {
+        width: 280px;
+    }
+}
+
+#vault-basics-header .header-logo--text {
+    font-size: 24px;
+    color: color(White);
+    margin-left: 2px;
+    -webkit-font-smoothing: antialiased;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 0;
+        font-size: 33px;
+    }
+}
+
+#vault-basics-header .button-secondary img {
+    @include media-breakpoint-down(sm) {
+        margin-right: 0;
+    }
+}
+
+#vault-basics-header .button-secondary span {
+    display: none;
+
+    @include media-breakpoint-up(sm) {
+        display: inline-block;
+    }
+}
+
+#vault-basics .hero-contained,
+#vault-basics .hero-centered {
+    @include rounded-corners(bottom);
+
+    // add extra spacing for heading to sit on top of this
+    padding-top: 130px;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 200px;
+        padding-bottom: 100px;
+    }
+}
+
+// add counteract nav header spacing
+.vault-basics .page-top-section {
+    padding-top: 130px;
+
+    @include media-breakpoint-up(md) {
+        padding-top: 200px;
+    }
+}
+
+#vault-basics .hero-centered .copy-container p {
+    @include font(body-m);
+
+    @include media-breakpoint-up(lg) {
+        max-width: 900px;
+    }
+}
+
+#vault-basics .hero-contained .copy-container__buttons a
+#vault-basics .hero-centered .copy-container__buttons a,
+#vault-basics .z-pattern .copy-container__buttons a {
+    text-decoration: none;
+}
+
+#vault-basics .hero-contained .copy-container__stats span,
+#vault-basics .hero-centered .copy-container__stats span {
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+#vault-basics .listed-up-accent {
+    background: linear-gradient(0deg, #FFF 0.11%, #EEF1F5 99.89%);
+    margin: 0;
+    @include rounded-corners(top);
+    @include block-spacing(padding);
+}
+
+#vault-basics .listed-up-accent .copy-container h2,
+#vault-basics .logo-wall-listed .copy-container h2 {
+    @include media-breakpoint-down(md) {
+        font-size: $font-size-h3-mobile;
+    }
+}
+
+#vault-basics .listed-up-card {
+    padding-inline: 0;
+}
+
+#vault-basics .z-pattern-container {
+    margin: 60px 0;
+
+    @include media-breakpoint-up(md) {
+        margin: 80px 0;
+    }
+}
+
+#vault-basics .z-pattern-container .z-pattern-products {
+    @include media-breakpoint-up(xl) {
+        margin: 80px 0;
+    }
+}
+
+#vault-basics #registration-form {
+    scroll-margin-top: 0;
+}
+
+#vault-basics .form {
+    @include block-spacing(padding);
+    @include rounded-corners(all);
+    @include copy-content-spacing;
+
+    background: $vault-basics-gradient-orange;
+    color: color(White);
+
+    z-index: 1;
+}
+
+#vault-basics .form .copy-container {
+    color: color(White);
+}
+
+#vault-basics .form .copy-container p {
+    color: color(White);
+}
+
+
+#vault-basics .iframe__wrapper {
+    @include rounded-corners(all);
+
+    height: auto;
+    margin: 0 auto;
+    padding: 32px 20px 20px;
+    max-width: $contained-width-lg;
+    background-color: color(White);
+
+    @include media-breakpoint-up(sm) {
+        padding: 50px 40px;
+    }
+
+    @include media-breakpoint-up(lg) {
+        padding: 70px 90px 50px;
+    }
+}
+
+#vault-basics .iframe__wrapper iframe {
+    height: 750px;
+
+    // use default media query for iframe form
+    @media screen and (min-width: 681px) {
+        height: 520px;
+    }
+}
+
+#vault-basics-footer.veeva-footer-2024 {
+    background: linear-gradient(192deg, #1B2F54 -11.72%, #01050B 6.58%, #02060D 21.47%, #030710 33.48%, #040A13 43.12%, #060C18 50.94%, #080F1D 57.44%, #0A1223 63.16%, #0C1629 68.61%, #0E1A2F 74.33%, #101D36 80.83%, #13213C 88.64%, #152543 98.29%, #172849 110.3%, #192C4F 125.19%, #1B2F54 143.49%);
+
+    margin-top: -60px;
+    padding: 120px 0 48px;
+
+    @include media-breakpoint-up(md) {
+        margin-top: -100px;
+        padding: 236px 0 64px;
+    }
+}
+
+// override orange color for various elements
+#vault-basics .copy-container--eyebrow-gradient h6,
+#vault-basics .hero-contained .copy-container__stats span,
+.vault-basics .copy-container--eyebrow-gradient h6,
+.vault-basics .hero-contained .copy-container__stats span {
+    background: none;
+    background-clip: initial;
+    -webkit-background-clip: initial;
+    -moz-background-clip: initial;
+
+    color: $vault-basics-orange;
+    -webkit-text-fill-color: $vault-basics-orange;
+    -moz-text-fill-color: $vault-basics-orange;
+}
+
+#vault-basics .copy-container--eyebrow-gradient .icon,
+#vault-basics .listed-up-card .bar,
+#vault-basics .listed-up-card:before,
+#vault-basics-footer.veeva-footer-2024 .veeva-footer-2024__content-upper-link-group .icon,
+.vault-basics .copy-container--eyebrow-gradient .icon,
+.vault-basics .listed-up-card .bar,
+.vault-basics .listed-up-card:before,
+.vault-basics .resource-chip__icon {
+    background: $vault-basics-orange;
+}
+
+#vault-basics .quote-card-full:not(.quote-card--bg-blue-gradient):not(.quote-card--bg-dark-gradient),
+.vault-basics .quote-card-full:not(.quote-card--bg-blue-gradient):not(.quote-card--bg-dark-gradient) {
+    background: $vault-basics-gradient-orange;
+}

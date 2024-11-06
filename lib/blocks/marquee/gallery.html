@@ -1,0 +1,41 @@
+<section class="marquee-gallery [modifier*]">
+    <div class="copy-container container copy-container--center copy-container--eyebrow-gradient">
+        <h6><span class="icon" data-icon="[id]"></span>[overline]</h6>
+        <h3>[headline]</h3>
+        <p>[body]</p>
+        <div class="copy-container__buttons">
+            <a class="button-primary [modifier^]" href="[url]" target="[target]">[label]</a>
+            <a class="button-secondary [modifier^]" href="[url]" target="[target]">
+                <img src="[src]" alt="[alt]" />
+                <span>[label]</span>
+            </a>
+        </div>
+    </div>
+    <div class="marquee-gallery__images container">
+        <!-- [1-4x] -->
+        <div class="marquee-gallery__image-row [modifier**]">
+            <img src="[src]" alt="[alt]" />
+            <img src="[src]" alt="[alt]" />
+        </div>
+        <!-- [] -->
+    </div>
+</section>
+
+<!--
+
+Modifiers
+---------
+
+Required (one of) *:
+
+marquee-gallery--light
+marquee-gallery--dark
+
+Required (one of) **:
+
+marquee-gallery__image-row--40-60
+marquee-gallery__image-row--60-40
+marquee-gallery__image-row--50-50
+marquee-gallery__image-row--100
+
+-->

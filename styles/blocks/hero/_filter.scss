@@ -1,0 +1,117 @@
+.hero-filter {
+    // no overflow on this block as needs to allow long dropdown menu to overflow
+    @include block-spacing(padding);
+}
+
+.hero-filter .copy-container {
+    margin-bottom: map-get($spacers, 5);
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: map-get($spacers, 8);
+    }
+}
+
+// color variation
+.hero-filter--grey,
+.hero-filter--light {
+    color: color(GalaxyBlack);
+}
+
+.hero-filter--blue {
+    color: color(White);
+}
+
+// blue + grey
+.hero-filter--blue,
+.hero-filter--grey {
+    position: relative;
+}
+
+// used psuedo-element to allow content to overflow
+.hero-filter--blue::before,
+.hero-filter--grey::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: color(NeutralGrey);
+    @include rounded-corners(bottom);
+    z-index: -1;
+}
+
+.hero-filter--blue::before {
+    background: $linear-gradient-dark-blue;
+}
+
+.hero-filter--blue .filter-tag, 
+.hero-filter--grey .filter-tag {
+    @include filter-tag--white;
+}
+
+.hero-filter--blue .form-dropdown,
+.hero-filter--grey .form-dropdown {
+    @include form-dropdown--white;
+}
+
+.hero-filter--blue .filter-search,
+.hero-filter--grey .filter-search {
+    @include filter-search--white;
+}
+
+.hero-filter--blue .filter-search-wrapper {
+    color: color(GalaxyBlack);
+}
+
+.hero-filter--blue .filter-modal-btn,
+.hero-filter--grey .filter-modal-btn {
+    @include filter-modal-btn--white;
+}
+
+// white
+.hero-filter--light {
+    background: color(White);
+}
+
+.hero-filter--light .filter-tag {
+    @include filter-tag--grey;
+}
+
+.hero-filter--light .form-dropdown {
+    @include form-dropdown--grey;
+}
+
+.hero-filter--light .filter-search {
+    @include filter-search--grey;
+}
+
+.hero-filter--light .filter-modal-btn {
+    @include filter-modal-btn--grey;
+}
+
+// width
+.hero-filter--contained .filter-field-wrapper {
+    @include media-breakpoint-up(xxl) {
+        max-width: $inner-content-max-width-xl;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.hero-filter--contained .filter-tag-wrapper {
+    @include media-breakpoint-up(xxl) {
+        padding-left: calc(50vw - $inner-content-max-width-xl / 2);
+        padding-right: map-get($spacers, 3);
+    }
+}
+
+/*********************/
+/* Integration Fixes */
+/*********************/
+
+.hero-filter .container:before,
+.hero-filter .container:after {
+    display: none;
+}
