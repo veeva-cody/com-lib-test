@@ -4,17 +4,19 @@ The Veeva Component Library is a collection of HTML snippets, combined with CSS 
 
 ---
 ##### Table of Contents
-- [Build Tools](#build-tools)
-- [Folder Organization](#folder-organization)
-- [Icons](#icons)
-- [Foundations](#foundations)
-- [Components](#components)
-- [Blocks](#blocks)
-- [Modifiers](#modifiers)
-- [Veeva Component Library](https://veeva-component-library.thinkingboxserver.ca/preview/)
+- [Veeva Component Library](#veeva-component-library)
+        - [Introduction](#introduction)
+        - [Table of Contents](#table-of-contents)
+        - [Build Tools](#build-tools)
+        - [Folder Organization](#folder-organization)
+        - [Icons](#icons)
+        - [Foundations](#foundations)
+        - [Components](#components)
+        - [Blocks](#blocks)
+        - [Modifiers](#modifiers)
 
 ##### Build Tools
-- Scripts and styles are compiled using Rollup. `npm run start` will build the bundles, listen for changes and start a live reloading server at **localhost:10001**. You can view the library at http://localhost:10001/preview/.
+- Scripts and styles are compiled using Rollup. `npm run start` will build the bundles, listen for changes and start a live reloading server at **localhost:10001**. You can view the library at http://localhost:10001/docs/.
 - `npm run build` will also build the bundles and remove some unnecessary code for production use.
 
 ##### Folder Organization
@@ -37,7 +39,7 @@ cd shell-scripts/
 chmod +x generate-icon-json.sh      // grant access to run locally
 ./generate-icon-json.sh
 ```
-The icons.json will be updated in /preview/foundation/icons.json
+The icons.json will be updated in /docs/foundation/icons.json
 
 ##### Foundations
 - Foundations are the most basic building block in our design system. They include such things as buttons, eyebrows, icons and more. 

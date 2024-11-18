@@ -9,253 +9,241 @@ const subnavMenuData = {
     menu: [
         {
             name: "Foundations",
-            url: "/foundation/",
+            url: "foundation/",
             subMenu: [
                 {
                     name: "Button",
-                    url: "/foundation/button.html",
+                    url: "foundation/button.html",
                 },
                 {
                     name: "Color",
-                    url: "/foundation/color.html",
+                    url: "foundation/color.html",
                 },
                 {
                     name: "Icon",
-                    url: "/foundation/icon.html",
+                    url: "foundation/icon.html",
                 },
                 {
                     name: "Typography",
-                    url: "/foundation/typography.html",
+                    url: "foundation/typography.html",
                 },
             ],
         },
         {
             name: "Accordion",
-            url: "/accordion/",
+            url: "accordion/",
         },
         {
             name: "Alert",
-            url: "/alert/",
+            url: "alert/",
             subMenu: [
                 {
                     name: "Announcement",
-                    url: "/alert/announcement.html",
+                    url: "alert/announcement.html",
                 },
                 {
                     name: "Banner",
-                    url: "/alert/banner.html",
+                    url: "alert/banner.html",
                 },
                 {
                     name: "News",
-                    url: "/alert/news.html",
+                    url: "alert/news.html",
                 },
             ],
         },
         {
             name: "Cards",
-            url: "/cards/",
+            url: "cards/",
             subMenu: [
                 {
                     name: "Card Blocks",
-                    url: "/cards/card-blocks/",
+                    url: "cards/card-blocks/",
                 },
                 {
                     name: "Listed Up Blocks",
-                    url: "/cards/listed-up/",
+                    url: "cards/listed-up/",
                 },
                 {
                     name: "People Blocks",
-                    url: "/cards/people/",
+                    url: "cards/people/",
                 },
                 {
                     name: "Resource Blocks",
-                    url: "/cards/resource/",
+                    url: "cards/resource/",
                 },
             ],
         },
         {
             name: "Footer",
-            url: "/footer/",
+            url: "footer/",
         },
-        // {
-        //     name: "Forms",
-        //     url: "/forms/",
-        // },
         {
             name: "General",
-            url: "/general/",
+            url: "general/",
             subMenu: [
                 {
                     name: "Not Found",
-                    url: "/general/result-not-found.html",
+                    url: "general/result-not-found.html",
                 },
             ],
         },
         {
             name: "Hero",
-            url: "/hero/",
+            url: "hero/",
             subMenu: [
                 {
                     name: "Centered",
-                    url: "/hero/centered.html",
+                    url: "hero/centered.html",
                 },
                 {
                     name: "Center Stack",
-                    url: "/hero/center-stack.html",
+                    url: "hero/center-stack.html",
                 },
                 {
                     name: "Contained",
-                    url: "/hero/contained.html",
+                    url: "hero/contained.html",
                 },
                 {
                     name: "Customer",
-                    url: "/hero/customer.html",
+                    url: "hero/customer.html",
                 },
                 {
                     name: "Filter",
-                    url: "/hero/filter.html",
+                    url: "hero/filter.html",
                 },
                 {
                     name: "Highlights",
-                    url: "/hero/highlights.html",
+                    url: "hero/highlights.html",
                 },
                 {
                     name: "Left Aligned",
-                    url: "/hero/left-aligned.html",
+                    url: "hero/left-aligned.html",
                 },
             ],
         },
         {
             name: "Logo Wall",
-            url: "/logo-wall/",
+            url: "logo-wall/",
             subMenu: [
                 {
                     name: "Animated",
-                    url: "/logo-wall/animated.html",
+                    url: "logo-wall/animated.html",
                 },
                 {
                     name: "Listed",
-                    url: "/logo-wall/listed.html",
+                    url: "logo-wall/listed.html",
                 },
                 {
                     name: "Scattered",
-                    url: "/logo-wall/scattered.html",
+                    url: "logo-wall/scattered.html",
                 },
             ],
         },
-        // {
-        //     name: "Long Form",
-        //     url: "/long-form/",
-        // },
         {
             name: "Marquee",
-            url: "/marquee/",
+            url: "marquee/",
             subMenu: [
                 {
                     name: "Gallery",
-                    url: "/marquee/gallery.html",
+                    url: "marquee/gallery.html",
                 },
                 {
                     name: "Subpoints",
-                    url: "/marquee/subpoints.html",
+                    url: "marquee/subpoints.html",
                 },
             ],
         },
-        // {
-        //     name: "Navigation",
-        //     url: "/navigation/",
-        // },
         {
             name: "Quote",
-            url: "/quote/",
+            url: "quote/",
             subMenu: [
                 {
                     name: "3 Up",
-                    url: "/quote/3-up.html",
+                    url: "quote/3-up.html",
                 },
                 {
                     name: "Tabs",
-                    url: "/quote/tabs.html",
+                    url: "quote/tabs.html",
                 },
                 {
                     name: "Z Pattern",
-                    url: "/quote/z-pattern.html",
+                    url: "quote/z-pattern.html",
                 },
             ],
         },
         {
             name: "Statistic",
-            url: "/statistic/",
+            url: "statistic/",
             subMenu: [
                 {
                     name: "Inline",
-                    url: "/statistic/inline.html",
+                    url: "statistic/inline.html",
                 },
                 {
                     name: "Contained",
-                    url: "/statistic/contained.html",
+                    url: "statistic/contained.html",
                 },
             ],
         },
         {
             name: "Tabs",
-            url: "/tabs/",
+            url: "tabs/",
             subMenu: [
                 {
                     name: "Customer",
-                    url: "/tabs/customer.html",
+                    url: "tabs/customer.html",
                 },
                 {
                     name: "Subpoints",
-                    url: "/tabs/subpoints.html",
+                    url: "tabs/subpoints.html",
                 },
             ],
         },
         {
             name: "Video",
-            url: "/video-player/",
+            url: "video-player/",
             subMenu: [
                 {
                     name: "Chapters",
-                    url: "/video-player/chapters.html",
+                    url: "video-player/chapters.html",
                 },
                 {
                     name: "Demos",
-                    url: "/video-player/demos.html",
+                    url: "video-player/demos.html",
                 },
                 {
                     name: "Multiple",
-                    url: "/video-player/multiple.html",
+                    url: "video-player/multiple.html",
                 },
                 {
                     name: "Stacked",
-                    url: "/video-player/stacked.html",
+                    url: "video-player/stacked.html",
                 },
                 {
                     name: "Tabs",
-                    url: "/video-player/tabs.html",
+                    url: "video-player/tabs.html",
                 },
             ],
         },
         {
             name: "Z Pattern",
-            url: "/z-pattern/",
+            url: "z-pattern/",
             subMenu: [
                 {
                     name: "Products",
-                    url: "/z-pattern/products.html",
+                    url: "z-pattern/products.html",
                 },
                 {
                     name: "Stats",
-                    url: "/z-pattern/stats.html",
+                    url: "z-pattern/stats.html",
                 },
                 {
                     name: "Subcopy",
-                    url: "/z-pattern/subcopy.html",
+                    url: "z-pattern/subcopy.html",
                 },
                 {
                     name: "Subpoints",
-                    url: "/z-pattern/subpoints.html",
+                    url: "z-pattern/subpoints.html",
                 },
             ],
         },
@@ -326,7 +314,7 @@ const SecondaryNav = {
         }
 
         let currentPath = window.location.pathname;
-        if (currentPath == "/preview/") return;
+        if (currentPath == "/") return;
 
         this.subnavMenu.url = this.getCategoryLink(currentPath);
     },
@@ -338,7 +326,7 @@ const SecondaryNav = {
         <div class="secondary-navigation__wrapper container">
         <div class="secondary-navigation__left">
             <h3>
-                <a href="/preview/" class="preview-main-link">
+                <a href="/" class="preview-main-link">
                     <img class="icon" src="/wp-content/themes/veeva2015/assets/veeva/veeva-logo-small.svg" />
                 </a>
                 <a :href="subnavMenu.url" class="preview-category-link">

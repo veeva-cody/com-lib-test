@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <base href="/com-lib-test/" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/styles/normalize.css" />
-        <link rel="stylesheet" href="/dist/bundle.min.css" />
+        <link rel="stylesheet" href="styles/normalize.css" />
+        <link rel="stylesheet" href="dist/bundle.min.css" />
         <title>Veeva Component Library</title>
     </head>
 
@@ -22,7 +23,7 @@
                         </h3>
                         <p>The page you're looking for is not found. Maybe it's still in development progress or the current url doesn't exist.</p>
                         <div class="copy-container__buttons">
-                            <a class="button-outline button-outline--black" href="/preview/" target="_self"> Back To Home </a>
+                            <a class="button-outline button-outline--black" href="/" target="_self"> Back To Home </a>
                         </div>
                     </div>
                 </div>
@@ -36,9 +37,9 @@
 </html>
 
 <!-- Vue Component -->
-<script src="/_vue/mixins/commonMixin.js"></script>
-<script src="/_vue/components/SecondaryNav.js"></script>
-<script src="/_vue/components/BlockCategoryContent.js"></script>
+<script src="_vue/mixins/commonMixin.js"></script>
+<script src="_vue/components/SecondaryNav.js"></script>
+<script src="_vue/components/BlockCategoryContent.js"></script>
 
 <script>
     const app = Vue.createApp({

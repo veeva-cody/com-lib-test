@@ -9,7 +9,7 @@
 .DS_Store
 
 # Compiled Files.
-dist
+/dist
 
 # IDE
 /.idea

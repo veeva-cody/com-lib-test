@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <base href="/com-lib-test/" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="/styles/normalize.css" />
-        <link rel="stylesheet" href="/dist/bundle.min.css" />
+        <link rel="stylesheet" href="styles/normalize.css" />
+        <link rel="stylesheet" href="dist/bundle.min.css" />
         <title>Icon</title>
     </head>
     <body>
@@ -37,14 +38,14 @@
 </html>
 
 <!-- Vue Component -->
-<script src="/_vue/mixins/commonMixin.js"></script>
-<script src="/_vue/components/SecondaryNav.js"></script>
-<script src="/_vue/components/BlockDivider.js"></script>
-<script src="/_vue/components/BlockDetailContent.js"></script>
+<script src="_vue/mixins/commonMixin.js"></script>
+<script src="_vue/components/SecondaryNav.js"></script>
+<script src="_vue/components/BlockDivider.js"></script>
+<script src="_vue/components/BlockDetailContent.js"></script>
 
 <!-- Specific -->
-<script src="/_vue/mixins/copyMixin.js"></script>
-<script src="/_vue/components/IconGrid.js"></script>
+<script src="_vue/mixins/copyMixin.js"></script>
+<script src="_vue/components/IconGrid.js"></script>
 
 <script>
     // data points --
@@ -52,7 +53,7 @@
         data() {
             return {
                 title: "Foundations - Icons",
-                iconDataPath: "/preview/foundation/icons.json", // icon data
+                iconDataPath: "foundation/icons.json", // icon data
                 isLibraryLoaded: false,
                 exampleCode: '<span class="icon" data-icon="3d-rotate-x-axis"> </span>'
             };

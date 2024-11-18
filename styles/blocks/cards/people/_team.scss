@@ -12,16 +12,16 @@ Leadership card specific styles
 
 .team-cards__grid {
     display: grid;
-    gap: $card-gap-xs;
+    gap: $card-gap-md;
     grid-template-columns: 1fr;
 
-    @include media-breakpoint-up(lg) {
-        gap: $card-gap-lg;
-        grid-template-columns: repeat(2, 1fr);
+    @include media-breakpoint-down(lg) {
+        max-width: 550px;
+        margin: 0 auto;
     }
 
-    @include media-breakpoint-up(xl) {
-        gap: 40px; // largest card gap for this display.
+    @include media-breakpoint-up(lg) {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     @include media-breakpoint-up(xxl) {
@@ -50,31 +50,44 @@ Leadership card specific styles
 .team-card__header {
     display: flex;
     flex-direction: row;
-    gap: $card-gap-xs;
+    gap: $card-gap-sm;
 
-    @include media-breakpoint-up(xxl) {
-        gap: $card-gap-lg;
+    @include media-breakpoint-up(xxxl) {
+        gap: $card-gap-md;
     }
 }
 
 .team-card__headshot {
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
+
+    @include media-breakpoint-up(xxxl) {
+        height: 150px;
+        width: 150px;
+    }
 
     img {
         border-radius: 50%;
-        max-width: 150px;
+        max-width: 120px;
         width: auto;
+        height: auto;
+
+        @include media-breakpoint-up(xxxl) {
+            max-width: 150px;
+        }
     }
 }
 
 .team-card__name {
-    font-size: 21px;
+    font-size: 18px;
+    line-height: 1.3;
     margin-bottom: 2px;
     @include background-text-clip($linear-gradient-orange-compliant);
 }
 
 .team-card__title {
+    font-size: 14px;
+    line-height: 1.2;
     color: color(Black);
     margin-bottom: 20px;
 }

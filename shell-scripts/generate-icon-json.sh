@@ -2,7 +2,7 @@
 
 # Directory containing SVG files
 SVG_DIR="../wp-content/themes/veeva2015/assets/svg/icons/"
-OUTPUT_FILE="../preview/foundation/icons.json"
+OUTPUT_FILE="../docs/foundation/icons.json"
 
 # Start the JSON structure
 echo '{ "icons": [' > "$OUTPUT_FILE"
